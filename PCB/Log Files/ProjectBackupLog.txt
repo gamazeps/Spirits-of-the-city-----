@@ -29,3 +29,15 @@
 [2014-06-18 15.16.33] Successfully created [AutoSave] backup [2014-06-18 15.16.33 - auto.zip] requested by [PC-ANTOINE:Antoine].
 [2014-06-18 15.16.33] Removing excessive [AutoSave] backup file [C:\Users\Antoine\Documents\elfes\PCB\Default\ProjectBackup\backups\2014-03-11 00.52.57 - auto.zip].
 [2014-06-18 15.16.33] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-03-11 00.52.57 - auto.zip] removed.
+[2014-06-18 18.00.06] Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014-06-18 18.00.06] Migrating iCDB upgrade backup file [2014-06-18 17.59.19-2000].
+[2014-06-18 18.00.06] Successfully created [Constraints Definition Upgrade] backup [2014-06-18 17.59.19 - consDefUpgr.zip] requested by [PC-ANTOINE:Antoine].
+[2014-06-18 18.00.06] Removing excessive [Constraints Definition Upgrade] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip].
+[2014-06-18 18.00.06] [Constraints Definition Upgrade] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip] removed.
+[2014-06-18 18.00.06] Removing excessive [Constraints Definition Upgrade] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.37.36 - consDefUpgr.zip].
+[2014-06-18 18.00.06] [Constraints Definition Upgrade] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 15.37.36 - consDefUpgr.zip] removed.
+[2014-06-18 18.00.06] Migrated iCDB content backup file [cdbback\2014-06-18 17.59.19-2000.zip] removed.
+[2014-06-18 18.00.06] Successfully migrated iCDB upgrade backup file [2014-06-18 17.59.19-2000] to Project Backup format [2014-06-18 17.59.19 - consDefUpgr.zip]
+[2014-06-18 19.16.33] Successfully created [AutoSave] backup [2014-06-18 19.16.33 - auto.zip] requested by [BI-WIN7:Alexis].
+[2014-06-18 19.16.33] Removing excessive [AutoSave] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip].
+[2014-06-18 19.16.33] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip] removed.

@@ -1,0 +1,115 @@
+[2014.06.18 15:39:14] [0000m.00s.015ms] [0] WELCOME
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Base flow version [7.9.4]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Machine [BI-WIN7]  User [Alexis]  PID [2360]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Operating system [Microsoft Windows 7 Business Edition, 64-bit Service Pack 1 (build 7601)]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Current working dir [E:\2014\elfes\PCB]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\Program Files (x86)\Common Files\Intel\Shared Files\fortran\bin\Intel64;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\ia32;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseGit\bin;]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] SDD_PLATFORM [win32]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] WDIR [C:\Users\Dauphin\Documents\PCB_designs;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Local iCDB working dir [C:\Users\Dauphin\Documents\PCB_designs\iCDB] on file system [NTFS]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [2] S: Loading config files
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Config file [E:\2014\elfes\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.18 15:39:14] [0000m.00s.031ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.18 15:39:14] [0000m.00s.031ms] [3] S: Config loaded
+[2014.06.18 15:39:14] [0000m.00s.062ms] [0] S: Project path [E:\2014\elfes\PCB\Default\default.icdb] on file system [VBoxSharedFolderFS]
+[2014.06.18 15:39:14] [0000m.00s.062ms] [0] S: Project global path [\\vboxsrv\PAF\2014\elfes\PCB\Default\default.icdb] on file system [UNKNOWN]
+[2014.06.18 15:39:14] [0000m.00s.062ms] [1] S: WARNING: No project file (.prj) path specified
+[2014.06.18 15:39:14] [0000m.00s.062ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.18 15:39:14] [0000m.00s.062ms] [0] S: Multi-user mode (config)
+[2014.06.18 15:39:14] [0000m.00s.062ms] [0] S: Event polling mode autodetection
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Started up automatically by iCDB Client: BI-WIN7:Alexis:1808
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Auto close mode
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Database ID [5ad2-dc4f-608e-35ea-f169-1a34-2691-a350-6a6d-295b-7cec-59f5]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: BEGIN dumping
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [E:\] -> [\\vboxsrv\PAF\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [F:\] -> [\\vboxsrv\mentor\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [U:\] -> [\\VBOXSVR\elecinf344\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [\\VBOXSVR\elecinf344\] -> [U:\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [\\vboxsrv\mentor\] -> [F:\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: [\\vboxsrv\PAF\] -> [E:\]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] PathTranslator: END dumping
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: START
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Server startup lock file created
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Listening for client connections on port [10000]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Server network ID [bi-Win7:10.0.2.15,bi-Win7:10000]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Server GUID [a502-cc35-1591-3078-2869-1a37-8691-a350-e57d-295b-7cec-59f5]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Project GUID [5ad2-dc4f-608e-35ea-f169-1a34-2691-a350-6a6d-295b-7cec-59f5]
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Wrote data to server address file
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] S: Server startup lock file removed
+[2014.06.18 15:39:14] [0000m.00s.078ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.18 15:39:14] [0000m.00s.109ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.18 15:39:14] [0000m.00s.109ms] [0] S: Local disc access time: 43 us
+[2014.06.18 15:39:14] [0000m.00s.109ms] [0] S: File server access time: 3247 us
+[2014.06.18 15:39:14] [0000m.00s.109ms] [0] S: Server will not release in-memory storage after read (memory usage overhead) - for better performance
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] size [87552 (85.5 kB)]
+[2014.06.18 15:39:14] [0000m.00s.125ms] [1] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] Database GUARD OK: [87552]
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] Database GUARD OK: [87552]
+[2014.06.18 15:39:14] [0000m.00s.125ms] [0] SingleFile: [a6a9-10ee-030d-3231] SFI version check [1009] [1009]
+[2014.06.18 15:39:14] [0000m.00s.140ms] [0] SingleFile: [a6a9-10ee-030d-3231] Database SFI header has been read in [23ms 477us]
+[2014.06.18 15:39:14] [0000m.00s.140ms] [0] iCDB Server PI: Server & plugin session [1163]
+[2014.06.18 15:39:14] [0000m.00s.140ms] [0] iCDB Server PI: Opening database [E:\2014\elfes\PCB\Default\default.icdb]
+[2014.06.18 15:39:14] [0000m.00s.140ms] [0] iCDB Server PI: Database [E:\2014\elfes\PCB\Default\default.icdb] opened
+[2014.06.18 15:39:14] [0000m.00s.156ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.18 15:39:14] [0000m.00s.156ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.18 15:39:14] [0000m.00s.203ms] [1] iCDB Database: Constraint definitions version [ce_ee.cns=7.10.24;user.cns=9901-97c8-1d6a-9bb1-78ba-5e0c-8ba5-e050-646d-295b-7cec-59f5] up to date
+[2014.06.18 15:39:14] [0000m.00s.265ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.18 15:39:14] [0000m.00s.265ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.18 15:39:14] [0000m.00s.265ms] [0] S: iCDB database loaded
+[2014.06.18 15:39:14] [0000m.00s.265ms] [0] S: Starting threads
+[2014.06.18 15:39:14] [0000m.00s.265ms] [0] ProjectBackupManager: WARNING: Could not startup Project Backup engine - functionality not initialized
+[2014.06.18 15:39:15] [0000m.00s.281ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.18 15:39:15] [0000m.00s.281ms] [0] IT: Session [1164] for host [bi-Win7] user [Alexis] with process ID [1808] created
+[2014.06.18 15:39:15] [0000m.00s.281ms] [1] CMT: There are [1] clients now: 1164
+[2014.06.18 15:39:15] [0000m.00s.281ms] [1] SC[1164]: Registered sub-client [DCDV] with ID [1] for session ID [1164] host [bi-Win7] user [Alexis] process ID [1808]
+[2014.06.18 15:39:31] [0000m.16s.343ms] [0] IT: Session [1165] for host [bi-Win7] user [Alexis] with process ID [1004] created
+[2014.06.18 15:39:31] [0000m.16s.343ms] [1] ProjectBackupManager: Client [ClientData[ClientNetAddress[bi-Win7] # ClientUserName[Alexis] # ClientProcessID[1004] # SessionID[1165]] # SubClientData[SubClientName[] # SubClientID[0]]] set project file (.prj): local path [E:\2014\ELFES\PCB\Elfe.prj], global path [\\vboxsrv\PAF\2014\ELFES\PCB\Elfe.prj]
+[2014.06.18 15:39:31] [0000m.16s.359ms] [1] CMT: There are [2] clients now: 1164, 1165
+[2014.06.18 15:39:31] [0000m.16s.390ms] [0] PrjBackupMgr: Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014.06.18 15:39:31] [0000m.16s.390ms] [0] PrjBackupMgr: Migrating iCDB upgrade backup file [2014-06-18 15.37.36-1876].
+[2014.06.18 15:39:31] [0000m.16s.468ms] [1] PrjBackupMgr: Successfully created Project Backup [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.37.36 - consDefUpgr.zip] with GUID [2c61-4f91-c589-596c-3969-1a38-9691-a350-ea3d-295b-7cec-59f5]
+[2014.06.18 15:39:31] [0000m.16s.468ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[c87f-87c3-60dc-5c1c-1f85-1a36-f851-a350-3065-acfc-40cd-3d5c] CreationTime[Wednesday, June 18, 2014 09:02:03] Type[ConsDefUpgrade] Creator[iCDB Server (2014-06-18 11.02.09-1356)] ApplicationName[iCDB Server (2014-06-18 11.02.03-1280)] UserName[Alexis] MachineName[LUTIN2] Description[Before constraint definitions upgrade using flow install:\n    Expedition Enterprise Flow\n    Flow Id: EE7.9.5; EE 7.9.5\n    GBS Install Id: 30163; 30120\n    iCDB GBS Build Id: 535943\n    iCDB Version: 2709] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip] BackupFileSize[83337] Persistent[FALSE]
+[2014.06.18 15:39:31] [0000m.16s.468ms] [0] PrjBackupMgr: Project Backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip] with GUID [c87f-87c3-60dc-5c1c-1f85-1a36-f851-a350-3065-acfc-40cd-3d5c] removed
+[2014.06.18 15:39:31] [0000m.16s.468ms] [1] PrjBackupMgr: Migrated iCDB content backup file [E:\2014\ELFES\PCB\Default\default.icdb\cdbback\2014-06-18 15.37.36-1876.zip] removed
+[2014.06.18 15:39:31] [0000m.16s.468ms] [0] PrjBackupMgr: Successfully migrated iCDB upgrade backup file [2014-06-18 15.37.36-1876] to Project Backup format [2014-06-18 15.37.36 - consDefUpgr.zip]
+[2014.06.18 15:39:31] [0000m.16s.484ms] [0] PrjBackupMgr: Migrating iCDB upgrade backup file [2014-06-18 11.18.33-2584].
+[2014.06.18 15:39:31] [0000m.16s.531ms] [0] PrjBackupMgr: iCDB upgrade backup file [2014-06-18 11.18.33-2584] is excessive.
+[2014.06.18 15:39:31] [0000m.16s.531ms] [0] PrjBackupMgr: Excessive iCDB upgrade backup file [2014-06-18 11.18.33-2584] removed.
+[2014.06.18 15:39:31] [0000m.16s.546ms] [1] SC[1165]: Registered sub-client [Expedition PCB_22951093] with ID [1] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 15:39:31] [0000m.16s.578ms] [1] SC[1165]: Registered sub-client [EEVM] with ID [2] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 15:39:31] [0000m.16s.625ms] [1] SC[1165]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 15:39:32] [0000m.17s.812ms] [1] SC[1165]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 15:40:10] [0000m.55s.718ms] [0] DFAMT: File server access time: 1100 us
+[2014.06.18 17:58:52] [0139m.38s.130ms] [1] SC[1165]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 17:58:53] [0139m.38s.333ms] [1] SC[1165]: UnRegistered sub-client [Expedition PCB_22951093] with ID [1] for session ID [1165] host [bi-Win7] user [Alexis] process ID [1004]
+[2014.06.18 17:58:53] [0139m.38s.349ms] [1] CMT: Removed client [1165]
+[2014.06.18 17:58:53] [0139m.38s.349ms] [1] CMT: There are [1] clients now: 1164
+[2014.06.18 17:58:54] [0139m.39s.568ms] [1] SC[1164]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1164] host [bi-Win7] user [Alexis] process ID [1808]
+[2014.06.18 17:58:54] [0139m.39s.802ms] [1] CMT: Removed client [1164]
+[2014.06.18 17:58:54] [0139m.39s.802ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.18 17:58:56] [0139m.41s.333ms] [0] CMT: Starting server auto-close
+[2014.06.18 17:58:56] [0139m.41s.443ms] [0] S: Closing server
+[2014.06.18 17:58:56] [0139m.41s.583ms] [0] iCDB Server PI: Closing plugins
+[2014.06.18 17:58:56] [0139m.41s.583ms] [0] iCDB Server PI: Plugins closed
+[2014.06.18 17:58:56] [0139m.41s.583ms] [0] iCDB Server PI: Unloading database
+[2014.06.18 17:58:56] [0139m.41s.583ms] [0] iCDB Server PI: Saving storage
+[2014.06.18 17:58:56] [0139m.41s.583ms] [0] iCDB Server PI: Closing database
+[2014.06.18 17:58:56] [0139m.41s.599ms] [1] iCDB Server PI: Stats: Database defragmentation: max[2] avg[1] holes[0%] data[97%]
+[2014.06.18 17:58:56] [0139m.41s.599ms] [1] iCDB Server PI: Stats: Database file size [87552 (85.5 kB)]
+[2014.06.18 17:58:56] [0139m.41s.630ms] [0] iCDB Server PI: Database closed
+[2014.06.18 17:58:56] [0139m.41s.630ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [1095] ticks
+[2014.06.18 17:58:56] [0139m.41s.630ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [418] microseconds
+[2014.06.18 17:58:56] [0139m.41s.630ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [10]
+[2014.06.18 17:58:56] [0139m.41s.630ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [23910] commands per second
+[2014.06.18 17:58:56] [0139m.41s.630ms] [0] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] closed with size [87552 (85.5 kB)]
+[2014.06.18 17:58:56] [0139m.41s.771ms] [0] S: STOP

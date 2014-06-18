@@ -2,8 +2,8 @@
                                Forward Annotation
                                ------------------
 
-                        02:55 PM Wednesday, June 18, 2014
-           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
+                        06:53 PM Wednesday, June 18, 2014
+                     Job Name: E:\2014\ELFES\PCB\PCB\PCB.pcb
 
 
 Version:  01.01.00
@@ -28,11 +28,11 @@ Version:  01.01.00
           Part Numb: 00-0122 -> Vend Part: 00-0122 
           Part Numb: 01-0176 -> Vend Part: 01-0176 
           Part Numb: 01-0204 -> Vend Part: 01-0204 
+          Part Numb: 03-0003 -> Vend Part: 03-0003 
           Part Numb: 10-0011 -> Vend Part: 10-0011 
           Part Numb: 10-0057 -> Vend Part: 10-0057 
           Part Numb: 10-0068 -> Vend Part: 10-0068 
           Part Numb: 10-0103 -> Vend Part: 10-0103 
-          Part Numb: 20-0065 -> Vend Part: 20-0065 
           Part Numb: 20-0066 -> Vend Part: 20-0066 
           Part Numb: 30-0004 -> Vend Part: 30-0004 
           Part Numb: 40-0115 -> Vend Part: 40-0115 
@@ -62,16 +62,16 @@ Version:  01.01.00
      No errors in Existing Schematic Packaging.
 
      The Common DataBase has been read and will be packaged.
-     Clustering 37 Symbols:
-              37  ************************************
+     Clustering 40 Symbols:
+              40  ***************************************
      Clustering is Complete
 
      Packager Assignments successfully completed
 
 
 
-     40 nets were found containing 130 pins
-     37 components were found
+     40 nets were found containing 132 pins
+     40 components were found
 
      Creating a formatted Schematic Netlist (LogFiles\SchematicNetlist.txt)...
      A formatted Schematic Netlist has been created.
@@ -84,8 +84,8 @@ Version:  01.01.00
                                      NetLoad
                                      -------
 
-                        02:55 PM Wednesday, June 18, 2014
-           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
+                        06:53 PM Wednesday, June 18, 2014
+                     Job Name: E:\2014\ELFES\PCB\PCB\PCB.pcb
 
 
 Version:  02.11.12
@@ -97,20 +97,9 @@ Version:  02.11.12
 	Schematic reference designator changes will be forward annotated.
 
 
-     The following 12 components have not been placed:
+     The following 1 components have not been placed:
 
-        C5
-        C6
-        C7
-        C8
-        D3
-        D4
-        J2
-        J3
-        Q1
-        Q2
-        R7
-        R8
+        R10
 
      Netload completed successfully with 0 warning(s).
      

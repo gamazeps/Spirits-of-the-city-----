@@ -1,0 +1,477 @@
+[2014.06.18 17:59:24] [0000m.00s.031ms] [0] WELCOME
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Base flow version [7.9.4]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Machine [BI-WIN7]  User [Alexis]  PID [2564]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Operating system [Microsoft Windows 7 Business Edition, 64-bit Service Pack 1 (build 7601)]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Current working dir [E:\2014\elfes\PCB]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\Program Files (x86)\Common Files\Intel\Shared Files\fortran\bin\Intel64;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\ia32;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseGit\bin;]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] SDD_PLATFORM [win32]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] WDIR [C:\Users\Dauphin\Documents\PCB_designs;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Local iCDB working dir [C:\Users\Dauphin\Documents\PCB_designs\iCDB] on file system [NTFS]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [2] S: Loading config files
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Config file [E:\2014\elfes\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.18 17:59:24] [0000m.00s.031ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.18 17:59:24] [0000m.00s.031ms] [3] S: Config loaded
+[2014.06.18 17:59:24] [0000m.00s.078ms] [0] S: Project path [E:\2014\elfes\PCB\Default\default.icdb] on file system [VBoxSharedFolderFS]
+[2014.06.18 17:59:24] [0000m.00s.078ms] [0] S: Project global path [\\vboxsrv\PAF\2014\elfes\PCB\Default\default.icdb] on file system [UNKNOWN]
+[2014.06.18 17:59:24] [0000m.00s.078ms] [1] S: WARNING: No project file (.prj) path specified
+[2014.06.18 17:59:24] [0000m.00s.078ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.18 17:59:24] [0000m.00s.078ms] [0] S: Multi-user mode (config)
+[2014.06.18 17:59:24] [0000m.00s.078ms] [0] S: Event polling mode autodetection
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Started up automatically by iCDB Client: BI-WIN7:Alexis:2912
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Auto close mode
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Database ID [361f-adbc-a7ef-e2f4-757b-1a3c-57b1-a350-e85d-295b-7cec-59f5]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: BEGIN dumping
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [E:\] -> [\\vboxsrv\PAF\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [F:\] -> [\\vboxsrv\mentor\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [U:\] -> [\\VBOXSVR\elecinf344\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [\\VBOXSVR\elecinf344\] -> [U:\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [\\vboxsrv\mentor\] -> [F:\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: [\\vboxsrv\PAF\] -> [E:\]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] PathTranslator: END dumping
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: START
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Server startup lock file created
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Listening for client connections on port [10000]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Server network ID [bi-Win7:10.0.2.15,bi-Win7:10000]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Server GUID [0996-9008-3847-0baa-c57b-1a31-67b1-a350-2f7d-295b-7cec-59f5]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Project GUID [361f-adbc-a7ef-e2f4-757b-1a3c-57b1-a350-e85d-295b-7cec-59f5]
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Wrote data to server address file
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] S: Server startup lock file removed
+[2014.06.18 17:59:24] [0000m.00s.093ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] S: Local disc access time: 24 us
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] S: File server access time: 548 us
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] S: Server will not release in-memory storage after read (memory usage overhead) - for better performance
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] size [89024 (86.9 kB)]
+[2014.06.18 17:59:24] [0000m.00s.125ms] [1] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] Database GUARD OK: [89024]
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] Database GUARD OK: [89024]
+[2014.06.18 17:59:24] [0000m.00s.125ms] [0] SingleFile: [84e7-f054-8b8e-ef3b] SFI version check [1009] [1009]
+[2014.06.18 17:59:24] [0000m.00s.156ms] [0] SingleFile: [84e7-f054-8b8e-ef3b] Database SFI header has been read in [21ms 617us]
+[2014.06.18 17:59:24] [0000m.00s.156ms] [0] iCDB Server PI: Server & plugin session [1176]
+[2014.06.18 17:59:24] [0000m.00s.156ms] [0] iCDB Server PI: Opening database [E:\2014\elfes\PCB\Default\default.icdb]
+[2014.06.18 17:59:24] [0000m.00s.156ms] [0] iCDB Server PI: Database [E:\2014\elfes\PCB\Default\default.icdb] opened
+[2014.06.18 17:59:24] [0000m.00s.156ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.18 17:59:24] [0000m.00s.171ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.18 17:59:24] [0000m.00s.203ms] [1] iCDB Database: Constraint definitions version [ce_ee.cns=7.10.24;user.cns=9901-97c8-1d6a-9bb1-78ba-5e0c-8ba5-e050-646d-295b-7cec-59f5] up to date
+[2014.06.18 17:59:24] [0000m.00s.250ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.18 17:59:24] [0000m.00s.250ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.18 17:59:24] [0000m.00s.265ms] [0] S: iCDB database loaded
+[2014.06.18 17:59:24] [0000m.00s.265ms] [0] S: Starting threads
+[2014.06.18 17:59:24] [0000m.00s.265ms] [0] ProjectBackupManager: WARNING: Could not startup Project Backup engine - functionality not initialized
+[2014.06.18 17:59:24] [0000m.00s.265ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.18 17:59:24] [0000m.00s.265ms] [1] CMT: There are no clients - waiting [10 seconds]
+[2014.06.18 17:59:24] [0000m.00s.265ms] [0] IT: Session [1177] for host [bi-Win7] user [Alexis] with process ID [2912] created
+[2014.06.18 17:59:25] [0000m.00s.328ms] [1] SC[1177]: Registered sub-client [DCDV] with ID [1] for session ID [1177] host [bi-Win7] user [Alexis] process ID [2912]
+[2014.06.18 17:59:25] [0000m.00s.375ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 17:59:54] [0000m.30s.062ms] [0] DFAMT: File server access time: 1495 us
+[2014.06.18 17:59:55] [0000m.30s.875ms] [0] IT: Session [1178] for host [bi-Win7] user [Alexis] with process ID [1844] created
+[2014.06.18 17:59:55] [0000m.30s.875ms] [1] SC[1178]: Registered sub-client [ICDBC] with ID [1] for session ID [1178] host [bi-Win7] user [Alexis] process ID [1844]
+[2014.06.18 17:59:55] [0000m.30s.968ms] [1] CMT: There are [2] clients now: 1177, 1178
+[2014.06.18 17:59:55] [0000m.30s.968ms] [1] SC[1178]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1178] host [bi-Win7] user [Alexis] process ID [1844]
+[2014.06.18 17:59:56] [0000m.31s.843ms] [1] SC[1178]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1178] host [bi-Win7] user [Alexis] process ID [1844]
+[2014.06.18 17:59:56] [0000m.31s.843ms] [1] SC[1178]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1178] host [bi-Win7] user [Alexis] process ID [1844]
+[2014.06.18 17:59:56] [0000m.31s.953ms] [1] CMT: Removed client [1178]
+[2014.06.18 17:59:56] [0000m.31s.953ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:00:05] [0000m.41s.250ms] [0] IT: Session [1179] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:00:05] [0000m.41s.265ms] [1] ProjectBackupManager: Client [ClientData[ClientNetAddress[bi-Win7] # ClientUserName[Alexis] # ClientProcessID[1680] # SessionID[1179]] # SubClientData[SubClientName[] # SubClientID[0]]] set project file (.prj): local path [E:\2014\ELFES\PCB\Elfe.prj], global path [\\vboxsrv\PAF\2014\ELFES\PCB\Elfe.prj]
+[2014.06.18 18:00:06] [0000m.41s.312ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:06] [0000m.41s.312ms] [0] PrjBackupMgr: Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014.06.18 18:00:06] [0000m.41s.312ms] [0] PrjBackupMgr: Migrating iCDB upgrade backup file [2014-06-18 17.59.19-2000].
+[2014.06.18 18:00:06] [0000m.41s.390ms] [1] PrjBackupMgr: Successfully created Project Backup [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 17.59.19 - consDefUpgr.zip] with GUID [f88d-1bd9-9001-a01b-687b-1a3b-87b1-a350-aafc-295b-7cec-59f5]
+[2014.06.18 18:00:06] [0000m.41s.390ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[c87f-87c3-60dc-5c1c-1f85-1a36-f851-a350-3065-acfc-40cd-3d5c] CreationTime[Wednesday, June 18, 2014 09:02:03] Type[ConsDefUpgrade] Creator[iCDB Server (2014-06-18 11.02.09-1356)] ApplicationName[iCDB Server (2014-06-18 11.02.03-1280)] UserName[Alexis] MachineName[LUTIN2] Description[Before constraint definitions upgrade using flow install:\n    Expedition Enterprise Flow\n    Flow Id: EE7.9.5; EE 7.9.5\n    GBS Install Id: 30163; 30120\n    iCDB GBS Build Id: 535943\n    iCDB Version: 2709] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip] BackupFileSize[83337] Persistent[FALSE]
+[2014.06.18 18:00:06] [0000m.41s.406ms] [0] PrjBackupMgr: Project Backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.02.03 - consDefUpgr.zip] with GUID [c87f-87c3-60dc-5c1c-1f85-1a36-f851-a350-3065-acfc-40cd-3d5c] removed
+[2014.06.18 18:00:06] [0000m.41s.406ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[2c61-4f91-c589-596c-3969-1a38-9691-a350-ea3d-295b-7cec-59f5] CreationTime[Wednesday, June 18, 2014 13:37:36] Type[ConsDefUpgrade] Creator[iCDB Server (2014-06-18 15.39.14-2360)] ApplicationName[iCDB Server (2014-06-18 15.37.36-1876)] UserName[Antoine] MachineName[PC-ANTOINE] Description[Before constraint definitions upgrade using flow install:\n    Expedition Enterprise Flow\n    Flow Id: EE7.9.5; EE 7.9.5\n    GBS Install Id: 30163; 30120\n    iCDB GBS Build Id: 535943\n    iCDB Version: 2709] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.37.36 - consDefUpgr.zip] BackupFileSize[74880] Persistent[FALSE]
+[2014.06.18 18:00:06] [0000m.41s.406ms] [0] PrjBackupMgr: Project Backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.37.36 - consDefUpgr.zip] with GUID [2c61-4f91-c589-596c-3969-1a38-9691-a350-ea3d-295b-7cec-59f5] removed
+[2014.06.18 18:00:06] [0000m.41s.406ms] [1] PrjBackupMgr: Migrated iCDB content backup file [E:\2014\ELFES\PCB\Default\default.icdb\cdbback\2014-06-18 17.59.19-2000.zip] removed
+[2014.06.18 18:00:06] [0000m.41s.406ms] [0] PrjBackupMgr: Successfully migrated iCDB upgrade backup file [2014-06-18 17.59.19-2000] to Project Backup format [2014-06-18 17.59.19 - consDefUpgr.zip]
+[2014.06.18 18:00:06] [0000m.41s.406ms] [1] SC[1179]: Registered sub-client [Expedition PCB_31385984] with ID [1] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:06] [0000m.41s.453ms] [1] SC[1179]: Registered sub-client [EEVM] with ID [2] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:06] [0000m.41s.500ms] [1] SC[1179]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:07] [0000m.42s.562ms] [1] SC[1179]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:12] [0000m.48s.265ms] [1] SC[1179]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:13] [0000m.48s.296ms] [1] SC[1179]: Registered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:13] [0000m.48s.296ms] [1] SC[1179]: UnRegistered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:13] [0000m.48s.390ms] [1] SC[1179]: Registered sub-client [JobPrefsDBPI_31393171] with ID [5] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:13] [0000m.48s.421ms] [1] SC[1179]: UnRegistered sub-client [JobPrefsDBPI_31393171] with ID [5] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:14] [0000m.49s.430ms] [1] SC[1179]: Registered sub-client [JobPrefsDBPI_31394218] with ID [6] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:14] [0000m.49s.461ms] [1] SC[1179]: UnRegistered sub-client [JobPrefsDBPI_31394218] with ID [6] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:14] [0000m.49s.727ms] [0] IT: Session [1180] for host [bi-Win7] user [Alexis] with process ID [2936] created
+[2014.06.18 18:00:14] [0000m.49s.727ms] [1] SC[1180]: Registered sub-client [Packager_31394468] with ID [1] for session ID [1180] host [bi-Win7] user [Alexis] process ID [2936]
+[2014.06.18 18:00:14] [0000m.49s.790ms] [1] CMT: There are [3] clients now: 1177, 1179, 1180
+[2014.06.18 18:00:14] [0000m.50s.008ms] [1] SC[1180]: UnRegistered sub-client [Packager_31394468] with ID [1] for session ID [1180] host [bi-Win7] user [Alexis] process ID [2936]
+[2014.06.18 18:00:14] [0000m.50s.118ms] [1] CMT: Removed client [1180]
+[2014.06.18 18:00:14] [0000m.50s.118ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:15] [0000m.50s.555ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [E:\2014\elfes\PCB\Default\default.icdb\s2\cdbcatlg\grpobj] - auto-saving it
+[2014.06.18 18:00:15] [0000m.50s.993ms] [0] IT: Session [1181] for host [bi-Win7] user [Alexis] with process ID [520] created
+[2014.06.18 18:00:15] [0000m.51s.008ms] [1] CMT: There are [3] clients now: 1177, 1179, 1181
+[2014.06.18 18:00:15] [0000m.51s.008ms] [1] SC[1181]: Registered sub-client [Expedition_31395734] with ID [1] for session ID [1181] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:15] [0000m.51s.040ms] [1] SC[1181]: UnRegistered sub-client [Expedition_31395734] with ID [1] for session ID [1181] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:15] [0000m.51s.118ms] [1] CMT: Removed client [1181]
+[2014.06.18 18:00:15] [0000m.51s.118ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:16] [0000m.51s.774ms] [0] IT: Session [1182] for host [bi-Win7] user [Alexis] with process ID [520] created
+[2014.06.18 18:00:16] [0000m.51s.774ms] [1] SC[1182]: Registered sub-client [JobPrefsDBPI_31396515] with ID [1] for session ID [1182] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:16] [0000m.51s.790ms] [1] SC[1182]: UnRegistered sub-client [JobPrefsDBPI_31396515] with ID [1] for session ID [1182] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:16] [0000m.51s.883ms] [1] CMT: There are [3] clients now: 1177, 1179, 1182
+[2014.06.18 18:00:16] [0000m.51s.883ms] [1] CMT: Removed client [1182]
+[2014.06.18 18:00:16] [0000m.51s.883ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:17] [0000m.52s.399ms] [0] IT: Session [1183] for host [bi-Win7] user [Alexis] with process ID [520] created
+[2014.06.18 18:00:17] [0000m.52s.399ms] [1] SC[1183]: Registered sub-client [JobPrefsDBPI_31397140] with ID [1] for session ID [1183] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:17] [0000m.52s.430ms] [1] CMT: There are [3] clients now: 1177, 1179, 1183
+[2014.06.18 18:00:17] [0000m.52s.571ms] [1] SC[1183]: UnRegistered sub-client [JobPrefsDBPI_31397140] with ID [1] for session ID [1183] host [bi-Win7] user [Alexis] process ID [520]
+[2014.06.18 18:00:17] [0000m.52s.665ms] [1] CMT: Removed client [1183]
+[2014.06.18 18:00:17] [0000m.52s.665ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:18] [0000m.53s.477ms] [0] IT: Session [1184] for host [bi-Win7] user [Alexis] with process ID [3056] created
+[2014.06.18 18:00:18] [0000m.53s.477ms] [1] SC[1184]: Registered sub-client [JobPrefsDBPI_31398218] with ID [1] for session ID [1184] host [bi-Win7] user [Alexis] process ID [3056]
+[2014.06.18 18:00:18] [0000m.53s.540ms] [1] CMT: There are [3] clients now: 1177, 1179, 1184
+[2014.06.18 18:00:18] [0000m.53s.540ms] [1] SC[1184]: Registered sub-client [Expedition_31398328] with ID [2] for session ID [1184] host [bi-Win7] user [Alexis] process ID [3056]
+[2014.06.18 18:00:18] [0000m.53s.571ms] [1] SC[1184]: UnRegistered sub-client [JobPrefsDBPI_31398218] with ID [1] for session ID [1184] host [bi-Win7] user [Alexis] process ID [3056]
+[2014.06.18 18:00:18] [0000m.53s.649ms] [1] SC[1184]: UnRegistered sub-client [Expedition_31398328] with ID [2] for session ID [1184] host [bi-Win7] user [Alexis] process ID [3056]
+[2014.06.18 18:00:18] [0000m.53s.805ms] [1] CMT: Removed client [1184]
+[2014.06.18 18:00:18] [0000m.53s.805ms] [1] CMT: There are [2] clients now: 1177, 1179
+[2014.06.18 18:00:18] [0000m.54s.274ms] [1] SC[1179]: Registered sub-client [EEVM_EEVM_311352548] with ID [7] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:18] [0000m.54s.274ms] [1] SC[1179]: UnRegistered sub-client [EEVM_EEVM_311352548] with ID [7] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.290ms] [1] SC[1179]: Registered sub-client [EEVM_EEVM_311352548] with ID [8] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.290ms] [1] SC[1179]: UnRegistered sub-client [EEVM_EEVM_311352548] with ID [8] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.290ms] [1] SC[1179]: Registered sub-client [EEVM_EEVM_311352548] with ID [9] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.305ms] [1] SC[1179]: UnRegistered sub-client [EEVM_EEVM_311352548] with ID [9] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.493ms] [1] SC[1179]: UnRegistered sub-client [Expedition PCB_31385984] with ID [1] for session ID [1179] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.54s.586ms] [1] CMT: Removed client [1179]
+[2014.06.18 18:00:19] [0000m.54s.586ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:00:19] [0000m.55s.086ms] [0] IT: Session [1185] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:00:19] [0000m.55s.086ms] [1] SC[1185]: Registered sub-client [Expedition PCB_31399812] with ID [1] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:19] [0000m.55s.133ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:00:21] [0000m.56s.842ms] [1] SC[1185]: Registered sub-client [JobPrefsDBPI_31401609] with ID [2] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:21] [0000m.56s.874ms] [1] SC[1185]: UnRegistered sub-client [JobPrefsDBPI_31401609] with ID [2] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:00:21] [0000m.56s.920ms] [1] SC[1185]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:31] [0011m.06s.530ms] [0] IT: Session [1186] for host [bi-Win7] user [Alexis] with process ID [2064] created
+[2014.06.18 18:10:31] [0011m.06s.530ms] [1] SC[1186]: Registered sub-client [ICDBC] with ID [1] for session ID [1186] host [bi-Win7] user [Alexis] process ID [2064]
+[2014.06.18 18:10:31] [0011m.06s.545ms] [1] CMT: There are [3] clients now: 1177, 1185, 1186
+[2014.06.18 18:10:31] [0011m.06s.624ms] [1] SC[1186]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1186] host [bi-Win7] user [Alexis] process ID [2064]
+[2014.06.18 18:10:34] [0011m.09s.764ms] [1] SC[1186]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1186] host [bi-Win7] user [Alexis] process ID [2064]
+[2014.06.18 18:10:34] [0011m.09s.780ms] [1] SC[1186]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1186] host [bi-Win7] user [Alexis] process ID [2064]
+[2014.06.18 18:10:34] [0011m.09s.827ms] [1] CMT: Removed client [1186]
+[2014.06.18 18:10:34] [0011m.09s.827ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:10:54] [0011m.30s.024ms] [0] IT: Session [1187] for host [bi-Win7] user [Alexis] with process ID [1516] created
+[2014.06.18 18:10:54] [0011m.30s.040ms] [1] SC[1187]: Registered sub-client [ICDBC] with ID [1] for session ID [1187] host [bi-Win7] user [Alexis] process ID [1516]
+[2014.06.18 18:10:54] [0011m.30s.055ms] [1] CMT: There are [3] clients now: 1177, 1185, 1187
+[2014.06.18 18:10:54] [0011m.30s.133ms] [1] SC[1187]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1187] host [bi-Win7] user [Alexis] process ID [1516]
+[2014.06.18 18:10:55] [0011m.31s.196ms] [1] SC[1187]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1187] host [bi-Win7] user [Alexis] process ID [1516]
+[2014.06.18 18:10:55] [0011m.31s.196ms] [1] SC[1187]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1187] host [bi-Win7] user [Alexis] process ID [1516]
+[2014.06.18 18:10:56] [0011m.31s.290ms] [1] CMT: Removed client [1187]
+[2014.06.18 18:10:56] [0011m.31s.290ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:10:57] [0011m.32s.946ms] [1] SC[1185]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:57] [0011m.32s.961ms] [1] SC[1185]: Registered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:57] [0011m.32s.961ms] [1] SC[1185]: UnRegistered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:58] [0011m.33s.493ms] [1] SC[1185]: Registered sub-client [JobPrefsDBPI_32038265] with ID [5] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:58] [0011m.33s.508ms] [1] SC[1185]: UnRegistered sub-client [JobPrefsDBPI_32038265] with ID [5] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:59] [0011m.34s.455ms] [1] SC[1185]: Registered sub-client [JobPrefsDBPI_32039234] with ID [6] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:59] [0011m.34s.486ms] [1] SC[1185]: UnRegistered sub-client [JobPrefsDBPI_32039234] with ID [6] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:10:59] [0011m.34s.720ms] [0] IT: Session [1188] for host [bi-Win7] user [Alexis] with process ID [2172] created
+[2014.06.18 18:10:59] [0011m.34s.720ms] [1] SC[1188]: Registered sub-client [Packager_32039453] with ID [1] for session ID [1188] host [bi-Win7] user [Alexis] process ID [2172]
+[2014.06.18 18:10:59] [0011m.34s.751ms] [1] CMT: There are [3] clients now: 1177, 1185, 1188
+[2014.06.18 18:10:59] [0011m.34s.986ms] [1] SC[1188]: UnRegistered sub-client [Packager_32039453] with ID [1] for session ID [1188] host [bi-Win7] user [Alexis] process ID [2172]
+[2014.06.18 18:10:59] [0011m.35s.080ms] [1] CMT: Removed client [1188]
+[2014.06.18 18:10:59] [0011m.35s.080ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:11:00] [0011m.35s.564ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [E:\2014\elfes\PCB\Default\default.icdb\s2\cdbcatlg\grpobj] - auto-saving it
+[2014.06.18 18:11:00] [0011m.35s.986ms] [0] IT: Session [1189] for host [bi-Win7] user [Alexis] with process ID [1048] created
+[2014.06.18 18:11:00] [0011m.35s.986ms] [1] SC[1189]: Registered sub-client [Expedition_32040703] with ID [1] for session ID [1189] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:00] [0011m.36s.017ms] [1] SC[1189]: UnRegistered sub-client [Expedition_32040703] with ID [1] for session ID [1189] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:00] [0011m.36s.111ms] [1] CMT: There are [3] clients now: 1177, 1185, 1189
+[2014.06.18 18:11:00] [0011m.36s.111ms] [1] CMT: Removed client [1189]
+[2014.06.18 18:11:00] [0011m.36s.111ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:11:01] [0011m.36s.751ms] [0] IT: Session [1190] for host [bi-Win7] user [Alexis] with process ID [1048] created
+[2014.06.18 18:11:01] [0011m.36s.751ms] [1] SC[1190]: Registered sub-client [JobPrefsDBPI_32041468] with ID [1] for session ID [1190] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:01] [0011m.36s.783ms] [1] CMT: There are [3] clients now: 1177, 1185, 1190
+[2014.06.18 18:11:01] [0011m.36s.783ms] [1] SC[1190]: UnRegistered sub-client [JobPrefsDBPI_32041468] with ID [1] for session ID [1190] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:01] [0011m.36s.892ms] [1] CMT: Removed client [1190]
+[2014.06.18 18:11:01] [0011m.36s.892ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:11:02] [0011m.37s.392ms] [0] IT: Session [1191] for host [bi-Win7] user [Alexis] with process ID [1048] created
+[2014.06.18 18:11:02] [0011m.37s.408ms] [1] SC[1191]: Registered sub-client [JobPrefsDBPI_32042125] with ID [1] for session ID [1191] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:02] [0011m.37s.455ms] [1] CMT: There are [3] clients now: 1177, 1185, 1191
+[2014.06.18 18:11:02] [0011m.37s.548ms] [1] SC[1191]: UnRegistered sub-client [JobPrefsDBPI_32042125] with ID [1] for session ID [1191] host [bi-Win7] user [Alexis] process ID [1048]
+[2014.06.18 18:11:02] [0011m.37s.658ms] [1] CMT: Removed client [1191]
+[2014.06.18 18:11:02] [0011m.37s.658ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:11:03] [0011m.38s.455ms] [0] IT: Session [1192] for host [bi-Win7] user [Alexis] with process ID [1820] created
+[2014.06.18 18:11:03] [0011m.38s.455ms] [1] SC[1192]: Registered sub-client [JobPrefsDBPI_32043187] with ID [1] for session ID [1192] host [bi-Win7] user [Alexis] process ID [1820]
+[2014.06.18 18:11:03] [0011m.38s.501ms] [1] SC[1192]: Registered sub-client [Expedition_32043281] with ID [2] for session ID [1192] host [bi-Win7] user [Alexis] process ID [1820]
+[2014.06.18 18:11:03] [0011m.38s.533ms] [1] SC[1192]: UnRegistered sub-client [JobPrefsDBPI_32043187] with ID [1] for session ID [1192] host [bi-Win7] user [Alexis] process ID [1820]
+[2014.06.18 18:11:03] [0011m.38s.533ms] [1] CMT: There are [3] clients now: 1177, 1185, 1192
+[2014.06.18 18:11:03] [0011m.38s.611ms] [1] SC[1192]: UnRegistered sub-client [Expedition_32043281] with ID [2] for session ID [1192] host [bi-Win7] user [Alexis] process ID [1820]
+[2014.06.18 18:11:03] [0011m.38s.705ms] [1] CMT: Removed client [1192]
+[2014.06.18 18:11:03] [0011m.38s.705ms] [1] CMT: There are [2] clients now: 1177, 1185
+[2014.06.18 18:11:03] [0011m.39s.267ms] [1] SC[1185]: Registered sub-client [EEVM_EEVM_138222620] with ID [7] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:03] [0011m.39s.267ms] [1] SC[1185]: UnRegistered sub-client [EEVM_EEVM_138222620] with ID [7] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:03] [0011m.39s.267ms] [1] SC[1185]: Registered sub-client [EEVM_EEVM_138222620] with ID [8] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:03] [0011m.39s.267ms] [1] SC[1185]: UnRegistered sub-client [EEVM_EEVM_138222620] with ID [8] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:03] [0011m.39s.283ms] [1] SC[1185]: Registered sub-client [EEVM_EEVM_138222620] with ID [9] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:03] [0011m.39s.283ms] [1] SC[1185]: UnRegistered sub-client [EEVM_EEVM_138222620] with ID [9] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:04] [0011m.39s.439ms] [1] SC[1185]: UnRegistered sub-client [Expedition PCB_31399812] with ID [1] for session ID [1185] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:04] [0011m.39s.533ms] [1] CMT: Removed client [1185]
+[2014.06.18 18:11:04] [0011m.39s.533ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:11:04] [0011m.40s.173ms] [0] IT: Session [1193] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:11:04] [0011m.40s.173ms] [1] SC[1193]: Registered sub-client [Expedition PCB_32044890] with ID [1] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:04] [0011m.40s.189ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:11:06] [0011m.41s.764ms] [1] SC[1193]: Registered sub-client [JobPrefsDBPI_32046531] with ID [2] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:06] [0011m.41s.780ms] [1] SC[1193]: UnRegistered sub-client [JobPrefsDBPI_32046531] with ID [2] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:11:06] [0011m.41s.811ms] [1] SC[1193]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:24:52] [0025m.28s.233ms] [0] IT: Session [1194] for host [bi-Win7] user [Alexis] with process ID [2440] created
+[2014.06.18 18:24:52] [0025m.28s.233ms] [1] SC[1194]: Registered sub-client [ICDBC] with ID [1] for session ID [1194] host [bi-Win7] user [Alexis] process ID [2440]
+[2014.06.18 18:24:52] [0025m.28s.249ms] [1] SC[1194]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1194] host [bi-Win7] user [Alexis] process ID [2440]
+[2014.06.18 18:24:53] [0025m.28s.342ms] [1] CMT: There are [3] clients now: 1177, 1193, 1194
+[2014.06.18 18:24:54] [0025m.30s.170ms] [1] SC[1194]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1194] host [bi-Win7] user [Alexis] process ID [2440]
+[2014.06.18 18:24:54] [0025m.30s.170ms] [1] SC[1194]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1194] host [bi-Win7] user [Alexis] process ID [2440]
+[2014.06.18 18:24:54] [0025m.30s.217ms] [1] CMT: Removed client [1194]
+[2014.06.18 18:24:54] [0025m.30s.217ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:24:55] [0025m.30s.686ms] [0] IT: Session [1195] for host [bi-Win7] user [Alexis] with process ID [1340] created
+[2014.06.18 18:24:55] [0025m.30s.686ms] [1] SC[1195]: Registered sub-client [Packager_32875437] with ID [1] for session ID [1195] host [bi-Win7] user [Alexis] process ID [1340]
+[2014.06.18 18:24:55] [0025m.30s.795ms] [1] CMT: There are [3] clients now: 1177, 1193, 1195
+[2014.06.18 18:24:55] [0025m.30s.905ms] [1] SC[1195]: UnRegistered sub-client [Packager_32875437] with ID [1] for session ID [1195] host [bi-Win7] user [Alexis] process ID [1340]
+[2014.06.18 18:24:55] [0025m.31s.014ms] [1] CMT: Removed client [1195]
+[2014.06.18 18:24:55] [0025m.31s.014ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:15] [0025m.50s.311ms] [1] SC[1193]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:15] [0025m.50s.327ms] [1] SC[1193]: Registered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:15] [0025m.50s.327ms] [1] SC[1193]: UnRegistered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:15] [0025m.50s.389ms] [1] SC[1193]: Registered sub-client [JobPrefsDBPI_32895156] with ID [5] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:15] [0025m.50s.420ms] [1] SC[1193]: UnRegistered sub-client [JobPrefsDBPI_32895156] with ID [5] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:15] [0025m.51s.267ms] [1] SC[1193]: Registered sub-client [JobPrefsDBPI_32896046] with ID [6] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:16] [0025m.51s.298ms] [1] SC[1193]: UnRegistered sub-client [JobPrefsDBPI_32896046] with ID [6] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:16] [0025m.51s.533ms] [0] IT: Session [1196] for host [bi-Win7] user [Alexis] with process ID [876] created
+[2014.06.18 18:25:16] [0025m.51s.548ms] [1] SC[1196]: Registered sub-client [Packager_32896265] with ID [1] for session ID [1196] host [bi-Win7] user [Alexis] process ID [876]
+[2014.06.18 18:25:16] [0025m.51s.595ms] [1] CMT: There are [3] clients now: 1177, 1193, 1196
+[2014.06.18 18:25:16] [0025m.51s.767ms] [1] SC[1196]: UnRegistered sub-client [Packager_32896265] with ID [1] for session ID [1196] host [bi-Win7] user [Alexis] process ID [876]
+[2014.06.18 18:25:16] [0025m.51s.861ms] [1] CMT: Removed client [1196]
+[2014.06.18 18:25:16] [0025m.51s.861ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:17] [0025m.52s.392ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [E:\2014\elfes\PCB\Default\default.icdb\s2\cdbcatlg\grpobj] - auto-saving it
+[2014.06.18 18:25:17] [0025m.52s.705ms] [0] IT: Session [1197] for host [bi-Win7] user [Alexis] with process ID [2784] created
+[2014.06.18 18:25:17] [0025m.52s.720ms] [1] SC[1197]: Registered sub-client [Expedition_32897453] with ID [1] for session ID [1197] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:17] [0025m.52s.736ms] [1] CMT: There are [3] clients now: 1177, 1193, 1197
+[2014.06.18 18:25:17] [0025m.52s.751ms] [1] SC[1197]: UnRegistered sub-client [Expedition_32897453] with ID [1] for session ID [1197] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:17] [0025m.52s.845ms] [1] CMT: Removed client [1197]
+[2014.06.18 18:25:17] [0025m.52s.845ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:18] [0025m.53s.486ms] [0] IT: Session [1198] for host [bi-Win7] user [Alexis] with process ID [2784] created
+[2014.06.18 18:25:18] [0025m.53s.486ms] [1] SC[1198]: Registered sub-client [JobPrefsDBPI_32898203] with ID [1] for session ID [1198] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:18] [0025m.53s.501ms] [1] CMT: There are [3] clients now: 1177, 1193, 1198
+[2014.06.18 18:25:18] [0025m.53s.501ms] [1] SC[1198]: UnRegistered sub-client [JobPrefsDBPI_32898203] with ID [1] for session ID [1198] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:18] [0025m.53s.611ms] [1] CMT: Removed client [1198]
+[2014.06.18 18:25:18] [0025m.53s.611ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:18] [0025m.54s.111ms] [0] IT: Session [1199] for host [bi-Win7] user [Alexis] with process ID [2784] created
+[2014.06.18 18:25:18] [0025m.54s.111ms] [1] SC[1199]: Registered sub-client [JobPrefsDBPI_32898859] with ID [1] for session ID [1199] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:18] [0025m.54s.205ms] [1] CMT: There are [3] clients now: 1177, 1193, 1199
+[2014.06.18 18:25:18] [0025m.54s.267ms] [1] SC[1199]: UnRegistered sub-client [JobPrefsDBPI_32898859] with ID [1] for session ID [1199] host [bi-Win7] user [Alexis] process ID [2784]
+[2014.06.18 18:25:19] [0025m.54s.392ms] [1] CMT: Removed client [1199]
+[2014.06.18 18:25:19] [0025m.54s.392ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:19] [0025m.55s.236ms] [0] IT: Session [1200] for host [bi-Win7] user [Alexis] with process ID [1220] created
+[2014.06.18 18:25:19] [0025m.55s.236ms] [1] SC[1200]: Registered sub-client [JobPrefsDBPI_32899968] with ID [1] for session ID [1200] host [bi-Win7] user [Alexis] process ID [1220]
+[2014.06.18 18:25:19] [0025m.55s.267ms] [1] CMT: There are [3] clients now: 1177, 1193, 1200
+[2014.06.18 18:25:19] [0025m.55s.283ms] [1] SC[1200]: Registered sub-client [Expedition_32900062] with ID [2] for session ID [1200] host [bi-Win7] user [Alexis] process ID [1220]
+[2014.06.18 18:25:20] [0025m.55s.345ms] [1] SC[1200]: UnRegistered sub-client [JobPrefsDBPI_32899968] with ID [1] for session ID [1200] host [bi-Win7] user [Alexis] process ID [1220]
+[2014.06.18 18:25:20] [0025m.55s.408ms] [1] SC[1200]: UnRegistered sub-client [Expedition_32900062] with ID [2] for session ID [1200] host [bi-Win7] user [Alexis] process ID [1220]
+[2014.06.18 18:25:20] [0025m.55s.486ms] [1] CMT: Removed client [1200]
+[2014.06.18 18:25:20] [0025m.55s.486ms] [1] CMT: There are [2] clients now: 1177, 1193
+[2014.06.18 18:25:20] [0025m.56s.080ms] [1] SC[1193]: Registered sub-client [EEVM_EEVM_311353868] with ID [7] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.095ms] [1] SC[1193]: UnRegistered sub-client [EEVM_EEVM_311353868] with ID [7] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.111ms] [1] SC[1193]: Registered sub-client [EEVM_EEVM_311353868] with ID [8] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.111ms] [1] SC[1193]: UnRegistered sub-client [EEVM_EEVM_311353868] with ID [8] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.111ms] [1] SC[1193]: Registered sub-client [EEVM_EEVM_311353868] with ID [9] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.126ms] [1] SC[1193]: UnRegistered sub-client [EEVM_EEVM_311353868] with ID [9] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:20] [0025m.56s.236ms] [1] SC[1193]: UnRegistered sub-client [Expedition PCB_32044890] with ID [1] for session ID [1193] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:21] [0025m.56s.314ms] [1] CMT: Removed client [1193]
+[2014.06.18 18:25:21] [0025m.56s.330ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:25:21] [0025m.56s.830ms] [0] IT: Session [1201] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:25:21] [0025m.56s.830ms] [1] SC[1201]: Registered sub-client [Expedition PCB_32901546] with ID [1] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:21] [0025m.56s.876ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:25:23] [0025m.58s.459ms] [1] SC[1201]: Registered sub-client [JobPrefsDBPI_32903234] with ID [2] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:23] [0025m.58s.475ms] [1] SC[1201]: UnRegistered sub-client [JobPrefsDBPI_32903234] with ID [2] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:25:23] [0025m.58s.514ms] [1] SC[1201]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:37] [0030m.13s.264ms] [0] IT: Session [1202] for host [bi-Win7] user [Alexis] with process ID [2184] created
+[2014.06.18 18:29:37] [0030m.13s.264ms] [1] SC[1202]: Registered sub-client [ICDBC] with ID [1] for session ID [1202] host [bi-Win7] user [Alexis] process ID [2184]
+[2014.06.18 18:29:37] [0030m.13s.280ms] [1] SC[1202]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1202] host [bi-Win7] user [Alexis] process ID [2184]
+[2014.06.18 18:29:38] [0030m.13s.342ms] [1] CMT: There are [3] clients now: 1177, 1201, 1202
+[2014.06.18 18:29:40] [0030m.16s.170ms] [1] SC[1202]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1202] host [bi-Win7] user [Alexis] process ID [2184]
+[2014.06.18 18:29:40] [0030m.16s.170ms] [1] SC[1202]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1202] host [bi-Win7] user [Alexis] process ID [2184]
+[2014.06.18 18:29:40] [0030m.16s.217ms] [1] CMT: Removed client [1202]
+[2014.06.18 18:29:40] [0030m.16s.217ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:29:41] [0030m.16s.670ms] [0] IT: Session [1203] for host [bi-Win7] user [Alexis] with process ID [2776] created
+[2014.06.18 18:29:41] [0030m.16s.670ms] [1] SC[1203]: Registered sub-client [Packager_33161406] with ID [1] for session ID [1203] host [bi-Win7] user [Alexis] process ID [2776]
+[2014.06.18 18:29:41] [0030m.16s.780ms] [1] CMT: There are [3] clients now: 1177, 1201, 1203
+[2014.06.18 18:29:41] [0030m.16s.874ms] [1] SC[1203]: UnRegistered sub-client [Packager_33161406] with ID [1] for session ID [1203] host [bi-Win7] user [Alexis] process ID [2776]
+[2014.06.18 18:29:41] [0030m.16s.967ms] [1] CMT: Removed client [1203]
+[2014.06.18 18:29:41] [0030m.16s.967ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:29:55] [0030m.30s.842ms] [1] SC[1201]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:55] [0030m.30s.858ms] [1] SC[1201]: Registered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:55] [0030m.30s.858ms] [1] SC[1201]: UnRegistered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:55] [0030m.30s.920ms] [1] SC[1201]: Registered sub-client [JobPrefsDBPI_33175703] with ID [5] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:55] [0030m.30s.952ms] [1] SC[1201]: UnRegistered sub-client [JobPrefsDBPI_33175703] with ID [5] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:56] [0030m.31s.875ms] [1] SC[1201]: Registered sub-client [JobPrefsDBPI_33176656] with ID [6] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:56] [0030m.31s.906ms] [1] SC[1201]: UnRegistered sub-client [JobPrefsDBPI_33176656] with ID [6] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:29:56] [0030m.32s.140ms] [0] IT: Session [1204] for host [bi-Win7] user [Alexis] with process ID [1964] created
+[2014.06.18 18:29:56] [0030m.32s.140ms] [1] SC[1204]: Registered sub-client [Packager_33176875] with ID [1] for session ID [1204] host [bi-Win7] user [Alexis] process ID [1964]
+[2014.06.18 18:29:56] [0030m.32s.218ms] [1] CMT: There are [3] clients now: 1177, 1201, 1204
+[2014.06.18 18:29:57] [0030m.32s.390ms] [1] SC[1204]: UnRegistered sub-client [Packager_33176875] with ID [1] for session ID [1204] host [bi-Win7] user [Alexis] process ID [1964]
+[2014.06.18 18:29:57] [0030m.32s.515ms] [1] CMT: Removed client [1204]
+[2014.06.18 18:29:57] [0030m.32s.515ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:29:57] [0030m.33s.031ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [E:\2014\elfes\PCB\Default\default.icdb\s2\cdbcatlg\grpobj] - auto-saving it
+[2014.06.18 18:29:58] [0030m.33s.921ms] [0] IT: Session [1205] for host [bi-Win7] user [Alexis] with process ID [1656] created
+[2014.06.18 18:29:58] [0030m.33s.921ms] [1] SC[1205]: Registered sub-client [Expedition_33178656] with ID [1] for session ID [1205] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:29:58] [0030m.33s.953ms] [1] SC[1205]: UnRegistered sub-client [Expedition_33178656] with ID [1] for session ID [1205] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:29:58] [0030m.34s.000ms] [1] CMT: There are [3] clients now: 1177, 1201, 1205
+[2014.06.18 18:29:58] [0030m.34s.000ms] [1] CMT: Removed client [1205]
+[2014.06.18 18:29:58] [0030m.34s.000ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:29:59] [0030m.34s.687ms] [0] IT: Session [1206] for host [bi-Win7] user [Alexis] with process ID [1656] created
+[2014.06.18 18:29:59] [0030m.34s.687ms] [1] SC[1206]: Registered sub-client [JobPrefsDBPI_33179390] with ID [1] for session ID [1206] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:29:59] [0030m.34s.703ms] [1] SC[1206]: UnRegistered sub-client [JobPrefsDBPI_33179390] with ID [1] for session ID [1206] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:29:59] [0030m.34s.796ms] [1] CMT: There are [3] clients now: 1177, 1201, 1206
+[2014.06.18 18:29:59] [0030m.34s.796ms] [1] CMT: Removed client [1206]
+[2014.06.18 18:29:59] [0030m.34s.796ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:30:00] [0030m.35s.328ms] [0] IT: Session [1207] for host [bi-Win7] user [Alexis] with process ID [1656] created
+[2014.06.18 18:30:00] [0030m.35s.343ms] [1] CMT: There are [3] clients now: 1177, 1201, 1207
+[2014.06.18 18:30:00] [0030m.35s.343ms] [1] SC[1207]: Registered sub-client [JobPrefsDBPI_33180062] with ID [1] for session ID [1207] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:30:00] [0030m.35s.500ms] [1] SC[1207]: UnRegistered sub-client [JobPrefsDBPI_33180062] with ID [1] for session ID [1207] host [bi-Win7] user [Alexis] process ID [1656]
+[2014.06.18 18:30:00] [0030m.35s.578ms] [1] CMT: Removed client [1207]
+[2014.06.18 18:30:00] [0030m.35s.578ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:30:01] [0030m.36s.453ms] [0] IT: Session [1208] for host [bi-Win7] user [Alexis] with process ID [276] created
+[2014.06.18 18:30:01] [0030m.36s.453ms] [1] SC[1208]: Registered sub-client [JobPrefsDBPI_33181187] with ID [1] for session ID [1208] host [bi-Win7] user [Alexis] process ID [276]
+[2014.06.18 18:30:01] [0030m.36s.468ms] [1] CMT: There are [3] clients now: 1177, 1201, 1208
+[2014.06.18 18:30:01] [0030m.36s.500ms] [1] SC[1208]: Registered sub-client [Expedition_33181281] with ID [2] for session ID [1208] host [bi-Win7] user [Alexis] process ID [276]
+[2014.06.18 18:30:01] [0030m.36s.546ms] [1] SC[1208]: UnRegistered sub-client [JobPrefsDBPI_33181187] with ID [1] for session ID [1208] host [bi-Win7] user [Alexis] process ID [276]
+[2014.06.18 18:30:01] [0030m.36s.625ms] [1] SC[1208]: UnRegistered sub-client [Expedition_33181281] with ID [2] for session ID [1208] host [bi-Win7] user [Alexis] process ID [276]
+[2014.06.18 18:30:01] [0030m.36s.703ms] [1] CMT: Removed client [1208]
+[2014.06.18 18:30:01] [0030m.36s.703ms] [1] CMT: There are [2] clients now: 1177, 1201
+[2014.06.18 18:30:01] [0030m.37s.265ms] [1] SC[1201]: Registered sub-client [EEVM_EEVM_138218396] with ID [7] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:01] [0030m.37s.281ms] [1] SC[1201]: UnRegistered sub-client [EEVM_EEVM_138218396] with ID [7] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:01] [0030m.37s.281ms] [1] SC[1201]: Registered sub-client [EEVM_EEVM_138218396] with ID [8] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:01] [0030m.37s.281ms] [1] SC[1201]: UnRegistered sub-client [EEVM_EEVM_138218396] with ID [8] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:02] [0030m.37s.296ms] [1] SC[1201]: Registered sub-client [EEVM_EEVM_138218396] with ID [9] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:02] [0030m.37s.296ms] [1] SC[1201]: UnRegistered sub-client [EEVM_EEVM_138218396] with ID [9] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:02] [0030m.37s.421ms] [1] SC[1201]: UnRegistered sub-client [Expedition PCB_32901546] with ID [1] for session ID [1201] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:02] [0030m.37s.531ms] [1] CMT: Removed client [1201]
+[2014.06.18 18:30:02] [0030m.37s.531ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:30:02] [0030m.37s.953ms] [0] IT: Session [1209] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:30:02] [0030m.37s.953ms] [1] SC[1209]: Registered sub-client [Expedition PCB_33182671] with ID [1] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:02] [0030m.37s.968ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:30:04] [0030m.39s.786ms] [1] SC[1209]: Registered sub-client [JobPrefsDBPI_33184562] with ID [2] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:04] [0030m.39s.801ms] [1] SC[1209]: UnRegistered sub-client [JobPrefsDBPI_33184562] with ID [2] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:30:04] [0030m.39s.833ms] [1] SC[1209]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:31] [0054m.06s.607ms] [0] IT: Session [1210] for host [bi-Win7] user [Alexis] with process ID [716] created
+[2014.06.18 18:53:31] [0054m.06s.607ms] [1] SC[1210]: Registered sub-client [ICDBC] with ID [1] for session ID [1210] host [bi-Win7] user [Alexis] process ID [716]
+[2014.06.18 18:53:31] [0054m.06s.623ms] [1] SC[1210]: Registered sub-client [ConsReuseSubClient] with ID [2] for session ID [1210] host [bi-Win7] user [Alexis] process ID [716]
+[2014.06.18 18:53:31] [0054m.06s.701ms] [1] CMT: There are [3] clients now: 1177, 1209, 1210
+[2014.06.18 18:53:33] [0054m.08s.529ms] [1] SC[1210]: UnRegistered sub-client [ICDBC] with ID [1] for session ID [1210] host [bi-Win7] user [Alexis] process ID [716]
+[2014.06.18 18:53:33] [0054m.08s.544ms] [1] SC[1210]: UnRegistered sub-client [ConsReuseSubClient] with ID [2] for session ID [1210] host [bi-Win7] user [Alexis] process ID [716]
+[2014.06.18 18:53:33] [0054m.08s.591ms] [1] CMT: Removed client [1210]
+[2014.06.18 18:53:33] [0054m.08s.591ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:33] [0054m.09s.076ms] [0] IT: Session [1211] for host [bi-Win7] user [Alexis] with process ID [1808] created
+[2014.06.18 18:53:33] [0054m.09s.076ms] [1] SC[1211]: Registered sub-client [Packager_34593796] with ID [1] for session ID [1211] host [bi-Win7] user [Alexis] process ID [1808]
+[2014.06.18 18:53:33] [0054m.09s.169ms] [1] CMT: There are [3] clients now: 1177, 1209, 1211
+[2014.06.18 18:53:33] [0054m.09s.279ms] [1] SC[1211]: UnRegistered sub-client [Packager_34593796] with ID [1] for session ID [1211] host [bi-Win7] user [Alexis] process ID [1808]
+[2014.06.18 18:53:34] [0054m.09s.388ms] [1] CMT: Removed client [1211]
+[2014.06.18 18:53:34] [0054m.09s.388ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:41] [0054m.17s.263ms] [1] SC[1209]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:41] [0054m.17s.279ms] [1] SC[1209]: Registered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:41] [0054m.17s.279ms] [1] SC[1209]: UnRegistered sub-client [EEVM_EEVM_1634560] with ID [4] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:42] [0054m.17s.748ms] [1] SC[1209]: Registered sub-client [JobPrefsDBPI_34602515] with ID [5] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:42] [0054m.17s.763ms] [1] SC[1209]: UnRegistered sub-client [JobPrefsDBPI_34602515] with ID [5] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:43] [0054m.18s.834ms] [1] SC[1209]: Registered sub-client [JobPrefsDBPI_34603609] with ID [6] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:43] [0054m.18s.866ms] [1] SC[1209]: UnRegistered sub-client [JobPrefsDBPI_34603609] with ID [6] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:43] [0054m.19s.100ms] [0] IT: Session [1212] for host [bi-Win7] user [Alexis] with process ID [344] created
+[2014.06.18 18:53:43] [0054m.19s.100ms] [1] SC[1212]: Registered sub-client [Packager_34603828] with ID [1] for session ID [1212] host [bi-Win7] user [Alexis] process ID [344]
+[2014.06.18 18:53:43] [0054m.19s.147ms] [1] CMT: There are [3] clients now: 1177, 1209, 1212
+[2014.06.18 18:53:44] [0054m.19s.350ms] [1] SC[1212]: UnRegistered sub-client [Packager_34603828] with ID [1] for session ID [1212] host [bi-Win7] user [Alexis] process ID [344]
+[2014.06.18 18:53:44] [0054m.19s.444ms] [1] CMT: Removed client [1212]
+[2014.06.18 18:53:44] [0054m.19s.444ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:44] [0054m.19s.959ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [E:\2014\elfes\PCB\Default\default.icdb\s2\cdbcatlg\grpobj] - auto-saving it
+[2014.06.18 18:53:45] [0054m.20s.366ms] [0] IT: Session [1213] for host [bi-Win7] user [Alexis] with process ID [1980] created
+[2014.06.18 18:53:45] [0054m.20s.366ms] [1] SC[1213]: Registered sub-client [Expedition_34605078] with ID [1] for session ID [1213] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:45] [0054m.20s.413ms] [1] SC[1213]: UnRegistered sub-client [Expedition_34605078] with ID [1] for session ID [1213] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:45] [0054m.20s.491ms] [1] CMT: There are [3] clients now: 1177, 1209, 1213
+[2014.06.18 18:53:45] [0054m.20s.491ms] [1] CMT: Removed client [1213]
+[2014.06.18 18:53:45] [0054m.20s.491ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:45] [0054m.21s.100ms] [0] IT: Session [1214] for host [bi-Win7] user [Alexis] with process ID [1980] created
+[2014.06.18 18:53:45] [0054m.21s.100ms] [1] SC[1214]: Registered sub-client [JobPrefsDBPI_34605828] with ID [1] for session ID [1214] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:45] [0054m.21s.116ms] [1] SC[1214]: UnRegistered sub-client [JobPrefsDBPI_34605828] with ID [1] for session ID [1214] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:45] [0054m.21s.209ms] [1] CMT: There are [3] clients now: 1177, 1209, 1214
+[2014.06.18 18:53:45] [0054m.21s.209ms] [1] CMT: Removed client [1214]
+[2014.06.18 18:53:45] [0054m.21s.209ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:46] [0054m.21s.741ms] [0] IT: Session [1215] for host [bi-Win7] user [Alexis] with process ID [1980] created
+[2014.06.18 18:53:46] [0054m.21s.741ms] [1] SC[1215]: Registered sub-client [JobPrefsDBPI_34606468] with ID [1] for session ID [1215] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:46] [0054m.21s.756ms] [1] CMT: There are [3] clients now: 1177, 1209, 1215
+[2014.06.18 18:53:46] [0054m.21s.897ms] [1] SC[1215]: UnRegistered sub-client [JobPrefsDBPI_34606468] with ID [1] for session ID [1215] host [bi-Win7] user [Alexis] process ID [1980]
+[2014.06.18 18:53:46] [0054m.22s.022ms] [1] CMT: Removed client [1215]
+[2014.06.18 18:53:46] [0054m.22s.022ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:47] [0054m.22s.850ms] [0] IT: Session [1216] for host [bi-Win7] user [Alexis] with process ID [2092] created
+[2014.06.18 18:53:47] [0054m.22s.850ms] [1] SC[1216]: Registered sub-client [JobPrefsDBPI_34607562] with ID [1] for session ID [1216] host [bi-Win7] user [Alexis] process ID [2092]
+[2014.06.18 18:53:47] [0054m.22s.897ms] [1] CMT: There are [3] clients now: 1177, 1209, 1216
+[2014.06.18 18:53:47] [0054m.22s.897ms] [1] SC[1216]: Registered sub-client [Expedition_34607671] with ID [2] for session ID [1216] host [bi-Win7] user [Alexis] process ID [2092]
+[2014.06.18 18:53:47] [0054m.22s.944ms] [1] SC[1216]: UnRegistered sub-client [JobPrefsDBPI_34607562] with ID [1] for session ID [1216] host [bi-Win7] user [Alexis] process ID [2092]
+[2014.06.18 18:53:47] [0054m.23s.022ms] [1] SC[1216]: UnRegistered sub-client [Expedition_34607671] with ID [2] for session ID [1216] host [bi-Win7] user [Alexis] process ID [2092]
+[2014.06.18 18:53:47] [0054m.23s.116ms] [1] CMT: Removed client [1216]
+[2014.06.18 18:53:47] [0054m.23s.116ms] [1] CMT: There are [2] clients now: 1177, 1209
+[2014.06.18 18:53:48] [0054m.23s.678ms] [1] SC[1209]: Registered sub-client [EEVM_EEVM_320608116] with ID [7] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.694ms] [1] SC[1209]: UnRegistered sub-client [EEVM_EEVM_320608116] with ID [7] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.694ms] [1] SC[1209]: Registered sub-client [EEVM_EEVM_320608116] with ID [8] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.709ms] [1] SC[1209]: UnRegistered sub-client [EEVM_EEVM_320608116] with ID [8] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.709ms] [1] SC[1209]: Registered sub-client [EEVM_EEVM_320608116] with ID [9] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.725ms] [1] SC[1209]: UnRegistered sub-client [EEVM_EEVM_320608116] with ID [9] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.850ms] [1] SC[1209]: UnRegistered sub-client [Expedition PCB_33182671] with ID [1] for session ID [1209] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:48] [0054m.23s.928ms] [1] CMT: Removed client [1209]
+[2014.06.18 18:53:48] [0054m.23s.928ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 18:53:49] [0054m.24s.288ms] [0] IT: Session [1217] for host [bi-Win7] user [Alexis] with process ID [1680] created
+[2014.06.18 18:53:49] [0054m.24s.288ms] [1] SC[1217]: Registered sub-client [Expedition PCB_34609000] with ID [1] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:49] [0054m.24s.366ms] [1] CMT: There are [2] clients now: 1177, 1217
+[2014.06.18 18:53:49] [0054m.24s.756ms] [1] SC[1217]: Registered sub-client [JobPrefsDBPI_34609531] with ID [2] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:49] [0054m.24s.772ms] [1] SC[1217]: UnRegistered sub-client [JobPrefsDBPI_34609531] with ID [2] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:50] [0054m.26s.179ms] [1] SC[1217]: Registered sub-client [JobPrefsDBPI_34610953] with ID [3] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:50] [0054m.26s.195ms] [1] SC[1217]: UnRegistered sub-client [JobPrefsDBPI_34610953] with ID [3] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 18:53:50] [0054m.26s.226ms] [1] SC[1217]: Registered sub-client [ExpeditionCrossProber] with ID [4] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:02:40] [0063m.15s.693ms] [1] SC[1217]: Registered sub-client [JobPrefsDBPI_35140468] with ID [5] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:02:40] [0063m.15s.708ms] [1] SC[1217]: UnRegistered sub-client [JobPrefsDBPI_35140468] with ID [5] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:02:43] [0063m.18s.349ms] [1] SC[1217]: Registered sub-client [JobPrefsDBPI_35143109] with ID [6] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:02:43] [0063m.18s.349ms] [1] SC[1217]: UnRegistered sub-client [JobPrefsDBPI_35143109] with ID [6] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:16:33] [0077m.08s.740ms] [1] PrjBackupMgr: Successfully created Project Backup [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 19.16.33 - auto.zip] with GUID [b140-7869-965a-030a-179c-1a36-79c1-a350-620d-295b-7cec-59f5]
+[2014.06.18 19:16:33] [0077m.08s.740ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[9157-e28f-ed60-6ce7-e4da-0a33-5da0-a350-a4c4-a372-e2af-69d8] CreationTime[Tuesday, June 17, 2014 21:04:14] Type[Autosave] Creator[iCDB Server (2014-06-17 22.54.39-1956)] ApplicationName[iCDB Server (2014-06-17 22.54.39-1956)] UserName[Alexis] MachineName[LUTIN2] Description[Autosave] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip] BackupFileSize[175161] Persistent[FALSE]
+[2014.06.18 19:16:33] [0077m.08s.740ms] [0] PrjBackupMgr: Project Backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip] with GUID [9157-e28f-ed60-6ce7-e4da-0a33-5da0-a350-a4c4-a372-e2af-69d8] removed
+[2014.06.18 19:16:33] [0077m.08s.740ms] [0] PrjBackupEngine: Successfully created backup:  BackupGUID[b140-7869-965a-030a-179c-1a36-79c1-a350-620d-295b-7cec-59f5] CreationTime[Wednesday, June 18, 2014 17:16:33] Type[Autosave] Creator[iCDB Server (2014-06-18 17.59.24-2564)] ApplicationName[iCDB Server (2014-06-18 17.59.24-2564)] UserName[Alexis] MachineName[BI-WIN7] Description[Autosave] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 19.16.33 - auto.zip] BackupFileSize[285828] Persistent[FALSE]
+[2014.06.18 19:37:36] [0098m.11s.537ms] [1] SC[1217]: UnRegistered sub-client [ExpeditionCrossProber] with ID [4] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:37:36] [0098m.11s.740ms] [1] SC[1217]: UnRegistered sub-client [Expedition PCB_34609000] with ID [1] for session ID [1217] host [bi-Win7] user [Alexis] process ID [1680]
+[2014.06.18 19:37:36] [0098m.11s.833ms] [1] CMT: Removed client [1217]
+[2014.06.18 19:37:36] [0098m.11s.833ms] [1] CMT: There are [1] clients now: 1177
+[2014.06.18 19:37:37] [0098m.12s.568ms] [1] SC[1177]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1177] host [bi-Win7] user [Alexis] process ID [2912]
+[2014.06.18 19:37:37] [0098m.12s.615ms] [1] CMT: Removed client [1177]
+[2014.06.18 19:37:37] [0098m.12s.615ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.18 19:37:39] [0098m.14s.380ms] [0] CMT: Starting server auto-close
+[2014.06.18 19:37:39] [0098m.14s.474ms] [0] S: Closing server
+[2014.06.18 19:37:39] [0098m.14s.521ms] [0] iCDB Server PI: Closing plugins
+[2014.06.18 19:37:39] [0098m.14s.521ms] [0] iCDB Server PI: Plugins closed
+[2014.06.18 19:37:39] [0098m.14s.521ms] [0] iCDB Server PI: Unloading database
+[2014.06.18 19:37:39] [0098m.14s.521ms] [0] iCDB Server PI: Saving storage
+[2014.06.18 19:37:39] [0098m.14s.521ms] [0] iCDB Server PI: Closing database
+[2014.06.18 19:37:39] [0098m.14s.537ms] [1] iCDB Server PI: Stats: Database defragmentation: max[3] avg[1] holes[40%] data[64%]
+[2014.06.18 19:37:39] [0098m.14s.537ms] [1] iCDB Server PI: Stats: Database file size [159328 (155.6 kB)]
+[2014.06.18 19:37:39] [0098m.14s.537ms] [1] iCDB Server PI: WARNING: Database needs defragmentation!
+[2014.06.18 19:37:39] [0098m.14s.552ms] [0] iCDB Server PI: Database closed
+[2014.06.18 19:37:39] [0098m.14s.552ms] [0] iCDB Server PI: Defragmenting database
+[2014.06.18 19:37:39] [0098m.14s.552ms] [0] iCDB Server PI: Creating database [E:\2014\elfes\PCB\Default\default.icdb] backup to file [E:\2014\elfes\PCB\Default\default.icdb\cdbback\2014-06-18 19.37.39-2564-d.zip]
+[2014.06.18 19:37:39] [0098m.14s.912ms] [0] iCDB Server PI: Database backup: DONE
+[2014.06.18 19:37:39] [0098m.14s.927ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 19:37:39] [0098m.14s.927ms] [0] Database GUARD OK: [159328]
+[2014.06.18 19:37:39] [0098m.14s.927ms] [0] SingleFile: [84e7-f054-8b8e-ef3b] SFI version check [1009] [1009]
+[2014.06.18 19:37:39] [0098m.14s.958ms] [0] SingleFile: [84e7-f054-8b8e-ef3b] Database SFI header has been read in [31ms 277us]
+[2014.06.18 19:37:39] [0098m.15s.115ms] [1] iCDB Server PI: Stats: Database file sizes: before[159328 (155.6 kB)], after[80944 (79.0 kB)], gain[78384 (76.5 kB)]
+[2014.06.18 19:37:39] [0098m.15s.115ms] [0] Single file [E:\2014\elfes\PCB\Default\default.icdb\icdb.dat] closed with size [80944 (79.0 kB)]
+[2014.06.18 19:37:39] [0098m.15s.115ms] [0] iCDB Server PI: Database defragmentation completed successfully
+[2014.06.18 19:37:39] [0098m.15s.115ms] [1] BackupTransaction: Removing database backup [E:\2014\elfes\PCB\Default\default.icdb\cdbback\2014-06-18 19.37.39-2564-d.zip]
+[2014.06.18 19:37:39] [0098m.15s.130ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [457376] ticks
+[2014.06.18 19:37:39] [0098m.15s.130ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [174693] microseconds
+[2014.06.18 19:37:39] [0098m.15s.130ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [974]
+[2014.06.18 19:37:39] [0098m.15s.130ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [5575] commands per second
+[2014.06.18 19:37:39] [0098m.15s.240ms] [0] S: STOP
