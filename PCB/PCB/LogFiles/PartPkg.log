@@ -2,21 +2,21 @@
                                     Packager
                                     --------
 
-                        02:28 AM Wednesday, June 18, 2014
-                      Job Name: G:\2014\ELFES\PCB\Elfe.prj
+                        02:55 PM Wednesday, June 18, 2014
+             Job Name: C:\Users\Antoine\Documents\elfes\PCB\Elfe.prj
 
 
      Packager     Version: 020806.00
 
-        Commandline is: "C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin\Package.exe -j"G:\2014\ELFES\PCB\Elfe.prj" -CleanBuild -NoFill "
+        Commandline is: "C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin\Package.exe -j"C:\Users\Antoine\Documents\elfes\PCB\Elfe.prj" -CleanBuild -NoFill "
 
-     The Common Database is at "G:\2014\ELFES\PCB\Default\default.icdb".
+     The Common Database is at "C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb".
 
      The Root of this design is "Schematic1".
 
      The Front End Snapshot of this design is "DCDV".
 
-     The PCB Design Path of this design is at "G:\2014\ELFES\PCB\PCB\PCB.pcb".
+     The PCB Design Path of this design is at "C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb".
 
      The Central Library is at "C:\MentorGraphics\libraries\Central_Libs\ENST.lmc".
 

@@ -2,13 +2,13 @@
                                 Autosave Log File
                                 -----------------
 
-                        02:29 AM Wednesday, June 18, 2014
-                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+                        03:19 PM Wednesday, June 18, 2014
+           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
 
 
                                Autosave log closed
                                -------------------
 
-                        03:00 AM Wednesday, June 18, 2014
-                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+                        03:19 PM Wednesday, June 18, 2014
+           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
 

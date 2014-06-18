@@ -18,3 +18,14 @@
 [2014-06-17 23.04.14] Migrated iCDB content backup file [cdbback\2014-06-17 11.19.32-4516.zip] removed.
 [2014-06-17 23.04.14] Successfully migrated iCDB upgrade backup file [2014-06-17 11.19.32-4516] to Project Backup format [2014-06-17 11.19.32 - upgrade.zip]
 [2014-06-17 23.04.14] Successfully created [AutoSave] backup [2014-06-17 23.04.14 - auto.zip] requested by [LUTIN2:Alexis].
+[2014-06-18 11.16.33] Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014-06-18 11.16.33] Migrating iCDB upgrade backup file [2014-06-18 11.02.03-1280].
+[2014-06-18 11.16.33] Successfully created [Constraints Definition Upgrade] backup [2014-06-18 11.02.03 - consDefUpgr.zip] requested by [LUTIN2:Alexis].
+[2014-06-18 11.16.33] Removing excessive [Constraints Definition Upgrade] backup file [C:\Users\Antoine\Documents\elfes\PCB\Default\ProjectBackup\backups\2014-06-17 22.54.23 - consDefUpgr.zip].
+[2014-06-18 11.16.33] [Constraints Definition Upgrade] backup file [PCB\Default\ProjectBackup\backups\2014-06-17 22.54.23 - consDefUpgr.zip] removed.
+[2014-06-18 11.16.33] Migrated iCDB content backup file [cdbback\2014-06-18 11.02.03-1280.zip] removed.
+[2014-06-18 11.16.33] Successfully migrated iCDB upgrade backup file [2014-06-18 11.02.03-1280] to Project Backup format [2014-06-18 11.02.03 - consDefUpgr.zip]
+[2014-06-18 11.16.33] Successfully created [AutoSave] backup [2014-06-18 11.16.33 - auto.zip] requested by [PC-ANTOINE:Antoine].
+[2014-06-18 15.16.33] Successfully created [AutoSave] backup [2014-06-18 15.16.33 - auto.zip] requested by [PC-ANTOINE:Antoine].
+[2014-06-18 15.16.33] Removing excessive [AutoSave] backup file [C:\Users\Antoine\Documents\elfes\PCB\Default\ProjectBackup\backups\2014-03-11 00.52.57 - auto.zip].
+[2014-06-18 15.16.33] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-03-11 00.52.57 - auto.zip] removed.

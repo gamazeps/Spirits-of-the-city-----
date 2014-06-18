@@ -2,8 +2,8 @@
                                Forward Annotation
                                ------------------
 
-                        02:28 AM Wednesday, June 18, 2014
-                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+                        02:55 PM Wednesday, June 18, 2014
+           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
 
 
 Version:  01.01.00
@@ -84,8 +84,8 @@ Version:  01.01.00
                                      NetLoad
                                      -------
 
-                        02:28 AM Wednesday, June 18, 2014
-                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+                        02:55 PM Wednesday, June 18, 2014
+           Job Name: C:\Users\Antoine\Documents\elfes\PCB\PCB\PCB.pcb
 
 
 Version:  02.11.12
@@ -97,35 +97,22 @@ Version:  02.11.12
 	Schematic reference designator changes will be forward annotated.
 
 
-     WARNING:  The "C0402" cell used by "C6" in the Layout is not
-      valid for a "10-0068" Part Number.
-      Since this cell is unplaced, it will be removed and reinserted as a
-      valid unplaced cell.
-     INFO: Cell "C0402" is being replaced by cell "C0603".
-
-     WARNING:  The "C0402" cell used by "C7" in the Layout is not
-      valid for a "10-0068" Part Number.
-      Since this cell is unplaced, it will be removed and reinserted as a
-      valid unplaced cell.
-     INFO: Cell "C0402" is being replaced by cell "C0603".
-
-     WARNING:  The "C0402" cell used by "C8" in the Layout is not
-      valid for a "10-0068" Part Number.
-      Since this cell is unplaced, it will be removed and reinserted as a
-      valid unplaced cell.
-     INFO: Cell "C0402" is being replaced by cell "C0603".
-
-     The following 7 components have not been placed:
+     The following 12 components have not been placed:
 
         C5
         C6
         C7
         C8
+        D3
+        D4
         J2
         J3
-        J4
+        Q1
+        Q2
+        R7
+        R8
 
-     Netload completed successfully with 3 warning(s).
+     Netload completed successfully with 0 warning(s).
      
      Back Annotating...
 

@@ -1,0 +1,140 @@
+[2014.06.18 11:02:02] [0000m.00s.038ms] [0] WELCOME
+[2014.06.18 11:02:02] [0000m.00s.040ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.18 11:02:02] [0000m.00s.040ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.18 11:02:02] [0000m.00s.040ms] [1] Base flow version [7.9.4]
+[2014.06.18 11:02:02] [0000m.00s.040ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 11:02:02] [0000m.00s.040ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] Machine [PC-ANTOINE]  User [Antoine]  PID [1280]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] Operating system [Microsoft Home Premium Edition, 64-bit (build 9200)]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] Current working dir [C:\Users\Antoine\Documents\elfes\PCB]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\TortoiseGit\bin]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] SDD_PLATFORM [win32]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] WDIR [C:\Users\Antoine\Documents\WDIR;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.18 11:02:02] [0000m.00s.041ms] [1] Local iCDB working dir [C:\Users\Antoine\Documents\WDIR\iCDB] on file system [NTFS]
+[2014.06.18 11:02:02] [0000m.00s.043ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.18 11:02:02] [0000m.00s.043ms] [2] S: Loading config files
+[2014.06.18 11:02:02] [0000m.00s.056ms] [1] Config file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.18 11:02:02] [0000m.00s.056ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.18 11:02:02] [0000m.00s.058ms] [3] S: Config loaded
+[2014.06.18 11:02:02] [0000m.00s.065ms] [0] S: Project path [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] on file system [NTFS]
+[2014.06.18 11:02:02] [0000m.00s.066ms] [0] S: Project global path [\\PC-ANTOINE\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] on file system [NTFS]
+[2014.06.18 11:02:02] [0000m.00s.066ms] [1] S: WARNING: No project file (.prj) path specified
+[2014.06.18 11:02:02] [0000m.00s.066ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.18 11:02:02] [0000m.00s.066ms] [0] S: Multi-user mode (config)
+[2014.06.18 11:02:02] [0000m.00s.066ms] [0] S: Event polling mode autodetection
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] S: Started up automatically by iCDB Client: PC-ANTOINE:Antoine:6828
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] S: Auto close mode
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] S: Database ID [273b-e803-2ec3-dd94-a855-1a3f-8551-a350-77a5-acfc-40cd-3d5c]
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: BEGIN dumping
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: [C:\Users] -> [\\PC-ANTOINE\Users]
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: [\\PC-ANTOINE\Users] -> [C:\Users]
+[2014.06.18 11:02:02] [0000m.00s.073ms] [0] PathTranslator: END dumping
+[2014.06.18 11:02:02] [0000m.00s.074ms] [0] S: START
+[2014.06.18 11:02:02] [0000m.00s.074ms] [0] S: Server startup lock file created
+[2014.06.18 11:02:02] [0000m.00s.075ms] [0] S: Listening for client connections on port [10000]
+[2014.06.18 11:02:02] [0000m.00s.076ms] [0] S: Server network ID [PC-Antoine:137.194.23.25,PC-Antoine:10000]
+[2014.06.18 11:02:02] [0000m.00s.076ms] [0] S: Server GUID [e96c-1746-42a4-8d8e-a855-1a3f-8551-a350-b984-acfc-40cd-3d5c]
+[2014.06.18 11:02:02] [0000m.00s.076ms] [0] S: Project GUID [273b-e803-2ec3-dd94-a855-1a3f-8551-a350-77a5-acfc-40cd-3d5c]
+[2014.06.18 11:02:02] [0000m.00s.079ms] [0] S: Wrote data to server address file
+[2014.06.18 11:02:02] [0000m.00s.080ms] [0] S: Server startup lock file removed
+[2014.06.18 11:02:02] [0000m.00s.081ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.18 11:02:03] [0000m.00s.340ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.18 11:02:03] [0000m.00s.341ms] [0] S: Local disc access time: 41 us
+[2014.06.18 11:02:03] [0000m.00s.341ms] [0] S: File server access time: 50 us
+[2014.06.18 11:02:03] [0000m.00s.345ms] [0] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] size [88880 (86.8 kB)]
+[2014.06.18 11:02:03] [0000m.00s.345ms] [1] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.18 11:02:03] [0000m.00s.345ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 11:02:03] [0000m.00s.345ms] [0] Database GUARD OK: [88880]
+[2014.06.18 11:02:03] [0000m.00s.349ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 11:02:03] [0000m.00s.349ms] [0] Database GUARD OK: [88880]
+[2014.06.18 11:02:03] [0000m.00s.349ms] [0] SingleFile: [3736-af3f-f3e2-be41] SFI version check [1009] [1009]
+[2014.06.18 11:02:03] [0000m.00s.352ms] [0] SingleFile: [3736-af3f-f3e2-be41] Database SFI header has been read in [3ms 112us]
+[2014.06.18 11:02:03] [0000m.00s.358ms] [0] iCDB Server PI: Server & plugin session [1087]
+[2014.06.18 11:02:03] [0000m.00s.358ms] [0] iCDB Server PI: Opening database [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb]
+[2014.06.18 11:02:03] [0000m.00s.358ms] [0] iCDB Server PI: Database [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] opened
+[2014.06.18 11:02:03] [0000m.00s.509ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.18 11:02:03] [0000m.00s.509ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.18 11:02:03] [0000m.00s.580ms] [0] iCDB Database: Creating database content backup before upgrade
+[2014.06.18 11:02:03] [0000m.00s.580ms] [1] iCDB Storage Server: Database backup: ProjectPath[C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb]
+[2014.06.18 11:02:03] [0000m.00s.603ms] [0] iCDB Storage Server Backup Thread: Database backup: BackupPath[C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\cdbback\2014-06-18 11.02.03-1280.zip]
+[2014.06.18 11:02:03] [0000m.00s.620ms] [0] iCDB Storage Server Backup Thread: Backup database DONE: Result[ Succeeded[TRUE]] BackupPath[C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\cdbback\2014-06-18 11.02.03-1280.zip]
+[2014.06.18 11:02:03] [0000m.00s.621ms] [0] iCDB Database: Database content backed up to [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\cdbback\2014-06-18 11.02.03-1280.zip] of size [80 048 bytes (78.2 kB)]  in [40ms 932us]
+[2014.06.18 11:02:03] [0000m.00s.625ms] [0] iCDB Database: Upgrading constraint definitions from version [ce_ee.cns=7.10.24;user.cns=75a7-9983-305b-ad8c-6b13-75da-b137-5d40-22b8-f675-73dc-0aa8]
+[2014.06.18 11:02:03] [0000m.00s.639ms] [0] iCDB Database: Loading snapshot [1:DCDV] version [2709]
+[2014.06.18 11:02:03] [0000m.00s.652ms] [0] iCDB Database: Snapshot [1:DCDV] loaded in [12ms 394us]
+[2014.06.18 11:02:03] [0000m.00s.652ms] [0] iCDB Database: Upgrading constraint definitions for snapshot [1:DCDV]
+[2014.06.18 11:02:03] [0000m.00s.656ms] [0] iCDB Database: Constraint definitions for snapshot [1:DCDV] upgraded in [3ms 781us]
+[2014.06.18 11:02:03] [0000m.00s.656ms] [0] iCDB Database: Saving snapshot [1:DCDV]
+[2014.06.18 11:02:03] [0000m.00s.656ms] [0] iCDB Database: Snapshot [1:DCDV] saved in [397us]
+[2014.06.18 11:02:03] [0000m.00s.657ms] [1] CORE: Applying a fix no 110 stage [fsAtlasLoaded] to atlas [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s1\cdbcmps\dxdatl]
+[2014.06.18 11:02:03] [0000m.00s.657ms] [1] CORE: Fix: cleared overlapping drawing order!
+[2014.06.18 11:02:03] [0000m.00s.657ms] [1] CORE: Atlas fixed stage [fsAtlasLoaded] successfully [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s1\cdbcmps\dxdatl]
+[2014.06.18 11:02:03] [0000m.00s.672ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s1\cdbcatlg\catlgatl.v] - auto-saving it
+[2014.06.18 11:02:03] [0000m.00s.672ms] [0] iCDB Database: Loading snapshot [2:PCB_Layout_Temp] version [2709]
+[2014.06.18 11:02:03] [0000m.00s.680ms] [0] iCDB Database: Snapshot [2:PCB_Layout_Temp] loaded in [7ms 747us]
+[2014.06.18 11:02:03] [0000m.00s.680ms] [0] iCDB Database: Upgrading constraint definitions for snapshot [2:PCB_Layout_Temp]
+[2014.06.18 11:02:03] [0000m.00s.684ms] [0] iCDB Database: Constraint definitions for snapshot [2:PCB_Layout_Temp] upgraded in [3ms 856us]
+[2014.06.18 11:02:03] [0000m.00s.684ms] [0] iCDB Database: Saving snapshot [2:PCB_Layout_Temp]
+[2014.06.18 11:02:03] [0000m.00s.685ms] [0] iCDB Database: Snapshot [2:PCB_Layout_Temp] saved in [120us]
+[2014.06.18 11:02:03] [0000m.00s.692ms] [0] iCDB Database: Loading snapshot [3:PCB] version [2709]
+[2014.06.18 11:02:03] [0000m.00s.703ms] [0] iCDB Database: Snapshot [3:PCB] loaded in [10ms 380us]
+[2014.06.18 11:02:03] [0000m.00s.703ms] [0] iCDB Database: Upgrading constraint definitions for snapshot [3:PCB]
+[2014.06.18 11:02:03] [0000m.00s.705ms] [0] iCDB Database: Constraint definitions for snapshot [3:PCB] upgraded in [2ms 249us]
+[2014.06.18 11:02:03] [0000m.00s.705ms] [0] iCDB Database: Saving snapshot [3:PCB]
+[2014.06.18 11:02:03] [0000m.00s.705ms] [0] iCDB Database: Snapshot [3:PCB] saved in [81us]
+[2014.06.18 11:02:03] [0000m.00s.710ms] [0] iCDB Database: Loading snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE] version [2709]
+[2014.06.18 11:02:03] [0000m.00s.712ms] [0] iCDB Database: Snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE] loaded in [1ms 386us]
+[2014.06.18 11:02:03] [0000m.00s.712ms] [0] iCDB Database: Upgrading constraint definitions for snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE]
+[2014.06.18 11:02:03] [0000m.00s.713ms] [0] iCDB Database: Constraint definitions for snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE] upgraded in [951us]
+[2014.06.18 11:02:03] [0000m.00s.713ms] [0] iCDB Database: Saving snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE]
+[2014.06.18 11:02:03] [0000m.00s.713ms] [0] iCDB Database: Snapshot [4:DCDV_INST_PROP_TEMPORARY_STORAGE] saved in [36us]
+[2014.06.18 11:02:03] [0000m.00s.715ms] [0] iCDB Database: Loading snapshot [5:RefSync] version [2709]
+[2014.06.18 11:02:03] [0000m.00s.722ms] [0] iCDB Database: Snapshot [5:RefSync] loaded in [7ms 262us]
+[2014.06.18 11:02:03] [0000m.00s.722ms] [0] iCDB Database: Upgrading constraint definitions for snapshot [5:RefSync]
+[2014.06.18 11:02:03] [0000m.00s.725ms] [0] iCDB Database: Constraint definitions for snapshot [5:RefSync] upgraded in [2ms 224us]
+[2014.06.18 11:02:03] [0000m.00s.725ms] [0] iCDB Database: Saving snapshot [5:RefSync]
+[2014.06.18 11:02:03] [0000m.00s.725ms] [0] iCDB Database: Snapshot [5:RefSync] saved in [69us]
+[2014.06.18 11:02:03] [0000m.00s.725ms] [1] CORE: Applying a fix no 110 stage [fsAtlasLoaded] to atlas [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s5\cdbcmps\dxdatl]
+[2014.06.18 11:02:03] [0000m.00s.725ms] [1] CORE: Fix: cleared overlapping drawing order!
+[2014.06.18 11:02:03] [0000m.00s.725ms] [1] CORE: Atlas fixed stage [fsAtlasLoaded] successfully [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s5\cdbcmps\dxdatl]
+[2014.06.18 11:02:03] [0000m.00s.730ms] [1] iCDB Storage Server: WARNING: Unloading CHANGED file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\s5\cdbcatlg\catlgatl.v] - auto-saving it
+[2014.06.18 11:02:03] [0000m.00s.730ms] [0] iCDB Database: Constraint definitions upgraded to version [ce_ee.cns=7.10.24;user.cns=3796-b2af-2a06-1465-4280-0a39-2800-a350-7a35-ac5d-40cd-3d5c]
+[2014.06.18 11:02:03] [0000m.00s.757ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.18 11:02:03] [0000m.00s.759ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.18 11:02:03] [0000m.00s.759ms] [0] S: iCDB database loaded
+[2014.06.18 11:02:03] [0000m.00s.761ms] [0] S: Starting threads
+[2014.06.18 11:02:03] [0000m.00s.762ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.18 11:02:03] [0000m.00s.762ms] [1] CMT: There are no clients - waiting [10 seconds]
+[2014.06.18 11:02:03] [0000m.00s.762ms] [0] ProjectBackupManager: WARNING: Could not startup Project Backup engine - functionality not initialized
+[2014.06.18 11:02:03] [0000m.00s.765ms] [0] IT: Session [1088] for host [PC-Antoine] user [Antoine] with process ID [6828] created
+[2014.06.18 11:02:03] [0000m.00s.766ms] [1] SC[1088]: Registered sub-client [DCDV] with ID [1] for session ID [1088] host [PC-Antoine] user [Antoine] process ID [6828]
+[2014.06.18 11:02:03] [0000m.00s.770ms] [1] SC[1088]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1088] host [PC-Antoine] user [Antoine] process ID [6828]
+[2014.06.18 11:02:03] [0000m.00s.863ms] [1] CMT: There are [1] clients now: 1088
+[2014.06.18 11:02:03] [0000m.00s.863ms] [1] CMT: Removed client [1088]
+[2014.06.18 11:02:03] [0000m.00s.863ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.18 11:02:04] [0000m.01s.298ms] [0] IT: Session [1089] for host [PC-Antoine] user [Antoine] with process ID [6828] created
+[2014.06.18 11:02:04] [0000m.01s.301ms] [1] SC[1089]: Registered sub-client [DCDV] with ID [1] for session ID [1089] host [PC-Antoine] user [Antoine] process ID [6828]
+[2014.06.18 11:02:04] [0000m.01s.305ms] [1] SC[1089]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1089] host [PC-Antoine] user [Antoine] process ID [6828]
+[2014.06.18 11:02:04] [0000m.01s.364ms] [1] CMT: Removed client [1089]
+[2014.06.18 11:02:04] [0000m.01s.364ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.18 11:02:06] [0000m.03s.269ms] [0] CMT: Starting server auto-close
+[2014.06.18 11:02:06] [0000m.03s.300ms] [0] S: Closing server
+[2014.06.18 11:02:06] [0000m.03s.301ms] [0] ProjectBackupManager: WARNING: Could not shutdown Project Backup engine - not started yet
+[2014.06.18 11:02:06] [0000m.03s.388ms] [0] iCDB Server PI: Closing plugins
+[2014.06.18 11:02:06] [0000m.03s.388ms] [0] iCDB Server PI: Plugins closed
+[2014.06.18 11:02:06] [0000m.03s.388ms] [0] iCDB Server PI: Unloading database
+[2014.06.18 11:02:06] [0000m.03s.394ms] [0] iCDB Server PI: Saving storage
+[2014.06.18 11:02:06] [0000m.03s.394ms] [0] iCDB Server PI: Closing database
+[2014.06.18 11:02:06] [0000m.03s.395ms] [1] iCDB Server PI: Stats: Database defragmentation: max[2] avg[1] holes[0%] data[93%]
+[2014.06.18 11:02:06] [0000m.03s.395ms] [1] iCDB Server PI: Stats: Database file size [94840 (92.6 kB)]
+[2014.06.18 11:02:06] [0000m.03s.399ms] [0] iCDB Server PI: Database closed
+[2014.06.18 11:02:06] [0000m.03s.399ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [29] ticks
+[2014.06.18 11:02:06] [0000m.03s.399ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [11] microseconds
+[2014.06.18 11:02:06] [0000m.03s.399ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [2]
+[2014.06.18 11:02:06] [0000m.03s.399ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [174710] commands per second
+[2014.06.18 11:02:06] [0000m.03s.402ms] [0] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] closed with size [94840 (92.6 kB)]
+[2014.06.18 11:02:06] [0000m.03s.409ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.18 11:02:06] [0000m.03s.567ms] [0] S: STOP

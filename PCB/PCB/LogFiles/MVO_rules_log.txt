@@ -1,6 +1,6 @@
 
 Can not open Multiple Via Rules file. File doesn't exist:
-       'G:\2014\ELFES\PCB\PCB\Config\MultiViaRules.txt'
+       'C:\Users\Antoine\Documents\elfes\PCB\PCB\Config\MultiViaRules.txt'
 
 Can not open Multiple Via Rules file. File doesn't exist:
-       'G:\2014\ELFES\PCB\PCB\Layout\MVO_Rules.txt'
+       'C:\Users\Antoine\Documents\elfes\PCB\PCB\Layout\MVO_Rules.txt'
