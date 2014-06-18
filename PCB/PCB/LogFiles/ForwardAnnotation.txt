@@ -1,0 +1,164 @@
+
+                               Forward Annotation
+                               ------------------
+
+                        02:28 AM Wednesday, June 18, 2014
+                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+
+
+Version:  01.01.00
+
+     A new Target PDB will be created from the Central Library to satisfy the parts
+      requirements of the iCDB.
+
+     The schematic source is a Common Data Base.
+
+     The AllowAlphaRefDes status indicates that reference
+      designators containing all alpha characters should be deleted
+      and the relevant symbols repackaged.
+
+
+
+     Common Data Base has been read
+
+     Target PDB Name: Work\Layout_Temp\PartsDB.pdb
+
+     Number of Part Numbers: 18
+          Part Numb: 00-0048 -> Vend Part: 00-0048 
+          Part Numb: 00-0122 -> Vend Part: 00-0122 
+          Part Numb: 01-0176 -> Vend Part: 01-0176 
+          Part Numb: 01-0204 -> Vend Part: 01-0204 
+          Part Numb: 10-0011 -> Vend Part: 10-0011 
+          Part Numb: 10-0057 -> Vend Part: 10-0057 
+          Part Numb: 10-0068 -> Vend Part: 10-0068 
+          Part Numb: 10-0103 -> Vend Part: 10-0103 
+          Part Numb: 20-0065 -> Vend Part: 20-0065 
+          Part Numb: 20-0066 -> Vend Part: 20-0066 
+          Part Numb: 30-0004 -> Vend Part: 30-0004 
+          Part Numb: 40-0115 -> Vend Part: 40-0115 
+          Part Numb: 40-0237 -> Vend Part: 40-0237 
+          Part Numb: 70-0014 -> Vend Part: 70-0014 
+          Part Numb: 70-0029 -> Vend Part: 70-0029 
+          Part Numb: 70-0081 -> Vend Part: 70-0081 
+          Part Numb: 80-0053 -> Vend Part: 80-0053 
+          Part Numb: 80-0054 -> Vend Part: 80-0054 
+
+     Number of Part Names: 0
+
+     Number of Part Labels: 0
+
+
+     Checking for value differences between symbol properties and PartsDB properties
+
+     Checking the validity of the packaging of prepackaged schematic
+      symbols.  Only the first error in symbols having the same
+      Reference Designator will be reported.
+
+     The packaging of all prepackaged schematic symbols is consistent
+      with the Parts DataBase data for the cross mapping of
+      symbol pin names to Part Number pin numbers.
+      Symbols that were not prepackaged will now be packaged correctly.
+      
+     No errors in Existing Schematic Packaging.
+
+     The Common DataBase has been read and will be packaged.
+     Clustering 37 Symbols:
+              37  ************************************
+     Clustering is Complete
+
+     Packager Assignments successfully completed
+
+
+
+     40 nets were found containing 130 pins
+     37 components were found
+
+     Creating a formatted Schematic Netlist (LogFiles\SchematicNetlist.txt)...
+     A formatted Schematic Netlist has been created.
+
+     The Logic DataBase has been compiled from the Schematic Design.
+      Use Netload to bring the Component Design into sync.
+
+     Logic Data has been successfully Compiled with no errors or warnings.
+      Please proceed with your component Design.
+                                     NetLoad
+                                     -------
+
+                        02:28 AM Wednesday, June 18, 2014
+                     Job Name: G:\2014\ELFES\PCB\PCB\PCB.pcb
+
+
+Version:  02.11.12
+
+	Netloading the Layout.  Unused components will be deleted.
+
+	Unconnected pins will be set to net "(Net0)".
+
+	Schematic reference designator changes will be forward annotated.
+
+
+     WARNING:  The "C0402" cell used by "C6" in the Layout is not
+      valid for a "10-0068" Part Number.
+      Since this cell is unplaced, it will be removed and reinserted as a
+      valid unplaced cell.
+     INFO: Cell "C0402" is being replaced by cell "C0603".
+
+     WARNING:  The "C0402" cell used by "C7" in the Layout is not
+      valid for a "10-0068" Part Number.
+      Since this cell is unplaced, it will be removed and reinserted as a
+      valid unplaced cell.
+     INFO: Cell "C0402" is being replaced by cell "C0603".
+
+     WARNING:  The "C0402" cell used by "C8" in the Layout is not
+      valid for a "10-0068" Part Number.
+      Since this cell is unplaced, it will be removed and reinserted as a
+      valid unplaced cell.
+     INFO: Cell "C0402" is being replaced by cell "C0603".
+
+     The following 7 components have not been placed:
+
+        C5
+        C6
+        C7
+        C8
+        J2
+        J3
+        J4
+
+     Netload completed successfully with 3 warning(s).
+     
+     Back Annotating...
+
+  Updating Logic Database...
+
+     Version:  99.00.05
+
+     No changes made to Existing Schematic Packaging.
+
+
+     There is no symbol data to be back annotated to the schematic source.
+
+
+     The Logic DataBase has been updated and the Common DataBase has
+      automatically been brought into sync with the Logic DataBase.
+      Please proceed with your design.
+
+     Finished updating the Logic Database.
+
+     Creating a formatted Schematic Netlist (LogFiles\AfterBakAnnoNetlist.txt)...
+     A formatted Schematic Netlist has been created.
+
+     Creating a new netlist text file (LogFiles\KeyinNetList.txt)
+      from the Logic Database (Work\Layout_Temp\LogicDB.lgc)...
+  A new netlist text file has been generated.
+
+
+
+                 Beginning Netload on the Layout Design.
+           ---------------------------------------------------
+
+Forward-Annotation on the Layout Design has been successfully completed.
+
+There were 0 reassignments of nets.
+There were 0 traces broken back.
+There were 0 nets removed from the Layout Design.
