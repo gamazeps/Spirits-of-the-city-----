@@ -1,0 +1,111 @@
+[2014.06.18 15:48:03] [0000m.00s.027ms] [0] WELCOME
+[2014.06.18 15:48:03] [0000m.00s.027ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.18 15:48:03] [0000m.00s.027ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.18 15:48:03] [0000m.00s.027ms] [1] Base flow version [7.9.4]
+[2014.06.18 15:48:03] [0000m.00s.027ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 15:48:03] [0000m.00s.027ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] Machine [PC-ANTOINE]  User [Antoine]  PID [4492]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] Operating system [Microsoft Home Premium Edition, 64-bit (build 9200)]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] Current working dir [C:\Users\Antoine\Documents\elfes\PCB]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\TortoiseGit\bin]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] SDD_PLATFORM [win32]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] WDIR [C:\Users\Antoine\Documents\WDIR;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] Local iCDB working dir [C:\Users\Antoine\Documents\WDIR\iCDB] on file system [NTFS]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.18 15:48:03] [0000m.00s.028ms] [2] S: Loading config files
+[2014.06.18 15:48:03] [0000m.00s.032ms] [1] Config file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.18 15:48:03] [0000m.00s.032ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.18 15:48:03] [0000m.00s.035ms] [3] S: Config loaded
+[2014.06.18 15:48:03] [0000m.00s.039ms] [0] S: Project path [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] on file system [NTFS]
+[2014.06.18 15:48:03] [0000m.00s.040ms] [0] S: Project global path [\\PC-ANTOINE\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] on file system [NTFS]
+[2014.06.18 15:48:03] [0000m.00s.040ms] [1] S: WARNING: No project file (.prj) path specified
+[2014.06.18 15:48:03] [0000m.00s.040ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.18 15:48:03] [0000m.00s.040ms] [0] S: Multi-user mode (config)
+[2014.06.18 15:48:03] [0000m.00s.040ms] [0] S: Event polling mode autodetection
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] S: Started up automatically by iCDB Client: PC-ANTOINE:Antoine:2600
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] S: Auto close mode
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] S: Database ID [273b-e803-2ec3-dd94-a855-1a3f-8551-a350-77a5-acfc-40cd-3d5c]
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: BEGIN dumping
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: [C:\Users] -> [\\PC-ANTOINE\Users]
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: [\\PC-ANTOINE\Users] -> [C:\Users]
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] PathTranslator: END dumping
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] S: START
+[2014.06.18 15:48:03] [0000m.00s.045ms] [0] S: Server startup lock file created
+[2014.06.18 15:48:03] [0000m.00s.046ms] [0] S: Listening for client connections on port [10000]
+[2014.06.18 15:48:03] [0000m.00s.047ms] [0] S: Server network ID [PC-Antoine:137.194.23.25,PC-Antoine:10000]
+[2014.06.18 15:48:03] [0000m.00s.047ms] [0] S: Server GUID [a3a5-bc23-336f-99c1-3989-1a38-9891-a350-38f5-acfc-40cd-3d5c]
+[2014.06.18 15:48:03] [0000m.00s.047ms] [0] S: Project GUID [273b-e803-2ec3-dd94-a855-1a3f-8551-a350-77a5-acfc-40cd-3d5c]
+[2014.06.18 15:48:03] [0000m.00s.051ms] [0] S: Wrote data to server address file
+[2014.06.18 15:48:03] [0000m.00s.052ms] [0] S: Server startup lock file removed
+[2014.06.18 15:48:03] [0000m.00s.052ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.18 15:48:03] [0000m.00s.077ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.18 15:48:03] [0000m.00s.078ms] [0] S: Local disc access time: 46 us
+[2014.06.18 15:48:03] [0000m.00s.078ms] [0] S: File server access time: 51 us
+[2014.06.18 15:48:03] [0000m.00s.079ms] [0] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] size [79608 (77.7 kB)]
+[2014.06.18 15:48:03] [0000m.00s.079ms] [1] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.18 15:48:03] [0000m.00s.079ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 15:48:03] [0000m.00s.079ms] [0] Database GUARD OK: [79608]
+[2014.06.18 15:48:03] [0000m.00s.080ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.18 15:48:03] [0000m.00s.080ms] [0] Database GUARD OK: [79608]
+[2014.06.18 15:48:03] [0000m.00s.080ms] [0] SingleFile: [3736-af3f-f3e2-be41] SFI version check [1009] [1009]
+[2014.06.18 15:48:03] [0000m.00s.083ms] [0] SingleFile: [3736-af3f-f3e2-be41] Database SFI header has been read in [2ms 590us]
+[2014.06.18 15:48:03] [0000m.00s.086ms] [0] iCDB Server PI: Server & plugin session [1157]
+[2014.06.18 15:48:03] [0000m.00s.086ms] [0] iCDB Server PI: Opening database [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb]
+[2014.06.18 15:48:03] [0000m.00s.086ms] [0] iCDB Server PI: Database [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb] opened
+[2014.06.18 15:48:03] [0000m.00s.098ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.18 15:48:03] [0000m.00s.098ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.18 15:48:03] [0000m.00s.159ms] [1] iCDB Database: Constraint definitions version [ce_ee.cns=7.10.24;user.cns=3796-b2af-2a06-1465-4280-0a39-2800-a350-7a35-ac5d-40cd-3d5c] up to date
+[2014.06.18 15:48:03] [0000m.00s.183ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.18 15:48:03] [0000m.00s.183ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.18 15:48:03] [0000m.00s.184ms] [0] S: iCDB database loaded
+[2014.06.18 15:48:03] [0000m.00s.184ms] [0] S: Starting threads
+[2014.06.18 15:48:03] [0000m.00s.185ms] [0] ProjectBackupManager: WARNING: Could not startup Project Backup engine - functionality not initialized
+[2014.06.18 15:48:03] [0000m.00s.185ms] [1] CMT: There are no clients - waiting [10 seconds]
+[2014.06.18 15:48:03] [0000m.00s.186ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.18 15:48:03] [0000m.00s.186ms] [0] IT: Session [1158] for host [PC-Antoine] user [Antoine] with process ID [2600] created
+[2014.06.18 15:48:03] [0000m.00s.189ms] [1] SC[1158]: Registered sub-client [DCDV] with ID [1] for session ID [1158] host [PC-Antoine] user [Antoine] process ID [2600]
+[2014.06.18 15:48:03] [0000m.00s.286ms] [1] CMT: There are [1] clients now: 1158
+[2014.06.18 15:48:24] [0000m.20s.801ms] [0] DFAMT: File server access time: 124 us
+[2014.06.18 15:48:47] [0000m.44s.113ms] [0] IT: Session [1159] for host [PC-Antoine] user [Antoine] with process ID [5076] created
+[2014.06.18 15:48:47] [0000m.44s.113ms] [1] ProjectBackupManager: Client [ClientData[ClientNetAddress[PC-Antoine] # ClientUserName[Antoine] # ClientProcessID[5076] # SessionID[1159]] # SubClientData[SubClientName[] # SubClientID[0]]] set project file (.prj): local path [C:\Users\Antoine\Documents\elfes\PCB\Elfe.prj], global path [\\PC-ANTOINE\Users\Antoine\Documents\elfes\PCB\Elfe.prj]
+[2014.06.18 15:48:47] [0000m.44s.116ms] [1] CMT: There are [2] clients now: 1158, 1159
+[2014.06.18 15:48:47] [0000m.44s.125ms] [1] SC[1159]: Registered sub-client [Expedition PCB_17495500] with ID [1] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:48:47] [0000m.44s.155ms] [1] SC[1159]: Registered sub-client [EEVM] with ID [2] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:48:47] [0000m.44s.202ms] [1] SC[1159]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:48:48] [0000m.44s.728ms] [1] SC[1159]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:59:09] [0011m.06s.032ms] [1] SC[1159]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:59:09] [0011m.06s.184ms] [1] SC[1159]: UnRegistered sub-client [Expedition PCB_17495500] with ID [1] for session ID [1159] host [PC-Antoine] user [Antoine] process ID [5076]
+[2014.06.18 15:59:09] [0011m.06s.233ms] [1] CMT: Removed client [1159]
+[2014.06.18 15:59:09] [0011m.06s.233ms] [1] CMT: There are [1] clients now: 1158
+[2014.06.18 15:59:24] [0011m.20s.450ms] [0] IT: Session [1160] for host [PC-Antoine] user [Antoine] with process ID [8008] created
+[2014.06.18 15:59:24] [0011m.20s.451ms] [1] SC[1160]: Registered sub-client [Expedition PCB_18131843] with ID [1] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 15:59:24] [0011m.20s.476ms] [1] SC[1160]: Registered sub-client [EEVM] with ID [2] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 15:59:24] [0011m.20s.515ms] [1] SC[1160]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 15:59:24] [0011m.20s.548ms] [1] CMT: There are [2] clients now: 1158, 1160
+[2014.06.18 15:59:24] [0011m.20s.976ms] [1] SC[1160]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 16:00:33] [0012m.29s.862ms] [1] SC[1160]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 16:00:33] [0012m.30s.008ms] [1] SC[1160]: UnRegistered sub-client [Expedition PCB_18131843] with ID [1] for session ID [1160] host [PC-Antoine] user [Antoine] process ID [8008]
+[2014.06.18 16:00:33] [0012m.30s.110ms] [1] CMT: Removed client [1160]
+[2014.06.18 16:00:33] [0012m.30s.110ms] [1] CMT: There are [1] clients now: 1158
+[2014.06.18 16:00:36] [0012m.32s.745ms] [1] SC[1158]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1158] host [PC-Antoine] user [Antoine] process ID [2600]
+[2014.06.18 16:00:36] [0012m.32s.813ms] [1] CMT: Removed client [1158]
+[2014.06.18 16:00:36] [0012m.32s.813ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.18 16:00:38] [0012m.34s.418ms] [0] CMT: Starting server auto-close
+[2014.06.18 16:00:38] [0012m.34s.428ms] [0] S: Closing server
+[2014.06.18 16:00:38] [0012m.34s.533ms] [0] iCDB Server PI: Closing plugins
+[2014.06.18 16:00:38] [0012m.34s.533ms] [0] iCDB Server PI: Plugins closed
+[2014.06.18 16:00:38] [0012m.34s.533ms] [0] iCDB Server PI: Unloading database
+[2014.06.18 16:00:38] [0012m.34s.533ms] [0] iCDB Server PI: Saving storage
+[2014.06.18 16:00:38] [0012m.34s.533ms] [0] iCDB Server PI: Closing database
+[2014.06.18 16:00:38] [0012m.34s.534ms] [1] iCDB Server PI: Stats: Database defragmentation: max[3] avg[1] holes[1%] data[96%]
+[2014.06.18 16:00:38] [0012m.34s.534ms] [1] iCDB Server PI: Stats: Database file size [81464 (79.6 kB)]
+[2014.06.18 16:00:38] [0012m.34s.537ms] [0] iCDB Server PI: Database closed
+[2014.06.18 16:00:38] [0012m.34s.537ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [3829] ticks
+[2014.06.18 16:00:38] [0012m.34s.537ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [1511] microseconds
+[2014.06.18 16:00:38] [0012m.34s.537ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [33]
+[2014.06.18 16:00:38] [0012m.34s.537ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [21833] commands per second
+[2014.06.18 16:00:38] [0012m.34s.539ms] [0] Single file [C:\Users\Antoine\Documents\elfes\PCB\Default\default.icdb\icdb.dat] closed with size [81464 (79.6 kB)]
+[2014.06.18 16:00:38] [0012m.34s.672ms] [0] S: STOP
