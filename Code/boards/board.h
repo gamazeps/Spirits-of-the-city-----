@@ -61,7 +61,7 @@
 #define GPIOA_PIN8                  8
 #define GPIOA_PIN9                  9
 #define GPIOA_PIN10                 10
-#define GPIOA_RF_CE                 11 /* Radio-frequence CE (sortie) */
+#define GPIOA_PIN11                 11 
 #define GPIOA_RF_IRQ                12 /* Radio-frequence IRQ (entree) */
 #define GPIOA_JTAG_TMS              13
 #define GPIOA_JTAG_TCK              14
@@ -78,7 +78,7 @@
 #define GPIOB_PIN8                  8
 #define GPIOB_PIN9                  9
 #define GPIOB_PIN10                 10
-#define GPIOB_PIN11                 11
+#define GPIOB_RF_CE                 11 /* Radio-frequence CE (sortie) */
 #define GPIOB_RF_NSS                12 /*Radio-frequence NSS -> SPI2_NSS */
 #define GPIOB_RF_SCK                13 /*Radio-frequence clock -> SPI2_SCK */
 #define GPIOB_RF_MISO               14 /*Radio-frequence MISO -> SPI2_MISO */
@@ -206,7 +206,7 @@
                                      PIN_MODE_INPUT(GPIOA_PIN8) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN9) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN10) |          \
-                                     PIN_MODE_INPUT(GPIOA_RF_CE) |          \
+                                     PIN_MODE_INPUT(GPIOA_PIN11) |          \
                                      PIN_MODE_INPUT(GPIOA_RF_IRQ) |          \
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TMS) |   \
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TCK) |   \
@@ -222,7 +222,7 @@
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN8) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN9) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN10) |      \
-                                     PIN_OTYPE_PUSHPULL(GPIOA_RF_CE) |      \
+                                     PIN_OTYPE_PUSHPULL(GPIOA_PIN11) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOA_RF_IRQ) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOA_JTAG_TMS) |   \
                                      PIN_OTYPE_PUSHPULL(GPIOA_JTAG_TCK) |   \
@@ -238,7 +238,7 @@
                                      PIN_OSPEED_400K(GPIOA_PIN8) |          \
                                      PIN_OSPEED_400K(GPIOA_PIN9) |          \
                                      PIN_OSPEED_400K(GPIOA_PIN10) |         \
-                                     PIN_OSPEED_400K(GPIOA_RF_CE) |         \
+                                     PIN_OSPEED_400K(GPIOA_PIN11) |         \
                                      PIN_OSPEED_400K(GPIOA_RF_IRQ) |         \
                                      PIN_OSPEED_40M(GPIOA_JTAG_TMS) |       \
                                      PIN_OSPEED_40M(GPIOA_JTAG_TCK) |       \
@@ -254,7 +254,7 @@
                                      PIN_PUPDR_PULLUP(GPIOA_PIN8) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN9) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN10) |        \
-                                     PIN_PUPDR_PULLUP(GPIOA_RF_CE) |        \
+                                     PIN_PUPDR_PULLUP(GPIOA_PIN11) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_RF_IRQ) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_JTAG_TMS) |     \
                                      PIN_PUPDR_PULLDOWN(GPIOA_JTAG_TCK) |   \
@@ -270,7 +270,7 @@
                                      PIN_ODR_HIGH(GPIOA_PIN8) |             \
                                      PIN_ODR_HIGH(GPIOA_PIN9) |             \
                                      PIN_ODR_HIGH(GPIOA_PIN10) |            \
-                                     PIN_ODR_HIGH(GPIOA_RF_CE) |            \
+                                     PIN_ODR_HIGH(GPIOA_PIN11) |            \
                                      PIN_ODR_HIGH(GPIOA_RF_IRQ) |            \
                                      PIN_ODR_HIGH(GPIOA_JTAG_TMS) |         \
                                      PIN_ODR_HIGH(GPIOA_JTAG_TCK) |         \
@@ -286,7 +286,7 @@
 #define VAL_GPIOA_AFRH              (PIN_AFIO_AF(GPIOA_PIN8, 0) |           \
                                      PIN_AFIO_AF(GPIOA_PIN9, 0) |           \
                                      PIN_AFIO_AF(GPIOA_PIN10, 0) |          \
-                                     PIN_AFIO_AF(GPIOA_RF_CE, 0) |          \
+                                     PIN_AFIO_AF(GPIOA_PIN11, 0) |          \
                                      PIN_AFIO_AF(GPIOA_RF_IRQ, 0) |          \
                                      PIN_AFIO_AF(GPIOA_JTAG_TMS, 0) |       \
                                      PIN_AFIO_AF(GPIOA_JTAG_TCK, 0) |       \
@@ -323,7 +323,7 @@
                                      PIN_MODE_INPUT(GPIOB_PIN8) |           \
                                      PIN_MODE_INPUT(GPIOB_PIN9) |           \
                                      PIN_MODE_INPUT(GPIOB_PIN10) |          \
-                                     PIN_MODE_INPUT(GPIOB_PIN11) |          \
+                                     PIN_MODE_INPUT(GPIOB_RF_CE) |          \
                                      PIN_MODE_INPUT(GPIOB_RF_NSS) |          \
                                      PIN_MODE_INPUT(GPIOB_RF_SCK) |          \
                                      PIN_MODE_INPUT(GPIOB_RF_MISO) |          \
@@ -339,7 +339,7 @@
                                      PIN_OTYPE_PUSHPULL(GPIOB_PIN8) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOB_PIN9) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOB_PIN10) |      \
-                                     PIN_OTYPE_PUSHPULL(GPIOB_PIN11) |      \
+                                     PIN_OTYPE_PUSHPULL(GPIOB_RF_CE) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOB_RF_NSS) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOB_RF_SCK) |      \
                                      PIN_OTYPE_PUSHPULL(GPIOB_RF_MISO) |      \
@@ -355,7 +355,7 @@
                                      PIN_OSPEED_400K(GPIOB_PIN8) |          \
                                      PIN_OSPEED_400K(GPIOB_PIN9) |          \
                                      PIN_OSPEED_400K(GPIOB_PIN10) |         \
-                                     PIN_OSPEED_400K(GPIOB_PIN11) |         \
+                                     PIN_OSPEED_400K(GPIOB_RF_CE) |         \
                                      PIN_OSPEED_400K(GPIOB_RF_NSS) |         \
                                      PIN_OSPEED_400K(GPIOB_RF_SCK) |         \
                                      PIN_OSPEED_400K(GPIOB_RF_MISO) |         \
@@ -371,7 +371,7 @@
                                      PIN_PUPDR_PULLUP(GPIOB_PIN8) |         \
                                      PIN_PUPDR_PULLUP(GPIOB_PIN9) |         \
                                      PIN_PUPDR_PULLUP(GPIOB_PIN10) |        \
-                                     PIN_PUPDR_PULLUP(GPIOB_PIN11) |        \
+                                     PIN_PUPDR_PULLUP(GPIOB_RF_CE) |        \
                                      PIN_PUPDR_PULLUP(GPIOB_RF_NSS) |        \
                                      PIN_PUPDR_PULLUP(GPIOB_RF_SCK) |        \
                                      PIN_PUPDR_PULLUP(GPIOB_RF_MISO) |        \
@@ -387,7 +387,7 @@
                                      PIN_ODR_HIGH(GPIOB_PIN8) |             \
                                      PIN_ODR_HIGH(GPIOB_PIN9) |             \
                                      PIN_ODR_HIGH(GPIOB_PIN10) |            \
-                                     PIN_ODR_HIGH(GPIOB_PIN11) |            \
+                                     PIN_ODR_HIGH(GPIOB_RF_CE) |            \
                                      PIN_ODR_HIGH(GPIOB_RF_NSS) |            \
                                      PIN_ODR_HIGH(GPIOB_RF_SCK) |            \
                                      PIN_ODR_HIGH(GPIOB_RF_MISO) |            \
@@ -403,7 +403,7 @@
 #define VAL_GPIOB_AFRH              (PIN_AFIO_AF(GPIOB_PIN8, 0) |           \
                                      PIN_AFIO_AF(GPIOB_PIN9, 0) |           \
                                      PIN_AFIO_AF(GPIOB_PIN10, 0) |          \
-                                     PIN_AFIO_AF(GPIOB_PIN11, 0) |          \
+                                     PIN_AFIO_AF(GPIOB_RF_CE, 0) |          \
                                      PIN_AFIO_AF(GPIOB_RF_NSS, 0) |          \
                                      PIN_AFIO_AF(GPIOB_RF_SCK, 0) |          \
                                      PIN_AFIO_AF(GPIOB_RF_MISO, 0) |          \
