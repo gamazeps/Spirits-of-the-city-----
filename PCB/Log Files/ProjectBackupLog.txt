@@ -41,3 +41,6 @@
 [2014-06-18 19.16.33] Successfully created [AutoSave] backup [2014-06-18 19.16.33 - auto.zip] requested by [BI-WIN7:Alexis].
 [2014-06-18 19.16.33] Removing excessive [AutoSave] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip].
 [2014-06-18 19.16.33] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-06-17 23.04.14 - auto.zip] removed.
+[2014-06-19 19.15.51] Successfully created [AutoSave] backup [2014-06-19 19.15.51 - auto.zip] requested by [BI-WIN7:Alexis].
+[2014-06-19 19.15.51] Removing excessive [AutoSave] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.16.33 - auto.zip].
+[2014-06-19 19.15.51] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 11.16.33 - auto.zip] removed.

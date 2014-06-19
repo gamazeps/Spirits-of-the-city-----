@@ -1,13 +1,13 @@
 .FILETYPE ExtendedPrint SetupFile
 .VERSION "VB99.0"
 .CREATOR "Expedition PCB PDF Output"
-.DATE "Wednesday, June 18, 2014 02:56 AM"
+.DATE "Thursday, June 19, 2014 07:49 PM"
 
 .BaseUnits "1NM"
 
-.FillText No
+.FillText Yes
 .FitDrawing No
-.PDFFileName "G:\\2014\\ELFES\\PCB\\PCB\\Output\\PDF\\PCB"
+.PDFFileName "E:\\2014\\elfes\\PCB\\PCB\\Output\\PDF\\PCB"
 
 
 .SheetName "Sheet1"
@@ -76,8 +76,17 @@
    ...ConductiveItem ViaPads
 
  ..ConductiveLayer 2
-   ...ProcessLayer Yes
+   ...ProcessLayer No
+   ...ConductiveItem EtchedText
+   ...ConductiveItem Fiducials
+   ...ConductiveItem PartPadsSMD
+   ...ConductiveItem PartPadsTest
+   ...ConductiveItem PartPadsThru
+   ...ConductiveItem PlaneData
+   ...ConductiveItem Traces
+   ...ConductiveItem ViaPads
  ..BoardItem BoardOutline
+ ..BoardItem PartHoles
  ..BoardCellType Buried
  ..BoardCellType Connector
  ..BoardCellType DiscreteAxial
@@ -101,18 +110,14 @@
  ..BoardCellType Jumper
  ..BoardCellType Mechanical
  ..BoardCellType TestPoint
- ..CellItemsSide Both
-   ...CellItemsLayer 2
-   ...CellItem AssemblyOutline
- ..UserLayer "Default User Layer"
 
 .SheetName "Sheet2"
- ..ProcessSheet No
+ ..ProcessSheet Yes
  ..UseLayering No
  ..PageSize None
  ..Orientation BestFit
  ..ScaleFactor 1.000000
- ..CurrentView Yes
+ ..CurrentView No
  ..HeaderText
    ...CommentLine ""
  ..TrailerText
@@ -151,22 +156,12 @@
 
  ..ConductiveLayer 2
    ...ProcessLayer Yes
-   ...ConductiveItem Bondpads
-   ...ConductiveItem Thieving
-   ...ConductiveItem EmbeddedCapPads
-   ...ConductiveItem EmbeddedResPads
    ...ConductiveItem EtchedText
    ...ConductiveItem Fiducials
    ...ConductiveItem PartPadsSMD
    ...ConductiveItem PartPadsTest
    ...ConductiveItem PartPadsThru
    ...ConductiveItem PlaneData
-   ...ConductiveItem PlaneNoConnect
-   ...ConductiveItem PlaneObstruct
-   ...ConductiveItem PlaneShape
-   ...ConductiveItem ResistorAreas
-   ...ConductiveItem RouteObstruct
-   ...ConductiveItem RuleArea
    ...ConductiveItem Traces
    ...ConductiveItem ViaHoles
    ...ConductiveItem ViaPads

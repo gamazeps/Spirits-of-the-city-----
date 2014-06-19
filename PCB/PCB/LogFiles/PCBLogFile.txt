@@ -3,8 +3,13 @@ Expedition PCB - Pinnacle Version: 2013.0.543.380
 
 Successfully read the design.
 Time spent Generating UPG
-Saved the design...
+Cannot resolve immovable metal conflicts.
+Part hazards exist.
+Part hazards exist.
+Part hazards exist.
+Part hazards exist.
+Part hazards exist.
+Cannot reconnect and/or resolve part violations.
 Saved the design...
 Time spent Generating UPG
-Saved the design...
 Saved the design...

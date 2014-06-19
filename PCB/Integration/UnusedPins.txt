@@ -1,5 +1,5 @@
 
-Schematic unused pins from : Packager  18-Jun-2014  18:53
+Schematic unused pins from : Packager  19-Jun-2014  15:58
 
 ------------------------------------------------------------------------
             Part/Reference             |          Unused pins
@@ -27,3 +27,4 @@ Schematic unused pins from : Packager  18-Jun-2014  18:53
   J1                                   | (P)  6 8 10
  Part 80-0053                          |
  Part 80-0054                          |
+ Part 80-0055                          |

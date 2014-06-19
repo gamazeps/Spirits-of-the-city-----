@@ -39,3 +39,4 @@ Alias_ID	Flat_Net_ID	Path_ID	Sheet_ID	Hier_Net_Name
 38	38	1	1	XSIG010437
 39	39	1	1	DEBUG_TX
 40	40	1	1	DEBUG_RX
+41	41	1	1	LDR
