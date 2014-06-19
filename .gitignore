@@ -1,0 +1,10 @@
+*.o
+build
+build/*
+.DS_Store
+.dep
+*~
+\#*
+_main.c
+*._*
+*#
