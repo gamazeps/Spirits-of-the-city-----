@@ -1,0 +1,221 @@
+[2014.06.20 00:29:06] [0000m.00s.250ms] [0] WELCOME
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Base flow version [7.9.4]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Machine [LUTIN2]  User [Alexis]  PID [1700]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Operating system [Microsoft Windows 7 Business Edition, 64-bit Service Pack 1 (build 7601)]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Current working dir [G:\2014\ELFES\PCB\PCB]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\Program Files (x86)\Common Files\Intel\Shared Files\fortran\bin\Intel64;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\ia32;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseGit\bin;]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] SDD_PLATFORM [win32]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] WDIR [C:\Users\Alexis\Documents\WDIR;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] Local iCDB working dir [C:\Users\Alexis\Documents\WDIR\iCDB] on file system [NTFS]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.20 00:29:06] [0000m.00s.265ms] [2] S: Loading config files
+[2014.06.20 00:29:06] [0000m.00s.281ms] [1] Config file [G:\2014\ELFES\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.20 00:29:06] [0000m.00s.281ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.20 00:29:06] [0000m.00s.281ms] [3] S: Config loaded
+[2014.06.20 00:29:06] [0000m.00s.390ms] [0] S: Project path [G:\2014\ELFES\PCB\Default\default.icdb] on file system [VBoxSharedFolderFS]
+[2014.06.20 00:29:06] [0000m.00s.390ms] [0] S: Project global path [\\vboxsrv\proj102\2014\ELFES\PCB\Default\default.icdb] on file system [UNKNOWN]
+[2014.06.20 00:29:06] [0000m.00s.390ms] [0] S: Project file (.prj) path [\\vboxsrv\proj102\2014\ELFES\PCB\Elfe.prj] on file system [UNKNOWN]
+[2014.06.20 00:29:06] [0000m.00s.390ms] [0] S: Project file (.prj) local path [G:\2014\ELFES\PCB\Elfe.prj] on file system [VBoxSharedFolderFS]
+[2014.06.20 00:29:06] [0000m.00s.406ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.20 00:29:06] [0000m.00s.406ms] [0] S: Multi-user mode (config)
+[2014.06.20 00:29:06] [0000m.00s.406ms] [0] S: Event polling mode autodetection
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] S: Started up automatically by iCDB Client: LUTIN2:Alexis:3068
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] S: Auto close mode
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] S: Database ID [b28e-f67e-3d9e-bb05-d7f3-3a32-8f33-a350-a735-a372-e2af-69d8]
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] PathTranslator: BEGIN dumping
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.20 00:29:06] [0000m.00s.421ms] [0] PathTranslator: [C:\Users] -> [\\LUTIN2\Users]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [E:\] -> [\\VBOXSVR\elecinf344\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [F:\] -> [\\vboxsrv\mentor\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [G:\] -> [\\vboxsrv\proj102\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [U:\] -> [\\vboxsrv\elecinf344\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [\\VBOXSVR\elecinf344\] -> [E:\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [\\vboxsrv\elecinf344\] -> [U:\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [\\vboxsrv\proj102\] -> [G:\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [\\vboxsrv\mentor\] -> [F:\]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: [\\LUTIN2\Users] -> [C:\Users]
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] PathTranslator: END dumping
+[2014.06.20 00:29:06] [0000m.00s.437ms] [0] S: START
+[2014.06.20 00:29:06] [0000m.00s.453ms] [0] S: Server startup lock file created
+[2014.06.20 00:29:06] [0000m.00s.468ms] [0] S: Listening for client connections on port [10001]
+[2014.06.20 00:29:06] [0000m.00s.468ms] [0] S: Server network ID [lutin2:10.0.2.15,192.168.56.101,lutin2:10001]
+[2014.06.20 00:29:06] [0000m.00s.468ms] [0] S: Server GUID [492a-2275-cda6-3955-2346-3a37-3463-a350-6d25-a372-e2af-69d8]
+[2014.06.20 00:29:06] [0000m.00s.468ms] [0] S: Project GUID [b28e-f67e-3d9e-bb05-d7f3-3a32-8f33-a350-a735-a372-e2af-69d8]
+[2014.06.20 00:29:06] [0000m.00s.484ms] [0] S: Wrote data to server address file
+[2014.06.20 00:29:06] [0000m.00s.484ms] [0] S: Server startup lock file removed
+[2014.06.20 00:29:06] [0000m.00s.484ms] [1] ProjectBackupManager: Setting project file (.prj) path: [G:\2014\ELFES\PCB\Elfe.prj]
+[2014.06.20 00:29:07] [0000m.01s.390ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.20 00:29:07] [0000m.01s.390ms] [0] S: Local disc access time: 41 us
+[2014.06.20 00:29:07] [0000m.01s.390ms] [0] S: File server access time: 1092 us
+[2014.06.20 00:29:07] [0000m.01s.390ms] [0] S: Server will not release in-memory storage after read (memory usage overhead) - for better performance
+[2014.06.20 00:29:07] [0000m.01s.406ms] [0] Single file [G:\2014\ELFES\PCB\Default\default.icdb\icdb.dat] size [102656 (100.3 kB)]
+[2014.06.20 00:29:07] [0000m.01s.406ms] [1] Single file [G:\2014\ELFES\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.20 00:29:07] [0000m.01s.406ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.20 00:29:07] [0000m.01s.406ms] [0] Database GUARD OK: [102656]
+[2014.06.20 00:29:07] [0000m.01s.421ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.20 00:29:07] [0000m.01s.421ms] [0] Database GUARD OK: [102656]
+[2014.06.20 00:29:07] [0000m.01s.421ms] [0] SingleFile: [22b7-d423-af71-d83e] SFI version check [1009] [1009]
+[2014.06.20 00:29:07] [0000m.01s.531ms] [0] SingleFile: [22b7-d423-af71-d83e] Database SFI header has been read in [113ms 542us]
+[2014.06.20 00:29:07] [0000m.01s.562ms] [0] iCDB Server PI: Server & plugin session [1256]
+[2014.06.20 00:29:07] [0000m.01s.562ms] [0] iCDB Server PI: Opening database [G:\2014\ELFES\PCB\Default\default.icdb]
+[2014.06.20 00:29:07] [0000m.01s.562ms] [0] iCDB Server PI: Database [G:\2014\ELFES\PCB\Default\default.icdb] opened
+[2014.06.20 00:29:07] [0000m.01s.609ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.20 00:29:07] [0000m.01s.609ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.20 00:29:07] [0000m.01s.703ms] [1] iCDB Database: Constraint definitions version [ce_ee.cns=7.10.24;user.cns=75a7-9983-305b-ad8c-6b13-75da-b137-5d40-22b8-f675-73dc-0aa8] up to date
+[2014.06.20 00:29:07] [0000m.01s.921ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.20 00:29:07] [0000m.01s.921ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.20 00:29:07] [0000m.01s.921ms] [0] S: iCDB database loaded
+[2014.06.20 00:29:07] [0000m.01s.921ms] [0] S: Starting threads
+[2014.06.20 00:29:07] [0000m.01s.921ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.20 00:29:07] [0000m.01s.937ms] [1] CMT: There are no clients - waiting [10 seconds]
+[2014.06.20 00:29:07] [0000m.01s.953ms] [0] IT: Session [1257] for host [lutin2] user [Alexis] with process ID [3068] created
+[2014.06.20 00:29:07] [0000m.01s.968ms] [0] IT: iCDB Server Monitor session [1] for host [lutin2] user [Alexis] with process ID [2200] created
+[2014.06.20 00:29:07] [0000m.01s.968ms] [1] DMT: There are [1] iCDB Server Monitor connected now
+[2014.06.20 00:29:08] [0000m.02s.000ms] [1] SC[1257]: Registered sub-client [Expedition PCB_133531] with ID [1] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:08] [0000m.02s.046ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:29:08] [0000m.02s.375ms] [1] SC[1257]: Registered sub-client [EEVM] with ID [2] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:08] [0000m.02s.531ms] [1] SC[1257]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:12] [0000m.06s.265ms] [1] SC[1257]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:15] [0000m.09s.250ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_143046] with ID [4] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:15] [0000m.09s.265ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_143046] with ID [4] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:29:39] [0000m.33s.796ms] [0] DFAMT: File server access time: 1635 us
+[2014.06.20 00:30:29] [0001m.23s.921ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_217750] with ID [5] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:30:30] [0001m.24s.046ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_217875] with ID [6] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:30:30] [0001m.24s.406ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_217750] with ID [5] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:30:30] [0001m.24s.421ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_217875] with ID [6] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:30:36] [0001m.30s.234ms] [0] IT: Session [1258] for host [lutin2] user [Alexis] with process ID [148] created
+[2014.06.20 00:30:36] [0001m.30s.250ms] [1] SC[1258]: Registered sub-client [JobPrefsDBPI_223968] with ID [1] for session ID [1258] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:36] [0001m.30s.312ms] [1] CMT: There are [2] clients now: 1257, 1258
+[2014.06.20 00:30:36] [0001m.30s.343ms] [1] SC[1258]: Registered sub-client [JobPrefsDBPI_224171] with ID [2] for session ID [1258] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:36] [0001m.30s.359ms] [1] SC[1258]: UnRegistered sub-client [JobPrefsDBPI_223968] with ID [1] for session ID [1258] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:36] [0001m.30s.375ms] [1] SC[1258]: UnRegistered sub-client [JobPrefsDBPI_224171] with ID [2] for session ID [1258] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:36] [0001m.30s.421ms] [1] CMT: Removed client [1258]
+[2014.06.20 00:30:36] [0001m.30s.421ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:30:36] [0001m.30s.937ms] [0] IT: Session [1259] for host [lutin2] user [Alexis] with process ID [148] created
+[2014.06.20 00:30:36] [0001m.30s.937ms] [1] SC[1259]: Registered sub-client [JobPrefsDBPI_224718] with ID [1] for session ID [1259] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:36] [0001m.30s.968ms] [1] CMT: There are [2] clients now: 1257, 1259
+[2014.06.20 00:30:37] [0001m.31s.031ms] [1] SC[1259]: Registered sub-client [JobPrefsDBPI_224859] with ID [2] for session ID [1259] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:37] [0001m.31s.609ms] [1] SC[1259]: UnRegistered sub-client [JobPrefsDBPI_224718] with ID [1] for session ID [1259] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:37] [0001m.31s.609ms] [1] SC[1259]: UnRegistered sub-client [JobPrefsDBPI_224859] with ID [2] for session ID [1259] host [lutin2] user [Alexis] process ID [148]
+[2014.06.20 00:30:37] [0001m.31s.734ms] [1] CMT: Removed client [1259]
+[2014.06.20 00:30:37] [0001m.31s.734ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:31:44] [0002m.38s.384ms] [1] PrjBackupMgr: Successfully created Project Backup [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-20 00.31.42 - auto.zip] with GUID [795d-097c-5761-c871-ec46-3a33-d463-a350-a4f4-a372-e2af-69d8]
+[2014.06.20 00:31:44] [0002m.38s.384ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[59ac-163b-c45d-acbb-1319-1a36-3191-a350-7a54-acfc-40cd-3d5c] CreationTime[Wednesday, June 18, 2014 13:16:33] Type[Autosave] Creator[iCDB Server (2014-06-18 11.02.09-1356)] ApplicationName[iCDB Server (2014-06-18 11.02.09-1356)] UserName[Antoine] MachineName[PC-ANTOINE] Description[Autosave] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.16.33 - auto.zip] BackupFileSize[210083] Persistent[FALSE]
+[2014.06.20 00:31:44] [0002m.38s.384ms] [0] PrjBackupMgr: Project Backup file [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.16.33 - auto.zip] with GUID [59ac-163b-c45d-acbb-1319-1a36-3191-a350-7a54-acfc-40cd-3d5c] removed
+[2014.06.20 00:31:44] [0002m.38s.384ms] [0] PrjBackupEngine: Successfully created backup:  BackupGUID[795d-097c-5761-c871-ec46-3a33-d463-a350-a4f4-a372-e2af-69d8] CreationTime[Thursday, June 19, 2014 22:31:42] Type[Autosave] Creator[iCDB Server (2014-06-20 00.29.06-1700)] ApplicationName[iCDB Server (2014-06-20 00.29.06-1700)] UserName[Alexis] MachineName[LUTIN2] Description[Autosave] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-20 00.31.42 - auto.zip] BackupFileSize[541907] Persistent[FALSE]
+[2014.06.20 00:34:48] [0005m.42s.400ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_476218] with ID [7] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:34:48] [0005m.42s.509ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_476343] with ID [8] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:34:48] [0005m.42s.712ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_476218] with ID [7] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:34:48] [0005m.42s.728ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_476343] with ID [8] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:35:22] [0006m.16s.721ms] [0] IT: Session [1260] for host [lutin2] user [Alexis] with process ID [3028] created
+[2014.06.20 00:35:22] [0006m.16s.721ms] [1] SC[1260]: Registered sub-client [JobPrefsDBPI_510453] with ID [1] for session ID [1260] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:22] [0006m.16s.737ms] [1] CMT: There are [2] clients now: 1257, 1260
+[2014.06.20 00:35:22] [0006m.16s.846ms] [1] SC[1260]: Registered sub-client [JobPrefsDBPI_510671] with ID [2] for session ID [1260] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:22] [0006m.16s.877ms] [1] SC[1260]: UnRegistered sub-client [JobPrefsDBPI_510453] with ID [1] for session ID [1260] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:22] [0006m.16s.893ms] [1] SC[1260]: UnRegistered sub-client [JobPrefsDBPI_510671] with ID [2] for session ID [1260] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:22] [0006m.16s.956ms] [1] CMT: Removed client [1260]
+[2014.06.20 00:35:22] [0006m.16s.956ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:35:23] [0006m.17s.456ms] [0] IT: Session [1261] for host [lutin2] user [Alexis] with process ID [3028] created
+[2014.06.20 00:35:23] [0006m.17s.456ms] [1] SC[1261]: Registered sub-client [JobPrefsDBPI_511218] with ID [1] for session ID [1261] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:23] [0006m.17s.502ms] [1] CMT: There are [2] clients now: 1257, 1261
+[2014.06.20 00:35:23] [0006m.17s.596ms] [1] SC[1261]: Registered sub-client [JobPrefsDBPI_511421] with ID [2] for session ID [1261] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:23] [0006m.17s.815ms] [1] SC[1261]: UnRegistered sub-client [JobPrefsDBPI_511218] with ID [1] for session ID [1261] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:23] [0006m.17s.831ms] [1] SC[1261]: UnRegistered sub-client [JobPrefsDBPI_511421] with ID [2] for session ID [1261] host [lutin2] user [Alexis] process ID [3028]
+[2014.06.20 00:35:23] [0006m.17s.940ms] [1] CMT: Removed client [1261]
+[2014.06.20 00:35:23] [0006m.17s.940ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:35:40] [0006m.34s.902ms] [0] IT: Session [1262] for host [lutin2] user [Alexis] with process ID [2680] created
+[2014.06.20 00:35:40] [0006m.34s.917ms] [1] SC[1262]: Registered sub-client [JobPrefsDBPI_528656] with ID [1] for session ID [1262] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.34s.996ms] [1] CMT: There are [2] clients now: 1257, 1262
+[2014.06.20 00:35:41] [0006m.34s.996ms] [1] SC[1262]: Registered sub-client [JobPrefsDBPI_528828] with ID [2] for session ID [1262] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.35s.042ms] [1] SC[1262]: UnRegistered sub-client [JobPrefsDBPI_528656] with ID [1] for session ID [1262] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.35s.042ms] [1] SC[1262]: UnRegistered sub-client [JobPrefsDBPI_528828] with ID [2] for session ID [1262] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.35s.105ms] [1] CMT: Removed client [1262]
+[2014.06.20 00:35:41] [0006m.35s.105ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:35:41] [0006m.35s.636ms] [0] IT: Session [1263] for host [lutin2] user [Alexis] with process ID [2680] created
+[2014.06.20 00:35:41] [0006m.35s.636ms] [1] SC[1263]: Registered sub-client [JobPrefsDBPI_529390] with ID [1] for session ID [1263] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.35s.652ms] [1] CMT: There are [2] clients now: 1257, 1263
+[2014.06.20 00:35:41] [0006m.35s.730ms] [1] SC[1263]: Registered sub-client [JobPrefsDBPI_529546] with ID [2] for session ID [1263] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:41] [0006m.35s.964ms] [1] SC[1263]: UnRegistered sub-client [JobPrefsDBPI_529390] with ID [1] for session ID [1263] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:42] [0006m.35s.980ms] [1] SC[1263]: UnRegistered sub-client [JobPrefsDBPI_529546] with ID [2] for session ID [1263] host [lutin2] user [Alexis] process ID [2680]
+[2014.06.20 00:35:42] [0006m.36s.089ms] [1] CMT: Removed client [1263]
+[2014.06.20 00:35:42] [0006m.36s.089ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:02] [0006m.56s.794ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_550625] with ID [9] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:36:02] [0006m.56s.951ms] [1] SC[1257]: Registered sub-client [JobPrefsDBPI_550781] with ID [10] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:36:03] [0006m.57s.154ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_550625] with ID [9] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:36:03] [0006m.57s.169ms] [1] SC[1257]: UnRegistered sub-client [JobPrefsDBPI_550781] with ID [10] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:36:21] [0007m.15s.475ms] [0] IT: Session [1264] for host [lutin2] user [Alexis] with process ID [1856] created
+[2014.06.20 00:36:21] [0007m.15s.475ms] [1] SC[1264]: Registered sub-client [JobPrefsDBPI_569218] with ID [1] for session ID [1264] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:21] [0007m.15s.522ms] [1] CMT: There are [2] clients now: 1257, 1264
+[2014.06.20 00:36:21] [0007m.15s.600ms] [1] SC[1264]: Registered sub-client [JobPrefsDBPI_569421] with ID [2] for session ID [1264] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:21] [0007m.15s.631ms] [1] SC[1264]: UnRegistered sub-client [JobPrefsDBPI_569218] with ID [1] for session ID [1264] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:21] [0007m.15s.631ms] [1] SC[1264]: UnRegistered sub-client [JobPrefsDBPI_569421] with ID [2] for session ID [1264] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:21] [0007m.15s.741ms] [1] CMT: Removed client [1264]
+[2014.06.20 00:36:21] [0007m.15s.741ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:22] [0007m.16s.241ms] [0] IT: Session [1265] for host [lutin2] user [Alexis] with process ID [1856] created
+[2014.06.20 00:36:22] [0007m.16s.241ms] [1] SC[1265]: Registered sub-client [JobPrefsDBPI_569968] with ID [1] for session ID [1265] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:22] [0007m.16s.288ms] [1] CMT: There are [2] clients now: 1257, 1265
+[2014.06.20 00:36:22] [0007m.16s.350ms] [1] SC[1265]: Registered sub-client [JobPrefsDBPI_570171] with ID [2] for session ID [1265] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:22] [0007m.16s.569ms] [1] SC[1265]: UnRegistered sub-client [JobPrefsDBPI_569968] with ID [1] for session ID [1265] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:22] [0007m.16s.584ms] [1] SC[1265]: UnRegistered sub-client [JobPrefsDBPI_570171] with ID [2] for session ID [1265] host [lutin2] user [Alexis] process ID [1856]
+[2014.06.20 00:36:22] [0007m.16s.616ms] [1] CMT: Removed client [1265]
+[2014.06.20 00:36:22] [0007m.16s.616ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:32] [0007m.26s.079ms] [0] IT: Session [1266] for host [lutin2] user [Alexis] with process ID [2944] created
+[2014.06.20 00:36:32] [0007m.26s.079ms] [1] SC[1266]: Registered sub-client [JobPrefsDBPI_579796] with ID [1] for session ID [1266] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:32] [0007m.26s.188ms] [1] CMT: There are [2] clients now: 1257, 1266
+[2014.06.20 00:36:32] [0007m.26s.188ms] [1] SC[1266]: Registered sub-client [JobPrefsDBPI_580015] with ID [2] for session ID [1266] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:32] [0007m.26s.204ms] [1] SC[1266]: UnRegistered sub-client [JobPrefsDBPI_579796] with ID [1] for session ID [1266] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:32] [0007m.26s.219ms] [1] SC[1266]: UnRegistered sub-client [JobPrefsDBPI_580015] with ID [2] for session ID [1266] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:32] [0007m.26s.297ms] [1] CMT: Removed client [1266]
+[2014.06.20 00:36:32] [0007m.26s.297ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:32] [0007m.26s.813ms] [0] IT: Session [1267] for host [lutin2] user [Alexis] with process ID [2944] created
+[2014.06.20 00:36:32] [0007m.26s.813ms] [1] SC[1267]: Registered sub-client [JobPrefsDBPI_580562] with ID [1] for session ID [1267] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:32] [0007m.26s.844ms] [1] CMT: There are [2] clients now: 1257, 1267
+[2014.06.20 00:36:32] [0007m.26s.922ms] [1] SC[1267]: Registered sub-client [JobPrefsDBPI_580750] with ID [2] for session ID [1267] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:33] [0007m.27s.329ms] [1] SC[1267]: UnRegistered sub-client [JobPrefsDBPI_580562] with ID [1] for session ID [1267] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:33] [0007m.27s.329ms] [1] SC[1267]: UnRegistered sub-client [JobPrefsDBPI_580750] with ID [2] for session ID [1267] host [lutin2] user [Alexis] process ID [2944]
+[2014.06.20 00:36:33] [0007m.27s.391ms] [1] CMT: Removed client [1267]
+[2014.06.20 00:36:33] [0007m.27s.391ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:57] [0007m.50s.978ms] [0] IT: Session [1268] for host [lutin2] user [Alexis] with process ID [2576] created
+[2014.06.20 00:36:57] [0007m.50s.978ms] [1] SC[1268]: Registered sub-client [JobPrefsDBPI_604718] with ID [1] for session ID [1268] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:57] [0007m.51s.009ms] [1] CMT: There are [2] clients now: 1257, 1268
+[2014.06.20 00:36:57] [0007m.51s.087ms] [1] SC[1268]: Registered sub-client [JobPrefsDBPI_604921] with ID [2] for session ID [1268] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:57] [0007m.51s.119ms] [1] SC[1268]: UnRegistered sub-client [JobPrefsDBPI_604718] with ID [1] for session ID [1268] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:57] [0007m.51s.134ms] [1] SC[1268]: UnRegistered sub-client [JobPrefsDBPI_604921] with ID [2] for session ID [1268] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:57] [0007m.51s.228ms] [1] CMT: Removed client [1268]
+[2014.06.20 00:36:57] [0007m.51s.228ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:36:57] [0007m.51s.744ms] [0] IT: Session [1269] for host [lutin2] user [Alexis] with process ID [2576] created
+[2014.06.20 00:36:57] [0007m.51s.759ms] [1] SC[1269]: Registered sub-client [JobPrefsDBPI_605500] with ID [1] for session ID [1269] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:57] [0007m.51s.791ms] [1] CMT: There are [2] clients now: 1257, 1269
+[2014.06.20 00:36:57] [0007m.51s.884ms] [1] SC[1269]: Registered sub-client [JobPrefsDBPI_605703] with ID [2] for session ID [1269] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:58] [0007m.52s.291ms] [1] SC[1269]: UnRegistered sub-client [JobPrefsDBPI_605500] with ID [1] for session ID [1269] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:58] [0007m.52s.306ms] [1] SC[1269]: UnRegistered sub-client [JobPrefsDBPI_605703] with ID [2] for session ID [1269] host [lutin2] user [Alexis] process ID [2576]
+[2014.06.20 00:36:58] [0007m.52s.337ms] [1] CMT: Removed client [1269]
+[2014.06.20 00:36:58] [0007m.52s.337ms] [1] CMT: There are [1] clients now: 1257
+[2014.06.20 00:38:13] [0009m.07s.063ms] [1] SC[1257]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:39:02] [0009m.56s.522ms] [1] SC[1257]: UnRegistered sub-client [Expedition PCB_133531] with ID [1] for session ID [1257] host [lutin2] user [Alexis] process ID [3068]
+[2014.06.20 00:39:02] [0009m.56s.726ms] [1] CMT: Removed client [1257]
+[2014.06.20 00:39:03] [0009m.57s.078ms] [1] SDL: The last connected iCDB Server Monitor [1] is waiting for server close
+[2014.06.20 00:39:03] [0009m.57s.393ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.20 00:39:06] [0010m.00s.061ms] [0] CMT: Starting server auto-close
+[2014.06.20 00:39:06] [0010m.00s.747ms] [0] S: Closing server
+[2014.06.20 00:39:07] [0010m.01s.568ms] [0] iCDB Server PI: Closing plugins
+[2014.06.20 00:39:07] [0010m.01s.588ms] [0] iCDB Server PI: Plugins closed
+[2014.06.20 00:39:07] [0010m.01s.588ms] [0] iCDB Server PI: Unloading database
+[2014.06.20 00:39:07] [0010m.01s.588ms] [0] iCDB Server PI: Saving storage
+[2014.06.20 00:39:07] [0010m.01s.792ms] [0] iCDB Server PI: Closing database
+[2014.06.20 00:39:07] [0010m.01s.894ms] [1] iCDB Server PI: Stats: Database defragmentation: max[3] avg[1] holes[1%] data[93%]
+[2014.06.20 00:39:08] [0010m.02s.220ms] [1] iCDB Server PI: Stats: Database file size [104264 (101.8 kB)]
+[2014.06.20 00:39:10] [0010m.04s.177ms] [0] iCDB Server PI: Database closed
+[2014.06.20 00:39:10] [0010m.04s.523ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [332828] ticks
+[2014.06.20 00:39:10] [0010m.04s.707ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [135555] microseconds
+[2014.06.20 00:39:10] [0010m.04s.910ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [39]
+[2014.06.20 00:39:11] [0010m.05s.807ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [287] commands per second
+[2014.06.20 00:39:12] [0010m.06s.276ms] [0] Single file [G:\2014\ELFES\PCB\Default\default.icdb\icdb.dat] closed with size [104264 (101.8 kB)]
+[2014.06.20 00:39:13] [0010m.07s.234ms] [1] SD[1]: Removing the last connected iCDB Server Monitor [1]
+[2014.06.20 00:39:15] [0010m.09s.741ms] [0] S: STOP

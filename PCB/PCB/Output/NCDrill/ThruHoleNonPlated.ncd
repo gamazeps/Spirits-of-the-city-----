@@ -1,0 +1,19 @@
+; Version : LOCAL
+; Job     : G:\2014\ELFES\PCB\PCB\PCB.pcb
+; User    : LUTIN2:Alexis
+; Date    : Fri Jun 20 01:17:16 2014
+; Format  : 3.3 / Absolute / MM / Leading
+; Contents: Thru / Drill / Non-Plated
+M48
+METRIC,TZ
+FMAT,2
+ICI,OFF
+T05C1.5000
+%
+M71
+G90
+G93X0Y0
+T05
+X5101Y13904
+T00
+M30

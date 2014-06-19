@@ -1,0 +1,14 @@
+*
+G04 Job   : G:\2014\ELFES\PCB\PCB\PCB.pcb*
+G04 User  : LUTIN2:Alexis*
+G04 Layer : SolderPasteBottom.gdo*
+G04 Date  : Fri Jun 20 01:19:52 2014*
+G04 Mentor Graphics Example Gerber Output Definition*
+%ICAS*%
+%MOIN*%
+%FSLAX24Y24*%
+%OFA0.0000B0.0000*%
+G90*
+G74*
+G01*
+M02*

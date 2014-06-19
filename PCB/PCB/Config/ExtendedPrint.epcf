@@ -1,13 +1,13 @@
 .FILETYPE ExtendedPrint SetupFile
 .VERSION "VB99.0"
 .CREATOR "Expedition PCB PDF Output"
-.DATE "Thursday, June 19, 2014 07:49 PM"
+.DATE "Friday, June 20, 2014 12:45 AM"
 
 .BaseUnits "1NM"
 
 .FillText Yes
 .FitDrawing No
-.PDFFileName "E:\\2014\\elfes\\PCB\\PCB\\Output\\PDF\\PCB"
+.PDFFileName "G:\\2014\\elfes\\PCB\\PCB\\Output\\PDF\\PCB"
 
 
 .SheetName "Sheet1"
@@ -16,7 +16,7 @@
  ..PageSize None
  ..Orientation BestFit
  ..ScaleFactor 1.000000
- ..CurrentView No
+ ..CurrentView Yes
  ..HeaderText
    ...CommentLine ""
  ..TrailerText
@@ -64,19 +64,14 @@
    ...ConductiveItem PartPadsSMD
    ...ConductiveItem PartPadsTest
    ...ConductiveItem PartPadsThru
-   ...ConductiveItem PlaneData
-   ...ConductiveItem PlaneNoConnect
-   ...ConductiveItem PlaneObstruct
-   ...ConductiveItem PlaneShape
    ...ConductiveItem ResistorAreas
    ...ConductiveItem RouteObstruct
    ...ConductiveItem RuleArea
-   ...ConductiveItem Traces
    ...ConductiveItem ViaHoles
    ...ConductiveItem ViaPads
 
  ..ConductiveLayer 2
-   ...ProcessLayer No
+   ...ProcessLayer Yes
    ...ConductiveItem EtchedText
    ...ConductiveItem Fiducials
    ...ConductiveItem PartPadsSMD
@@ -110,9 +105,13 @@
  ..BoardCellType Jumper
  ..BoardCellType Mechanical
  ..BoardCellType TestPoint
+ ..CellItemsSide Both
+   ...CellItemsLayer 1
+   ...CellItem AssemblyOutline
+ ..UserLayer "Default User Layer"
 
 .SheetName "Sheet2"
- ..ProcessSheet Yes
+ ..ProcessSheet No
  ..UseLayering No
  ..PageSize None
  ..Orientation BestFit

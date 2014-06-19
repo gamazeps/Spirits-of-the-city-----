@@ -1,15 +1,14 @@
  ----------------------------
 |       EzPDF Output Log     |
 |          Started           |
-|  Thu Jun 19 16:18:38 2014  |
+|  Fri Jun 20 00:42:41 2014  |
  ----------------------------
 
 
     Processing document ......
     Processing sheet Sheet1......
-    Processing sheet Sheet2......
  ---------------------------
 |       EzPDF Output Log     |
 |          Finished          |
-|  Thu Jun 19 16:18:39 2014  |
+|  Fri Jun 20 00:42:44 2014  |
  ----------------------------

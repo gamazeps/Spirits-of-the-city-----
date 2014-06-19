@@ -5,6 +5,13 @@
   ..SymbolName  "" 
 
 
+.HoleName  "Rnd 0.8 +Tol 0.1 -Tol -0.05" 
+  ..AssignmentMethod  kUseDrlsymFromList 
+  ..DrillSymbolType  kSquareDiamondDrlsym 
+  ..SymbolSize  1000000 
+  ..SymbolName  "" 
+
+
 .HoleName  "Rnd 0.9 +Tol 0.1 -Tol -0.05" 
   ..AssignmentMethod  kUseDrlsymFromList 
   ..DrillSymbolType  kXDrlsym 

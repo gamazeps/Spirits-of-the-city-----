@@ -1,0 +1,139 @@
+[2014.06.19 21:52:39] [0000m.00s.812ms] [0] WELCOME
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] iCDB Server ver.1.094, vt40T8RtWJOG2cE2Nlvc5A, build:535943 created 2013-01-08 09:09:26, sources stamp:vt40T8RtWJOG2cE2Nlvc5A
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] Copyright 2013 Mentor Graphics Corporation. All Rights Reserved.
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] Base flow version [7.9.4]
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] GBS Install Id [30163], Flow Id [EE7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] GBS Install Id [30120], Flow Id [EE 7.9.5], Full Flow Name [Expedition Enterprise Flow], Exact Access Date [Jun 1 2012]
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] Machine [LUTIN2]  User [Alexis]  PID [2612]
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] Operating system [Microsoft Windows 7 Business Edition, 64-bit Service Pack 1 (build 7601)]
+[2014.06.19 21:52:39] [0000m.00s.812ms] [1] Current working dir [G:\2014\elfes\PCB]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] PATH [C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\help;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\_bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\wg\win32\lib;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\bin;C:\MentorGraphics\7.9.5EE\SDD_HOME\common\win32\lib;C:\Program Files (x86)\Common Files\Intel\Shared Files\fortran\bin\Intel64;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\ia32;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\bin;C:\MentorGraphics\7.9.5EE\MGC_HOME.ixn\lib;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseGit\bin;]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] SDD_HOME [C:\MentorGraphics\7.9.5EE\SDD_HOME] on file system [NTFS]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] SDD_PLATFORM [win32]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] WDIR [C:\Users\Alexis\Documents\WDIR;C:\MentorGraphics\7.9.5EE\SDD_HOME\standard]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] Local iCDB working dir [C:\Users\Alexis\Documents\WDIR\iCDB] on file system [NTFS]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [1] S: Config file name [ServerWG.cfg]
+[2014.06.19 21:52:39] [0000m.00s.828ms] [2] S: Loading config files
+[2014.06.19 21:52:39] [0000m.00s.843ms] [1] Config file [G:\2014\elfes\PCB\Default\default.icdb\cdbsvr\ServerWG.cfg] not found
+[2014.06.19 21:52:39] [0000m.00s.843ms] [1] Config: Non-default value [System.SingleUserMode] = [no]
+[2014.06.19 21:52:39] [0000m.00s.843ms] [3] S: Config loaded
+[2014.06.19 21:52:39] [0000m.00s.953ms] [0] S: Project path [G:\2014\elfes\PCB\Default\default.icdb] on file system [VBoxSharedFolderFS]
+[2014.06.19 21:52:39] [0000m.00s.953ms] [0] S: Project global path [\\vboxsrv\proj102\2014\elfes\PCB\Default\default.icdb] on file system [UNKNOWN]
+[2014.06.19 21:52:39] [0000m.00s.968ms] [1] S: WARNING: No project file (.prj) path specified
+[2014.06.19 21:52:39] [0000m.00s.968ms] [1] S: WARNING: Database auto-repair support DISABLED
+[2014.06.19 21:52:39] [0000m.00s.968ms] [0] S: Multi-user mode (config)
+[2014.06.19 21:52:39] [0000m.00s.968ms] [0] S: Event polling mode autodetection
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] S: Started up automatically by iCDB Client: LUTIN2:Alexis:260
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] S: Auto close mode
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] S: Database ID [b28e-f67e-3d9e-bb05-d7f3-3a32-8f33-a350-a735-a372-e2af-69d8]
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] PathTranslator: BEGIN dumping
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] PathTranslator: Local -> global path prefix list
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] PathTranslator: [C:\Users] -> [\\LUTIN2\Users]
+[2014.06.19 21:52:40] [0000m.00s.984ms] [0] PathTranslator: [E:\] -> [\\VBOXSVR\elecinf344\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [F:\] -> [\\vboxsrv\mentor\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [G:\] -> [\\vboxsrv\proj102\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [U:\] -> [\\vboxsrv\elecinf344\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: Global -> local path prefix list
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [\\VBOXSVR\elecinf344\] -> [E:\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [\\vboxsrv\elecinf344\] -> [U:\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [\\vboxsrv\proj102\] -> [G:\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [\\vboxsrv\mentor\] -> [F:\]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: [\\LUTIN2\Users] -> [C:\Users]
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] PathTranslator: END dumping
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] S: START
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] S: Server startup lock file created
+[2014.06.19 21:52:40] [0000m.01s.000ms] [0] S: Listening for client connections on port [10001]
+[2014.06.19 21:52:40] [0000m.01s.015ms] [0] S: Server network ID [lutin2:10.0.2.15,192.168.56.101,lutin2:10001]
+[2014.06.19 21:52:40] [0000m.01s.015ms] [0] S: Server GUID [e467-2acc-7a83-0609-78f3-3a3c-8f33-a350-61a4-a372-e2af-69d8]
+[2014.06.19 21:52:40] [0000m.01s.015ms] [0] S: Project GUID [b28e-f67e-3d9e-bb05-d7f3-3a32-8f33-a350-a735-a372-e2af-69d8]
+[2014.06.19 21:52:40] [0000m.01s.015ms] [0] S: Wrote data to server address file
+[2014.06.19 21:52:40] [0000m.01s.015ms] [0] S: Server startup lock file removed
+[2014.06.19 21:52:40] [0000m.01s.031ms] [0] ProjectBackupManager: WARNING: Could not create Project Backup - functionality not initialized
+[2014.06.19 21:52:40] [0000m.01s.593ms] [0] S: Plugins loaded: [PIM] [ENetGen70] 
+[2014.06.19 21:52:40] [0000m.01s.593ms] [0] S: Local disc access time: 69 us
+[2014.06.19 21:52:40] [0000m.01s.593ms] [0] S: File server access time: 1262 us
+[2014.06.19 21:52:40] [0000m.01s.593ms] [0] S: Server will not release in-memory storage after read (memory usage overhead) - for better performance
+[2014.06.19 21:52:40] [0000m.01s.609ms] [0] Single file [G:\2014\elfes\PCB\Default\default.icdb\icdb.dat] size [89592 (87.5 kB)]
+[2014.06.19 21:52:40] [0000m.01s.609ms] [1] Single file [G:\2014\elfes\PCB\Default\default.icdb\icdb.dat] opened in read-write mode
+[2014.06.19 21:52:40] [0000m.01s.609ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.19 21:52:40] [0000m.01s.609ms] [0] Database GUARD OK: [89592]
+[2014.06.19 21:52:40] [0000m.01s.609ms] [0] SingleFile: [0000-0000-0000-0000] SFI header version check [1009] [1009]
+[2014.06.19 21:52:40] [0000m.01s.625ms] [0] Database GUARD OK: [89592]
+[2014.06.19 21:52:40] [0000m.01s.625ms] [0] SingleFile: [22b7-d423-af71-d83e] SFI version check [1009] [1009]
+[2014.06.19 21:52:40] [0000m.01s.765ms] [0] SingleFile: [22b7-d423-af71-d83e] Database SFI header has been read in [150ms 331us]
+[2014.06.19 21:52:40] [0000m.01s.781ms] [0] iCDB Server PI: Server & plugin session [1243]
+[2014.06.19 21:52:40] [0000m.01s.781ms] [0] iCDB Server PI: Opening database [G:\2014\elfes\PCB\Default\default.icdb]
+[2014.06.19 21:52:40] [0000m.01s.781ms] [0] iCDB Server PI: Database [G:\2014\elfes\PCB\Default\default.icdb] opened
+[2014.06.19 21:52:40] [0000m.01s.843ms] [0] iCDB Database: Checking existence of constraint definitions
+[2014.06.19 21:52:40] [0000m.01s.843ms] [0] iCDB Database: Checking constraint definitions version
+[2014.06.19 21:52:40] [0000m.01s.937ms] [1] iCDB Database: Constraint definitions version [ce_ee.cns=7.10.24;user.cns=75a7-9983-305b-ad8c-6b13-75da-b137-5d40-22b8-f675-73dc-0aa8] up to date
+[2014.06.19 21:52:41] [0000m.02s.156ms] [0] iCDB Server PI: Initializing plugins
+[2014.06.19 21:52:41] [0000m.02s.156ms] [0] iCDB Server PI: Plugins initialized
+[2014.06.19 21:52:41] [0000m.02s.156ms] [0] S: iCDB database loaded
+[2014.06.19 21:52:41] [0000m.02s.156ms] [0] S: Starting threads
+[2014.06.19 21:52:41] [0000m.02s.171ms] [0] BT: Listening for broadcast messages on port [10000]
+[2014.06.19 21:52:41] [0000m.02s.171ms] [1] CMT: There are no clients - waiting [10 seconds]
+[2014.06.19 21:52:41] [0000m.02s.171ms] [0] ProjectBackupManager: WARNING: Could not startup Project Backup engine - functionality not initialized
+[2014.06.19 21:52:41] [0000m.02s.218ms] [0] IT: Session [1244] for host [lutin2] user [Alexis] with process ID [260] created
+[2014.06.19 21:52:41] [0000m.02s.250ms] [1] DMT: There are [1] iCDB Server Monitor connected now
+[2014.06.19 21:52:41] [0000m.02s.250ms] [0] IT: iCDB Server Monitor session [1] for host [lutin2] user [Alexis] with process ID [2192] created
+[2014.06.19 21:52:41] [0000m.02s.265ms] [1] SC[1244]: Registered sub-client [DCDV] with ID [1] for session ID [1244] host [lutin2] user [Alexis] process ID [260]
+[2014.06.19 21:52:41] [0000m.02s.281ms] [1] CMT: There are [1] clients now: 1244
+[2014.06.19 21:54:55] [0002m.16s.578ms] [0] DFAMT: File server access time: 1923 us
+[2014.06.19 22:33:23] [0040m.44s.270ms] [0] IT: Session [1245] for host [lutin2] user [Alexis] with process ID [1300] created
+[2014.06.19 22:33:23] [0040m.44s.270ms] [1] ProjectBackupManager: Client [ClientData[ClientNetAddress[lutin2] # ClientUserName[Alexis] # ClientProcessID[1300] # SessionID[1245]] # SubClientData[SubClientName[] # SubClientID[0]]] set project file (.prj): local path [G:\2014\ELFES\PCB\Elfe.prj], global path [\\vboxsrv\proj102\2014\ELFES\PCB\Elfe.prj]
+[2014.06.19 22:33:23] [0040m.44s.317ms] [1] CMT: There are [2] clients now: 1244, 1245
+[2014.06.19 22:33:23] [0040m.44s.598ms] [0] PrjBackupMgr: Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014.06.19 22:33:23] [0040m.44s.598ms] [0] PrjBackupMgr: Migrating iCDB upgrade backup file [2014-06-19 21.52.32-2672].
+[2014.06.19 22:33:24] [0040m.45s.161ms] [1] PrjBackupMgr: Successfully created Project Backup [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-19 21.52.32 - consDefUpgr.zip] with GUID [0cb6-efac-d1c9-9dbd-3194-3a38-1943-a350-ef25-a372-e2af-69d8]
+[2014.06.19 22:33:24] [0040m.45s.161ms] [0] PrjBackupMgr: Removing excessive backup:  BackupGUID[f88d-1bd9-9001-a01b-687b-1a3b-87b1-a350-aafc-295b-7cec-59f5] CreationTime[Wednesday, June 18, 2014 15:59:19] Type[ConsDefUpgrade] Creator[iCDB Server (2014-06-18 17.59.24-2564)] ApplicationName[iCDB Server (2014-06-18 17.59.19-2000)] UserName[Antoine] MachineName[PC-ANTOINE] Description[Before constraint definitions upgrade using flow install:\n    Expedition Enterprise Flow\n    Flow Id: EE7.9.5; EE 7.9.5\n    GBS Install Id: 30163; 30120\n    iCDB GBS Build Id: 535943\n    iCDB Version: 2709] FullFlowName[Expedition Enterprise Flow] FlowId[EE7.9.5; EE 7.9.5] GBSInstallId[30163; 30120] GBSBuildId[535943] IcdbVersion[2709] ReferenceLogFilePath[] BackupFilePath[G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 17.59.19 - consDefUpgr.zip] BackupFileSize[74780] Persistent[FALSE]
+[2014.06.19 22:33:24] [0040m.45s.176ms] [0] PrjBackupMgr: Project Backup file [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 17.59.19 - consDefUpgr.zip] with GUID [f88d-1bd9-9001-a01b-687b-1a3b-87b1-a350-aafc-295b-7cec-59f5] removed
+[2014.06.19 22:33:24] [0040m.45s.192ms] [1] PrjBackupMgr: Migrated iCDB content backup file [G:\2014\ELFES\PCB\Default\default.icdb\cdbback\2014-06-19 21.52.32-2672.zip] removed
+[2014.06.19 22:33:24] [0040m.45s.208ms] [0] PrjBackupMgr: Successfully migrated iCDB upgrade backup file [2014-06-19 21.52.32-2672] to Project Backup format [2014-06-19 21.52.32 - consDefUpgr.zip]
+[2014.06.19 22:33:24] [0040m.45s.223ms] [1] SC[1245]: Registered sub-client [Expedition PCB_3025750] with ID [1] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:33:24] [0040m.45s.348ms] [1] SC[1245]: Registered sub-client [EEVM] with ID [2] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:33:24] [0040m.45s.489ms] [1] SC[1245]: UnRegistered sub-client [EEVM] with ID [2] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:33:27] [0040m.48s.926ms] [1] SC[1245]: Registered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:33:31] [0040m.52s.020ms] [1] SC[1245]: Registered sub-client [JobPrefsDBPI_3033593] with ID [4] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:33:31] [0040m.52s.036ms] [1] SC[1245]: UnRegistered sub-client [JobPrefsDBPI_3033593] with ID [4] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:56] [0049m.17s.754ms] [1] SC[1245]: Registered sub-client [JobPrefsDBPI_3539343] with ID [5] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:56] [0049m.17s.895ms] [1] SC[1245]: UnRegistered sub-client [JobPrefsDBPI_3539343] with ID [5] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:57] [0049m.18s.520ms] [1] SC[1245]: Registered sub-client [JobPrefsDBPI_3540109] with ID [6] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:57] [0049m.18s.536ms] [1] SC[1245]: UnRegistered sub-client [JobPrefsDBPI_3540109] with ID [6] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:57] [0049m.18s.567ms] [1] SC[1245]: Registered sub-client [JobPrefsDBPI_3540171] with ID [7] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:57] [0049m.18s.583ms] [1] SC[1245]: UnRegistered sub-client [JobPrefsDBPI_3540171] with ID [7] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:58] [0049m.19s.614ms] [1] SC[1245]: UnRegistered sub-client [ExpeditionCrossProber] with ID [3] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:58] [0049m.19s.911ms] [1] SC[1245]: UnRegistered sub-client [Expedition PCB_3025750] with ID [1] for session ID [1245] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:41:58] [0049m.19s.958ms] [1] CMT: Removed client [1245]
+[2014.06.19 22:41:58] [0049m.19s.958ms] [1] CMT: There are [1] clients now: 1244
+[2014.06.19 22:42:00] [0049m.21s.286ms] [0] IT: Session [1246] for host [lutin2] user [Alexis] with process ID [1300] created
+[2014.06.19 22:42:00] [0049m.21s.301ms] [1] SC[1246]: Registered sub-client [Expedition PCB_3542671] with ID [1] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:42:00] [0049m.21s.379ms] [1] CMT: There are [2] clients now: 1244, 1246
+[2014.06.19 22:42:02] [0049m.23s.708ms] [1] SC[1246]: Registered sub-client [ExpeditionCrossProber] with ID [2] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:42:05] [0049m.25s.973ms] [1] SC[1246]: Registered sub-client [JobPrefsDBPI_3547562] with ID [3] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:42:05] [0049m.25s.989ms] [1] SC[1246]: UnRegistered sub-client [JobPrefsDBPI_3547562] with ID [3] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:57:40] [0065m.01s.658ms] [1] SC[1246]: UnRegistered sub-client [ExpeditionCrossProber] with ID [2] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:57:41] [0065m.02s.642ms] [1] SC[1246]: UnRegistered sub-client [Expedition PCB_3542671] with ID [1] for session ID [1246] host [lutin2] user [Alexis] process ID [1300]
+[2014.06.19 22:57:41] [0065m.02s.721ms] [1] CMT: Removed client [1246]
+[2014.06.19 22:57:41] [0065m.02s.736ms] [1] SC[1244]: UnRegistered sub-client [DCDV] with ID [1] for session ID [1244] host [lutin2] user [Alexis] process ID [260]
+[2014.06.19 22:57:41] [0065m.02s.877ms] [1] CMT: There are [1] clients now: 1244
+[2014.06.19 22:57:42] [0065m.03s.142ms] [1] CMT: Removed client [1244]
+[2014.06.19 22:57:42] [0065m.03s.174ms] [1] CMT: There are no clients left - waiting [1 seconds]
+[2014.06.19 22:57:42] [0065m.03s.392ms] [1] SDL: The last connected iCDB Server Monitor [1] is waiting for server close
+[2014.06.19 22:57:44] [0065m.05s.064ms] [0] CMT: Starting server auto-close
+[2014.06.19 22:57:44] [0065m.05s.142ms] [0] S: Closing server
+[2014.06.19 22:57:44] [0065m.05s.330ms] [0] iCDB Server PI: Closing plugins
+[2014.06.19 22:57:44] [0065m.05s.330ms] [0] iCDB Server PI: Plugins closed
+[2014.06.19 22:57:44] [0065m.05s.330ms] [0] iCDB Server PI: Unloading database
+[2014.06.19 22:57:44] [0065m.05s.330ms] [0] iCDB Server PI: Saving storage
+[2014.06.19 22:57:44] [0065m.05s.346ms] [0] iCDB Server PI: Closing database
+[2014.06.19 22:57:44] [0065m.05s.424ms] [1] iCDB Server PI: Stats: Database defragmentation: max[2] avg[1] holes[3%] data[97%]
+[2014.06.19 22:57:44] [0065m.05s.424ms] [1] iCDB Server PI: Stats: Database file size [101000 (98.6 kB)]
+[2014.06.19 22:57:44] [0065m.05s.517ms] [0] iCDB Server PI: Database closed
+[2014.06.19 22:57:44] [0065m.05s.517ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [27468] ticks
+[2014.06.19 22:57:44] [0065m.05s.533ms] [1] iCDB Server PI: Stats: Total iCDB execution time: [17741] microseconds
+[2014.06.19 22:57:44] [0065m.05s.533ms] [1] iCDB Server PI: Stats: Total iCDB commands count: [42]
+[2014.06.19 22:57:44] [0065m.05s.533ms] [1] iCDB Server PI: Stats: Average iCDB speed:        [2367] commands per second
+[2014.06.19 22:57:44] [0065m.05s.549ms] [0] Single file [G:\2014\elfes\PCB\Default\default.icdb\icdb.dat] closed with size [101000 (98.6 kB)]
+[2014.06.19 22:57:44] [0065m.05s.580ms] [1] SD[1]: Removing the last connected iCDB Server Monitor [1]
+[2014.06.19 22:57:44] [0065m.05s.908ms] [0] S: STOP

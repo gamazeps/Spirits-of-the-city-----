@@ -2,46 +2,46 @@
 Expedition PCB - Pinnacle - Version 2013.0.543.380
 =======================================================================
 
-Job Directory:        E:\2014\ELFES\PCB\PCB\
+Job Directory:        G:\2014\ELFES\PCB\PCB\
 
-Design Status Report: E:\2014\ELFES\PCB\PCB\LogFiles\DesignStatus_00.txt
+Design Status Report: G:\2014\ELFES\PCB\PCB\LogFiles\DesignStatus_02.txt
 
-Wed Jun 18 18:47:54 2014
+Fri Jun 20 01:05:30 2014
 
 =======================================================================
 DESIGN STATUS
 =======================================================================
 Board Size Extents  ............ 50 X 46 (mm)
-Route Border Extents  .......... 50 X 46 (mm)
-Actual Board Area  ............. 2,300 (mm)
-Actual Route Area  ............. 2,300 (mm)
+Route Border Extents  .......... 49.4 X 45.4 (mm)
+Actual Board Area  ............. 2,181.8 (mm)
+Actual Route Area  ............. 2,128.092 (mm)
 
 Placement Areas: Name            Available         Required          Required/Available
-                 Entire Board    4,600 Sq. (mm)    1,551.332 Sq. (mm)33.72 %
+                 Entire Board    4,363.6 Sq. (mm)  1,586.412 Sq. (mm)36.36 %
 
-Pins  .......................... 153
-Pins per Route Area  ........... 0.067 Pins/Sq. (mm)
+Pins  .......................... 159
+Pins per Route Area  ........... 0.075 Pins/Sq. (mm)
 
 Layers  ........................ 2
     Layer 1 is a signal layer
-        Trace Widths  .......... 0.25, 0.4
+        Trace Widths  .......... 0.25, 0.4, 0.5, 0.6, 0.7, 0.8
     Layer 2 is a signal layer
-        Trace Widths  .......... 0.4
+        Trace Widths  .......... 0.4, 0.6, 0.8
 
-Nets  .......................... 40
-Connections  ................... 97
+Nets  .......................... 41
+Connections  ................... 101
 Open Connections  .............. 0
 Differential Pairs  ............ 0
 Percent Routed  ................ 100.00 %
 
 Netline Length  ................ 0 (mm)
 Netline Manhattan Length  ...... 0 (mm)
-Total Trace Length  ............ 634.943 (mm)
+Total Trace Length  ............ 635.784 (mm)
 
-Trace Widths Used (mm)  ........ 0.25, 0.4
-Vias  .......................... 5
+Trace Widths Used (mm)  ........ 0.25, 0.4, 0.5, 0.6, 0.7, 0.8
+Vias  .......................... 61
 Via Span  Name                   Quantity
-   1-2    VIA1.6                 5
+   1-2    VIA0.6                 61
 
 Teardrops....................... 0
     Pad Teardrops............... 0
@@ -52,15 +52,15 @@ Breakouts....................... 0
 Virtual Pins.................... 0
 Guide Pins ..................... 0
 
-Parts Placed  .................. 39
-    Parts Mounted on Top  ...... 35
-        SMD  ................... 34
+Parts Placed  .................. 42
+    Parts Mounted on Top  ...... 37
+        SMD  ................... 36
         Through  ............... 1
         Test Points  ........... 0
         Mechanical  ............ 0
-    Parts Mounted on Bottom  ... 4
+    Parts Mounted on Bottom  ... 5
         SMD  ................... 0
-        Through  ............... 4
+        Through  ............... 5
         Test Points  ........... 0
         Mechanical  ............ 0
     Embedded Components ........ 0
@@ -76,6 +76,6 @@ Nested Cells  .................. 0
 
 Jumpers  ....................... 0
 
-Through Holes  ................. 25
-    Holes per Board Area  ...... 0.011 Holes/Sq. (mm)
+Through Holes  ................. 83
+    Holes per Board Area  ...... 0.038 Holes/Sq. (mm)
 Mounting Holes  ................ 1

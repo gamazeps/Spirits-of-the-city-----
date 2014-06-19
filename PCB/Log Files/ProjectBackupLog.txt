@@ -44,3 +44,13 @@
 [2014-06-19 19.15.51] Successfully created [AutoSave] backup [2014-06-19 19.15.51 - auto.zip] requested by [BI-WIN7:Alexis].
 [2014-06-19 19.15.51] Removing excessive [AutoSave] backup file [E:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 11.16.33 - auto.zip].
 [2014-06-19 19.15.51] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 11.16.33 - auto.zip] removed.
+[2014-06-19 22.33.23] Migrating iCDB upgrade backups from directory [PCB\Default\default.icdb\cdbback] to Project Backup format.
+[2014-06-19 22.33.23] Migrating iCDB upgrade backup file [2014-06-19 21.52.32-2672].
+[2014-06-19 22.33.24] Successfully created [Constraints Definition Upgrade] backup [2014-06-19 21.52.32 - consDefUpgr.zip] requested by [BI-WIN7:Alexis].
+[2014-06-19 22.33.24] Removing excessive [Constraints Definition Upgrade] backup file [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 17.59.19 - consDefUpgr.zip].
+[2014-06-19 22.33.24] [Constraints Definition Upgrade] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 17.59.19 - consDefUpgr.zip] removed.
+[2014-06-19 22.33.24] Migrated iCDB content backup file [cdbback\2014-06-19 21.52.32-2672.zip] removed.
+[2014-06-19 22.33.24] Successfully migrated iCDB upgrade backup file [2014-06-19 21.52.32-2672] to Project Backup format [2014-06-19 21.52.32 - consDefUpgr.zip]
+[2014-06-20 00.31.44] Successfully created [AutoSave] backup [2014-06-20 00.31.42 - auto.zip] requested by [LUTIN2:Alexis].
+[2014-06-20 00.31.44] Removing excessive [AutoSave] backup file [G:\2014\ELFES\PCB\Default\ProjectBackup\backups\2014-06-18 15.16.33 - auto.zip].
+[2014-06-20 00.31.44] [AutoSave] backup file [PCB\Default\ProjectBackup\backups\2014-06-18 15.16.33 - auto.zip] removed.

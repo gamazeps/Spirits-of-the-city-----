@@ -1,0 +1,234 @@
+.FILETYPE DRCFILE
+.VERSION "2002"
+.DATE "June 20, 2014"
+.TIME "1:14:27"
+.PROXIMITY
+..VIO_XY (23032249, 2627434)  ! (23.032mm, 2.627mm)
+..CLEARANCE 150000  ! 0.15mm
+!..CLEARANCE_STRING "NetClass Trace-To-Trace : Scheme=(Master), Layer=1, NetName1=XSIG010371, NetClass1Override=(null), NetName2=(Net0), NetClass2Override=(null), Clearance=0.15mm  "
+..OBJECT_1
+...OBJECT
+....TRACE REGULAR
+.....LYR 1
+.....WDT 250000
+.....NET "XSIG010371"
+.....NETCLASS "(Default)"
+.....XY (24631995, 2627434)  ! (24.632mm, 2.627mm)
+..OBJECT_2
+...OBJECT
+....TEXT "+"
+.....LYR 1
+.....HGT 2032000
+.....WDT 2048256
+.....TEXT_TYPE COND
+.....XY (21621388, 2083682)  ! (21.621mm, 2.084mm)
+.PROXIMITY
+..VIO_XY (28442416, 39544220)  ! (28.442mm, 39.544mm)
+..CLEARANCE 150000  ! 0.15mm
+!..CLEARANCE_STRING "NetClass Trace-To-Trace : Scheme=(Master), Layer=1, NetName1=(Net0), NetClass1Override=(null), NetName2=(Net0), NetClass2Override=(null), Clearance=0.15mm  "
+..OBJECT_1
+...OBJECT
+....TEXT "PAF 2014"
+.....LYR 1
+.....HGT 2032000
+.....WDT 13827862
+.....TEXT_TYPE COND
+.....XY (26977080, 39333980)  ! (26.977mm, 39.334mm)
+..OBJECT_2
+...OBJECT
+....TEXT "ELFES"
+.....LYR 1
+.....HGT 2032000
+.....WDT 9925508
+.....TEXT_TYPE COND
+.....XY (28955484, 42402482)  ! (28.955mm, 42.402mm)
+.PROXIMITY
+..VIO_XY (21677075, 2222260)  ! (21.677mm, 2.222mm)
+..CLEARANCE 200000  ! 0.2mm
+!..CLEARANCE_STRING "NetClass Trace-To-Smd : Scheme=(Master), Layer=1, NetName1=(Net0), NetClass1Override=(null), NetName2=XSIG010371, Clearance=0.2mm   "
+..OBJECT_1
+...OBJECT
+....TEXT "+"
+.....LYR 1
+.....HGT 2032000
+.....WDT 2048256
+.....TEXT_TYPE COND
+.....XY (21621388, 2083682)  ! (21.621mm, 2.084mm)
+..OBJECT_2
+...OBJECT
+....PAD SMD
+.....LYR 1
+.....NET "XSIG010371"
+.....NETCLASS "(Default)"
+.....NAME "Rectangle 1x0.6"
+.....REF_DES "R7"
+.....XY (22376821, 2522260)  ! (22.377mm, 2.522mm)
+.PROXIMITY
+..VIO_XY (23432249, 2402365)  ! (23.432mm, 2.402mm)
+..CLEARANCE 200000  ! 0.2mm
+!..CLEARANCE_STRING "NetClass Trace-To-Smd : Scheme=(Master), Layer=1, NetName1=(Net0), NetClass1Override=(null), NetName2=XSIG010371, Clearance=0.2mm   "
+..OBJECT_1
+...OBJECT
+....TEXT "+"
+.....LYR 1
+.....HGT 2032000
+.....WDT 2048256
+.....TEXT_TYPE COND
+.....XY (21621388, 2083682)  ! (21.621mm, 2.084mm)
+..OBJECT_2
+...OBJECT
+....PAD SMD
+.....LYR 1
+.....NET "XSIG010371"
+.....NETCLASS "(Default)"
+.....NAME "Rectangle 2x3"
+.....REF_DES "J5"
+.....XY (24631995, 3902365)  ! (24.632mm, 3.902mm)
+.PROXIMITY
+..VIO_XY (21445874, 299995)  ! (21.446mm, 0.3mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ ROUTE_BORDER
+.....XY (37850000, 300000)  ! (37.85mm, 0.3mm)
+..OBJECT_2
+...OBJECT
+....TEXT "+"
+.....LYR 1
+.....HGT 2032000
+.....WDT 2048256
+.....TEXT_TYPE COND
+.....XY (21621388, 2083682)  ! (21.621mm, 2.084mm)
+.PROXIMITY
+..VIO_XY (9799797, 299995)  ! (9.8mm, 0.3mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ ROUTE_BORDER
+.....XY (37850000, 300000)  ! (37.85mm, 0.3mm)
+..OBJECT_2
+...OBJECT
+....TEXT "-"
+.....LYR 1
+.....HGT 2032000
+.....WDT 1282294
+.....TEXT_TYPE COND
+.....XY (9957074, 2595636)  ! (9.957mm, 2.596mm)
+.PROXIMITY
+..VIO_XY (21445874, -5)  ! (21.446mm, 0mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ BOARD
+.....XY (38000000, 0)  ! (38mm, 0mm)
+..OBJECT_2
+...OBJECT
+....TEXT "+"
+.....LYR 1
+.....HGT 2032000
+.....WDT 2048256
+.....TEXT_TYPE COND
+.....XY (21621388, 2083682)  ! (21.621mm, 2.084mm)
+.PROXIMITY
+..VIO_XY (9799797, -5)  ! (9.8mm, 0mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ BOARD
+.....XY (38000000, 0)  ! (38mm, 0mm)
+..OBJECT_2
+...OBJECT
+....TEXT "-"
+.....LYR 1
+.....HGT 2032000
+.....WDT 1282294
+.....TEXT_TYPE COND
+.....XY (9957074, 2595636)  ! (9.957mm, 2.596mm)
+.PROXIMITY
+..VIO_XY (15401555, 25902936)  ! (15.402mm, 25.903mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OBSTRUCT PLACE
+.....LYR 2
+.....XY (27085556, 25902937)  ! (27.086mm, 25.903mm)
+.....HGT 0
+..OBJECT_2
+...OBJECT
+....OUTLINE_OBJ PLACE
+.....SIDE BOTTOM
+.....XY (28053556, 24934936)  ! (28.054mm, 24.935mm)
+.....HGT 7000000
+.....UNDER_HGT 3000000
+.....REF_DES "U4"
+.PROXIMITY
+..VIO_XY (11083555, 44698936)  ! (11.084mm, 44.699mm)
+..CLEARANCE 0  ! 0mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0mm     "
+..OBJECT_1
+...OBJECT
+....OBSTRUCT PLACE
+.....LYR 2
+.....XY (27085555, 44698935)  ! (27.086mm, 44.699mm)
+.....HGT 0
+..OBJECT_2
+...OBJECT
+....OUTLINE_OBJ PLACE
+.....SIDE BOTTOM
+.....XY (28053556, 24934936)  ! (28.054mm, 24.935mm)
+.....HGT 7000000
+.....UNDER_HGT 3000000
+.....REF_DES "U4"
+.PROXIMITY
+..VIO_XY (24784, 5979912)  ! (0.025mm, 5.98mm)
+..CLEARANCE 254000  ! 0.254mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0.254mm "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ BOARD
+.....XY (7400000, 0)  ! (7.4mm, 0mm)
+..OBJECT_2
+...OBJECT
+....OUTLINE_OBJ PLACE
+.....SIDE BOTTOM
+.....XY (12275704, 6167880)  ! (12.276mm, 6.168mm)
+.....HGT 13000000
+.....UNDER_HGT 0
+.....REF_DES "U2"
+.PROXIMITY
+..VIO_XY (9799811, 45999995)  ! (9.8mm, 46mm)
+..CLEARANCE 254000  ! 0.254mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0.254mm "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ BOARD
+.....XY (0, 46000000)  ! (0mm, 46mm)
+..OBJECT_2
+...OBJECT
+....OUTLINE_OBJ PLACE
+.....SIDE BOTTOM
+.....XY (28053556, 24934936)  ! (28.054mm, 24.935mm)
+.....HGT 7000000
+.....UNDER_HGT 3000000
+.....REF_DES "U4"
+.PROXIMITY
+..VIO_XY (652158, 45999995)  ! (0.652mm, 46mm)
+..CLEARANCE 254000  ! 0.254mm
+!..CLEARANCE_STRING "Element-To-Element Matrix : Clearance=0.254mm "
+..OBJECT_1
+...OBJECT
+....OUTLINE_OBJ BOARD
+.....XY (0, 46000000)  ! (0mm, 46mm)
+..OBJECT_2
+...OBJECT
+....OUTLINE_OBJ PLACE
+.....SIDE BOTTOM
+.....XY (9567663, 41572121)  ! (9.568mm, 41.572mm)
+.....HGT 10000000
+.....UNDER_HGT 10000000
+.....REF_DES "D1"

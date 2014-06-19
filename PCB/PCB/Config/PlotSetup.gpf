@@ -1,7 +1,7 @@
 .FILETYPE GerberPlotSetupFile
 .VERSION "VB99.0"
 .CREATOR "Expedition PCB Gerber Output"
-.DATE "Monday, April 01, 2013 07:19 PM"
+.DATE "Friday, June 20, 2014 01:19 AM"
 
 .BaseUnits "1NM"
 
