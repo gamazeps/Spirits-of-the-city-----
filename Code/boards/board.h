@@ -197,12 +197,12 @@
  */
 #define VAL_GPIOA_MODER             (PIN_MODE_INPUT(GPIOA_BUTTON) |         \
                                      PIN_MODE_INPUT(GPIOA_PIN1) |           \
-                                     PIN_MODE_INPUT(GPIOA_UV1) |           \
-                                     PIN_MODE_INPUT(GPIOA_UV2) |           \
+                                     PIN_MODE_OUTPUT(GPIOA_UV1) |           \
+                                     PIN_MODE_OUTPUT(GPIOA_UV2) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN4) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN5) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN6) |           \
-                                     PIN_MODE_INPUT(GPIOA_RGBbig_G) |           \
+                                     PIN_MODE_OUTPUT(GPIOA_RGBbig_G) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN8) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN9) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN10) |          \
@@ -210,7 +210,7 @@
                                      PIN_MODE_INPUT(GPIOA_RF_IRQ) |          \
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TMS) |   \
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TCK) |   \
-                                     PIN_MODE_ALTERNATE(GPIOA_RGBsmall_B))
+                                     PIN_MODE_OUTPUT(GPIOA_RGBsmall_B))
 #define VAL_GPIOA_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOA_BUTTON) |     \
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN1) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOA_UV1) |       \
@@ -312,22 +312,22 @@
  * PB14 - PIN14                     (input pullup).
  * PB15 - PIN15                     (input pullup).
  */
-#define VAL_GPIOB_MODER             (PIN_MODE_INPUT(GPIOB_RGBbig_B) |           \
-                                     PIN_MODE_INPUT(GPIOB_RGBbig_R) |           \
+#define VAL_GPIOB_MODER             (PIN_MODE_OUTPUT(GPIOB_RGBbig_B) |           \
+                                     PIN_MODE_OUTPUT(GPIOB_RGBbig_R) |           \
                                      PIN_MODE_INPUT(GPIOB_BOOT1) |          \
-                                     PIN_MODE_ALTERNATE(GPIOA_RGBsmall_G) |   \
-                                     PIN_MODE_ALTERNATE(GPIOA_RGBsmall_R) |  \
+                                     PIN_MODE_OUTPUT(GPIOA_RGBsmall_G) |   \
+                                     PIN_MODE_OUTPUT(GPIOA_RGBsmall_R) |  \
                                      PIN_MODE_INPUT(GPIOB_PIN5) |           \
                                      PIN_MODE_OUTPUT(GPIOB_DEBUG_TX) |          \
-                                     PIN_MODE_OUTPUT(GPIOB_DEBUG_RX) |          \
+                                     PIN_MODE_INPUT(GPIOB_DEBUG_RX) |          \
                                      PIN_MODE_INPUT(GPIOB_PIN8) |           \
                                      PIN_MODE_INPUT(GPIOB_PIN9) |           \
                                      PIN_MODE_INPUT(GPIOB_PIN10) |          \
-                                     PIN_MODE_INPUT(GPIOB_RF_CE) |          \
-                                     PIN_MODE_INPUT(GPIOB_RF_NSS) |          \
-                                     PIN_MODE_INPUT(GPIOB_RF_SCK) |          \
+                                     PIN_MODE_OUTPUT(GPIOB_RF_CE) |          \
+                                     PIN_MODE_OUTPUT(GPIOB_RF_NSS) |          \
+                                     PIN_MODE_OUTPUT(GPIOB_RF_SCK) |          \
                                      PIN_MODE_INPUT(GPIOB_RF_MISO) |          \
-                                     PIN_MODE_INPUT(GPIOB_RF_MOSI))
+                                     PIN_MODE_OUTPUT(GPIOB_RF_MOSI))
 #define VAL_GPIOB_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOB_RGBbig_B) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOB_RGBbig_R) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOB_BOOT1) |      \
