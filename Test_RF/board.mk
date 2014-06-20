@@ -1,5 +1,5 @@
 # List of all the board related files.
-BOARDSRC = $board.c
+BOARDSRC = $/board.c
 
 # Required include directories
 BOARDINC = $../Test_RF

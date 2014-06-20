@@ -69,7 +69,7 @@ PROJECT = ch
 
 # Imported source files and paths
 CHIBIOS = ../../ChibiOS_2.6.4
-include $board.mk
+include $/board.mk
 include $(CHIBIOS)/os/hal/platforms/STM32F4xx/platform.mk
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32F4xx/port.mk
