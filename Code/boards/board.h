@@ -540,7 +540,7 @@
  * PD5  - PIN5                     
  * PD6  - PIN6                      
  * PD7  - PIN7                     
- * PD8  - PIN8                    
+ * PD8  - PIN8                     
  * PD9  - PIN9                      
  * PD10 - PIN10                 
  * PD11 - PIN11                
