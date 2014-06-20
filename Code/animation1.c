@@ -8,3 +8,12 @@
 #include "ch.h"
 #include "hal.h"
 #include "test.h"
+
+static void animation_1 () =
+{
+/* Radio signal -> wip */
+
+/*Father's Wake Up */
+
+
+}
