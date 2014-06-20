@@ -240,7 +240,7 @@
                              PIN_PUDR_PULLUP(GPIOA_DCMI_PIXCLK) |           \
                              PIN_PUDR_PULLDOWN(GPIOA_OTG_FS_VBUS) |         \
                              PIN_PUDR_PULLUP(GPIOA_JTMS) |                  \
-			     PIN_PUDR_PULLUP(GPIOA_JTDI) |                  \
+                 PIN_PUDR_PULLUP(GPIOA_JTDI) |                  \
                              PIN_PUDR_PULLDOWN(GPIOA_JTCK))
 #define VAL_GPIOA_ODR       0xFFFFFFDF
 #define VAL_GPIOA_AFRL      (PIN_AFIO_AF(GPIOA_ETH_RMII_REF_CLK, 11) |      \
@@ -293,11 +293,11 @@
 #define VAL_GPIOB_OSPEEDR   0xFFFFFFFF
 #define VAL_GPIOB_PUPDR     (PIN_PUDR_PULLUP(GPIOB_DCMI_D5) |               \
                              PIN_PUDR_PULLUP(GPIOB_DCMI_VSYNC) |            \
-			     PIN_PUDR_PULLUP(GPIOB_JTDO) |                  \
+                 PIN_PUDR_PULLUP(GPIOB_JTDO) |                  \
                              PIN_PUDR_PULLDOWN(GPIOB_OTG_HS_VBUS))
 #define VAL_GPIOB_ODR       0xFFFFFFFC
 #define VAL_GPIOB_AFRL      (PIN_AFIO_AF(GPIOB_JTDO, 0) |                   \
-			     PIN_AFIO_AF(GPIOB_NJTRST, 0) |                 \
+                 PIN_AFIO_AF(GPIOB_NJTRST, 0) |                 \
                              PIN_AFIO_AF(GPIOB_I2S3_SD, 6))
 #define VAL_GPIOB_AFRH      (PIN_AFIO_AF(GPIOB_CAN1_RX, 9) |                \
                              PIN_AFIO_AF(GPIOB_CAN1_TX, 9) |                \
@@ -332,7 +332,7 @@
                              PIN_MODE_OUTPUT(GPIOC_LCD_MOSI) |              \
                              PIN_MODE_ALTERNATE(GPIOC_ETH_RMII_RXD0) |      \
                              PIN_MODE_ALTERNATE(GPIOC_ETH_RMII_RXD1) |      \
-                             PIN_MODE_ALTERNATE(GPIOC_DCMI_D0_US6_TX) |     \
+                             PIN_MODE_OUTPUT(GPIOC_DCMI_D0_US6_TX) |     \
                              PIN_MODE_ALTERNATE(GPIOC_I2S3_MCK) |           \
                              PIN_MODE_INPUT(GPIOC_DCMI_D2) |                \
                              PIN_MODE_INPUT(GPIOC_DCMI_D3) |                \
@@ -345,7 +345,9 @@
 #define VAL_GPIOC_OTYPER    0x00000000
 #define VAL_GPIOC_OSPEEDR   0xFFFFFFFF
 #define VAL_GPIOC_PUPDR     (PIN_PUDR_PULLUP(GPIOC_DCMI_D2) |               \
-                             PIN_PUDR_PULLUP(GPIOC_DCMI_D3))
+                            PIN_PUDR_PULLUP(GPIOC_DCMI_D3) |               \
+                            PIN_PUDR_PULLUP(GPIOC_SPI3_MISO)|               \
+                            PIN_PUDR_PULLUP(GPIOC_SPI3_MOSI))
 #define VAL_GPIOC_ODR       0xFFFFFFF3
 #define VAL_GPIOC_AFRL      (PIN_AFIO_AF(GPIOC_ETH_RMII_MDC, 11) |          \
                              PIN_AFIO_AF(GPIOC_ETH_RMII_RXD0, 11) |         \
@@ -501,7 +503,8 @@
                              PIN_MODE_INPUT(GPIOF_13) |                     \
                              PIN_MODE_INPUT(GPIOF_14) |                     \
                              PIN_MODE_INPUT(GPIOF_15))
-#define VAL_GPIOF_OTYPER    0x00000000
+#define VAL_GPIOF_OTYPER     0x00000000
+
 #define VAL_GPIOF_OSPEEDR   0xFFFFFFFF
 #define VAL_GPIOF_PUPDR     (PIN_PUDR_PULLUP(GPIOF_0) |                     \
                              PIN_PUDR_PULLUP(GPIOF_1) |                     \
