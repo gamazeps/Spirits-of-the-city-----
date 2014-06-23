@@ -99,7 +99,22 @@ int main(void) {
     ReadRegister(0x0A,5,txbuf, rxbuf);
     // Read PIPE0 addr register
 
-    //  WriteRegister(0x00,1,txbuf
+    // Configuration in TX mode
+    txbuf[1]=0b00000010;
+    WriteRegister(0x00,1,txbuf,rxbuf);
+    // Adress settings
+    txbuf[1]=0b00000001;// address width
+    WriteRegister(0x03,1,txbuf,rxbuf);
+    txbuf[1]=0xB1;
+    txbuf[2]=0xB2;
+    txbuf[3]=0xB3;
+    WriteRegister(0x10,3,txbuf,rxbuf); //Fixation of the Transmiter address
+    WriteRegister(0x0A,3,txbuf,rxbuf); // Fixation of the RX_ADDR_P0
+    //Checking the values of the registers
+    ReadRegister(0x00,1,txbuf,rxbuf);
+    ReadRegister(0x03,1,txbuf,rxbuf);
+    ReadRegister(0x10,3,txbuf,rxbuf);
+    ReadRegister(0x0A,3,txbuf,rxbuf);
 
     chThdSleepMilliseconds(1000);
   }
