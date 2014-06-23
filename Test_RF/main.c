@@ -17,6 +17,10 @@
 #include "ch.h"
 #include "hal.h"
 
+#define R_REGISTER(x) (x & 0x1F)
+#define W_REGISTER(x) ((x & 0x1F) | 0x20)
+#define NOP (0xff)
+
 static void set_green(int on){
   on ? palSetPad(GPIOF, GPIOF_STAT1) : palClearPad(GPIOF, GPIOF_STAT1);
 }
@@ -69,9 +73,41 @@ int main(void) {
 
   // Send some things
   while (TRUE) {
+    // Read PIPE0 addr register
+    txbuf[0] = R_REGISTER(0xA);
+    txbuf[1] = NOP;
+    txbuf[2] = NOP;
+    txbuf[3] = NOP;
+    txbuf[4] = NOP;
+    txbuf[5] = NOP;
     spiSelect(&SPID3);
-    spiExchange(&SPID3, 10, txbuf, rxbuf);
+    spiExchange(&SPID3, 6, txbuf, rxbuf);
     spiUnselect(&SPID3);
+    chThdSleepMilliseconds(1);
+
+    // Change PIPE0 addr register
+    txbuf[0] = W_REGISTER(0xA);
+    txbuf[1] = 0xaa;
+    txbuf[2] = 0xE7;
+    txbuf[3] = 0x23;
+    txbuf[4] = 0xe7;
+    txbuf[5] = 0x23;
+    spiSelect(&SPID3);
+    spiExchange(&SPID3, 6, txbuf, rxbuf);
+    spiUnselect(&SPID3);
+    chThdSleepMilliseconds(1);
+
+    // Read PIPE0 addr register
+    txbuf[0] = R_REGISTER(0xA);
+    txbuf[1] = NOP;
+    txbuf[2] = NOP;
+    txbuf[3] = NOP;
+    txbuf[4] = NOP;
+    txbuf[5] = NOP;
+    spiSelect(&SPID3);
+    spiExchange(&SPID3, 6, txbuf, rxbuf);
+    spiUnselect(&SPID3);
+    chThdSleepMilliseconds(1);
 
     chThdSleepMilliseconds(1000);
   }
