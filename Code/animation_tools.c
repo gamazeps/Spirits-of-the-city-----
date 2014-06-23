@@ -11,31 +11,48 @@
 static int CYCLIC_RATIO = 200; /* Number of states in PWM*/
 /* A FAIRE : CHOISIR LE TYPE. INT INNEFICACE (TROP DE BITS INUTILISES) */
 
-static void clear_all (PWMDriver *pwmd)
+
+static void clear_all_tim2 (PWMDriver *pwmd)
 {
   palSetPad(GPIOA, GPIOA_UV1); 
   palSetPad(GPIOA, GPIOA_UV2);
-  palSetPad(GPIOA, GPIOA_RGBbig_G);
-  palSetPad(GPIOB, GPIOB_RGBbig_R);
-  palSetPad(GPIOB, GPIOB_RGBbig_B);
   palSetPad(GPIOA, GPIOA_RGBsmall_B);
-  palSetPad(GPIOB, GPIOB_RGBsmall_R);
-  palSetPad(GPIOB, GPIOB_RGBsmall_B);
+  palSetPad(GPIOB, GPIOB_RGBsmall_G);
 }
 
-static void set_heart_beat (PWMDriver *pwmd)
+static void clear_all_tim3 (PWMDriver *pwmd)
 {
-  palClearPad(GPIOF, GPIOF_STAT1);
+  palSetPad(GPIOB, GPIOB_RGBsmall_R); 
+  palSetPad(GPIOA, GPIOA_RGBbig_G);
+  palSetPad(GPIOB, GPIOB_RGBbig_B);
+  palSetPad(GPIOB, GPIOB_RGBbig_R);
 }
 
 
-static PWMConfig pwmcfg = {
+static PWMConfig pwmcfg_tim2 = {
   20000,
   CYCLIC_RATIO,
-  clear_all,
+  clear_all_tim2,
   {
-    {PWM_OUTPUT_DISABLED, NULL},
-    {PWM_OUTPUT_DISABLED, NULL},
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Small Eye, blue */
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Small Eye, green */
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED UV 1 : Head*/
+    {PWM_OUTPUT_DISABLED, incr_value},/* LED UV 2 : Heart*/
+  
+  },
+  0,
+  0
+};
+
+static PWMConfig pwmcfg_tim3 = {
+  20000,
+  CYCLIC_RATIO,
+  clear_all_tim3,
+  {
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Small Eye, red */
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Big Eye, green*/
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Big Eye, blue */
+    {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Big Eye, red */
   
   },
   0,
@@ -76,9 +93,11 @@ static void eyes_lightening (char eye, int8 blue, int8 red, int8 green ,int8 ini
     }
 };
 
-static void accelerate_heart_beats (int initial_speed, int final_speed, int time) = {
-  int t = time/CYCLIC_RATIO; 
+static void accelerate_heart_beats (int initial_speed, int final_speed, int time) = { 
   int sens = initial_speed<final_speed ? 1 : -1;
+
+
+}
 
 
 
