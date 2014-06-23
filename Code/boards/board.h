@@ -248,12 +248,12 @@
 
 #define VAL_GPIOA_OSPEEDR           (PIN_OSPEED_400K(GPIOA_ADC) |       \
                                      PIN_OSPEED_400K(GPIOA_PIN1) |      \
-                                     PIN_OSPEED_400K(GPIOA_UV_SMALL) |  \
-                                     PIN_OSPEED_400K(GPIOA_UV_BIG) |    \
+                                     PIN_OSPEED_40M(GPIOA_UV_SMALL) |  \
+                                     PIN_OSPEED_40M(GPIOA_UV_BIG) |    \
                                      PIN_OSPEED_400K(GPIOA_PIN4) |      \
                                      PIN_OSPEED_400K(GPIOA_PIN5) |      \
                                      PIN_OSPEED_400K(GPIOA_PIN6) |      \
-                                     PIN_OSPEED_400K(GPIOA_RGB_BIG_G) | \
+                                     PIN_OSPEED_40M(GPIOA_RGB_BIG_G) | \
                                      PIN_OSPEED_400K(GPIOA_PIN8) |      \
                                      PIN_OSPEED_400K(GPIOA_PIN9) |      \
                                      PIN_OSPEED_400K(GPIOA_PIN10) |     \
@@ -261,7 +261,7 @@
                                      PIN_OSPEED_400K(GPIOA_RF_IRQ) |    \
                                      PIN_OSPEED_40M(GPIOA_SWDAT) |      \
                                      PIN_OSPEED_40M(GPIOA_SWCLK) |      \
-                                     PIN_OSPEED_400K(GPIOA_RGB_SMALL_B))
+                                     PIN_OSPEED_40M(GPIOA_RGB_SMALL_B))
 
 #define VAL_GPIOA_PUPDR             (PIN_PUPDR_PULLDOWN(GPIOA_ADC) |    \
                                      PIN_PUPDR_PULLDOWN(GPIOA_PIN1) |   \
@@ -360,11 +360,11 @@
                                      PIN_OTYPE_PUSHPULL(GPIOB_RF_MISO) | \
                                      PIN_OTYPE_PUSHPULL(GPIOB_RF_MOSI))
 
-#define VAL_GPIOB_OSPEEDR           (PIN_OSPEED_400K(GPIOB_RGB_BIG_B) | \
-                                     PIN_OSPEED_400K(GPIOB_RGB_BIG_R) | \
+#define VAL_GPIOB_OSPEEDR           (PIN_OSPEED_40M(GPIOB_RGB_BIG_B) | \
+                                     PIN_OSPEED_40M(GPIOB_RGB_BIG_R) | \
                                      PIN_OSPEED_400K(GPIOB_BOOT1) |     \
-                                     PIN_OSPEED_400K(GPIOB_RGB_SMALL_G) | \
-                                     PIN_OSPEED_400K(GPIOB_RGB_SMALL_R) | \
+                                     PIN_OSPEED_40M(GPIOB_RGB_SMALL_G) | \
+                                     PIN_OSPEED_40M(GPIOB_RGB_SMALL_R) | \
                                      PIN_OSPEED_400K(GPIOB_PIN5) |      \
                                      PIN_OSPEED_2M(GPIOB_DEBUG_TX) |  \
                                      PIN_OSPEED_2M(GPIOB_DEBUG_RX) |  \

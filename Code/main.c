@@ -27,8 +27,8 @@ BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
 
 // Timer 2 ans 3 PWM configuration structure (same config for both PWM drivers)
 static PWMConfig pwmcfg = {
-  800000,                             // 100kHz tick clock frequency
-  256,                                // 100 ticks per PWM period thus PWM period is 1kHz
+  800000,                             // 800kHz tick clock frequency
+  256,                                // 256 ticks per PWM period
   NULL,
   {
     {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -55,7 +55,7 @@ __attribute__((__noreturn__))  static msg_t HBT(void *arg) {
   while (TRUE) {
     h += 1;
     v = v+delta_v;
-    if (v==100)
+    if (v==80)
       delta_v = -1;
     else if (v==0)
       delta_v = 1;
