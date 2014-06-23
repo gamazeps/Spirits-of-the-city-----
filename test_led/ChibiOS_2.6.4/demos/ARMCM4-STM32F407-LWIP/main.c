@@ -22,40 +22,49 @@
 
 #include "web/web.h"
 
-static void clear_all (PWMDriver *pwmd)
-{
-  palSetPad(GPIOF, GPIOF_STAT1); 
-  palSetPad(GPIOF, GPIOF_STAT2);
-  palSetPad(GPIOF, GPIOF_STAT3);
-}
+// static void clear_all (PWMDriver *pwmd)
+// {
+//   palSetPad(GPIOF, GPIOF_STAT1); 
+//   palSetPad(GPIOF, GPIOF_STAT2);
+//   palSetPad(GPIOF, GPIOF_STAT3);
+// }
 
-static void set_green (PWMDriver *pwmd)
-{
-  palClearPad(GPIOF, GPIOF_STAT1);
-}
+// static void set_green (PWMDriver *pwmd)
+// {
+//   palClearPad(GPIOF, GPIOF_STAT1);
+// }
 
-static void set_orange (PWMDriver *pwmd)
-{
-  palClearPad(GPIOF, GPIOF_STAT2);
+// static void set_orange (PWMDriver *pwmd)
+// {
+//   palClearPad(GPIOF, GPIOF_STAT2);
 
-}static void set_red (PWMDriver *pwmd)
-{
-  palClearPad(GPIOF, GPIOF_STAT3);
-}
+// }static void set_red (PWMDriver *pwmd)
+// {
+//   palClearPad(GPIOF, GPIOF_STAT3);
+// }
   
-static PWMConfig pwmcfg = {
-  20000,
-  200,
-  clear_all,
-  {
-    {PWM_OUTPUT_DISABLED, set_green},
-    {PWM_OUTPUT_DISABLED, set_orange},
-    {PWM_OUTPUT_DISABLED, set_red},
-    {PWM_OUTPUT_DISABLED, NULL},
-  },
-  0,
-  0
+// static PWMConfig pwmcfg = {
+//   20000,
+//   200,
+//   clear_all,
+//   {
+//     {PWM_OUTPUT_DISABLED, set_green},
+//     {PWM_OUTPUT_DISABLED, set_orange},
+//     {PWM_OUTPUT_DISABLED, set_red},
+//     {PWM_OUTPUT_DISABLED, NULL},
+//   },
+//   0,
+//   0
+// };
+
+static ADCDriver adcp;
+static const ADCConversionGroup grpp = {
+  FALSE,
+  10,
+  NULL,
+  NULL
 };
+static adcsample_t samples;
 
     
 
@@ -67,21 +76,53 @@ static msg_t Thread1(void *arg) {
 
   (void)arg;
   chRegSetThreadName("blinker");
+
+  msg_t adc_result;
+
+  
+
   while (TRUE) {
-    for(int j=1; j<400; j++)
-      {
+
+    adcStart(&adcp,NULL);
+
+    adc_result = adcConvert(&adcp, &grpp, &samples, 1);
+
+    switch(adc_result){
+      case RDY_OK :
+        palSetPad(GPIOF, GPIOF_STAT1);
+        chThdSleepMilliseconds(150);
+        palClearPad(GPIOF, GPIOF_STAT1);
+        chThdSleepMilliseconds(150);
+        break;
+      case RDY_RESET :
+        palSetPad(GPIOF, GPIOF_STAT2);
+        chThdSleepMilliseconds(150);
+        palClearPad(GPIOF, GPIOF_STAT2);
+        chThdSleepMilliseconds(150);
+        break;
+      case RDY_TIMEOUT :
+        palSetPad(GPIOF, GPIOF_STAT3);
+        chThdSleepMilliseconds(150);
+        palClearPad(GPIOF, GPIOF_STAT3);
+        chThdSleepMilliseconds(150);
+        break;
+    }
+
+ //    for(int j=1; j<400; j++)
+ //      {
 	
-	int i = j < 200 ? j : 399 - j;
-	int k = (j+133)%400 < 200 ? (j+133)%400 : (399 - (j+133))%400;
-	int l = (j + 266)%400 < 200 ? (j+266)%400 : (399-(j+266))%400;
+	// int i = j < 200 ? j : 399 - j;
+	// int k = (j+133)%400 < 200 ? (j+133)%400 : (399 - (j+133))%400;
+	// int l = (j + 266)%400 < 200 ? (j+266)%400 : (399-(j+266))%400;
 
-	pwmEnableChannel(&PWMD4, 0, i);
-	pwmEnableChannel(&PWMD4, 1,k);
-	pwmEnableChannel(&PWMD4, 2, l);
-	chThdSleepMilliseconds(8);
+	// pwmEnableChannel(&PWMD4, 0, i);
+	// pwmEnableChannel(&PWMD4, 1,k);
+	// pwmEnableChannel(&PWMD4, 2, l);
+	// chThdSleepMilliseconds(8);
 
-      }
+  //    }
   }
+  
 }
 
 /*
@@ -99,7 +140,10 @@ int main(void) {
   halInit();
   chSysInit();
 
-  pwmStart(&PWMD4, &pwmcfg);
+  adcInit();
+  adcObjectInit(&adcp);
+
+  //pwmStart(&PWMD4, &pwmcfg);
 
   /*
    * Activates the serial driver 6 using the driver default configuration.
