@@ -326,7 +326,7 @@
  * PC14 - GPIOC_OSC32_IN        (input floating).
  * PC15 - GPIOC_OSC32_OUT       (input floating).
  */
-#define VAL_GPIOC_MODER     (PIN_MODE_INPUT(GPIOC_TRIM) |                   \
+#define VAL_GPIOC_MODER     (PIN_MODE_ANALOG(GPIOC_TRIM) |                   \
                              PIN_MODE_ALTERNATE(GPIOC_ETH_RMII_MDC) |       \
                              PIN_MODE_OUTPUT(GPIOC_USB_FS_VBUSON) |         \
                              PIN_MODE_OUTPUT(GPIOC_LCD_MOSI) |              \
