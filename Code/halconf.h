@@ -173,7 +173,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(ADC_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)
-#define ADC_USE_MUTUAL_EXCLUSION    TRUE
+#define ADC_USE_MUTUAL_EXCLUSION    FALSE
 #endif
 
 /*===========================================================================*/
@@ -184,7 +184,7 @@
  * @brief   Sleep mode related APIs inclusion switch.
  */
 #if !defined(CAN_USE_SLEEP_MODE) || defined(__DOXYGEN__)
-#define CAN_USE_SLEEP_MODE          TRUE
+#define CAN_USE_SLEEP_MODE          FALSE
 #endif
 
 /*===========================================================================*/
@@ -195,7 +195,7 @@
  * @brief   Enables the mutual exclusion APIs on the I2C bus.
  */
 #if !defined(I2C_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)
-#define I2C_USE_MUTUAL_EXCLUSION    TRUE
+#define I2C_USE_MUTUAL_EXCLUSION    FALSE
 #endif
 
 /*===========================================================================*/
@@ -213,7 +213,7 @@
  * @brief   Enables an event sources for incoming packets.
  */
 #if !defined(MAC_USE_EVENTS) || defined(__DOXYGEN__)
-#define MAC_USE_EVENTS              TRUE
+#define MAC_USE_EVENTS              FALSE
 #endif
 
 /*===========================================================================*/
@@ -229,7 +229,7 @@
  *          use a DMA channel and heavily loads the CPU.
  */
 #if !defined(MMC_NICE_WAITING) || defined(__DOXYGEN__)
-#define MMC_NICE_WAITING            TRUE
+#define MMC_NICE_WAITING            FALSE
 #endif
 
 /*===========================================================================*/
@@ -273,7 +273,7 @@
  *          default configuration.
  */
 #if !defined(SERIAL_DEFAULT_BITRATE) || defined(__DOXYGEN__)
-#define SERIAL_DEFAULT_BITRATE      38400
+#define SERIAL_DEFAULT_BITRATE      115200
 #endif
 
 /**
@@ -284,7 +284,7 @@
  *          buffers.
  */
 #if !defined(SERIAL_BUFFERS_SIZE) || defined(__DOXYGEN__)
-#define SERIAL_BUFFERS_SIZE         16
+#define SERIAL_BUFFERS_SIZE         256
 #endif
 
 /*===========================================================================*/
@@ -304,7 +304,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(SPI_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)
-#define SPI_USE_MUTUAL_EXCLUSION    TRUE
+#define SPI_USE_MUTUAL_EXCLUSION    FALSE
 #endif
 
 #endif /* _HALCONF_H_ */

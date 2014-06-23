@@ -33,14 +33,15 @@
 /*
  * HAL driver system settings.
  */
+
 #define STM32_NO_INIT                       FALSE
 #define STM32_HSI_ENABLED                   TRUE
 #define STM32_LSI_ENABLED                   TRUE
 #define STM32_HSE_ENABLED                   FALSE
-#define STM32_LSE_ENABLED                   TRUE
+#define STM32_LSE_ENABLED                   FALSE
 #define STM32_ADC_CLOCK_ENABLED             TRUE
-#define STM32_USB_CLOCK_ENABLED             TRUE
-#define STM32_MSIRANGE                      STM32_MSIRANGE_2M
+#define STM32_USB_CLOCK_ENABLED             FALSE
+#define STM32_MSIRANGE                      STM32_MSIRANGE_4M
 #define STM32_SW                            STM32_SW_PLL
 #define STM32_PLLSRC                        STM32_PLLSRC_HSI
 #define STM32_PLLMUL_VALUE                  6
@@ -50,7 +51,7 @@
 #define STM32_PPRE2                         STM32_PPRE2_DIV1
 #define STM32_MCOSEL                        STM32_MCOSEL_NOCLOCK
 #define STM32_MCOPRE                        STM32_MCOPRE_DIV1
-#define STM32_RTCSEL                        STM32_RTCSEL_LSE
+#define STM32_RTCSEL                        STM32_RTCSEL_LSI
 #define STM32_RTCPRE                        STM32_RTCPRE_DIV2
 #define STM32_VOS                           STM32_VOS_1P8
 #define STM32_PVD_ENABLE                    FALSE
@@ -118,9 +119,9 @@
 /*
  * PWM driver system settings.
  */
-#define STM32_PWM_USE_TIM2                  FALSE
-#define STM32_PWM_USE_TIM3                  FALSE
-#define STM32_PWM_USE_TIM4                  TRUE
+#define STM32_PWM_USE_TIM2                  TRUE
+#define STM32_PWM_USE_TIM3                  TRUE
+#define STM32_PWM_USE_TIM4                  FALSE
 #define STM32_PWM_TIM2_IRQ_PRIORITY         7
 #define STM32_PWM_TIM3_IRQ_PRIORITY         7
 #define STM32_PWM_TIM4_IRQ_PRIORITY         7
@@ -164,7 +165,7 @@
 /*
  * USB driver system settings.
  */
-#define STM32_USB_USE_USB1                  TRUE
+#define STM32_USB_USE_USB1                  FALSE
 #define STM32_USB_LOW_POWER_ON_SUSPEND      FALSE
 #define STM32_USB_USB1_HP_IRQ_PRIORITY      13
 #define STM32_USB_USB1_LP_IRQ_PRIORITY      14
