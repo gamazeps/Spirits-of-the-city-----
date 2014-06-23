@@ -87,14 +87,13 @@ int main(void) {
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
 
-  
+    // Send some things
+  while (TRUE) {
     txbuf[1] =0xe4;
     txbuf[2]=0x05;
     txbuf[3]=0x17;
     txbuf[4]=0xe7;
 
-  // Send some things
-  while (TRUE) {
     // Read PIPE0 addr register
     WriteRegister(0x0A,5);
     ReadRegister(0x0A,5);
