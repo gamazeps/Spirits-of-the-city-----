@@ -51,7 +51,7 @@
  * IO pins assignments.
  */
 
-#define GPIOA_PIN0                0
+#define GPIOA_ADC                  0 /*Luminosity sensor*/
 #define GPIOA_PIN1                  1
 #define GPIOA_UV1                   2 /*LED UV 1 -> TIM2_CH3*/
 #define GPIOA_UV2                   3 /*LED UV 2 -> TIM2_CH4*/
@@ -180,7 +180,7 @@
 /*
  * GPIOA setup:
  *
- * PA0  -
+ * PA0  - ADC IN0                   (anolog input)
  * PA1  - 
  * PA2  - UV1                       (alternate 1 -> Timer ; pushpull).
  * PA3  - UV2                       (alternate 1 -> Timer ; pushpull).
@@ -197,7 +197,7 @@
  * PA14 - 
  * PA15 - RGBsmall_B                (alternate 1 -> Timer ; pushpull).
  */
-#define VAL_GPIOA_MODER             (PIN_MODE_INPUT(GPIOA_PIN0) |         \
+#define VAL_GPIOA_MODER             (PIN_MODE_ANALOG(GPIOA_ADC) |         \
                                      PIN_MODE_INPUT(GPIOA_PIN1) |           \
                                      PIN_MODE_ALTERNATE(GPIOA_UV1) |           \
                                      PIN_MODE_ALTERNATE(GPIOA_UV2) |           \
@@ -213,7 +213,7 @@
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TMS) |   \
                                      PIN_MODE_ALTERNATE(GPIOA_JTAG_TCK) |   \
                                      PIN_MODE_ALTERNATE(GPIOA_RGBsmall_B))
-#define VAL_GPIOA_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOA_PIN0) |     \
+#define VAL_GPIOA_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOA_ADC) |     \
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN1) |       \
                                      PIN_OTYPE_PUSHPULL(GPIOA_UV1) |        \
                                      PIN_OTYPE_PUSHPULL(GPIOA_UV2) |        \
@@ -229,7 +229,7 @@
                                      PIN_OTYPE_PUSHPULL(GPIOA_JTAG_TMS) |   \
                                      PIN_OTYPE_PUSHPULL(GPIOA_JTAG_TCK) |   \
                                      PIN_OTYPE_PUSHPULL(GPIOA_RGBsmall_B))
-#define VAL_GPIOA_OSPEEDR           (PIN_OSPEED_400K(GPIOA_PIN0) |        \
+#define VAL_GPIOA_OSPEEDR           (PIN_OSPEED_400K(GPIOA_ADC) |        \
                                      PIN_OSPEED_400K(GPIOA_PIN1) |          \
                                      PIN_OSPEED_400K(GPIOA_UV1) |          \
                                      PIN_OSPEED_400K(GPIOA_UV2) |          \
@@ -245,7 +245,7 @@
                                      PIN_OSPEED_400K(GPIOA_JTAG_TMS) |       \
                                      PIN_OSPEED_400K(GPIOA_JTAG_TCK) |       \
                                      PIN_OSPEED_400K(GPIOA_RGBsmall_B))
-#define VAL_GPIOA_PUPDR             (PIN_PUPDR_PULLDOWN(GPIOA_PIN0) |     \
+#define VAL_GPIOA_PUPDR             (PIN_PUPDR_PULLDOWN(GPIOA_ADC) |     \
                                      PIN_PUPDR_PULLDOWN(GPIOA_PIN1) |         \
                                      PIN_PUPDR_PULLDOWN(GPIOA_UV1) |         \
                                      PIN_PUPDR_PULLDOWN(GPIOA_UV2) |         \
@@ -261,7 +261,7 @@
                                      PIN_PUPDR_PULLDOWN(GPIOA_JTAG_TMS) |     \
                                      PIN_PUPDR_PULLDOWN(GPIOA_JTAG_TCK) |   \
                                      PIN_PUPDR_PULLDOWN(GPIOA_RGBsmall_B))
-#define VAL_GPIOA_ODR               (PIN_ODR_HIGH(GPIOA_PIN0) |           \
+#define VAL_GPIOA_ODR               (PIN_ODR_HIGH(GPIOA_ADC) |           \
                                      PIN_ODR_HIGH(GPIOA_PIN1) |             \
                                      PIN_ODR_HIGH(GPIOA_UV1) |             \
                                      PIN_ODR_HIGH(GPIOA_UV2) |             \
@@ -277,7 +277,7 @@
                                      PIN_ODR_HIGH(GPIOA_JTAG_TMS) |         \
                                      PIN_ODR_HIGH(GPIOA_JTAG_TCK) |         \
                                      PIN_ODR_HIGH(GPIOA_RGBsmall_B))
-#define VAL_GPIOA_AFRL              (PIN_AFIO_AF(GPIOA_PIN0, 0) |         \
+#define VAL_GPIOA_AFRL              (PIN_AFIO_AF(GPIOA_ADC, 0) |         \
                                      PIN_AFIO_AF(GPIOA_PIN1, 0) |           \
                                      PIN_AFIO_AF(GPIOA_UV1, 1) |           \
                                      PIN_AFIO_AF(GPIOA_UV2, 1) |           \
