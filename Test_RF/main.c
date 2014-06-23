@@ -48,21 +48,21 @@ static msg_t BlinkerThread(void *arg) {
   static uint8_t txbuf[512];
   static uint8_t rxbuf[512];
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
-void WriteRegister(int  numRegistre, int numMots){
-  txbuf[0] = W_REGISTER(numRegistre);
+void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf, uint8_t* wrxbuf){
+  wtxbuf[0] = W_REGISTER(numRegistre);
   spiSelect(&SPID3);
-  spiExchange(&SPID3, numMots+1, txbuf, rxbuf);
+  spiExchange(&SPID3, numMots+1, wtxbuf, wrxbuf);
   spiUnselect(&SPID3);
   chThdSleepMilliseconds(1);
 }
 //registre dans lequel on va lire, et nombre de mots à lire
-void ReadRegister(int numRegistre,int numMots){
-  txbuf[0] = R_REGISTER(numRegistre);
+void ReadRegister(int numRegistre,int numMots,uint8_t* rtxbuf, uint8_t* rrxbuf ){
+  rtxbuf[0] = R_REGISTER(numRegistre);
   for(int i=1; i<numMots+1;i++){
-    txbuf[i]=NOP;
+    rtxbuf[i]=NOP;
   }
   spiSelect(&SPID3);
-  spiExchange(&SPID3, numMots+1, txbuf, rxbuf);
+  spiExchange(&SPID3, numMots+1, rtxbuf, rrxbuf);
   spiUnselect(&SPID3);
   chThdSleepMilliseconds(1);
 }
@@ -87,19 +87,20 @@ int main(void) {
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
 
-  
-    txbuf[1] =0xe4;
+txbuf[1] =0xe4;
     txbuf[2]=0x05;
     txbuf[3]=0x17;
     txbuf[4]=0xe7;
 
+
   // Send some things
   while (TRUE) {
     // Read PIPE0 addr register
-    WriteRegister(0x0A,5);
-    ReadRegister(0x0A,5);
+    WriteRegister(0x0A,5,txbuf, rxbuf);
+    ReadRegister(0x0A,5,txbuf, rxbuf);
     // Read PIPE0 addr register
-  
+
+    //  WriteRegister(0x00,1,txbuf
 
     chThdSleepMilliseconds(1000);
   }
