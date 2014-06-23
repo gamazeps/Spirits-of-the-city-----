@@ -17,99 +17,62 @@
 #include "ch.h"
 #include "hal.h"
 
-static pwmcallback_t clear_all(void){
-  palClearPad(GPIOF,GPIOF_STAT1);
-  palClearPad(GPIOF,GPIOF_STAT2);
-  palClearPad(GPIOF,GPIOF_STAT3);
-  return 0;
+static void set_green(int on){
+  on ? palSetPad(GPIOF, GPIOF_STAT1) : palClearPad(GPIOF, GPIOF_STAT1);
 }
 
-static void set_green(PWMDriver *pwmd){
-  (void)pwmd;
-  palSetPad(GPIOF, GPIOF_STAT1);
+static void set_orange(int on){
+  on ? palSetPad(GPIOF, GPIOF_STAT2) : palClearPad(GPIOF, GPIOF_STAT2);
 }
 
-static void set_orange(PWMDriver *pwmd){
-  (void)pwmd;
-  palSetPad(GPIOF, GPIOF_STAT2);
+static void set_red(int on){
+  on ? palSetPad(GPIOF, GPIOF_STAT3): palClearPad(GPIOF, GPIOF_STAT3);
 }
 
-static void set_red(PWMDriver *pwmd){
-  (void)pwmd;
-  palSetPad(GPIOF, GPIOF_STAT3);
-}
-/*
- * Green LED blinker thread, times are in milliseconds.
- */
-static PWMConfig pwmcfg =
-  {
-    200000,/*20 kHz clock frequency */
-    64, /*PWM period 0.005 second*/
-    (pwmcallback_t) clear_all, /*No callback*/
-    {
-      {PWM_OUTPUT_DISABLED,set_green},
-      {PWM_OUTPUT_DISABLED,set_orange},
-      {PWM_OUTPUT_DISABLED,set_red},
-      {PWM_OUTPUT_DISABLED,NULL}
-    },
-    0,0
-  };
-
+// Blinker thread
 static WORKING_AREA(waThread1, 128);
-static msg_t Thread1(void *arg) {
+static msg_t BlinkerThread(void *arg) {
   (void)arg;
-  chRegSetThreadName("blinker");
+  int on = 0;
   while (TRUE) {
-    for(int i = 0;i<63;i++){
-      pwmEnableChannel(&PWMD5,0,64-i);
-      pwmEnableChannel(&PWMD5,1,64-i);
-      pwmEnableChannel(&PWMD5,2,64-i);
-      chThdSleepMilliseconds(50);
-    }
+    set_green(on);
+    chThdSleepMilliseconds(500);
+    on = 1-on;
   }
   return 0;
 }
 
-static SPIConfig spi3cfg = {
-  NULL, // No callback
-  /* HW dependent part.*/
-  GPIOC, // CS is PC6
-  6, // CS is PC6
-  0x00000038 // CR1 : clock as low as possible 5:3=111
-};
 
-/*
- * Application entry point.
- */
+//  Application entry point.
 int main(void) {
-
-  /*
-   * System initializations.
-   * - HAL initialization, this also initializes the configured device drivers
-   *   and performs the board-specific initializations.
-   * - Kernel initialization, the main() function becomes a thread and the
-   *   RTOS is active.
-   */
-  halInit();
+  halInit();//also initializes the spi driver
   chSysInit();
-  pwmStart(&PWMD5, &pwmcfg);
-  spiStart(&SPID3, &spi3cfg);
-  /*
-   * Activates the serial driver 6 using the driver default configuration.
-   */
-  sdStart(&SD6, NULL);
 
-  /*
-   * Creates the blinker thread.
-   */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+  // Creates the blinker thread.
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
 
-  // test SPI
+  // Test SPI
+  static SPIConfig spi3cfg = {
+    NULL, // No callback
+    /* HW dependent part.*/
+    GPIOC, // CS is PC6
+    6,// CS is PC6
+    0x00000038 // CR1 : clock as low as possible 5:3=111
+  };
 
+  // Init SPI
+  spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
+  static uint8_t txbuf[512];
+  static uint8_t rxbuf[512];
+  for (int i=0; i<512; i++)
+    txbuf[i] = i;
 
-
-  // Go to bed
+  // Send some things
   while (TRUE) {
+    spiSelect(&SPID3);
+    spiExchange(&SPID3, 10, txbuf, rxbuf);
+    spiUnselect(&SPID3);
+
     chThdSleepMilliseconds(1000);
   }
 }

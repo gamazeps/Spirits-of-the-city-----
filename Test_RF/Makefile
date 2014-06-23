@@ -10,7 +10,7 @@ endif
 
 # C specific options here (added to USE_OPT).
 ifeq ($(USE_COPT),)
-  USE_COPT = -std=gnu99 -Werror -Wall
+  USE_COPT = -std=gnu99 -Werror -Wall -Wno-unused-function
 endif
 
 # C++ specific options here (added to USE_OPT).
