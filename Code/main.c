@@ -18,7 +18,8 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
-#include "gamma.h"
+#include "hsv2rgb.h"
+#include "led.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
@@ -45,24 +46,28 @@ static WORKING_AREA(waHBT, 128);
 __attribute__((__noreturn__))  static msg_t HBT(void *arg) {
   (void)arg;
   chRegSetThreadName("Heart Beat");
-  static int i = 0;
-  static int delta = 1;
+  static uint8_t h = 0;
+  static uint8_t s = 255;
+  static uint8_t v = 0;
+  static int delta_v = 1;
+  static hsv_color hsv = {0, 0, 0};
+  static rgb_color rgb;
   while (TRUE) {
-    pwmEnableChannel(&PWMD3, 0, led_gamma[i]);
-    pwmEnableChannel(&PWMD3, 1, led_gamma[i]);
-    pwmEnableChannel(&PWMD3, 2, led_gamma[i]);
-    pwmEnableChannel(&PWMD3, 3, led_gamma[i]);
+    h += 1;
+    v = v+delta_v;
+    if (v==100)
+      delta_v = -1;
+    else if (v==0)
+      delta_v = 1;
 
-    pwmEnableChannel(&PWMD2, 0, led_gamma[i]);
-    pwmEnableChannel(&PWMD2, 1, led_gamma[i]);
-    pwmEnableChannel(&PWMD2, 2, led_gamma[i]);
-    pwmEnableChannel(&PWMD2, 3, led_gamma[i]);
+    hsv.h = h; hsv.s = s; hsv.v = v;
+    rgb = hsv2rgb(hsv);
+    set_big_led(rgb.r, rgb.g, rgb.b);
 
-    i = i+delta;
-    if (i==100)
-      delta = -1;
-    else if (i==0)
-      delta = 1;
+    hsv.h = (h+100)%256; hsv.s = s; hsv.v = v;
+    rgb = hsv2rgb(hsv);
+    set_small_led(rgb.r, rgb.g, rgb.b);
+
     chThdSleepMilliseconds(10);
   }
 }
