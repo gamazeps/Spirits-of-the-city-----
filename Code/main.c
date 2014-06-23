@@ -91,7 +91,7 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   (void)arg;
   chRegSetThreadName("PIR");
   while(TRUE) {
-    if (palReadPad(GPIOC, GPIOC_PROXSENSOR)) {
+    if (palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH) {
       run_led_thread = TRUE;
       chThdSleepSeconds(5);
       run_led_thread = FALSE;
