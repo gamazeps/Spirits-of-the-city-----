@@ -63,23 +63,27 @@ static PWMConfig pwmcfg_tim3 = {
 
 
 /* Eyes light up/ light down slowly :
-   Eye -> "2" if both eyes, "b" if only the big one, "s" if only the small one
-   blue, red, green -> color (between 0 and 255)
+   Eye -> 2 if both eyes, 0 if only the big one, 1 if only the small one
+   color -> color in hexadecimal
    intensity -> between 0 (off) and 10 (full on)
    Time -> duration of the lightening
 */
-static void eyes_lightening (char eye, int8 blue, int8 red, int8 green ,int8 initial_intensity, int8 final_intensity,int time ) = {
+static void eyes_lightening (int8_t eye, int8_t color ,int8_t initial_intensity, int8_t final_intensity,int time ) = {
+  
+  int8_t red = color/0xFFFF;
+  int8_t green = (color-red)/0xFF;
+  int8_t blue = color - red - green;
   int t = time/CYCLIC_RATIO; 
-  int sens = initial_intensity<final_intensity ? 1 : -1;
+  int8_t sens = initial_intensity<final_intensity ? 1 : -1;
 
-    for(int i=1+(initial_intensity*CYCLIC_RATIO/10); i<CYCLIC_RATIO*final_intensity/10; i+=sens) {
+  for(int i=1+(initial_intensity*CYCLIC_RATIO/10); i<CYCLIC_RATIO*final_intensity/10; i++) {
 
-      int c_bigblue = (eye = "2" | eye = "b") ? (i*blue)/256 : 0;
-      int c_bigred = (eye = "2" | eye = "b") ? (i*red)/256 : 0;
-      int c_biggreen = (eye = "2" | eye = "b") ? (i*green)/256 : 0;
-      int c_smallblue = (eye = "2" | eye = "s") ? (i*blue)/256 : 0;
-      int c_smallred = (eye = "2" | eye = "s") ? (i*red)/256 : 0;
-      int c_smallgreen = (eye = "2" | eye = "s") ? (i*green)/256 : 0;
+      int c_bigblue = (eye = 2 | eye = 0) ? (i*blue)/256 : 0;
+      int c_bigred = (eye = 2 | eye = 0) ? (i*red)/256 : 0;
+      int c_biggreen = (eye = 2 | eye = 0) ? (i*green)/256 : 0;
+      int c_smallblue = (eye = 2 | eye = 1) ? (i*blue)/256 : 0;
+      int c_smallred = (eye = 2 | eye = 1) ? (i*red)/256 : 0;
+      int c_smallgreen = (eye = 2 | eye = 1) ? (i*green)/256 : 0;
 
       pwmEnableChannel(&PWMD3, 2, c_biggreen); 
       pwmEnableChannel(&PWMD3, 3,c_bigblue);
@@ -93,7 +97,7 @@ static void eyes_lightening (char eye, int8 blue, int8 red, int8 green ,int8 ini
     }
 };
 
-static void set_heart_beat (int speed) = { 
+static void set_heart_beat (int speed) = {  /* A FAIRE : THREAD*/
   
   pwmEnableChannel(&PWMD2, 4,CYCLIC_RATIO/2 );     /* big beat */ 
   chThdSleepMilliseconds(speed/8);
