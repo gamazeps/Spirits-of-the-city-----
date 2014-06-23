@@ -86,6 +86,29 @@ void ReadRegister(int numRegistre,int numMots,uint8_t* rtxbuf, uint8_t* rrxbuf )
   spiUnselect(&SPID3);
   chThdSleepMilliseconds(1);
 }
+//To send data to an other radio, puts the data int the TX_PAYLOAD
+void SendData(uint8_t* datasend,int numWords,uint8_t* srxbuf){
+datasend[0]=W_TX_PAYLOAD;
+spiSelect(&SPID3);
+spiExchange(&SPID3, numWords+1, datasend, srxbuf);
+spiUnselect(&SPID3);
+chThdSleepMilliseconds(1);
+set_red(1);chThdSleepMilliseconds(100);
+set_red(0);
+}
+
+void ReceiveData(uint8_t* rtxbuf,uint8_t* rrxbuf,int sizepck){
+set_red(0);
+rtxbuf[0]=R_RX_PAYLOAD;
+for(int i=1; i<sizepck+1;i++){
+    rtxbuf[i]=NOP;
+  }
+spiSelect(&SPID3);
+spiExchange(&SPID3,sizepck+1, rtxbuf, rrxbuf);
+spiUnselect(&SPID3);
+chThdSleepMilliseconds(1);
+set_red(1);
+}
 
 void ConfigureRF(int sizepck){
   //Configure the register 00 (config)
