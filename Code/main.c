@@ -42,24 +42,31 @@ static PWMConfig pwmcfg = {
 };
 
 // LED thread
+static volatile bool run_led_thread = FALSE;
 static WORKING_AREA(waLEDThread, 128);
 __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   (void)arg;
-  chRegSetThreadName("Heart Beat");
+  chRegSetThreadName("LED");
   static uint8_t h = 0;
   static uint8_t s = 255;
   static uint8_t v = 0;
   static int delta_v = 1;
   while (TRUE) {
-    h += 1;
-    v = v+delta_v;
-    if (v==80)
-      delta_v = -1;
-    else if (v==0)
-      delta_v = 1;
+    if(run_led_thread) {
+      h += 1;
+      v = v+delta_v;
+      if (v==80)
+        delta_v = -1;
+      else if (v==0)
+        delta_v = 1;
 
-    set_big_led_hsv(h, s, v);
-    set_small_led_hsv((h+128)%256, s, 80-v);
+      set_big_led_hsv(h, s, v);
+      set_small_led_hsv((h+128)%256, s, 80-v);
+    }
+    else {
+      set_big_led_hsv(0, 0, 0);
+      set_small_led_hsv(0, 0, 0);
+    }
 
     chThdSleepMilliseconds(10);
   }
@@ -69,7 +76,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
 static WORKING_AREA(waHeartbeatThread, 128);
 __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
   (void)arg;
-  chRegSetThreadName("Heart Beat");
+  chRegSetThreadName("Heartbeat");
   while(TRUE) {
     set_big_uv_led(0);
     chThdSleepMilliseconds(500);
@@ -77,6 +84,22 @@ __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
     chThdSleepMilliseconds(500);
   }
 }
+
+// PIR sensor thread
+static WORKING_AREA(waPIRThread, 128);
+__attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
+  (void)arg;
+  chRegSetThreadName("PIR");
+  while(TRUE) {
+    if (palReadPad(GPIOC, GPIOC_PROXSENSOR)) {
+      run_led_thread = TRUE;
+      chThdSleepSeconds(5);
+      run_led_thread = FALSE;
+    }
+    chThdSleepMilliseconds(100);
+  }
+}
+
 
 /*
  * Application entry point.
@@ -98,6 +121,9 @@ int main(void) {
 
   // Launch the heart beat thread
   chThdCreateStatic(waHeartbeatThread, sizeof(waHeartbeatThread), NORMALPRIO, HeartbeatThread, NULL);
+
+  // Launch PIR thread
+  chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
