@@ -45,7 +45,27 @@ static msg_t BlinkerThread(void *arg) {
   }
   return 0;
 }
-
+  static uint8_t txbuf[512];
+  static uint8_t rxbuf[512];
+// en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
+void WriteRegister(int  numRegistre, int numMots){
+  txbuf[0] = W_REGISTER(numRegistre);
+  spiSelect(&SPID3);
+  spiExchange(&SPID3, numMots+1, txbuf, rxbuf);
+  spiUnselect(&SPID3);
+  chThdSleepMilliseconds(1);
+}
+//registre dans lequel on va lire, et nombre de mots à lire
+void ReadRegister(int numRegistre,int numMots){
+  txbuf[0] = R_REGISTER(numRegistre);
+  for(int i=1; i<numMots+1;i++){
+    txbuf[i]=NOP;
+  }
+  spiSelect(&SPID3);
+  spiExchange(&SPID3, numMots+1, txbuf, rxbuf);
+  spiUnselect(&SPID3);
+  chThdSleepMilliseconds(1);
+}
 
 //  Application entry point.
 int main(void) {
@@ -66,48 +86,20 @@ int main(void) {
 
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
-  static uint8_t txbuf[512];
-  static uint8_t rxbuf[512];
-  for (int i=0; i<512; i++)
-    txbuf[i] = i;
+
+  
+    txbuf[1] =0xe4;
+    txbuf[2]=0x05;
+    txbuf[3]=0x17;
+    txbuf[4]=0xe7;
 
   // Send some things
   while (TRUE) {
     // Read PIPE0 addr register
-    txbuf[0] = R_REGISTER(0xA);
-    txbuf[1] = NOP;
-    txbuf[2] = NOP;
-    txbuf[3] = NOP;
-    txbuf[4] = NOP;
-    txbuf[5] = NOP;
-    spiSelect(&SPID3);
-    spiExchange(&SPID3, 6, txbuf, rxbuf);
-    spiUnselect(&SPID3);
-    chThdSleepMilliseconds(1);
-
-    // Change PIPE0 addr register
-    txbuf[0] = W_REGISTER(0xA);
-    txbuf[1] = 0xaa;
-    txbuf[2] = 0xE7;
-    txbuf[3] = 0x23;
-    txbuf[4] = 0xe7;
-    txbuf[5] = 0x23;
-    spiSelect(&SPID3);
-    spiExchange(&SPID3, 6, txbuf, rxbuf);
-    spiUnselect(&SPID3);
-    chThdSleepMilliseconds(1);
-
+    WriteRegister(0x0A,5);
+    ReadRegister(0x0A,5);
     // Read PIPE0 addr register
-    txbuf[0] = R_REGISTER(0xA);
-    txbuf[1] = NOP;
-    txbuf[2] = NOP;
-    txbuf[3] = NOP;
-    txbuf[4] = NOP;
-    txbuf[5] = NOP;
-    spiSelect(&SPID3);
-    spiExchange(&SPID3, 6, txbuf, rxbuf);
-    spiUnselect(&SPID3);
-    chThdSleepMilliseconds(1);
+  
 
     chThdSleepMilliseconds(1000);
   }
