@@ -41,17 +41,15 @@ static PWMConfig pwmcfg = {
   0
 };
 
-// Heartbeat thread
-static WORKING_AREA(waHBT, 128);
-__attribute__((__noreturn__))  static msg_t HBT(void *arg) {
+// LED thread
+static WORKING_AREA(waLEDThread, 128);
+__attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   (void)arg;
   chRegSetThreadName("Heart Beat");
   static uint8_t h = 0;
   static uint8_t s = 255;
   static uint8_t v = 0;
   static int delta_v = 1;
-  static hsv_color hsv = {0, 0, 0};
-  static rgb_color rgb;
   while (TRUE) {
     h += 1;
     v = v+delta_v;
@@ -60,15 +58,23 @@ __attribute__((__noreturn__))  static msg_t HBT(void *arg) {
     else if (v==0)
       delta_v = 1;
 
-    hsv.h = h; hsv.s = s; hsv.v = v;
-    rgb = hsv2rgb(hsv);
-    set_big_led(rgb.r, rgb.g, rgb.b);
-
-    hsv.h = (h+100)%256; hsv.s = s; hsv.v = v;
-    rgb = hsv2rgb(hsv);
-    set_small_led(rgb.r, rgb.g, rgb.b);
+    set_big_led_hsv(h, s, v);
+    set_small_led_hsv((h+128)%256, s, 80-v);
 
     chThdSleepMilliseconds(10);
+  }
+}
+
+// Heart beat thread
+static WORKING_AREA(waHeartbeatThread, 128);
+__attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
+  (void)arg;
+  chRegSetThreadName("Heart Beat");
+  while(TRUE) {
+    set_big_uv_led(0);
+    chThdSleepMilliseconds(500);
+    set_big_uv_led(128);
+    chThdSleepMilliseconds(500);
   }
 }
 
@@ -87,8 +93,11 @@ int main(void) {
   pwmStart(&PWMD2, &pwmcfg);
   pwmStart(&PWMD3, &pwmcfg);
 
+  // Launch the LED thread
+  chThdCreateStatic(waLEDThread, sizeof(waLEDThread), NORMALPRIO, LEDThread, NULL);
+
   // Launch the heart beat thread
-  chThdCreateStatic(waHBT, sizeof(waHBT), NORMALPRIO, HBT, NULL);
+  chThdCreateStatic(waHeartbeatThread, sizeof(waHeartbeatThread), NORMALPRIO, HeartbeatThread, NULL);
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
