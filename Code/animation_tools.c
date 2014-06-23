@@ -103,7 +103,15 @@ static void set_heart_beat (int speed) = {
   chThdSleepMilliseconds(speed/16);  
   pwmEnableChannel(&PWMD2, 4,0 );                 /* turn off*/
   chThdSleepMilliseconds(speed*3/4);    
+};
+
+  static void accelerate_heart_beat (int initial_speed, int final_speed, int time) = {
     
+    t = time/(final_speed - initial_speed);
 
-}
-
+    for (int i = initial_speed, i< final_speed, i++)
+      {
+	set_heart_beat (i);
+	chThdSleepMilliseconds(t);
+      }
+  };
