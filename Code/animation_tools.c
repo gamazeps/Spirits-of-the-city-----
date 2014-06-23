@@ -37,7 +37,7 @@ static PWMConfig pwmcfg_tim2 = {
     {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Small Eye, blue */
     {PWM_OUTPUT_DISABLED, NULL}, /* LED RGB Small Eye, green */
     {PWM_OUTPUT_DISABLED, NULL}, /* LED UV 1 : Head*/
-    {PWM_OUTPUT_DISABLED, incr_value},/* LED UV 2 : Heart*/
+    {PWM_OUTPUT_DISABLED, NULL},/* LED UV 2 : Heart*/
   
   },
   0,
@@ -93,13 +93,25 @@ static void eyes_lightening (char eye, int8 blue, int8 red, int8 green ,int8 ini
     }
 };
 
-static void accelerate_heart_beats (int initial_speed, int final_speed, int time) = { 
-  int sens = initial_speed<final_speed ? 1 : -1;
+static void set_heart_beat (int speed) = { 
+  
+  pwmEnableChannel(&PWMD2, 4,CYCLIC_RATIO/2 );     /* big beat */ 
+  chThdSleepMilliseconds(speed/8);
+  pwmEnableChannel(&PWMD2, 4, 0 );                /*turn off */
+  chThdSleepMilliseconds(speed/16);  
+  pwmEnableChannel(&PWMD2, 4,CYCLIC_RATIO/2 );    /* small beat */ 
+  chThdSleepMilliseconds(speed/16);  
+  pwmEnableChannel(&PWMD2, 4,0 );                 /* turn off*/
+  chThdSleepMilliseconds(speed*3/4);    
+};
 
+  static void accelerate_heart_beat (int initial_speed, int final_speed, int time) = {
+    
+    t = time/(final_speed - initial_speed);
 
-}
-
-
-
-}
-
+    for (int i = initial_speed, i< final_speed, i++)
+      {
+	set_heart_beat (i);
+	chThdSleepMilliseconds(t);
+      }
+  };
