@@ -18,6 +18,7 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
+#include "gamma.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
@@ -25,8 +26,8 @@ BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
 
 // Timer 2 ans 3 PWM configuration structure (same config for both PWM drivers)
 static PWMConfig pwmcfg = {
-  100000,                             // 100kHz tick clock frequency
-  100,                                // 100 ticks per PWM period thus PWM period is 1kHz
+  800000,                             // 100kHz tick clock frequency
+  256,                                // 100 ticks per PWM period thus PWM period is 1kHz
   NULL,
   {
     {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -45,20 +46,23 @@ __attribute__((__noreturn__))  static msg_t HBT(void *arg) {
   (void)arg;
   chRegSetThreadName("Heart Beat");
   static int i = 0;
+  static int delta = 1;
   while (TRUE) {
-    pwmEnableChannel(&PWMD3, 0, i);
-    pwmEnableChannel(&PWMD3, 1, i);
-    pwmEnableChannel(&PWMD3, 2, i);
-    pwmEnableChannel(&PWMD3, 3, i);
+    pwmEnableChannel(&PWMD3, 0, led_gamma[i]);
+    pwmEnableChannel(&PWMD3, 1, led_gamma[i]);
+    pwmEnableChannel(&PWMD3, 2, led_gamma[i]);
+    pwmEnableChannel(&PWMD3, 3, led_gamma[i]);
 
-    pwmEnableChannel(&PWMD2, 0, i);
-    pwmEnableChannel(&PWMD2, 1, i);
-    pwmEnableChannel(&PWMD2, 2, i);
-    pwmEnableChannel(&PWMD2, 3, i);
+    pwmEnableChannel(&PWMD2, 0, led_gamma[i]);
+    pwmEnableChannel(&PWMD2, 1, led_gamma[i]);
+    pwmEnableChannel(&PWMD2, 2, led_gamma[i]);
+    pwmEnableChannel(&PWMD2, 3, led_gamma[i]);
 
-    i = i+1;
-    if (i>100)
-      i = 0;
+    i = i+delta;
+    if (i==100)
+      delta = -1;
+    else if (i==0)
+      delta = 1;
     chThdSleepMilliseconds(10);
   }
 }
