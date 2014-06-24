@@ -129,7 +129,7 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   while(TRUE) {
     if (palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH) {
       run_led_thread = TRUE;
-      chThdSleepSeconds(5);
+      chThdSleepSeconds(1000);
       run_led_thread = FALSE;
     }
     chThdSleepMilliseconds(100);
