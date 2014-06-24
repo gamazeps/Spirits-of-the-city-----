@@ -38,13 +38,22 @@ static const ADCConversionGroup adcgrpcfg = {
   NULL,
   NULL,
   /* HW dependent part.*/
+
+  //CR1 && CR2 Init
   0,
   ADC_CR2_SWSTART,
+
+  //SMPRX Init
   0,
-  ADC_SMPR1_SMP_AN0(ADC_SAMPLE_480),
-  ADC_SQR3_NUM_CH(ADC_GRP1_NUM_CHANNELS),
   0,
-  ADC_SQR3_SQ1_N(ADC_CHANNEL_IN0)
+  ADC_SMPR3_SMP_AN0(ADC_SAMPLE_384),
+
+  //SQRX Init
+  ADC_SQR5_SQ1_N(ADC_CHANNEL_IN0),
+  0,
+  0,
+  0,
+  ADC_SQR1_NUM_CH(ADC_GRP1_NUM_CHANNELS)
 };
 
 
