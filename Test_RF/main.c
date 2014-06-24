@@ -17,7 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITER FALSE
+#define ISTRANSMITER TRUE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -28,9 +28,9 @@
 #define FLUSH_TX (0xE1)
 
 #define CONFIG (0x00)
-#define EN_AA (0x01) 
+#define EN_AA (0x01)
 #define EN_RXADDR (0x02)
-#define SETUP_AW (0x03) 
+#define SETUP_AW (0x03)
 #define SETUP_RTR (0x04)
 #define RF_CH (0x05)
 #define RF_SETUP (0x06)
@@ -66,7 +66,7 @@ static msg_t BlinkerThread(void *arg) {
   return 0;
 }
  static uint8_t txbuf[512];
-  static uint8_t rxbuf[512]; 
+ static uint8_t rxbuf[512];
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
 void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf, uint8_t* wrxbuf){
   wtxbuf[0] = W_REGISTER(numRegistre);
@@ -88,6 +88,7 @@ void ReadRegister(int numRegistre,int numMots,uint8_t* rtxbuf, uint8_t* rrxbuf )
 }
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(uint8_t* datasend,int numWords,uint8_t* srxbuf){
+set_red(0);
 datasend[0]=W_TX_PAYLOAD;
 spiSelect(&SPID3);
 spiExchange(&SPID3, numWords+1, datasend, srxbuf);
@@ -135,7 +136,7 @@ void ConfigureRF(int sizepck){
   txbuf[1]=0b00000010;
   WriteRegister(RF_CH,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
   //??
-  txbuf[1]=0b00000101;
+  txbuf[1]=0b00000111;
   WriteRegister(RF_SETUP,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
   //setting the  adress and the payload width
   txbuf[1]=0xB1;txbuf[2]=0xB2;txbuf[3]=0xB3;
@@ -167,12 +168,21 @@ int main(void) {
   };
     // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
+
+  //Configuration, parameter : nomber of bytes that we have to send
+   ConfigureRF(3);
+   txbuf[1]=0x23;
+   txbuf[2]=0x09;
+   txbuf[3]=0x92;
+   chThdSleepMilliseconds(10);
+
   // Send some things
   while (TRUE) {
-    // Read PIPE0 addr register
-    ConfigureRF(1);
-    // Read PIPE0 addr register
-
+    SendData(txbuf,3,rxbuf);
     chThdSleepMilliseconds(1000);
+    txbuf[1]=0x05;
+    txbuf[2]=0x11;
+    txbuf[3]=0x94;
+    SendData(txbuf,3,rxbuf);
   }
 }
