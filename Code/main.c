@@ -123,13 +123,13 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   }
 }
 
-// Luminosity sensor thread
+// ADC - Luminosity sensor thread
 static WORKING_AREA(waADCThread,128);
 __attribute__((__noreturn__)) static msg_t ADCThread(void *arg){
   (void) arg;
   chRegSetThreadName("ADC");
   while(TRUE){
-    adcConvert(&ADCD1, &adcgrpcfg, samples, 1);
+    adcConvert(&ADCD1, &adcgrpcfg, adc_samples, 1);
 
     //Sleep for 30 minutes
     chThdSleepMilliseconds(1800000);
