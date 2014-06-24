@@ -65,89 +65,79 @@ static msg_t BlinkerThread(void *arg) {
   }
   return 0;
 }
- static uint8_t txbuf[512];
- static uint8_t rxbuf[512];
+static uint8_t txbuf[512];
+static uint8_t rxbuf[512];
+
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
-void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf, uint8_t* wrxbuf){
-  wtxbuf[0] = W_REGISTER(numRegistre);
+void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
   spiSelect(&SPID3);
-  spiExchange(&SPID3, numMots+1, wtxbuf, wrxbuf);
+  uint8_t command = W_REGISTER(numRegistre);
+  spiSend(&SPID3, 1, &command);
+  spiSend(&SPID3, numMots, wtxbuf);
   spiUnselect(&SPID3);
   chThdSleepMilliseconds(1);
 }
+
+static void WriteRegisterByte(int numRegister, uint8_t value) {
+  WriteRegister(numRegister, 1, &value);
+}
+
 //registre dans lequel on va lire, et nombre de mots à lire
-void ReadRegister(int numRegistre,int numMots,uint8_t* rtxbuf, uint8_t* rrxbuf ){
-  rtxbuf[0] = R_REGISTER(numRegistre);
-  for(int i=1; i<numMots+1;i++){
-    rtxbuf[i]=NOP;
-  }
+void ReadRegister(int numRegister, int numMots, uint8_t* rrxbuf ){
+  uint8_t command = R_REGISTER(numRegister);
   spiSelect(&SPID3);
-  spiExchange(&SPID3, numMots+1, rtxbuf, rrxbuf);
+  spiSend(&SPID3, 1, &command);
+  spiReceive(&SPID3, numMots, rrxbuf);
   spiUnselect(&SPID3);
   chThdSleepMilliseconds(1);
 }
 //To send data to an other radio, puts the data int the TX_PAYLOAD
-void SendData(uint8_t* datasend,int numWords,uint8_t* srxbuf){
-set_red(0);
-datasend[0]=W_TX_PAYLOAD;
-spiSelect(&SPID3);
-spiExchange(&SPID3, numWords+1, datasend, srxbuf);
-spiUnselect(&SPID3);
-chThdSleepMilliseconds(1);
-set_red(1);chThdSleepMilliseconds(100);
-set_red(0);
+void SendData(const uint8_t* datasend,int numWords){
+  set_red(0);
+  spiSelect(&SPID3);
+  uint8_t command = W_TX_PAYLOAD;
+  spiSend(&SPID3, 1, &command);
+  spiSend(&SPID3, numWords, datasend);
+  spiUnselect(&SPID3);
+  chThdSleepMilliseconds(1);
+  set_red(1);
+  chThdSleepMilliseconds(100);
+  set_red(0);
 }
 
-void ReceiveData(uint8_t* rtxbuf,uint8_t* rrxbuf,int sizepck){
-set_red(0);
-rtxbuf[0]=R_RX_PAYLOAD;
-for(int i=1; i<sizepck+1;i++){
-    rtxbuf[i]=NOP;
-  }
-spiSelect(&SPID3);
-spiExchange(&SPID3,sizepck+1, rtxbuf, rrxbuf);
-chThdSleepMilliseconds(1);
-spiUnselect(&SPID3);
-chThdSleepMilliseconds(1000);
-set_red(1);
+void ReceiveData(uint8_t* rrxbuf, int sizepck){
+  set_red(0);
+  spiSelect(&SPID3);
+  uint8_t command = R_RX_PAYLOAD;
+  spiSend(&SPID3, 1, &command);
+  spiReceive(&SPID3, sizepck, rrxbuf);
+  spiUnselect(&SPID3);
+  chThdSleepMilliseconds(1000);
+  set_red(1);
 }
 
 void ConfigureRF(int sizepck){
   //Configure the register 00 (config)
-  if(ISTRANSMITER==TRUE){
-    txbuf[1]=0b00000010;
-  }
-  else {
-    txbuf[1]=0b00000011;
-  }
-  WriteRegister(CONFIG,1,txbuf, rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(CONFIG, ISTRANSMITER ? 0b00000010 : 0b00000011);
   //Disable the auto-ACK
-  txbuf[1]=0b00000000;
-  WriteRegister(EN_AA,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(EN_AA, 0);
   //chosing channels
-  txbuf[1]=0b00000001;
-  WriteRegister(EN_RXADDR,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
-  //Adress width
-  txbuf[1]=0b00000001;
-  WriteRegister(SETUP_AW,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(EN_RXADDR, 1);
+  //Adress width (1 => 3 bytes)
+  WriteRegisterByte(SETUP_AW, 1);
   //set retransmission to 0
-  txbuf[1]=0b00000000;
-  WriteRegister(SETUP_RTR,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(SETUP_RTR, 0);
   //set the number of channels used
-  txbuf[1]=0b00000010;
-  WriteRegister(RF_CH,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(RF_CH, 2);
   //??
-  txbuf[1]=0b00000111;
-  WriteRegister(RF_SETUP,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  WriteRegisterByte(RF_SETUP, 0x07);
   //setting the  adress and the payload width
-  txbuf[1]=0xB1;txbuf[2]=0xB2;txbuf[3]=0xB3;
-  if(ISTRANSMITER==TRUE){
-    WriteRegister(TX_ADDR,3,txbuf,rxbuf);chThdSleepMilliseconds(1);
-  }
-  else{
-    WriteRegister(RX_ADDR_P0,3,txbuf,rxbuf);chThdSleepMilliseconds(1);
-    txbuf[1]=sizepck;
-    WriteRegister(RX_PW_P0,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
+  txbuf[0]=0xB1;txbuf[1]=0xB2;txbuf[2]=0xB3;
+  if(ISTRANSMITER) {
+    WriteRegister(TX_ADDR,3,txbuf);
+  } else {
+    WriteRegister(RX_ADDR_P0, 3, txbuf);
+    WriteRegisterByte(RX_PW_P0, sizepck);
   }
 }
 
@@ -171,26 +161,22 @@ int main(void) {
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
 
   ConfigureRF(3);
-    txbuf[1]=0x23;
-    txbuf[2]=0x09;
-    txbuf[3]=0x92;
-   chThdSleepMilliseconds(10);
-  // Send some things
+  //Send some things
   while (TRUE) {
    if(ISTRANSMITER==TRUE)
     {
-    ReceiveData(txbuf,rxbuf,3);
-    chThdSleepMilliseconds(10);
-    ReadRegister(STATUS,1,txbuf,rxbuf);
     chThdSleepMilliseconds(1000);
+    txbuf[0]=0x05;
+    txbuf[1]=0x11;
+    txbuf[2]=0x94;
+    SendData(txbuf,3);
    }
    else {
-    SendData(txbuf,3,rxbuf);
+    ReceiveData(rxbuf,3);
+    chThdSleepMilliseconds(10);
+    uint8_t reg;
+    ReadRegister(STATUS,1,&reg);
     chThdSleepMilliseconds(1000);
-    txbuf[1]=0x05;
-    txbuf[2]=0x11;
-    txbuf[3]=0x94;
-    SendData(txbuf,3,rxbuf);
     }
   }
 }
