@@ -17,7 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITER FALSE
+#define ISTRANSMITTER FALSE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -40,7 +40,7 @@
 #define TX_ADDR 0x10
 #define RX_PW_P0 0x11
 #define FIFO_STATUS 0x17
-#define RX_EMPTY (1 << 0)  
+#define RX_EMPTY (1 << 0)
 #define DYNP 0x1C
 #define RX_DR (1 << 6)
 
@@ -81,8 +81,8 @@ static msg_t BlinkerThread(void *arg) {
   return 0;
 }
 
-static uint8_t txbuf[512];
-static uint8_t rxbuf[512];
+static uint8_t txbuf[128];
+static uint8_t rxbuf[128];
 
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
 static void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
@@ -98,11 +98,11 @@ static void WriteRegisterByte(int numRegister, uint8_t value) {
 }
 
 //registre dans lequel on va lire, et nombre de mots à lire
-void ReadRegister(int numRegister, int numMots, uint8_t* rrxbuf ){
+void ReadRegister(int numRegister, int numBytes, uint8_t* rrxbuf ){
   uint8_t command = R_REGISTER(numRegister);
   spiStartTransaction();
   spiSend(&SPID3, 1, &command);
-  spiReceive(&SPID3, numMots, rrxbuf);
+  spiReceive(&SPID3, numBytes, rrxbuf);
   spiStopTransaction();
 }
 
@@ -143,11 +143,11 @@ static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
   spiStopTransaction();
   WriteRegisterByte(STATUS, RX_DR);
   status = ReadRegisterByte(STATUS);
-} 
+}
 
 void ConfigureRF(int sizepck){
   //Configure the register 00 (config)
-  WriteRegisterByte(CONFIG, ISTRANSMITER ? 0b00000010 : 0b00000011);
+  WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001110 : 0b00001111);
   //Disable the auto-ACK
   WriteRegisterByte(EN_AA, 0);
   //chosing channels
@@ -162,12 +162,47 @@ void ConfigureRF(int sizepck){
   WriteRegisterByte(RF_SETUP, 0x07);
   //setting the  adress and the payload width
   txbuf[0]=0xB1;txbuf[1]=0xB2;txbuf[2]=0xB3;
-  if(ISTRANSMITER) {
+  if(ISTRANSMITTER) {
     WriteRegister(TX_ADDR,3,txbuf);
   } else {
     WriteRegister(RX_ADDR_P0, 3, txbuf);
     WriteRegisterByte(RX_PW_P0, sizepck);
   }
+}
+
+static void switchOn(void){
+  WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001110 : 0b00001111);
+}
+
+static void switchOff(void){
+  WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
+}
+
+static WORKING_AREA(waThread2, 128);
+static msg_t waThread2go(void *arg) {
+  (void)arg;
+
+   if (ISTRANSMITTER) {
+    while (TRUE) {
+      chThdSleepMilliseconds(1000);
+      txbuf[0]=0x05;
+      txbuf[1]=0x11;
+      txbuf[2]=0x94;
+      SendData(txbuf,3);
+    }
+  }else{
+    while (TRUE) {
+      chThdSleepMilliseconds(5000);
+      switchOn();
+      palTogglePad(GPIOF, GPIOF_STAT2);
+      // Wait for data to be present in the RX FIFO
+      ReceivePacket(rxbuf,3);
+      chThdSleepMilliseconds(1);
+      switchOff();
+      }
+  }
+
+  return 0;
 }
 
 //  Application entry point.
@@ -185,26 +220,11 @@ int main(void) {
     6,// CS is PC6
     0x00000038 // CR1 : clock as low as possible 5:3=111
   };
-    // Init SPI
+  // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
 
   ConfigureRF(3);
   //Send some things
-  if (ISTRANSMITER) {
-    while (TRUE) {
-      chThdSleepMilliseconds(1000);
-      txbuf[0]=0x05;
-      txbuf[1]=0x11;
-      txbuf[2]=0x94;
-      SendData(txbuf,3);
-   }
- } else {
-    while (TRUE) {
-      palTogglePad(GPIOF, GPIOF_STAT2);
-   
-      // Wait for data to be present in the RX FIFO
-      ReceivePacket(rxbuf,3); 
-      chThdSleepMilliseconds(1);
-    }
-  }
+
+}
 }
