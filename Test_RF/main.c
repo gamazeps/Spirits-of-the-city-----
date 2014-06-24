@@ -88,6 +88,7 @@ void ReadRegister(int numRegistre,int numMots,uint8_t* rtxbuf, uint8_t* rrxbuf )
 }
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(uint8_t* datasend,int numWords,uint8_t* srxbuf){
+set_red(0);
 datasend[0]=W_TX_PAYLOAD;
 spiSelect(&SPID3);
 spiExchange(&SPID3, numWords+1, datasend, srxbuf);
@@ -105,8 +106,9 @@ for(int i=1; i<sizepck+1;i++){
   }
 spiSelect(&SPID3);
 spiExchange(&SPID3,sizepck+1, rtxbuf, rrxbuf);
-spiUnselect(&SPID3);
 chThdSleepMilliseconds(1);
+spiUnselect(&SPID3);
+chThdSleepMilliseconds(1000);
 set_red(1);
 }
 
@@ -135,7 +137,7 @@ void ConfigureRF(int sizepck){
   txbuf[1]=0b00000010;
   WriteRegister(RF_CH,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
   //??
-  txbuf[1]=0b00000101;
+  txbuf[1]=0b00000111;
   WriteRegister(RF_SETUP,1,txbuf,rxbuf);chThdSleepMilliseconds(1);
   //setting the  adress and the payload width
   txbuf[1]=0xB1;txbuf[2]=0xB2;txbuf[3]=0xB3;
@@ -167,12 +169,12 @@ int main(void) {
   };
     // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
+  ConfigureRF(3);
   // Send some things
   while (TRUE) {
-    // Read PIPE0 addr register
-    ConfigureRF(1);
-    // Read PIPE0 addr register
-
-    chThdSleepMilliseconds(1000);
-  }
+   ReceiveData(txbuf,rxbuf,3);
+   chThdSleepMilliseconds(10);
+   ReadRegister(STATUS,1,txbuf,rxbuf);
+   chThdSleepMilliseconds(1000);
+   }
 }
