@@ -111,9 +111,13 @@ __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
   chRegSetThreadName("Heartbeat");
   while(TRUE) {
     set_big_uv_led(0);
-    chThdSleepMilliseconds(500);
+    chThdSleepMilliseconds(heart_beat_speed/2);
     set_big_uv_led(128);
-    chThdSleepMilliseconds(500);
+    chThdSleepMilliseconds(heart_beat_speed/4);
+    set_big_uv_led(0);
+    chThdSleepMilliseconds(heart_beat_speed/8);
+    set_big_uv_led(128);
+    chThdSleepMilliseconds(heart_beat_speed/8);
   }
 }
 
