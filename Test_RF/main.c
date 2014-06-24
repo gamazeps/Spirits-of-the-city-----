@@ -28,9 +28,9 @@
 #define FLUSH_TX (0xE1)
 
 #define CONFIG (0x00)
-#define EN_AA (0x01) 
+#define EN_AA (0x01)
 #define EN_RXADDR (0x02)
-#define SETUP_AW (0x03) 
+#define SETUP_AW (0x03)
 #define SETUP_RTR (0x04)
 #define RF_CH (0x05)
 #define RF_SETUP (0x06)
@@ -66,7 +66,7 @@ static msg_t BlinkerThread(void *arg) {
   return 0;
 }
  static uint8_t txbuf[512];
-  static uint8_t rxbuf[512]; 
+ static uint8_t rxbuf[512];
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
 void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf, uint8_t* wrxbuf){
   wtxbuf[0] = W_REGISTER(numRegistre);
@@ -169,12 +169,28 @@ int main(void) {
   };
     // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
+
   ConfigureRF(3);
+    txbuf[1]=0x23;
+    txbuf[2]=0x09;
+    txbuf[3]=0x92;
+   chThdSleepMilliseconds(10);
   // Send some things
   while (TRUE) {
-   ReceiveData(txbuf,rxbuf,3);
-   chThdSleepMilliseconds(10);
-   ReadRegister(STATUS,1,txbuf,rxbuf);
-   chThdSleepMilliseconds(1000);
+   if(ISTRANSMITER==TRUE)
+    {
+    ReceiveData(txbuf,rxbuf,3);
+    chThdSleepMilliseconds(10);
+    ReadRegister(STATUS,1,txbuf,rxbuf);
+    chThdSleepMilliseconds(1000);
    }
+   else {
+    SendData(txbuf,3,rxbuf);
+    chThdSleepMilliseconds(1000);
+    txbuf[1]=0x05;
+    txbuf[2]=0x11;
+    txbuf[3]=0x94;
+    SendData(txbuf,3,rxbuf);
+    }
+  }
 }
