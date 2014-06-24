@@ -21,8 +21,31 @@
 #include "hsv2rgb.h"
 #include "led.h"
 
+/* Total number of channels to be sampled by a single ADC operation.*/
+#define ADC_GRP1_NUM_CHANNELS   1
+
+/* Depth of the conversion buffer, channels are sampled four times each.*/
+#define ADC_GRP1_BUF_DEPTH      1
+
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
+
+static adcsample_t adc_samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
+
+static const ADCConversionGroup adcgrpcfg = {
+  FALSE,
+  ADC_GRP1_NUM_CHANNELS,
+  NULL,
+  NULL,
+  /* HW dependent part.*/
+  0,
+  ADC_CR2_SWSTART,
+  0,
+  ADC_SMPR1_SMP_AN0(ADC_SAMPLE_480),
+  ADC_SQR3_NUM_CH(ADC_GRP1_NUM_CHANNELS),
+  0,
+  ADC_SQR3_SQ1_N(ADC_CHANNEL_IN0)
+};
 
 
 // Timer 2 ans 3 PWM configuration structure (same config for both PWM drivers)
@@ -100,6 +123,19 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   }
 }
 
+// Luminosity sensor thread
+static WORKING_AREA(waADCThread,128);
+__attribute__((__noreturn__)) static msg_t ADCThread(void *arg){
+  (void) arg;
+  chRegSetThreadName("ADC");
+  while(TRUE){
+    adcConvert(&ADCD1, &adcgrpcfg, samples, 1);
+
+    //Sleep for 30 minutes
+    chThdSleepMilliseconds(1800000);
+  }
+}
+
 
 /*
  * Application entry point.
@@ -112,6 +148,9 @@ int main(void) {
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
 
+  // Activate ADC
+  adcStart(&ADCD1,NULL);
+
   // Initializes the PWM driver 3 and 4. Output are routed to LEDs in board.h
   pwmStart(&PWMD2, &pwmcfg);
   pwmStart(&PWMD3, &pwmcfg);
@@ -122,6 +161,8 @@ int main(void) {
   // Launch the heart beat thread
   chThdCreateStatic(waHeartbeatThread, sizeof(waHeartbeatThread), NORMALPRIO, HeartbeatThread, NULL);
 
+  //Launch ADC Thread
+  chThdCreateStatic(waADCThread, sizeof(waADCThread), NORMALPRIO, ADCThread, NULL);
   // Launch PIR thread
   chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
 
