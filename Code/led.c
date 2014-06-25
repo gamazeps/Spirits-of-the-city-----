@@ -1,6 +1,8 @@
 #include "ch.h"
 #include "hal.h"
 #include "led.h"
+#include "chprintf.h"
+#include "thread.h"
 #include "gamma.h"
 #include "hsv2rgb.h"
 
@@ -97,12 +99,11 @@ void change_heart_beat_speed (int initial_speed, int final_speed, int time)
 {
   int diff = final_speed - initial_speed;
   diff = diff > 0 ? diff : -diff;
-  int t = time/diff;
   int j = 0;
-  for (int i = 0; i < diff; i++)
+  for (int i = 0; i < 100; i++)
     {
-      j = initial_speed + ((final_speed - initial_speed)*i/diff);
+      j = initial_speed + ((final_speed - initial_speed)*i/100);
       set_heart_beat_speed (j);
-      chThdSleepMilliseconds(t);
+      chThdSleepMilliseconds(time/100);
     }
 }
