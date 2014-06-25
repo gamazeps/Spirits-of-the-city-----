@@ -20,42 +20,11 @@
 #include "debug.h"
 #include "hsv2rgb.h"
 #include "led.h"
+#include "thread.h"
 
-/* Total number of channels to be sampled by a single ADC operation.*/
-#define ADC_GRP1_NUM_CHANNELS   1
-
-/* Depth of the conversion buffer, channels are sampled four times each.*/
-#define ADC_GRP1_BUF_DEPTH      1
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
-
-static adcsample_t adc_samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
-
-static const ADCConversionGroup adcgrpcfg = {
-  FALSE,
-  ADC_GRP1_NUM_CHANNELS,
-  NULL,
-  NULL,
-  /* HW dependent part.*/
-
-  //CR1 && CR2 Init
-  0,
-  ADC_CR2_SWSTART,
-
-  //SMPRX Init
-  0,
-  0,
-  ADC_SMPR3_SMP_AN0(ADC_SAMPLE_384),
-
-  //SQRX Init
-  ADC_SQR5_SQ1_N(ADC_CHANNEL_IN0),
-  0,
-  0,
-  0,
-  ADC_SQR1_NUM_CH(ADC_GRP1_NUM_CHANNELS)
-};
-
 
 // Timer 2 ans 3 PWM configuration structure (same config for both PWM drivers)
 static PWMConfig pwmcfg = {
@@ -72,89 +41,6 @@ static PWMConfig pwmcfg = {
   0,
   0
 };
-
-// LED thread
-static volatile bool run_led_thread = FALSE;
-static WORKING_AREA(waLEDThread, 128);
-__attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
-  (void)arg;
-  chRegSetThreadName("LED");
-  static uint8_t h = 0;
-  static uint8_t s = 255;
-  static uint8_t v = 0;
-  static int delta_v = 1;
-  while (TRUE) {
-    if(run_led_thread) {
-      for(h=0;h<255;h++){
-	v = v+delta_v;
-	if (v==80){
-	  delta_v = -1;
-	  chprintf(chp,"Je décrémente ta mère");}
-	else if (v==0){
-	  delta_v = 1;
-	  chprintf(chp,"J'incrémente ta mère");}
-	set_heart_beat_speed(1000);
-	set_big_led_hsv(h, s, v);
-	set_small_led_hsv((h+128)%256, s, 80-v);
-	chThdSleepMilliseconds(10);
-      }
-    }
-    else {
-      set_big_led_hsv(0, 0, 0);
-      set_small_led_hsv(0, 0, 0);
-    }
-
-    chThdSleepMilliseconds(10);
-  }
-
-}
-// Heart beat thread
-static WORKING_AREA(waHeartbeatThread, 128);
-__attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
-  (void)arg;
-  chRegSetThreadName("Heartbeat");
-  while(TRUE) {
-    set_big_uv_led(255);
-    chThdSleepMilliseconds(300);
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(50);
-    set_big_uv_led(255);
-    chThdSleepMilliseconds(300);
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed);
-  }
-}
-
-// PIR sensor thread
-static WORKING_AREA(waPIRThread, 128);
-__attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
-  (void)arg;
-  chRegSetThreadName("PIR");
-  while(TRUE) {
-    if (palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH) {
-      chprintf(chp,"Coucou je te détecte\r\n");
-      run_led_thread = TRUE;
-      chThdSleepSeconds(5);
-      run_led_thread = FALSE;
-    }
-    else chprintf(chp,"Pas cette fois-ci");
-    chThdSleepMilliseconds(100);
-  }
-}
-
-// ADC - Luminosity sensor thread
-static WORKING_AREA(waADCThread,128);
-__attribute__((__noreturn__)) static msg_t ADCThread(void *arg){
-  (void) arg;
-  chRegSetThreadName("ADC");
-  while(TRUE){
-    adcConvert(&ADCD1, &adcgrpcfg, adc_samples, 1);
-
-    //Sleep for 30 minutes
-    chThdSleepMilliseconds(1800000);
-  }
-}
-
 
 /*
  * Application entry point.
@@ -175,15 +61,15 @@ int main(void) {
   pwmStart(&PWMD3, &pwmcfg);
 
   // Launch the LED thread
-  chThdCreateStatic(waLEDThread, sizeof(waLEDThread), NORMALPRIO, LEDThread, NULL);
+  startLedThread();
 
   // Launch the heart beat thread
-  chThdCreateStatic(waHeartbeatThread, sizeof(waHeartbeatThread), NORMALPRIO, HeartbeatThread, NULL);
+  startHeartBeatThread();
 
   //Launch ADC Thread
-  chThdCreateStatic(waADCThread, sizeof(waADCThread), NORMALPRIO, ADCThread, NULL);
+  startAdcThread();
   // Launch PIR thread
-  chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
+  startPirThread();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
