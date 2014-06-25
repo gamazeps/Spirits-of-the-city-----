@@ -24,6 +24,7 @@
 #include "heart_beat_thread.h"
 #include "led_thread.h"
 #include "adc_thread.h"
+#include "radio_thread.h"
 #include <stdint.h>
 #include "lfsr.h"
 

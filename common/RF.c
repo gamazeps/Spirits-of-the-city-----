@@ -2,23 +2,23 @@
 #include "hal.h"
 #include "RF.h"
 
- void set_CE(int on){
+void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
 }
 
- void spiStartTransaction(void) {
+void spiStartTransaction(void) {
   chThdSleepMilliseconds(1);
   spiSelect(&SPID2);
   chThdSleepMilliseconds(1);
 }
 
- void spiStopTransaction(void) {
+void spiStopTransaction(void) {
   chThdSleepMilliseconds(1);
   spiUnselect(&SPID2);
   chThdSleepMilliseconds(1);
 }
 
- void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
+void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
   spiStartTransaction();
   uint8_t command = W_REGISTER(numRegistre);
   spiSend(&SPID2, 1, &command);
@@ -26,7 +26,7 @@
   spiStopTransaction();
 }
 
- void WriteRegisterByte(int numRegister, uint8_t value) {
+void WriteRegisterByte(int numRegister, uint8_t value) {
   WriteRegister(numRegister, 1, &value);
 }
 
@@ -38,13 +38,13 @@ void ReadRegister(int numRegister, int numBytes, uint8_t* rrxbuf ){
   spiStopTransaction();
 }
 
- uint8_t ReadRegisterByte(int numRegister) {
+uint8_t ReadRegisterByte(int numRegister) {
   uint8_t value;
   ReadRegister(numRegister, 1, &value);
   return value;
 }
 
- void ExecuteCommand(int command) {
+void ExecuteCommand(int command) {
   spiStartTransaction();
   spiSend(&SPID2, 1, &command);
   spiStopTransaction();
@@ -63,20 +63,20 @@ void SendData(const uint8_t* datasend, int numWords){
   set_CE(0);
 }
 
- void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
- set_CE(1);//sets CE to 1
- msg_t msgMode = chSemWaitTimeout(&sem,1000);
- if(msgMode == RDY_OK){
-   set_CE(0);
-   uint8_t command = R_RX_PAYLOAD;
-   spiStartTransaction();
-   spiSend(&SPID2, 1, &command);
-   spiReceive(&SPID2, pkt_size, rxbuf);
-   spiStopTransaction();
-   WriteRegisterByte(STATUS, RX_DR);
- }
- else if(msgMode == RDY_TIMEOUT) {
-   set_CE(0);
+void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
+  set_CE(1);//sets CE to 1
+  msg_t msgMode = chSemWaitTimeout(&sem,1000);
+  if(msgMode == RDY_OK){
+    set_CE(0);
+    uint8_t command = R_RX_PAYLOAD;
+    spiStartTransaction();
+    spiSend(&SPID2, 1, &command);
+    spiReceive(&SPID2, pkt_size, rxbuf);
+    spiStopTransaction();
+    WriteRegisterByte(STATUS, RX_DR);
+  }
+  else if(msgMode == RDY_TIMEOUT) {
+    set_CE(0);
   }
 }
 
@@ -105,15 +105,15 @@ void ConfigureRF(int sizepck){
   }
 }
 
- void switchOn(void){
+void switchOn(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001110 : 0b00001111);
 }
 
- void switchOff(void){
+void switchOff(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
 }
 
- void SendMessage(uint8_t* txbuf) {
+void SendMessage(uint8_t* txbuf) {
   if(ISTRANSMITTER){
     int t=chTimeNow();
     while( (int) chTimeNow() < (int) (t+7000) ){
@@ -122,7 +122,7 @@ void ConfigureRF(int sizepck){
   }
 }
 
- void ReceiveMessage(void){
+void ReceiveMessage(void){
   if(!ISTRANSMITTER){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
@@ -135,7 +135,7 @@ void ConfigureRF(int sizepck){
   }
 }
 
- void irq_handler(EXTDriver *e, expchannel_t c){
+void irq_handler(EXTDriver *e, expchannel_t c){
   (void) e;
   (void) c;
   chSysLockFromIsr();

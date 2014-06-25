@@ -1,3 +1,5 @@
+#include "ch.h"
+#include "hal.h"
 #include "RF.h"
 
 static WORKING_AREA(waRFThread, 128);
@@ -31,6 +33,6 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   ReceiveMessage();
 }
 
-void startRFthread(void){
+void startRFThread(void){
 chThdCreateStatic(waRFThread, sizeof(waRFThread), NORMALPRIO, RFThread, NULL);
 }
