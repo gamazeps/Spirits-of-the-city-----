@@ -73,7 +73,7 @@ int main(void) {
   startPirThread();
   // Launch RF thread
   startRFThread();
-	
+
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
     chThdSleepSeconds(1);
@@ -99,8 +99,3 @@ uint8_t nextSequence(void){
     result = 3;
   return result;
 }
-
-
-
-
-

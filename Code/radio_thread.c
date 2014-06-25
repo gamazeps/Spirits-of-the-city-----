@@ -1,11 +1,9 @@
-#include "ch.h"
-#include "hal.h"
-#include "thread.h"
 #include "RF.h"
 
 static WORKING_AREA(waRFThread, 128);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   (void) arg;
+  (void) rxbuf;
   chRegSetThreadName("RF");
   extStart(&EXTD1, &extconfig);
 
@@ -15,7 +13,8 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
     /* HW dependent part.*/
     GPIOB_RF_NSS, // CS is PB12
     12,// CS is PB12
-    0x00000038 // CR1 : clock as low as possible 5:3=111
+    0x00000038, // CR1 : clock as low as possible 5:3=111
+    0x00000000//CR2 what to put ?
   };
   // Init SPI
   spiStart(&SPID2, &spi2cfg);//get the SPI out of the "low power state"
@@ -29,7 +28,7 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   txbuf[1]=0x57;
   txbuf[2]=0x26;
   SendMessage(txbuf);
-  ReceiveMessage(rxbuf);
+  ReceiveMessage();
 }
 
 void startRFthread(void){

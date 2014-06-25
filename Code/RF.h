@@ -2,7 +2,7 @@
 #include "hal.h"
 #include "thread.h"
 
-#define ISTRANSMITTER TRUE
+#define ISTRANSMITTER FALSE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -30,44 +30,42 @@
 #define RX_DR (1 << 6)
 #define SIZEPKT 3
 
-static void set_CE(int on);
+void set_CE(int on);
 
-static void spiStartTransaction(void);
+void spiStartTransaction(void);
 
-static void spiStopTransaction(void);
+void spiStopTransaction(void);
+
 static uint8_t rxbuf[32];
 static uint8_t txbuf[32];
 static SEMAPHORE_DECL(sem, 0);
-static msg_t msgMode;
 
-static void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf);
+void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf);
 
-static void WriteRegisterByte(int numRegister, uint8_t value);
+void WriteRegisterByte(int numRegister, uint8_t value);
 
 void ReadRegister(int numRegister, int numBytes, uint8_t* rrxbuf );
 
-static uint8_t ReadRegisterByte(int numRegister);
+uint8_t ReadRegisterByte(int numRegister);
 
-static void ExecuteCommand(int command);
+void ExecuteCommand(int command);
 
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(const uint8_t* datasend, int numWords);
 
-volatile int status;
-
-static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size);
+void ReceivePacket(uint8_t *rxbuf, size_t pkt_size);
 
 void ConfigureRF(int sizepck);
 
-static void switchOn(void);
+void switchOn(void);
 
-static void switchOff(void);
+void switchOff(void);
 
-static void SendMessage(uint8_t* txbuf);
+void SendMessage(uint8_t* txbuf);
 
-static void ReceiveMessage(uint8_t* message);
+void ReceiveMessage(void);
 
-static void irq_handler(EXTDriver *e, expchannel_t c);
+void irq_handler(EXTDriver *e, expchannel_t c);
 
 static const EXTConfig extconfig={
   {

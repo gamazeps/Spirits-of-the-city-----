@@ -83,7 +83,7 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/evtimer.c \
        $(CHIBIOS)/os/various/syscalls.c \
        $(CHIBIOS)/os/various/chprintf.c \
-       gamma.c led.c hsv2rgb.c main.c adc_thread.c pir_thread.c heart_beat_thread.c led_thread.c animation1.c RF.c
+       gamma.c led.c hsv2rgb.c main.c adc_thread.c pir_thread.c heart_beat_thread.c led_thread.c animation1.c RF.c radio_thread.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
