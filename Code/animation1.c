@@ -55,7 +55,7 @@ void animation_2 (int8_t nb_beats, int8_t small_colour, int8_t big_colour){
   set_big_uv_led(0);
 }
 
-void animation_3 (int8_t decalage, int8_t color1, int )
+void animation_3 (int8_t decalage, int8_t color1, int8_t color2 )
 {
   chThdSleepMilliseconds(decalage*10);
   set_big_led_rgb (0,255,0);
@@ -97,7 +97,7 @@ void animation_3 (int8_t decalage, int8_t color1, int )
   chThdSleepMilliseconds(200);
   set_small_uv_led(0);
 
-  for (int8_t i =0; i<255;i++)
+  for (int8_t i =0; i<254;i++)
     {
       set_big_led_rgb(0,255-i,0);
       set_small_led_rgb(0,255-i,0); 
