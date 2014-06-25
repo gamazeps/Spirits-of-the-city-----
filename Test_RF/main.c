@@ -1,5 +1,5 @@
 /*
-  ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Sirio
+  ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Siri
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -69,7 +69,6 @@ static void spiStopTransaction(void) {
 }
 
 static uint8_t txbuf[128];
-static uint8_t rxbuf[128];
 static SEMAPHORE_DECL(sem, 0);
 static msg_t msgMode;
 
@@ -124,9 +123,8 @@ volatile int status;
 
 static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
  set_red(1);//sets CE to 1
- msgMode = chSemWaitTimeout(&sem,TIME_INFINITE);
+ msgMode = chSemWaitTimeout(&sem,1000);
  if(msgMode == RDY_OK){
-   palTogglePad(GPIOF, GPIOF_STAT2);
    set_red(0);
    uint8_t command = R_RX_PAYLOAD;
    spiStartTransaction();
@@ -136,8 +134,8 @@ static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
    WriteRegisterByte(STATUS, RX_DR);
  }
  else if(msgMode == RDY_TIMEOUT) {
-   set_red(0);
-   chSemSignal(&sem);set_orange(1);
+   set_red(0);set_orange(1);
+   set_orange(0);
   }
 }
 
@@ -202,14 +200,15 @@ static uint8_t* ReceiveMessage(uint8_t* message){
   if(!ISTRANSMITTER){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
-      // switchOn();
+      switchOn();
       // Wait for data to be present in the RX FIFO
       ReceivePacket(message, 3);
       chThdSleepMilliseconds(1);
-      // switchOff();
+      switchOff();
     }
     return message;
   }
+
 }
 
 static void irq_handler(EXTDriver *e, expchannel_t c){
@@ -261,9 +260,9 @@ int main(void) {
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
   ConfigureRF(3);
+  switchOff();
   ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
-  rxbuf[0]=ReadRegisterByte(CONFIG);
   chThdSleepMilliseconds(1);
   //Send some things
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
