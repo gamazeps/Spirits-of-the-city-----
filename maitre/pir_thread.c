@@ -3,7 +3,10 @@
 #include "debug.h"
 #include "pir_thread.h"
 
-volatile bool presence_detected = FALSE;
+// Définit tous les combien on regarde s'il y a un passant
+#define PRESENCE_CHECK_TIME_MILLISECONDS 100
+
+volatile bool presence_detected = TRUE; // XXX TODO : change this to FALSE !!!
 static WORKING_AREA(waPIRThread, 128);
 __attribute__((__noreturn__)) static msg_t PIRThread(void *arg) {
   (void)arg;

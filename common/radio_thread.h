@@ -5,6 +5,4 @@
 extern uint8_t RxBuf[32];
 extern uint8_t TxBuf[32];
 
-void startPirThread(void);
-
 #endif

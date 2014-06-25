@@ -31,22 +31,6 @@
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
 
-// Timer 2 ans 3 PWM configuration structure (same config for both PWM drivers)
-static PWMConfig pwmcfg = {
-  800000,                             // 800kHz tick clock frequency
-  256,                                // 256 ticks per PWM period
-  NULL,
-  {
-    {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-    {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-    {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-    {PWM_OUTPUT_ACTIVE_HIGH, NULL}
-  },
-  /* HW dependent part.*/
-  0,
-  0
-};
-
 /*
  * Application entry point.
  */
@@ -61,9 +45,8 @@ int main(void) {
   // Activate ADC
   adcStart(&ADCD1,NULL);
 
-  // Initializes the PWM driver 3 and 4. Output are routed to LEDs in board.h
-  pwmStart(&PWMD2, &pwmcfg);
-  pwmStart(&PWMD3, &pwmcfg);
+  // Init LEDs
+  led_init();
 
   // Launch the LED thread
   startLedThread();
@@ -73,11 +56,13 @@ int main(void) {
 
   //Launch ADC Thread
   startAdcThread();
+
   // Launch PIR thread
   startPirThread();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
+    chprintf(chp, "tic\r\n");
     chThdSleepSeconds(1);
   }
 
