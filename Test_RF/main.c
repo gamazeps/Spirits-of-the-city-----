@@ -13,7 +13,6 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
-
 #include "ch.h"
 #include "hal.h"
 
@@ -43,28 +42,22 @@
 #define RX_EMPTY (1 << 0)
 #define DYNP 0x1C
 #define RX_DR (1 << 6)
+#define SIZEPKT 10
+#define USEDSPI SPI2
 
-static void set_green(int on){
-  on ? palSetPad(GPIOF, GPIOF_STAT1) : palClearPad(GPIOF, GPIOF_STAT1);
-}
-
-static void set_orange(int on){
-  on ? palSetPad(GPIOF, GPIOF_STAT2) : palClearPad(GPIOF, GPIOF_STAT2);
-}
-
-static void set_red(int on){
-  on ? palSetPad(GPIOF, GPIOF_STAT3): palClearPad(GPIOF, GPIOF_STAT3);
+static void set_CE(int on){
+  on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPa(GPIOB, GPIOB_RF_CE);
 }
 
 static void spiStartTransaction(void) {
   chThdSleepMilliseconds(1);
-  spiSelect(&SPID3);
+  spiSelect(&USEDSPI);
   chThdSleepMilliseconds(1);
 }
 
 static void spiStopTransaction(void) {
   chThdSleepMilliseconds(1);
-  spiUnselect(&SPID3);
+  spiUnselect(&USEDSPI);
   chThdSleepMilliseconds(1);
 }
 
@@ -76,8 +69,8 @@ static msg_t msgMode;
 static void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
   spiStartTransaction();
   uint8_t command = W_REGISTER(numRegistre);
-  spiSend(&SPID3, 1, &command);
-  spiSend(&SPID3, numMots, wtxbuf);
+  spiSend(&USEDSPI, 1, &command);
+  spiSend(&USEDSPI, numMots, wtxbuf);
   spiStopTransaction();
 }
 
@@ -85,18 +78,12 @@ static void WriteRegisterByte(int numRegister, uint8_t value) {
   WriteRegister(numRegister, 1, &value);
 }
 
-static void ExecuteCommand(int command) {
-  spiStartTransaction();
-  spiSend(&SPID3, 1, &command);
-  spiStopTransaction();
-}
-
 //registre dans lequel on va lire, et nombre de mots à lire
 void ReadRegister(int numRegister, int numBytes, uint8_t* rrxbuf ){
   uint8_t command = R_REGISTER(numRegister);
   spiStartTransaction();
-  spiSend(&SPID3, 1, &command);
-  spiReceive(&SPID3, numBytes, rrxbuf);
+  spiSend(&USEDSPI, 1, &command);
+  spiReceive(&USEDSPI, numBytes, rrxbuf);
   spiStopTransaction();
 }
 
@@ -106,36 +93,41 @@ static uint8_t ReadRegisterByte(int numRegister) {
   return value;
 }
 
+static void ExecuteCommand(int command) {
+  spiStartTransaction();
+  spiSend(&USEDSPI, 1, &command);
+  spiStopTransaction();
+}
+
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(const uint8_t* datasend, int numWords){
-  set_red(0);
+  set_CE(0);
   spiStartTransaction();
   uint8_t command = W_TX_PAYLOAD;
-  spiSend(&SPID3, 1, &command);
-  spiSend(&SPID3, numWords, datasend);
+  spiSend(&USEDSPI, 1, &command);
+  spiSend(&USEDSPI, numWords, datasend);
   spiStopTransaction();
-  set_red(1);
+  set_CE(1);
   chThdSleepMilliseconds(1);
-  set_red(0);
+  set_CE(0);
 }
 
 volatile int status;
 
 static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
- set_red(1);//sets CE to 1
+ set_CE(1);//sets CE to 1
  msgMode = chSemWaitTimeout(&sem,1000);
  if(msgMode == RDY_OK){
-   set_red(0);
+   set_CE(0);
    uint8_t command = R_RX_PAYLOAD;
    spiStartTransaction();
-   spiSend(&SPID3, 1, &command);
-   spiReceive(&SPID3, pkt_size, rxbuf);
+   spiSend(&USEDSPI, 1, &command);
+   spiReceive(&USEDSPI, pkt_size, rxbuf);
    spiStopTransaction();
    WriteRegisterByte(STATUS, RX_DR);
  }
  else if(msgMode == RDY_TIMEOUT) {
-   set_red(0);set_orange(1);
-   set_orange(0);
+   set_CE(0);
   }
 }
 
@@ -172,27 +164,11 @@ static void switchOff(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
 }
 
-// Blinker thread
-static WORKING_AREA(waThread1, 128);
-static msg_t BlinkerThread(void *arg) {
-  (void)arg;
-  int on = 0;
-    while (TRUE) {
-    set_green(on);
-    chThdSleepMilliseconds(500);
-    on = 1-on;
-  }
-  return 0;
-}
-
-/*static WORKING_AREA(waThread2, 128);
-  static msg_t waThread2go(void *arg)*/
-
 static void SendMessage(uint8_t *txbuf) {
   if(ISTRANSMITTER){
     int t=chTimeNow();
     while( (int) chTimeNow() < (int) (t+7000) ){
-      SendData(txbuf,3);
+      SendData(txbuf,SIZEPKT);
     }
   }
 }
@@ -202,13 +178,12 @@ static uint8_t* ReceiveMessage(uint8_t* message){
       chThdSleepMilliseconds(5000);
       switchOn();
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(message, 3);
+      ReceivePacket(message,SIZEPKT);
       chThdSleepMilliseconds(1);
       switchOff();
     }
     return message;
   }
-
 }
 
 static void irq_handler(EXTDriver *e, expchannel_t c){
@@ -240,36 +215,31 @@ static const EXTConfig extconfig={
   },
 };
 
-
 //  Application entry point.
 int main(void) {
   halInit();//also initializes the spi driver
   chSysInit();
   extStart(&EXTD1, &extconfig);
 
-
-  // Creates the blinker thread.
-  // Test SPI
-  static SPIConfig spi3cfg = {
+   // Test SPI
+  static SPIConfig spi2cfg = {
     NULL, // No callback
     /* HW dependent part.*/
-    GPIOC, // CS is PC6
-    6,// CS is PC6
+    GPIOB_RF_NSS, // CS is PB12
+    12,// CS is PB12
     0x00000038 // CR1 : clock as low as possible 5:3=111
   };
   // Init SPI
-  spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
-  ConfigureRF(3);
+  spiStart(&USEDSPI, &USEDSPI);//get the SPI out of the "low power state"
+  ConfigureRF(SIZEPKT);//Configure the RF device
   switchOff();
-  ExecuteCommand(FLUSH_RX);
+  ExecuteCommand(FLUSH_RX);//Clean the RX FIFO
   WriteRegisterByte(STATUS, RX_DR);
   chThdSleepMilliseconds(1);
   //Send some things
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
-  uint8_t mess[128];
-  mess[0]=0xAB;
-  mess[1]=0x57;
-  mess[2]=0x26;
-  SendMessage(mess);
-
+  txbuf[0]=0xAB;
+  txbuf[1]=0x57;
+  txbuf[2]=0x26;
+  SendMessage(*txbuf);
+  ReceiveMessage(*rxbuf);
 }
