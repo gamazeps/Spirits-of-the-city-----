@@ -7,14 +7,13 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "test.h"
 #include "led.h"
 #include "gamma.h"
 #include "hsv2rgb.h"
+#include "animation1.h"
 
 
-static void animation_1 (
-{
+void animation_1(){
   static uint8_t h = 0;
   static uint8_t s = 255;
   static uint8_t v = 0;
@@ -36,13 +35,12 @@ static void animation_1 (
  }
 
 
-static void animation_2 (int8_t nb_beats, int8_t small_colour, int8_t big_colour) =
-{
+void animation_2 (int8_t nb_beats, int8_t small_colour, int8_t big_colour){
   set_small_led_hsv(small_colour,255,80);
   set_big_led_hsv(big_colour,255,80);
   for(int8_t i=0;i<nb_beats; i++){
-  set_small_led_UV (255);
-  set_big_led_UV(255);
+  set_small_uv_led (255);
+  set_big_uv_led(255);
   chThdSleepMilliseconds(300);
   set_big_uv_led(0);
   chThdSleepMilliseconds(50);
@@ -51,10 +49,12 @@ static void animation_2 (int8_t nb_beats, int8_t small_colour, int8_t big_colour
   set_big_uv_led(0);
   chThdSleepSeconds(3);
   }
-  set_small_led_UV(0);
-  set_big_led_UV(0);
+  set_small_led_hsv(0,0,0);
+  set_big_led_hsv(0,0,0);
+  set_small_uv_led(0);
+  set_big_uv_led(0);
 }
 
-static void
+
 
  
