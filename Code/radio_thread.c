@@ -6,8 +6,6 @@ static WORKING_AREA(waRFThread, 128);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   (void) arg;
   chRegSetThreadName("RF");
- halInit();//also initializes the spi driver
-  chSysInit();
   extStart(&EXTD1, &extconfig);
 
    // Test SPI
