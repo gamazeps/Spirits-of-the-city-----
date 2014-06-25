@@ -7,10 +7,6 @@
 // ADC - Luminosity sensor thread
 static WORKING_AREA(waADCThread,128);
 
-void startAdcThread(void){
-  chThdCreateStatic(waADCThread, sizeof(waADCThread), NORMALPRIO, ADCThread, NULL);
-}
-
 adcsample_t adc_samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 
 static const ADCConversionGroup adcgrpcfg = {
@@ -47,4 +43,8 @@ __attribute__((__noreturn__)) static msg_t ADCThread(void *arg){
     //Sleep for 30 minutes
     chThdSleepMilliseconds(1800000);
   }
+}
+
+void startAdcThread(void){
+  chThdCreateStatic(waADCThread, sizeof(waADCThread), NORMALPRIO, ADCThread, NULL);
 }

@@ -7,11 +7,6 @@
 // PIR sensor thread
 static WORKING_AREA(waPIRThread, 128);
 
-void startPirThread(void){
-  chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
-}
-
-
 __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   (void)arg;
   chRegSetThreadName("PIR");  while(TRUE) {
@@ -23,3 +18,8 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
     chThdSleepMilliseconds(100);
   }
 }
+
+void startPirThread(void){
+  chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
+}
+

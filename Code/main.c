@@ -43,56 +43,6 @@ static PWMConfig pwmcfg = {
   0
 };
 
-// LED thread
-volatile bool run_led_thread = TRUE;
-static WORKING_AREA(waLEDThread, 128);
-__attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
-  (void)arg;
-  chRegSetThreadName("LED");
-  static uint8_t h = 0;
-  static uint8_t s = 255;
-  static uint8_t v = 0;
-  static int delta_v = 1;
-  while (TRUE) {
-    if(run_led_thread) {
-      h += 1;
-      v = v+delta_v;
-      if (v==80)
-        delta_v = -1;
-      else if (v==0)
-        delta_v = 1;
-
-      set_big_led_hsv(h, s, v);
-      set_small_led_hsv((h+128)%256, s, 80-v);
-    }
-    else {
-      set_big_led_hsv(0, 0, 0);
-      set_small_led_hsv(0, 0, 0);
-    }
-
-    chThdSleepMilliseconds(10);
-  }
-}
-
-// Heart beat thread
-static WORKING_AREA(waHeartbeatThread, 128);
-__attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
-  (void)arg;
-  chRegSetThreadName("Heartbeat");
-  while(TRUE) {
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/2);
-    set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/4);
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/8);
-    set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/8);
-  }
-}
-
-
-
 /*
  * Application entry point.
  */
@@ -112,10 +62,10 @@ int main(void) {
   pwmStart(&PWMD3, &pwmcfg);
 
   // Launch the LED thread
-  chThdCreateStatic(waLEDThread, sizeof(waLEDThread), NORMALPRIO, LEDThread, NULL);
+  startLedThread();
 
   // Launch the heart beat thread
-  chThdCreateStatic(waHeartbeatThread, sizeof(waHeartbeatThread), NORMALPRIO, HeartbeatThread, NULL);
+  startHeartBeatThread();
 
   //Launch ADC Thread
   startAdcThread();

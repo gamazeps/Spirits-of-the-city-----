@@ -3,10 +3,9 @@
 
 //Start Thread Fonctions Section
 void startAdcThread(void);
-__attribute__((__noreturn__)) static msg_t ADCThread(void *arg);
-
 void startPirThread(void);
-__attribute__((__noreturn__))  static msg_t PIRThread(void *arg);
+void startHeartBeatThread(void);
+void startLedThread(void);
 
 //Shared variables section
 
