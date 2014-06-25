@@ -52,6 +52,7 @@ int main(void) {
 
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
+    chprintf(chp, "Hello World2!\r\n");
 
   // Activate ADC
   adcStart(&ADCD1,NULL);
@@ -73,7 +74,7 @@ int main(void) {
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "Hello World!\r\n");
-    chThdSleepSeconds(1);
+    chprintf(chp, "Tic\r\n");
+    chThdSleepSeconds(10);
   }
 }
