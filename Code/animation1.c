@@ -97,7 +97,7 @@ void animation_3 (int8_t decalage, int8_t color1, int8_t color2 )
   chThdSleepMilliseconds(200);
   set_small_uv_led(0);
 
-  for (int8_t i =0; i<254;i++)
+  for (uint8_t i =0; i<254;i++)
     {
       set_big_led_rgb(0,255-i,0);
       set_small_led_rgb(0,255-i,0); 
