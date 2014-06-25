@@ -85,15 +85,19 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   static int delta_v = 1;
   while (TRUE) {
     if(run_led_thread) {
-      h += 1;
-      v = v+delta_v;
-      if (v==80)
-        delta_v = -1;
-      else if (v==0)
-        delta_v = 1;
-
-      set_big_led_hsv(h, s, v);
-      set_small_led_hsv((h+128)%256, s, 80-v);
+      for(h=0;h<255;h++){
+	v = v+delta_v;
+	if (v==80){
+	  delta_v = -1;
+	  chprintf(chp,"Je décrémente ta mère");}
+	else if (v==0){
+	  delta_v = 1;
+	  chprintf(chp,"J'incrémente ta mère");}
+	set_heart_beat_speed(1000);
+	set_big_led_hsv(h, s, v);
+	set_small_led_hsv((h+128)%256, s, 80-v);
+	chThdSleepMilliseconds(10);
+      }
     }
     else {
       set_big_led_hsv(0, 0, 0);
@@ -102,22 +106,22 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
 
     chThdSleepMilliseconds(10);
   }
-}
 
+}
 // Heart beat thread
 static WORKING_AREA(waHeartbeatThread, 128);
 __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
   (void)arg;
   chRegSetThreadName("Heartbeat");
   while(TRUE) {
+    set_big_uv_led(255);
+    chThdSleepMilliseconds(300);
     set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/2);
-    set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/4);
+    chThdSleepMilliseconds(50);
+    set_big_uv_led(255);
+    chThdSleepMilliseconds(300);
     set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/8);
-    set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/8);
+    chThdSleepMilliseconds(heart_beat_speed);
   }
 }
 
@@ -128,10 +132,12 @@ __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   chRegSetThreadName("PIR");
   while(TRUE) {
     if (palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH) {
+      chprintf(chp,"Coucou je te détecte\r\n");
       run_led_thread = TRUE;
       chThdSleepSeconds(5);
       run_led_thread = FALSE;
     }
+    else chprintf(chp,"Pas cette fois-ci");
     chThdSleepMilliseconds(100);
   }
 }
