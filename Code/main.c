@@ -1,17 +1,17 @@
 /*
-    ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Sirio
+  ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Sirio
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+  http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 */
 
 #include "ch.h"
@@ -21,6 +21,7 @@
 #include "hsv2rgb.h"
 #include "led.h"
 #include "thread.h"
+#include <stdint.h>
 
 
 // Debug channel
@@ -41,6 +42,8 @@ static PWMConfig pwmcfg = {
   0,
   0
 };
+
+bool day_mode = FALSE;
 
 /*
  * Application entry point.
@@ -73,7 +76,62 @@ int main(void) {
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "Hello World!\r\n");
-    chThdSleepSeconds(1);
+    if(ISMASTER){
+
+      //Instruction for Master Elf
+      if(day_mode){
+
+        //Day mode : sleep and check luminosity
+        if(adcsamples[0] < LUM_TRESHOLD_MASTER)
+          day_mode = FALSE;
+        thThdSleepSeconds(DAY_LUM_CHECK_SECONDS);
+      }
+      else{
+
+        //Night mode : heart beating & checking presence & animation & checking luminosity
+        activateHeartBeat();
+        activatePirThread();
+        while(1-presence_detected && adcsamples[0] < LUM_TRESHOLD_MASTER){
+          chThdSleepMilliseconds(PRESENCE_CHECK_TIME_MILLISECONDS);
+        }
+        stopHeartBeat();
+        if(adcsamples[0] > LUM_TRESHOLD_MASTER)
+          break;
+        else{
+          stopPirThread();
+          presence_detected = FALSE;
+          activateLedThread();
+          RxBuf[0] = HEART_FLASH;
+          activateRadioEmissionThread();
+        }
+      }
+    }
+
+
   }
+
 }
+
+//Return pseudo-random number between 1~3
+uint8_t nextSequence(void){
+  static uint16_t lfsr = 0xACE1u;
+  uint8_t bit;
+  uint8_t result;
+
+  /* taps: 16 5 4 3; feedback polynomial: x^16 + x^14 + x^13 + x^11 + 1 */
+  bit  = ((lfsr >> 0) ^ (lfsr >> 11) ^ (lfsr >> 12) ^ (lfsr >> 13) ) & 1;
+  lfsr =  (lfsr >> 1) | (bit << 15);
+  result = (uint8_t) lfsr & 0xFF;
+  if(result < 85)
+    result = 1;
+  else if(result < 170)
+    result = 2;
+  else
+    result = 3;
+  return result;
+}
+
+
+
+
+
