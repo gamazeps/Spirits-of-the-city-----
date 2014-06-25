@@ -16,13 +16,17 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
     // XXX TODO : change this to use a semaphore !!!
     if(presence_detected){
       switch(lfsr()%3){
-      case 2:
+      case 0:
+        animation_1();
+        break;
+      case 1:
         animation_2(50, 50, 120);
         break;
-      case 3:
+      case 2:
         animation_3(0, 20, 180);
+        break;
       default :
-        animation_1();
+        break;
       }
       chThdSleepSeconds(1);
     }
