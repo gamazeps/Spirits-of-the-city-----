@@ -1,3 +1,6 @@
+#include "ch.h"
+#include "hal.h"
+#include "thread.h"
 #include "RF.h"
 
 static WORKING_AREA(waRFThread, 128);
@@ -14,8 +17,8 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
     GPIOB_RF_NSS, // CS is PB12
     12,// CS is PB12
     0x00000038, // CR1 : clock as low as possible 5:3=111
-    0x00000000//CR2 what to put ?
-  };
+    0x00000000
+ };
   // Init SPI
   spiStart(&SPID2, &spi2cfg);//get the SPI out of the "low power state"
   ConfigureRF(SIZEPKT);//Configure the RF device
@@ -31,6 +34,6 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   ReceiveMessage();
 }
 
-void startRFthread(void){
+void startRFThread(void){
 chThdCreateStatic(waRFThread, sizeof(waRFThread), NORMALPRIO, RFThread, NULL);
 }
