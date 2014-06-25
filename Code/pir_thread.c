@@ -14,12 +14,10 @@ void startPirThread(void){
 
 __attribute__((__noreturn__))  static msg_t PIRThread(void *arg) {
   (void)arg;
-  chRegSetThreadName("PIR");
-  chprintf(chp,"Thread PIR debout !\r\n");
-  while(TRUE) {
+  chRegSetThreadName("PIR");  while(TRUE) {
     if (palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH) {
       run_led_thread = TRUE;
-      chThdSleepSeconds(1000);
+      chThdSleepSeconds(10);
       run_led_thread = FALSE;
     }
     chThdSleepMilliseconds(100);
