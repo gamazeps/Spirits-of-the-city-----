@@ -1,6 +1,5 @@
 #include "ch.h"
 #include "hal.h"
-#include "thread.h"
 
 #define ISTRANSMITTER FALSE
 //RF registers and function names

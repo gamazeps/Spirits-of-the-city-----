@@ -1,3 +1,0 @@
-#ifndef _ANIMATION_TOOLS_H
-#define _ANIMATION_TOOLS_H
-

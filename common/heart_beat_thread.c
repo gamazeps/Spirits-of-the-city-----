@@ -2,23 +2,28 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
-#include "hsv2rgb.h"
 #include "led.h"
-#include "thread.h"
+#include "heart_beat_thread.h"
+
+volatile int heart_beat_speed = 600; //speed of heart beat in 10th of seconds
 
 static WORKING_AREA(waHeartbeatThread, 128);
 __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
   (void)arg;
   chRegSetThreadName("Heartbeat");
   while(TRUE) {
-    set_big_uv_led(128);
-    chThdSleepMilliseconds(500);
-    set_big_uv_led(0);
+    set_small_uv_led(255);
     chThdSleepMilliseconds(200);
-    set_big_uv_led(128);
+    set_small_uv_led(0);
     chThdSleepMilliseconds(200);
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed*100);
+    set_small_uv_led(255);
+    chThdSleepMilliseconds(200);
+    set_small_uv_led(0);
+
+    // Gget current time
+    systime_t t = chTimeNow();
+    while(chTimeNow() < (t+heart_beat_speed*100))
+      chThdSleepMilliseconds(10);
   }
 }
 void startHeartBeatThread(void){
