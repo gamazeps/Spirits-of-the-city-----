@@ -124,9 +124,8 @@ volatile int status;
 
 static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
  set_red(1);//sets CE to 1
- msgMode = chSemWaitTimeout(&sem,TIME_INFINITE);
+ msgMode = chSemWaitTimeout(&sem,1000);
  if(msgMode == RDY_OK){
-   palTogglePad(GPIOF, GPIOF_STAT2);
    set_red(0);
    uint8_t command = R_RX_PAYLOAD;
    spiStartTransaction();
@@ -136,8 +135,8 @@ static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
    WriteRegisterByte(STATUS, RX_DR);
  }
  else if(msgMode == RDY_TIMEOUT) {
-   set_red(0);
-   chSemSignal(&sem);set_orange(1);
+   set_red(0);set_orange(1);
+   set_orange(0);
   }
 }
 
@@ -201,12 +200,14 @@ static msg_t waThread2go(void *arg) {
     }else{
     while (TRUE) {
       chThdSleepMilliseconds(5000);
-      // switchOn();
+      switchOn();
       // Wait for data to be present in the RX FIFO
       ReceivePacket(rxbuf, 3);
       chThdSleepMilliseconds(1);
-      // switchOff();
-      }
+      ReadRegisterByte(CONFIG);
+      switchOff();
+      ReadRegisterByte(CONFIG);
+    }
      }
   return 0;
 }
@@ -260,9 +261,9 @@ int main(void) {
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
   ConfigureRF(3);
+  switchOff();
   ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
-  rxbuf[0]=ReadRegisterByte(CONFIG);
   chThdSleepMilliseconds(1);
   //Send some things
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
