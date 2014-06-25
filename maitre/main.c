@@ -55,6 +55,8 @@ int main(void) {
 
   // Launch PIR thread
   startPirThread();
+  // Launch RF thread
+  startRFThread();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
