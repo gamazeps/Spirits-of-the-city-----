@@ -22,6 +22,7 @@ void startAdcThread(void);
 void startPirThread(void);
 void startHeartBeatThread(void);
 void startLedThread(void);
+void startRFThread(void);
 
 //Miscellaneous
 uint8_t nextSequence(void);

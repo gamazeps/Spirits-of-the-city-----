@@ -1,6 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "thread.h"
+#include "RF.h"
 
 static WORKING_AREA(waRFThread, 128);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
@@ -29,4 +30,8 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   txbuf[2]=0x26;
   SendMessage(txbuf);
   ReceiveMessage(rxbuf);
+}
+
+void startRFthread(void){
+chThdCreateStatic(waRFThread, sizeof(waRFThread), NORMALPRIO, RFThread, NULL);
 }
