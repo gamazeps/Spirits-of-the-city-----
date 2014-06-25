@@ -70,15 +70,40 @@ void animation_3 (int8_t decalage, int8_t color1, int )
   set_small_uv_led(0);
 
   chThdSleepMilliseconds(decalage*10);
-  set_big_led_hsv(color1,255,80);
-  chThdSleepMilliseconds(250);
-  set_small_led_hsv(color2,255,80);
-  chThdSleepMilliseconds(250);
-  set_big_led_hsv(color1,0,80);
-  chThdSleepMilliseconds(250);
-  set_small_led_hsv(color2,0,80);
-  chThdSleepMilliseconds(250);
- 
+  for (int8_t i =0; i<100;i++) 
+    {
+      set_big_led_hsv(color1,255,80);
+      chThdSleepMilliseconds(250-i);
+      set_small_led_hsv(color2,255,80);
+      chThdSleepMilliseconds(250-i);
+      set_big_led_hsv(color1,0,80);
+      chThdSleepMilliseconds(250-i);
+      set_small_led_hsv(color2,0,80);
+      chThdSleepMilliseconds(250-i);
+    }
+
+  chThdSleepMilliseconds(2000-decalage*10);
+
+  for (int8_t i =0; i<100;i+=4)
+    {
+      set_big_led_hsv(color1,255,80);
+      set_small_led_hsv(color2,255,80);
+      chThdSleepMilliseconds(250-i);
+      set_big_led_hsv(color2,255,80);
+      set_small_led_hsv(color1,255,80);
+      chThdSleepMilliseconds(250-i);
+    }
+  set_small_uv_led(255);
+  chThdSleepMilliseconds(200);
+  set_small_uv_led(0);
+
+  for (int8_t i =0; i<255;i++)
+    {
+      set_big_led_rgb(0,255-i,0);
+      set_small_led_rgb(0,255-i,0); 
+      chThdSleepMilliseconds(100);   
+    }
+
   change_heart_beat_speed(1000,60000,3000);
 }
 
