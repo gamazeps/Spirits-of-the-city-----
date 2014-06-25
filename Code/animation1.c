@@ -55,6 +55,35 @@ void animation_2 (int8_t nb_beats, int8_t small_colour, int8_t big_colour){
   set_big_uv_led(0);
 }
 
+void animation_3 (int8_t decalage, int8_t color1, int )
+{
+  chThdSleepMilliseconds(decalage*10);
+  set_big_led_rgb (0,255,0);
+  set_small_led_rgb (0,255,0);
+  chThdSleepMilliseconds(4000-decalage*10);
+  set_big_led_rgb (0,0,0);
+  set_small_led_rgb (0,0,0);
+
+  change_heart_beat_speed(60000,1000,3000);
+  set_small_uv_led(255);
+  chThdSleepMilliseconds(400);
+  set_small_uv_led(0);
+
+  chThdSleepMilliseconds(decalage*10);
+  set_big_led_hsv(color1,255,80);
+  chThdSleepMilliseconds(250);
+  set_small_led_hsv(color2,255,80);
+  chThdSleepMilliseconds(250);
+  set_big_led_hsv(color1,0,80);
+  chThdSleepMilliseconds(250);
+  set_small_led_hsv(color2,0,80);
+  chThdSleepMilliseconds(250);
+ 
+  change_heart_beat_speed(1000,60000,3000);
+}
+
+
+
 
 
  
