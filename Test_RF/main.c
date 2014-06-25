@@ -1,5 +1,5 @@
 /*
-  ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Sirio
+  ChibiOS/RT - Copyright (C) 2006-2013 Giovanni Di Siri
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITTER FALSE
+#define ISTRANSMITTER TRUE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -69,7 +69,6 @@ static void spiStopTransaction(void) {
 }
 
 static uint8_t txbuf[128];
-static uint8_t rxbuf[128];
 static SEMAPHORE_DECL(sem, 0);
 static msg_t msgMode;
 
@@ -186,38 +185,38 @@ static msg_t BlinkerThread(void *arg) {
   return 0;
 }
 
-static WORKING_AREA(waThread2, 128);
-static msg_t waThread2go(void *arg) {
-  (void)arg;
-   if (ISTRANSMITTER) {
-    while (TRUE) {
-      chThdSleepMilliseconds(1000);
-      txbuf[0]=0x05;
-      txbuf[1]=0x11;
-      txbuf[2]=0x94;
+/*static WORKING_AREA(waThread2, 128);
+  static msg_t waThread2go(void *arg)*/
+
+static void SendMessage(uint8_t *txbuf) {
+  if(ISTRANSMITTER){
+    int t=chTimeNow();
+    while( (int) chTimeNow() < (int) (t+7000) ){
       SendData(txbuf,3);
     }
-    }else{
+  }
+}
+static uint8_t* ReceiveMessage(uint8_t* message){
+  if(!ISTRANSMITTER){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
       switchOn();
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(rxbuf, 3);
+      ReceivePacket(message, 3);
       chThdSleepMilliseconds(1);
-      ReadRegisterByte(CONFIG);
       switchOff();
-      ReadRegisterByte(CONFIG);
     }
-     }
-  return 0;
+    return message;
+  }
+
 }
 
 static void irq_handler(EXTDriver *e, expchannel_t c){
-	(void) e;
-	(void) c;
-	chSysLockFromIsr();
-	chSemSignalI(&sem);
-	chSysUnlockFromIsr();
+  (void) e;
+  (void) c;
+  chSysLockFromIsr();
+  chSemSignalI(&sem);
+  chSysUnlockFromIsr();
 }
 
 static const EXTConfig extconfig={
@@ -250,7 +249,7 @@ int main(void) {
 
 
   // Creates the blinker thread.
-   // Test SPI
+  // Test SPI
   static SPIConfig spi3cfg = {
     NULL, // No callback
     /* HW dependent part.*/
@@ -267,5 +266,10 @@ int main(void) {
   chThdSleepMilliseconds(1);
   //Send some things
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
-  chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO, waThread2go, NULL);
+  uint8_t mess[128];
+  mess[0]=0xAB;
+  mess[1]=0x57;
+  mess[2]=0x26;
+  SendMessage(mess);
+
 }
