@@ -84,3 +84,14 @@ void set_heart_beat_speed (uint16_t speed){
   heart_beat_speed = speed;
 }
 
+// Change continiously the heart beat from a speed to another (in a defined time)
+void change_heart_beat_speed (int initial_speed, int final_speed, int time){
+  int diff = final_speed - initial_speed;
+  int j = 0;
+  for (int i = 0; i < 100; i++)
+    {
+      j = initial_speed + ((diff)*i/100);
+      set_heart_beat_speed (j);
+      chThdSleepMilliseconds(time/100);
+    }
+}

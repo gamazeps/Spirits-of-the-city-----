@@ -32,7 +32,7 @@ extern BaseSequentialStream *chp;
 extern volatile bool run_led_thread;
 extern volatile uint16_t heart_beat_speed;
 extern volatile bool presence_detected;
-extern uint8_t * RxBuf;
-extern uint8_t * TxBuf;
+extern uint8_t RxBuf[32];
+extern uint8_t TxBuf[32];
 
 #endif
