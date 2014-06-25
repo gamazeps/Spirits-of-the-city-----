@@ -1,8 +1,7 @@
 #include "ch.h"
 #include "hal.h"
-#include "chprintf.h"
 #include "debug.h"
-#include "thread.h"
+#include "pir_thread.h"
 
 volatile bool presence_detected = FALSE;
 static WORKING_AREA(waPIRThread, 128);
@@ -21,4 +20,3 @@ __attribute__((__noreturn__)) static msg_t PIRThread(void *arg) {
 void startPirThread(void){
   chThdCreateStatic(waPIRThread, sizeof(waPIRThread), NORMALPRIO, PIRThread, NULL);
 }
-

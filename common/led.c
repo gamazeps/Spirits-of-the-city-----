@@ -2,7 +2,6 @@
 #include "hal.h"
 #include "led.h"
 #include "chprintf.h"
-#include "thread.h"
 #include "gamma.h"
 #include "hsv2rgb.h"
 #include <stdint.h>

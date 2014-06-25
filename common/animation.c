@@ -3,11 +3,7 @@
 #include "hal.h"
 #include "led.h"
 #include "chprintf.h"
-#include "thread.h"
-#include "gamma.h"
-#include "hsv2rgb.h"
-#include "animation1.h"
-
+#include "animation.h"
 
 void animation_1(){
   static uint8_t h = 0;

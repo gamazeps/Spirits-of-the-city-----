@@ -63,12 +63,14 @@ endif
 PROJECT = elfe
 
 # Imported source files and paths
+BOARD = ../boards
+
 CHIBIOS = ../ChibiOS_2.6.4
-include boards/board.mk
 include $(CHIBIOS)/os/hal/platforms/STM32L1xx/platform.mk
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32L1xx/port.mk
 include $(CHIBIOS)/os/kernel/kernel.mk
+include $(BOARD)/board.mk
 
 # Define linker script file here
 LDSCRIPT= $(PORTLD)/STM32L152xB.ld
@@ -83,7 +85,15 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/evtimer.c \
        $(CHIBIOS)/os/various/syscalls.c \
        $(CHIBIOS)/os/various/chprintf.c \
-       gamma.c led.c hsv2rgb.c main.c adc_thread.c pir_thread.c heart_beat_thread.c led_thread.c animation1.c mainRadio.c
+       ../common/gamma.c \
+       ../common/led.c \
+       ../common/hsv2rgb.c \
+       ../common/adc_thread.c \
+       ../common/heart_beat_thread.c \
+       ../common/led_thread.c \
+       ../common/animation.c \
+       ../common/lfsr.c \
+        pir_thread.c main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -112,7 +122,7 @@ TCPPSRC =
 # List ASM source files here
 ASMSRC = $(PORTASM)
 
-INCDIR = $(PORTINC) $(KERNINC) $(TESTINC) \
+INCDIR = $(PORTINC) $(KERNINC) \
          $(HALINC) $(PLATFORMINC) $(BOARDINC) \
          $(CHIBIOS)/os/various
 
@@ -192,7 +202,7 @@ UDEFS =
 UADEFS =
 
 # List all user directories here
-UINCDIR =
+UINCDIR = $(BOARD) ../common
 
 # List the user directory to look for the libraries here
 ULIBDIR =

@@ -2,7 +2,7 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
-#include "thread.h"
+#include "adc_thread.h"
 
 // ADC - Luminosity sensor thread
 static WORKING_AREA(waADCThread,128);

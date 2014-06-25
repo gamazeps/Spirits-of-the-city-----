@@ -2,9 +2,8 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
-#include "hsv2rgb.h"
 #include "led.h"
-#include "thread.h"
+#include "heart_beat_thread.h"
 
 static WORKING_AREA(waHeartbeatThread, 128);
 __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {

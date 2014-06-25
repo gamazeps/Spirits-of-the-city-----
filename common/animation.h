@@ -1,5 +1,5 @@
-#ifndef ANIMATION1_H
-#define ANIMATION1_H
+#ifndef ANIMATION_H
+#define ANIMATION_H
 
 #include <stdint.h>
 

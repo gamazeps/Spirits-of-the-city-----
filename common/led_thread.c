@@ -2,10 +2,10 @@
 #include "hal.h"
 #include "chprintf.h"
 #include "debug.h"
-#include "hsv2rgb.h"
-#include "led.h"
-#include "thread.h"
-#include "animation1.h"
+#include "led_thread.h"
+#include "pir_thread.h"
+#include "animation.h"
+#include "lfsr.h"
 #include <stdint.h>
 
 volatile bool run_led_thread = FALSE;
@@ -20,7 +20,8 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   chRegSetThreadName("LED");
   while(TRUE){
     if(presence_detected){
-      switch(nextSequence()){
+      switch(lfsr() & 0x3){
+      case 0:
       case 1:
         animation_1();
         break;

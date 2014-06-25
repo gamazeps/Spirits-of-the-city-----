@@ -20,7 +20,11 @@
 #include "debug.h"
 #include "hsv2rgb.h"
 #include "led.h"
-#include "thread.h"
+#include "pir_thread.h"
+#include "led_thread.h"
+#include "heart_beat_thread.h"
+#include "led_thread.h"
+#include "adc_thread.h"
 #include <stdint.h>
 
 
@@ -78,27 +82,3 @@ int main(void) {
   }
 
 }
-
-//Return pseudo-random number between 1~3
-uint8_t nextSequence(void){
-  static uint16_t lfsr = 0xACE1u;
-  uint8_t bit;
-  uint8_t result;
-
-  /* taps: 16 5 4 3; feedback polynomial: x^16 + x^14 + x^13 + x^11 + 1 */
-  bit  = ((lfsr >> 0) ^ (lfsr >> 11) ^ (lfsr >> 12) ^ (lfsr >> 13) ) & 1;
-  lfsr =  (lfsr >> 1) | (bit << 15);
-  result = (uint8_t) lfsr & 0xFF;
-  if(result < 85)
-    result = 1;
-  else if(result < 170)
-    result = 2;
-  else
-    result = 3;
-  return result;
-}
-
-
-
-
-
