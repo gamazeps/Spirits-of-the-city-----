@@ -95,7 +95,8 @@ void set_heart_beat_speed (int speed)
 // Change continiously the heart beat from a speed to another (in a defined time)
 void change_heart_beat_speed (int initial_speed, int final_speed, int time)
 {
-  int diff = abs(final_speed - initial_speed);
+  int diff = final_speed - initial_speed;
+  diff = diff > 0 ? diff : -diff;
   int t = time/diff;
   int j = 0;
   for (int i = 0; i < diff; i++)
