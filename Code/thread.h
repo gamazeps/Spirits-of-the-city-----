@@ -5,13 +5,10 @@
 
 //Definitions section
 //Common
-#define ISMASTER 1
-#define DAY_LUM_CHECK_TIME_SECONDS 120
 #define HEART_FLASH 0
-#define ANIMATION1 1
-#define ANIMATION2 2
+#define ANIMATION1  1
+#define ANIMATION2  2
 //Master
-#define LUM_TRESHOLD_MASTER 0x800
 #define PRESENCE_CHECK_TIME_MILLISECONDS 100
 
 /* Total number of channels to be sampled by a single ADC operation.*/
@@ -33,7 +30,7 @@ uint8_t nextSequence(void);
 extern adcsample_t adc_samples[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 extern BaseSequentialStream *chp;
 extern volatile bool run_led_thread;
-extern volatile bool day_mode;
+extern volatile uint16_t heart_beat_speed;
 extern volatile bool presence_detected;
 extern uint8_t * RxBuf;
 extern uint8_t * TxBuf;

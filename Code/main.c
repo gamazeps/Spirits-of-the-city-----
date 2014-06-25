@@ -43,8 +43,6 @@ static PWMConfig pwmcfg = {
   0
 };
 
-bool day_mode = FALSE;
-
 /*
  * Application entry point.
  */
@@ -76,38 +74,7 @@ int main(void) {
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    if(ISMASTER){
-
-      //Instruction for Master Elf
-      if(day_mode){
-
-        //Day mode : sleep and check luminosity
-        if(adcsamples[0] < LUM_TRESHOLD_MASTER)
-          day_mode = FALSE;
-        thThdSleepSeconds(DAY_LUM_CHECK_SECONDS);
-      }
-      else{
-
-        //Night mode : heart beating & checking presence & animation & checking luminosity
-        activateHeartBeat();
-        activatePirThread();
-        while(1-presence_detected && adcsamples[0] < LUM_TRESHOLD_MASTER){
-          chThdSleepMilliseconds(PRESENCE_CHECK_TIME_MILLISECONDS);
-        }
-        stopHeartBeat();
-        if(adcsamples[0] > LUM_TRESHOLD_MASTER)
-          break;
-        else{
-          stopPirThread();
-          presence_detected = FALSE;
-          activateLedThread();
-          RxBuf[0] = HEART_FLASH;
-          activateRadioEmissionThread();
-        }
-      }
-    }
-
-
+    chThdSleepSeconds(1);
   }
 
 }
