@@ -15,9 +15,9 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   while(TRUE){
     // XXX TODO : change this to use a semaphore !!!
     if(presence_detected){
-      switch(lfsr() & 0x3){
+      switch(lfsr()%3){
       case 2:
-        animation_2(4, 50, 120);
+        animation_2(50, 50, 120);
         break;
       case 3:
         animation_3(0, 20, 180);

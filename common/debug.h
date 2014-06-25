@@ -3,6 +3,7 @@
 
 #include "ch.h"
 #include "hal.h"
+#include "chprintf.h"
 
 extern BaseSequentialStream *chp;
 

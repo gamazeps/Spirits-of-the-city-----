@@ -16,7 +16,6 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "chprintf.h"
 #include "debug.h"
 #include "hsv2rgb.h"
 #include "led.h"
@@ -26,7 +25,7 @@
 #include "led_thread.h"
 #include "adc_thread.h"
 #include <stdint.h>
-
+#include "lfsr.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
@@ -41,9 +40,6 @@ int main(void) {
 
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
-
-  // Activate ADC
-  adcStart(&ADCD1,NULL);
 
   // Init LEDs
   led_init();
@@ -62,7 +58,7 @@ int main(void) {
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "tic\r\n");
+    chprintf(chp, "lfsr = %x\r\n", lfsr());
     chThdSleepSeconds(1);
   }
 

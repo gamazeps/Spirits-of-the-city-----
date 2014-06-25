@@ -5,7 +5,7 @@
 #include "led.h"
 #include "heart_beat_thread.h"
 
-volatile uint16_t heart_beat_speed = 600; //speed of heart beat in 10th of seconds
+volatile int heart_beat_speed = 600; //speed of heart beat in 10th of seconds
 
 static WORKING_AREA(waHeartbeatThread, 128);
 __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
@@ -19,7 +19,11 @@ __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
     set_small_uv_led(255);
     chThdSleepMilliseconds(200);
     set_small_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed*100);
+
+    // Gget current time
+    systime_t t = chTimeNow();
+    while(chTimeNow() < (t+heart_beat_speed*100))
+      chThdSleepMilliseconds(10);
   }
 }
 void startHeartBeatThread(void){
