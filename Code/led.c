@@ -1,10 +1,12 @@
 #include "ch.h"
 #include "hal.h"
 #include "led.h"
+#include "chprintf.h"
+#include "thread.h"
 #include "gamma.h"
 #include "hsv2rgb.h"
 
-int heart_beat_speed = 60000; //speed of heart beat
+volatile int heart_beat_speed = 60000; //speed of heart beat
 
 // Set the big eye led to the desired color
 void set_big_led_rgb(uint8_t r, uint8_t g, uint8_t b)
@@ -44,13 +46,13 @@ void set_small_led_hsv(uint8_t h, uint8_t s, uint8_t v)
 // Set the big UV LED to the desired intensity
 void set_big_uv_led(uint8_t val)
 {
-  pwmEnableChannel(&PWMD2, 2, led_gamma[val]);
+  pwmEnableChannel(&PWMD2, 3, led_gamma[val]);
 }
 
 // Set the small UV LED to the desired intensity
 void set_small_uv_led(uint8_t val)
 {
-  pwmEnableChannel(&PWMD2, 3, led_gamma[val]);
+  pwmEnableChannel(&PWMD2, 2, led_gamma[val]);
 }
 
 //Set continiuously de big eye from a color to another (in a defined time)
@@ -97,12 +99,11 @@ void change_heart_beat_speed (int initial_speed, int final_speed, int time)
 {
   int diff = final_speed - initial_speed;
   diff = diff > 0 ? diff : -diff;
-  int t = time/diff;
   int j = 0;
-  for (int i = 0; i < diff; i++)
+  for (int i = 0; i < 100; i++)
     {
-      j = initial_speed + ((final_speed - initial_speed)*i/diff);
+      j = initial_speed + ((final_speed - initial_speed)*i/100);
       set_heart_beat_speed (j);
-      chThdSleepMilliseconds(t);
+      chThdSleepMilliseconds(time/100);
     }
 }

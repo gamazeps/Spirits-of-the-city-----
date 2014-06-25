@@ -68,21 +68,10 @@ static void spiStopTransaction(void) {
   chThdSleepMilliseconds(1);
 }
 
-// Blinker thread
-static WORKING_AREA(waThread1, 128);
-static msg_t BlinkerThread(void *arg) {
-  (void)arg;
-  int on = 0;
-  while (TRUE) {
-    set_green(on);
-    chThdSleepMilliseconds(500);
-    on = 1-on;
-  }
-  return 0;
-}
-
 static uint8_t txbuf[128];
 static uint8_t rxbuf[128];
+static SEMAPHORE_DECL(sem, 0);
+static msg_t msgMode;
 
 // en argument, le nom du registre ou il faut écrire et le nombre de mots à écrire
 static void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
@@ -95,6 +84,12 @@ static void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf){
 
 static void WriteRegisterByte(int numRegister, uint8_t value) {
   WriteRegister(numRegister, 1, &value);
+}
+
+static void ExecuteCommand(int command) {
+  spiStartTransaction();
+  spiSend(&SPID3, 1, &command);
+  spiStopTransaction();
 }
 
 //registre dans lequel on va lire, et nombre de mots à lire
@@ -128,21 +123,21 @@ void SendData(const uint8_t* datasend, int numWords){
 volatile int status;
 
 static void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
-  set_red(1);
-  while (true) {
-    status = ReadRegisterByte(STATUS);
-    if (status & RX_DR) {
-      break;
-    }
+ set_red(1);//sets CE to 1
+ msgMode = chSemWaitTimeout(&sem,1000);
+ if(msgMode == RDY_OK){
+   set_red(0);
+   uint8_t command = R_RX_PAYLOAD;
+   spiStartTransaction();
+   spiSend(&SPID3, 1, &command);
+   spiReceive(&SPID3, pkt_size, rxbuf);
+   spiStopTransaction();
+   WriteRegisterByte(STATUS, RX_DR);
+ }
+ else if(msgMode == RDY_TIMEOUT) {
+   set_red(0);set_orange(1);
+   set_orange(0);
   }
-  set_red(0);
-  uint8_t command = R_RX_PAYLOAD;
-  spiStartTransaction();
-  spiSend(&SPID3, 1, &command);
-  spiReceive(&SPID3, pkt_size, rxbuf);
-  spiStopTransaction();
-  WriteRegisterByte(STATUS, RX_DR);
-  status = ReadRegisterByte(STATUS);
 }
 
 void ConfigureRF(int sizepck){
@@ -178,10 +173,22 @@ static void switchOff(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
 }
 
+// Blinker thread
+static WORKING_AREA(waThread1, 128);
+static msg_t BlinkerThread(void *arg) {
+  (void)arg;
+  int on = 0;
+    while (TRUE) {
+    set_green(on);
+    chThdSleepMilliseconds(500);
+    on = 1-on;
+  }
+  return 0;
+}
+
 static WORKING_AREA(waThread2, 128);
 static msg_t waThread2go(void *arg) {
   (void)arg;
-
    if (ISTRANSMITTER) {
     while (TRUE) {
       chThdSleepMilliseconds(1000);
@@ -190,29 +197,60 @@ static msg_t waThread2go(void *arg) {
       txbuf[2]=0x94;
       SendData(txbuf,3);
     }
-  }else{
+    }else{
     while (TRUE) {
       chThdSleepMilliseconds(5000);
       switchOn();
-      palTogglePad(GPIOF, GPIOF_STAT2);
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(rxbuf,3);
+      ReceivePacket(rxbuf, 3);
       chThdSleepMilliseconds(1);
+      ReadRegisterByte(CONFIG);
       switchOff();
-      }
-  }
-
+      ReadRegisterByte(CONFIG);
+    }
+     }
   return 0;
 }
+
+static void irq_handler(EXTDriver *e, expchannel_t c){
+	(void) e;
+	(void) c;
+	chSysLockFromIsr();
+	chSemSignalI(&sem);
+	chSysUnlockFromIsr();
+}
+
+static const EXTConfig extconfig={
+  {
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_FALLING_EDGE | EXT_MODE_GPIOG | EXT_CH_MODE_AUTOSTART, irq_handler},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL}
+  },
+};
+
 
 //  Application entry point.
 int main(void) {
   halInit();//also initializes the spi driver
   chSysInit();
-  // Creates the blinker thread.
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
+  extStart(&EXTD1, &extconfig);
 
-  // Test SPI
+
+  // Creates the blinker thread.
+   // Test SPI
   static SPIConfig spi3cfg = {
     NULL, // No callback
     /* HW dependent part.*/
@@ -222,9 +260,12 @@ int main(void) {
   };
   // Init SPI
   spiStart(&SPID3, &spi3cfg);//get the SPI out of the "low power state"
-
   ConfigureRF(3);
+  switchOff();
+  ExecuteCommand(FLUSH_RX);
+  WriteRegisterByte(STATUS, RX_DR);
+  chThdSleepMilliseconds(1);
   //Send some things
-
-}
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, BlinkerThread, NULL);
+  chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO, waThread2go, NULL);
 }
