@@ -98,11 +98,10 @@ void set_heart_beat_speed (int speed)
 void change_heart_beat_speed (int initial_speed, int final_speed, int time)
 {
   int diff = final_speed - initial_speed;
-  diff = diff > 0 ? diff : -diff;
   int j = 0;
   for (int i = 0; i < 100; i++)
     {
-      j = initial_speed + ((final_speed - initial_speed)*i/100);
+      j = initial_speed + ((diff)*i/100);
       set_heart_beat_speed (j);
       chThdSleepMilliseconds(time/100);
     }

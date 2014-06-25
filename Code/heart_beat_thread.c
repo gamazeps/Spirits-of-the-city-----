@@ -11,14 +11,14 @@ __attribute__((__noreturn__))  static msg_t HeartbeatThread(void *arg) {
   (void)arg;
   chRegSetThreadName("Heartbeat");
   while(TRUE) {
-    set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/2);
     set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/4);
+    chThdSleepMilliseconds(500);
     set_big_uv_led(0);
-    chThdSleepMilliseconds(heart_beat_speed/8);
+    chThdSleepMilliseconds(200);
     set_big_uv_led(128);
-    chThdSleepMilliseconds(heart_beat_speed/8);
+    chThdSleepMilliseconds(200);
+    set_big_uv_led(0);
+    chThdSleepMilliseconds(heart_beat_speed);
   }
 }
 void startHeartBeatThread(void){

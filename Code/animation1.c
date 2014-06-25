@@ -1,9 +1,3 @@
-/* Definition of animation 1 :
-   - The father wake up : his heart beats faster and faster ; his head glows more and more ; his eyes lights up slowly in green
-   - The children's eyes turn up at the same moment, in green.
-   - The children heart beats faster and faster
-   - All the heart slow down and the eyes slowly turn off
-*/
 
 #include "ch.h"
 #include "hal.h"
@@ -59,10 +53,10 @@ void animation_2 (uint8_t nb_beats, uint8_t small_colour, uint8_t big_colour){
 
 void animation_3 (uint8_t decalage, uint8_t color1, uint8_t color2 )
 {
-    chThdSleepMilliseconds(decalage*10+1);
+  chThdSleepMilliseconds(decalage*10+1);
   set_big_led_rgb (0,255,0);
   set_small_led_rgb (0,255,0);
-    chThdSleepMilliseconds(2000-(decalage*10));
+  chThdSleepMilliseconds(2000-(decalage*10));
   set_big_led_rgb (0,0,0);
   set_small_led_rgb (0,0,0);
   change_heart_beat_speed(60000,1000,3000);
