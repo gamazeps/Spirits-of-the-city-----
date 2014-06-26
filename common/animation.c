@@ -4,6 +4,7 @@
 #include "led.h"
 #include "chprintf.h"
 #include "animation.h"
+#include "lfsr.h"
 
 void animation_0(){
   static uint8_t h = 0;
@@ -139,4 +140,21 @@ void animation_3(uint8_t color) {
 
   set_big_led_hsv(color, 255, 255);
   set_small_led_hsv(color, 255, 255);
+}
+
+// Animation qui fait flasher la tete de façon aléatoire en allumant et éteignant
+// progressivement les yeux à la couleur spécifiée
+void animation_4(uint8_t color) {
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  for(int i=0; i<10; i++) {
+    flash_head();
+    flash_head();
+
+    set_big_led_hsv(color, 255, 25*i);
+    set_small_led_hsv(color, 255, 25*i);
+
+    chThdSleepMilliseconds((lfsr()%100) * 10);
+  }
 }

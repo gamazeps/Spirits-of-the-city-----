@@ -32,6 +32,10 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
         color = lfsr()%256;
         animation_3(color);
         break;
+      case 4:
+        color = lfsr()%256;
+        animation_4(color);
+        break;
       default :
         break;
       }
