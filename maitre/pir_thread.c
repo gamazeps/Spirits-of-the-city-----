@@ -14,8 +14,8 @@ __attribute__((__noreturn__)) static msg_t PIRThread(void *arg) {
   chRegSetThreadName("PIR");
   while(TRUE) {
     if(palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH){
-      chSemSignal(presence_sem);
-      chSemWait(animation_sem);
+      chSemSignal(&presence_sem);
+      chSemWait(&animation_sem);
     }
     chThdSleepMilliseconds(100);
   }
