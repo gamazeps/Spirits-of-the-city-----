@@ -16,17 +16,21 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   while(TRUE){
     // XXX TODO : change this to use a semaphore !!!
     if(presence_detected){
-      switch(lfsr()%3){
+      switch(lfsr()%ANIMS_NUMBER){
       case 0:
-        animation_1();
+        animation_0();
         break;
       case 1:
         color = lfsr()%256;
-        animation_2(50, color, (color+123)%256);
+        animation_1(50, color, (color+123)%256);
         break;
       case 2:
         color = lfsr()%256;
-        animation_3(0, color, (color+123)%256);
+        animation_2(0, color, (color+123)%256);
+        break;
+      case 3:
+        color = lfsr()%256;
+        animation_3(color);
         break;
       default :
         break;
