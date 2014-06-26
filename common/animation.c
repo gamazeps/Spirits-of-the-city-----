@@ -113,3 +113,33 @@ void animation_3 (uint8_t decalage, uint8_t color1, uint8_t color2 )
   // Go to pace
   set_heart_beat_speed(600);
 }
+
+void animation_4 ( uint8_t color1, uint8_t color2) {
+  flash_head();
+  chThdSleepMilliseconds(200);
+  flash_head();
+  chThdSleepMilliseconds(200);
+
+  set_big_led_hsv(color1, 255, 80);
+  set_small_led_hsv(color2, 255, 80); 
+  set_heart_beat_speed(6);
+  chThdSleepMilliseconds(200);
+
+  for (int i = 80; i>0; i--){
+    set_small_led_hsv(color2, 255, i); 
+    set_big_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }
+  for (int i = 0; i<80; i++){
+    set_big_led_hsv(color2, 255, i); 
+    set_small_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }  
+
+  flash_head();
+  chThdSleepMilliseconds(200);
+  flash_head();
+  chThdSleepMilliseconds(200);
+
+
+};
