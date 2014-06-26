@@ -1,6 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "RF.h"
+#include "radio_thread.h"
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -96,11 +97,12 @@ void ConfigureRF(int sizepck){
   //??
   WriteRegisterByte(RF_SETUP, 0x07);
   //setting the  adress and the payload width
-  txbuf[0]=0xB1;txbuf[1]=0xB2;txbuf[2]=0xB3;
+  uint8_t addr[3];
+  addr[0]=0xB1;addr[1]=0xB2;addr[2]=0xB3;
   if(ISTRANSMITTER) {
-    WriteRegister(TX_ADDR,3,txbuf);
+    WriteRegister(TX_ADDR,3,addr);
   } else {
-    WriteRegister(RX_ADDR_P0, 3, txbuf);
+    WriteRegister(RX_ADDR_P0, 3, addr);
     WriteRegisterByte(RX_PW_P0, sizepck);
   }
 }
@@ -115,8 +117,8 @@ void switchOff(void){
 
 void SendMessage(uint8_t* txbuf) {
   if(ISTRANSMITTER){
-    int t=chTimeNow();
-    while( (int) chTimeNow() < (int) (t+7000) ){
+    // int t=chTimeNow();
+    while( TRUE /*(int) chTimeNow() < (int) (t+7000) */  ){
       SendData(txbuf,SIZEPKT);
     }
   }
