@@ -50,7 +50,7 @@ void ExecuteCommand(int command);
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(const uint8_t* datasend, int numWords);
 
-void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size);
+void ReceivePacket(uint8_t *rxbuf, size_t pkt_size);
 
 void ConfigureRF(int sizepck);
 

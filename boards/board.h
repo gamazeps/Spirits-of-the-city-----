@@ -340,7 +340,7 @@
                                      PIN_MODE_OUTPUT(GPIOB_RF_CE) |     \
                                      PIN_MODE_OUTPUT(GPIOB_RF_NSS) |    \
                                      PIN_MODE_ALTERNATE(GPIOB_RF_SCK) | \
-                                     PIN_MODE_INPUT(GPIOB_RF_MISO) |    \
+                                     PIN_MODE_ALTERNATE(GPIOB_RF_MISO) |    \
                                      PIN_MODE_ALTERNATE(GPIOB_RF_MOSI))
 
 #define VAL_GPIOB_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOB_RGB_BIG_B) | \

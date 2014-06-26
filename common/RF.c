@@ -1,8 +1,9 @@
 #include "ch.h"
 #include "hal.h"
 #include "RF.h"
-#include "debug.h"
 #include "radio_thread.h"
+#include "debug.h"
+
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -70,11 +71,11 @@ void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size) {
   msg_t msgMode = chSemWaitTimeout(&sem,1000);
   if(msgMode == RDY_OK){chprintf(chp, "je reçois \r\n");
     set_CE(0);
-    uint8_t command = R_RX_PAYLOAD;
-    spiStartTransaction();
+    uint8_t command = R_RX_PAYLOAD; rrxbuf[1]=2;
+    spiStartTransaction();chprintf(chp, "command=%x\r\n", command);
     spiSend(&SPID2, 1, &command);
-    spiReceive(&SPID2, pkt_size, rrxbuf);
-    spiStopTransaction();chprintf(chp, "rx2buf[0]=%x\r\n", rrxbuf[0]);
+    spiReceive(&SPID2, pkt_size, rrxbuf);chprintf(chp, "la commande est passée \r\n");chprintf(chp, "rx2buf[1]=%x\r\n", rrxbuf[32]);
+    spiStopTransaction();
     WriteRegisterByte(STATUS, RX_DR);
   }
   else if(msgMode == RDY_TIMEOUT) {
@@ -98,12 +99,12 @@ void ConfigureRF(int sizepck){
   //??
   WriteRegisterByte(RF_SETUP, 0x07);
   //setting the  adress and the payload width
-  uint8_t tableaddress[3];
-  tableaddress[0]=0xB1;tableaddress[1]=0xB2;tableaddress[2]=0xB3;
+  uint8_t addr[3];
+  addr[0]=0xB1;addr[1]=0xB2;addr[2]=0xB3;
   if(ISTRANSMITTER) {
-    WriteRegister(TX_ADDR,3,tableaddress);
+    WriteRegister(TX_ADDR,3,addr);
   } else {
-    WriteRegister(RX_ADDR_P0, 3, tableaddress);
+    WriteRegister(RX_ADDR_P0, 3, addr);
     WriteRegisterByte(RX_PW_P0, sizepck);
   }
 }
@@ -118,8 +119,8 @@ void switchOff(void){
 
 void SendMessage(uint8_t* stxbuf) {
   if(ISTRANSMITTER){
-    int t=chTimeNow();
-    while( (int) chTimeNow() < (int) (t+7000) ){
+    // int t=chTimeNow();
+    while( TRUE /*(int) chTimeNow() < (int) (t+7000) */  ){
       SendData(stxbuf,SIZEPKT);
     }
   }
@@ -130,10 +131,13 @@ void ReceiveMessage(void){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
       // switchOn();
+      uint8_t messagerecu[32];messagerecu[1]=3;
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(rxbuf,SIZEPKT);
-      chprintf(chp, "rxbuf[0]=%x\r\n", rxbuf[0]);
+      ReceivePacket(messagerecu,SIZEPKT);
+       chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
+       messagerecu[5]=0x25;
       chThdSleepMilliseconds(1);
+      chprintf(chp, "rxbuf[5]=%x\r\n",messagerecu[5]);
       // switchOff();
     }
   }
