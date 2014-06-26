@@ -10,7 +10,7 @@ endif
 
 # C specific options here (added to USE_OPT).
 ifeq ($(USE_COPT),)
-  USE_COPT = -std=gnu99 -Wno-unused-function
+  USE_COPT = -std=gnu99 -Wno-unused-function -DISTRANSMITTER=FALSE
 endif
 
 # C++ specific options here (added to USE_OPT).
@@ -96,6 +96,7 @@ CSRC = $(PORTSRC) \
        ../common/radio_thread.c \
        ../common/RF.c \
        ../common/sem.c \
+		../common/playAnimation.c\
 	   main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global

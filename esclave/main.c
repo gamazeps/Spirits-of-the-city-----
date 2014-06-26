@@ -27,6 +27,7 @@
 #include <stdint.h>
 #include "lfsr.h"
 #include "../common/sem.h"
+#include "../common/playAnimation.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
@@ -60,7 +61,8 @@ int main(void) {
   startAdcThread();
 
   while (TRUE) {
+    chprintf(chp, "I am waiting\r\n");
     WaitForAnimation();
-    // PlayAnimation();
+    playAnimation();
   }
 }

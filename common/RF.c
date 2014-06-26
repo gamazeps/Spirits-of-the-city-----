@@ -8,7 +8,6 @@
 static SEMAPHORE_DECL(sem, 0);
 
 uint8_t rxbuf[SIZEPKT] = {0};
-static uint8_t rxbuf2[SIZEPKT] = {0};
 uint8_t txbuf[SIZEPKT] = {0};
 
 void set_CE(int on){
@@ -87,7 +86,7 @@ int ReceivePacket(uint8_t *rrxbuf, size_t pkt_size, int timeout_ms) {
     return TRUE;
   }
   else if(msgMode == RDY_TIMEOUT) {
-    set_CE(0);chprintf(chp, "time is up \r\n");
+    set_CE(0);
   }
   return FALSE;
 }
@@ -138,10 +137,11 @@ void SendMessage(uint8_t* stxbuf) {
 // Return TRUE if an animation is ready, 0 if not.
 static int ReceiveAnimation(void) {
   switchOn();
+  static uint8_t rxbuf2[SIZEPKT] = {0};
   int needs_start = 0;
   int received;
   while (TRUE) {
-    received = ReceivePacket(rxbuf2, SIZEPKT, needs_start ? 6000 : 1000);
+    received = ReceivePacket(rxbuf2, SIZEPKT, needs_start ? 10000 : 1000);
     if (!received)
       break;
     if (rxbuf2[0] == 0xff) {
