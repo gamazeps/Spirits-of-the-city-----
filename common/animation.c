@@ -74,7 +74,6 @@ void animation_3 (uint8_t decalage, uint8_t color1, uint8_t color2 )
   // Flash head
   flash_head();
 
-
   chThdSleepMilliseconds(decalage*10+1);
   for (int i =0; i<200; i+=8) {
     set_big_led_hsv(color1, 255, 80);
