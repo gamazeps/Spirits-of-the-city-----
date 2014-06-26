@@ -1,7 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITTER FALSE
+#define ISTRANSMITTER TRUE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -78,9 +78,9 @@ static const EXTConfig extconfig={
 	{EXT_CH_MODE_DISABLED,NULL},
 	{EXT_CH_MODE_DISABLED,NULL},
 	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_FALLING_EDGE | EXT_MODE_GPIOG | EXT_CH_MODE_AUTOSTART, irq_handler},
 	{EXT_CH_MODE_DISABLED,NULL},
 	{EXT_CH_MODE_DISABLED,NULL},
+    {EXT_CH_MODE_FALLING_EDGE | EXT_MODE_GPIOA | EXT_CH_MODE_AUTOSTART, irq_handler},
 	{EXT_CH_MODE_DISABLED,NULL},
 	{EXT_CH_MODE_DISABLED,NULL},
 	{EXT_CH_MODE_DISABLED,NULL}
