@@ -3,7 +3,6 @@
 #include "chprintf.h"
 #include "debug.h"
 #include "led_thread.h"
-#include "pir_thread.h"
 #include "animation.h"
 #include "lfsr.h"
 #include "../common/sem.h"
