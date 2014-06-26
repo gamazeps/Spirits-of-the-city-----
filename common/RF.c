@@ -1,6 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "RF.h"
+#include "debug.h"
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -126,11 +127,12 @@ void ReceiveMessage(void){
   if(!ISTRANSMITTER){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
-      switchOn();
+      // switchOn();
       // Wait for data to be present in the RX FIFO
       ReceivePacket(rxbuf,SIZEPKT);
+      chprintf(chp, "rxbuf[0]=%x\r\n", rxbuf[0]);
       chThdSleepMilliseconds(1);
-      switchOff();
+      // switchOff();
     }
   }
 }

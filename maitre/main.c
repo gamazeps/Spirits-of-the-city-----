@@ -61,7 +61,6 @@ int main(void) {
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "lfsr = %x\r\n", lfsr());
     chThdSleepSeconds(1);
   }
 

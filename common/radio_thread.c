@@ -2,7 +2,7 @@
 #include "hal.h"
 #include "RF.h"
 
-static WORKING_AREA(waRFThread, 128);
+static WORKING_AREA(waRFThread, 512);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   (void) arg;
   (void) rxbuf;
@@ -23,18 +23,17 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
 
   // Configure the RF device
   ConfigureRF(SIZEPKT);
-  switchOff();
+  // switchOff();
   // Clean the RX FIFO
   ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
   chThdSleepMilliseconds(1);
-
+  txbuf[0]=0xAB;
+  txbuf[1]=0x57;
+  txbuf[2]=0x26;
   while(TRUE) {
     //Send some things
-    txbuf[0]=0xAB;
-    txbuf[1]=0x57;
-    txbuf[2]=0x26;
-    SendMessage(txbuf);
+    // SendMessage(txbuf);
     ReceiveMessage();
   }
 }
