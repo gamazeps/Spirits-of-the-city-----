@@ -11,6 +11,7 @@
 static WORKING_AREA(waLEDThread, 128);
 __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   (void)arg;
+  uint8_t color;
   chRegSetThreadName("LED");
   while(TRUE){
     // XXX TODO : change this to use a semaphore !!!
@@ -20,10 +21,12 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
         animation_1();
         break;
       case 1:
-        animation_2(50, 50, 120);
+        color = lfsr()%256;
+        animation_2(50, color, (color+123)%256);
         break;
       case 2:
-        animation_3(0, 20, 180);
+        color = lfsr()%256;
+        animation_3(0, color, (color+123)%256);
         break;
       default :
         break;
