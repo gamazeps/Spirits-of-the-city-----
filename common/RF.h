@@ -35,8 +35,6 @@ void spiStartTransaction(void);
 
 void spiStopTransaction(void);
 
-static SEMAPHORE_DECL(sem, 0);
-
 void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf);
 
 void WriteRegisterByte(int numRegister, uint8_t value);
@@ -50,7 +48,7 @@ void ExecuteCommand(int command);
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(const uint8_t* datasend, int numWords);
 
-void ReceivePacket(uint8_t *rxbuf, size_t pkt_size);
+int ReceivePacket(uint8_t *rxbuf, size_t pkt_size, int timeout_ms);
 
 void ConfigureRF(int sizepck);
 
@@ -62,25 +60,6 @@ void SendMessage(uint8_t* ttxbuf);
 
 void ReceiveMessage(void);
 
-void irq_handler(EXTDriver *e, expchannel_t c);
+void WaitForAnimation(void);
 
-static const EXTConfig extconfig={
-  {
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-    {EXT_CH_MODE_FALLING_EDGE | EXT_MODE_GPIOA | EXT_CH_MODE_AUTOSTART, irq_handler},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL},
-	{EXT_CH_MODE_DISABLED,NULL}
-  },
-};
+void irq_handler(EXTDriver *e, expchannel_t c);

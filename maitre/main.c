@@ -32,8 +32,21 @@
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
 
-Semaphore *presence_sem;
-Semaphore *animation_sem;
+SEMAPHORE_DECL(presence_sem, 0);
+SEMAPHORE_DECL(animation_sem, 0);
+
+static void slave(void) {
+  while (TRUE) {
+    WaitForAnimation();
+    // PlayAnimation();
+  }
+}
+
+static void master(void) {
+  while (TRUE) {
+    chThdSleepSeconds(1);
+  }
+}
 
 /*
  * Application entry point.
@@ -43,14 +56,7 @@ int main(void) {
   halInit();
   chSysInit();
 
-
-  chprintf(chp,"je suis la\r\n");
-
-  //Initializes semaphore to check presence, locked by default
-  chSemInit(presence_sem, 0);
-
-  //Initializes semaphore to lock pir thread during an animation
-  chSemInit(animation_sem, 0);
+  chprintf(chp,"je suis la init\r\n");
 
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
@@ -64,21 +70,17 @@ int main(void) {
   // Launch the heart beat thread
   startHeartBeatThread();
 
-  //Launch ADC Thread
-  startAdcThread();
+  // Configure radio
+  startRF();
 
   // Launch PIR thread
   startPirThread();
 
-  // Launch RF thread
-  //startRFThread();
-
-  flash_head();
-
-  // Output some things on the serial port but mainly sleep
-  while (TRUE) {
-    chThdSleepSeconds(1);
-	chprintf(chp,"je suis la\r\n");
+  if (ISTRANSMITTER) {
+    //Launch ADC Thread
+    startAdcThread();
+    master();
+  } else {
+    slave();
   }
-
 }
