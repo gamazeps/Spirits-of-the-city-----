@@ -43,8 +43,6 @@ int main(void) {
   halInit();
   chSysInit();
 
-  chprintf(chp, "Initialisation semaphore");
-
   //Initializes semaphore to check presence, locked by default
   chSemInit(presence_sem, 0);
 
@@ -70,13 +68,14 @@ int main(void) {
   startPirThread();
 
   // Launch RF thread
-  //startRFThread();
+  startRFThread();
+
   flash_head();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "lfsr = %x\r\n", lfsr());
     chThdSleepSeconds(1);
+	chprintf(chp,"je suis la\r\n");
   }
 
 }

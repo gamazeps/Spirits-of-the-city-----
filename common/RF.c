@@ -2,6 +2,8 @@
 #include "hal.h"
 #include "RF.h"
 #include "radio_thread.h"
+#include "debug.h"
+
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -64,20 +66,20 @@ void SendData(const uint8_t* datasend, int numWords){
   set_CE(0);
 }
 
-void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
+void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size) {
   set_CE(1);//sets CE to 1
   msg_t msgMode = chSemWaitTimeout(&sem,1000);
-  if(msgMode == RDY_OK){
+  if(msgMode == RDY_OK){chprintf(chp, "je reçois \r\n");
     set_CE(0);
-    uint8_t command = R_RX_PAYLOAD;
-    spiStartTransaction();
+    uint8_t command = R_RX_PAYLOAD; rrxbuf[1]=2;
+    spiStartTransaction();chprintf(chp, "command=%x\r\n", command);
     spiSend(&SPID2, 1, &command);
-    spiReceive(&SPID2, pkt_size, rxbuf);
+    spiReceive(&SPID2, pkt_size, rrxbuf);chprintf(chp, "la commande est passée \r\n");chprintf(chp, "rx2buf[1]=%x\r\n", rrxbuf[32]);
     spiStopTransaction();
     WriteRegisterByte(STATUS, RX_DR);
   }
   else if(msgMode == RDY_TIMEOUT) {
-    set_CE(0);
+    set_CE(0);chprintf(chp, "time is up \r\n");
   }
 }
 
@@ -115,11 +117,11 @@ void switchOff(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
 }
 
-void SendMessage(uint8_t* txbuf) {
+void SendMessage(uint8_t* stxbuf) {
   if(ISTRANSMITTER){
     // int t=chTimeNow();
     while( TRUE /*(int) chTimeNow() < (int) (t+7000) */  ){
-      SendData(txbuf,SIZEPKT);
+      SendData(stxbuf,SIZEPKT);
     }
   }
 }
@@ -128,11 +130,15 @@ void ReceiveMessage(void){
   if(!ISTRANSMITTER){
     while (TRUE) {
       chThdSleepMilliseconds(5000);
-      switchOn();
+      // switchOn();
+      uint8_t messagerecu[32];messagerecu[1]=3;
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(rxbuf,SIZEPKT);
+      ReceivePacket(messagerecu,SIZEPKT);
+       chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
+       messagerecu[5]=0x25;
       chThdSleepMilliseconds(1);
-      switchOff();
+      chprintf(chp, "rxbuf[5]=%x\r\n",messagerecu[5]);
+      // switchOff();
     }
   }
 }

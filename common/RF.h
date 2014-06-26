@@ -1,7 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITTER TRUE
+#define ISTRANSMITTER FALSE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -58,7 +58,7 @@ void switchOn(void);
 
 void switchOff(void);
 
-void SendMessage(uint8_t* txbuf);
+void SendMessage(uint8_t* ttxbuf);
 
 void ReceiveMessage(void);
 
