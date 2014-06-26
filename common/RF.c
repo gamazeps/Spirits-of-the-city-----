@@ -4,7 +4,7 @@
 #include "radio_thread.h"
 #include "debug.h"
 
-uint8_t rxbuf = {0};
+volatile uint8_t rxbuf[32] = {0};
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
