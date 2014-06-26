@@ -4,8 +4,9 @@
 #include "led.h"
 #include "chprintf.h"
 #include "animation.h"
+#include "lfsr.h"
 
-void animation_1(){
+void animation_0(){
   static uint8_t h = 0;
   static uint8_t s = 255;
   static uint8_t v = 0;
@@ -34,7 +35,7 @@ void animation_1(){
 }
 
 
-void animation_2 (int delay, uint8_t small_colour, uint8_t big_colour){
+void animation_1 (int delay, uint8_t small_colour, uint8_t big_colour){
   // Set eyes to the given colors
   set_small_led_hsv(small_colour, 255, 80);
   set_big_led_hsv(big_colour, 255, 80);
@@ -54,7 +55,7 @@ void animation_2 (int delay, uint8_t small_colour, uint8_t big_colour){
   set_heart_beat_speed(600);
 }
 
-void animation_3 (uint8_t decalage, uint8_t color1, uint8_t color2 )
+void animation_2 (uint8_t decalage, uint8_t color1, uint8_t color2 )
 {
   // Wait for the specified time
   chThdSleepMilliseconds(decalage*10+1);
@@ -111,4 +112,121 @@ void animation_3 (uint8_t decalage, uint8_t color1, uint8_t color2 )
 
   // Go to pace
   set_heart_beat_speed(600);
+}
+
+// Animation qui fait clignoter les yeux en une couleur spécifiée, comme un néon qui s'allume...
+void animation_3(uint8_t color) {
+  // Tableau des délais allumage / éteignage en 10ème de seconde.
+  static uint8_t delays[] = {1, 10,
+                             1, 2,
+                             1, 2,
+                             1, 10,
+                             3, 8,
+                             1, 1,
+                             1, 1,
+                             3, 1,
+                             3, 10,
+                             7, 2,
+                             1, 1};
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_hsv(color, 255, 255);
+    set_small_led_hsv(color, 255, 255);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_hsv(0, 0, 0);
+    set_small_led_hsv(0, 0, 0);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_hsv(color, 255, 255);
+  set_small_led_hsv(color, 255, 255);
+}
+
+// Animation qui fait flasher la tete de façon aléatoire en allumant et éteignant
+// progressivement les yeux à la couleur spécifiée
+void animation_4(uint8_t color) {
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  for(int i=0; i<10; i++) {
+    flash_head();
+    flash_head();
+
+    set_big_led_hsv(color, 255, 25*i);
+    set_small_led_hsv(color, 255, 25*i);
+
+    chThdSleepMilliseconds((lfsr()%100) * 10);
+  }
+}
+
+// Animation qui fait flasher juste flasher brièvement les yeux en blanc
+void animation_5(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+}
+
+// Animation qui fait flasher juste flasher brièvement les yeux en blanc
+void animation_6(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+}
+
+// Meme chose que la précédente, mais avec la tete en plus.
+void animation_7(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    set_big_uv_led(0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    set_big_uv_led(255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+  set_big_uv_led(0);
 }
