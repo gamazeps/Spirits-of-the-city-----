@@ -15,32 +15,56 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   chRegSetThreadName("LED");
   while(TRUE){
     chSemWait(&presence_sem);
-      switch(lfsr()%8){
+    txbuf[0]=lfsr()%8; //choose of an animation (alea)
+    switch(txbuf[0]){ 
+      //txbuf -> parameters for the slaves
+      //rxbuf -> parameters for the master
       case 0:
-        animation_0();
         break;
+
       case 1:
         color = lfsr()%256;
-        animation_1(50, color, (color+123)%256);
+	txbuf[1]=50;
+	txbuf[2]=color;
+	txbuf[3]=(color+123)%256;
+
+        color = lfsr()%256;
+	rxbuf[1]=50;
+	rxbuf[2]=color;
+	rxbuf[3]=(color+123)%256;
         break;
+
       case 2:
         color = lfsr()%256;
-        animation_2(0, color, (color+123)%256);
+	txbuf[1]=1000;
+	txbuf[2]=color;
+	txbuf[3]=(color+123)%256;
+
+        color = lfsr()%256;
+	rxbuf[1]=0;
+	rxbuf[2]=color;
+	rxbuf[3]=(color+123)%256;
         break;
+
       case 3:
-        color = lfsr()%256;
-        animation_3(color);
+        txbuf[1]=lfsr()%256;
+        rxbuf[1]=lfsr()%256;
         break;
+
       case 4:
-        color = lfsr()%256;
-        animation_4(color);
+        txbuf[1]=lfsr()%256; 
+        rxbuf[1]=lfsr()%256;
         break;
-      case 5: animation_5(); break;
-      case 6: animation_6(); break;
-      case 7: animation_7(); break;
-      default :
-        break;
+
+      case 5: break;
+
+      case 6: break;
+
+      case 7:  break;
+
+      default : break;
       }
+
       chSemSignal(&animation_sem);
       chThdSleepSeconds(1);
   }
