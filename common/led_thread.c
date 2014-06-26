@@ -5,6 +5,7 @@
 #include "led_thread.h"
 #include "animation.h"
 #include "lfsr.h"
+#include "radio_thread.h"
 #include "../common/sem.h"
 #include <stdint.h>
 
@@ -36,7 +37,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
 
       case 2:
         color = lfsr()%256;
-	txbuf[1]=1000;
+	txbuf[1]=100;
 	txbuf[2]=color;
 	txbuf[3]=(color+123)%256;
 

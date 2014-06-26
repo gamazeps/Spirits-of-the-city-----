@@ -232,7 +232,7 @@ void animation_7(void) {
   set_big_uv_led(0);
 }
 
-void animation_8 ( uint8_t color1, uint8_t color2) {
+/*void animation_8 ( uint8_t color1, uint8_t color2) {
   flash_head();
   chThdSleepMilliseconds(200);
   flash_head();
@@ -302,5 +302,5 @@ void animation_8 ( uint8_t color1, uint8_t color2) {
   set_small_led_hsv(0, 0, 0);
   set_heart_beat_speed(6);
 
-};
+  };*/
 
