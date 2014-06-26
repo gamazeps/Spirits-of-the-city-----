@@ -16,7 +16,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   chRegSetThreadName("LED");
   while(TRUE){
     chSemWait(presence_sem);
-      switch(lfsr()%3){
+      switch(lfsr()%8){
       case 0:
         animation_0();
         break;
@@ -42,11 +42,8 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
       default :
         break;
       }
-      chThdSleepSeconds(1);
-    }
       chSemSignal(animation_sem);
-    chThdSleepSeconds(1);
-
+      chThdSleepSeconds(1);
   }
 }
 
