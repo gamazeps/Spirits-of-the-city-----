@@ -114,6 +114,7 @@ void animation_2 (uint8_t decalage, uint8_t color1, uint8_t color2 )
   set_heart_beat_speed(600);
 }
 
+
 // Animation qui fait clignoter les yeux en une couleur spécifiée, comme un néon qui s'allume...
 void animation_3(uint8_t color) {
   // Tableau des délais allumage / éteignage en 10ème de seconde.
@@ -230,3 +231,76 @@ void animation_7(void) {
   set_small_led_rgb(0, 0, 0);
   set_big_uv_led(0);
 }
+
+/*void animation_8 ( uint8_t color1, uint8_t color2) {
+  flash_head();
+  chThdSleepMilliseconds(200);
+  flash_head();
+  chThdSleepMilliseconds(200);
+
+  set_big_led_hsv(color1, 255, 80);
+  set_small_led_hsv(color2, 255, 80); 
+  set_heart_beat_speed(6);
+  chThdSleepMilliseconds(200);
+
+  for (int i = 80; i>0; i--){
+    set_small_led_hsv(color2, 255, i); 
+    set_big_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }
+  for (int i = 0; i<80; i++){
+    set_big_led_hsv(color1, 255, i); 
+    set_small_led_hsv(color2, 255, i);
+    chThdSleepMilliseconds(10);
+  }  
+
+  flash_head();
+  chThdSleepMilliseconds(200);
+  flash_head();
+  chThdSleepMilliseconds(200);
+
+  for (int i = 80; i>0; i--){
+    set_small_led_hsv(color1, 255, i); 
+    set_big_led_hsv(color2, 255, i);
+    chThdSleepMilliseconds(10); 
+  }
+  for (int i = 80; i>0; i--){
+    set_small_led_hsv(color2, 255, i); 
+    set_big_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }
+  for (int i = 0; i<80; i++){
+    set_big_led_hsv(color2, 255, i); 
+    set_small_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }  
+  }
+  for (int i = 0; i<80; i++){
+    set_big_led_hsv(color2, 255, i); 
+    set_small_led_hsv(color1, 255, i);
+    chThdSleepMilliseconds(10);
+  }  
+
+  flash_head();
+  set_small_led_hsv(0, 0, 0);
+  set_big_led_hsv(0, 0, 0);
+  chThdSleepMilliseconds(300);
+
+  set_big_led_hsv(color1, 255, 80); 
+  set_small_led_hsv(color1, 255, 80);
+  chThdSleepMilliseconds(150);
+
+  set_big_led_hsv(0, 0, 0); 
+  set_small_led_hsv(0, 0, 0);
+  chThdSleepMilliseconds(150);
+
+  set_big_led_hsv(color2, 255, 80); 
+  set_small_led_hsv(color2, 255, 80);
+  chThdSleepMilliseconds(150);
+
+  set_big_led_hsv(0, 0, 0); 
+  set_small_led_hsv(0, 0, 0);
+  set_heart_beat_speed(6);
+
+  };*/
+
