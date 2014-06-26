@@ -26,7 +26,7 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   ConfigureRF(SIZEPKT);
   //switchOff();
   // Clean the RX FIFO
-  // ExecuteCommand(FLUSH_RX);
+  //ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
   chThdSleepMilliseconds(1);
   while(TRUE){

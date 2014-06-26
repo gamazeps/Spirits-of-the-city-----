@@ -64,7 +64,7 @@ int main(void) {
   startPirThread();
 
   // Launch RF thread
-  //startRFThread();
+  startRFThread();
 
   flash_head();
 
