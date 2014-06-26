@@ -6,6 +6,7 @@
 #include "pir_thread.h"
 #include "animation.h"
 #include "lfsr.h"
+#include "../common/sem.h"
 #include <stdint.h>
 
 static WORKING_AREA(waLEDThread, 128);
@@ -14,8 +15,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   uint8_t color;
   chRegSetThreadName("LED");
   while(TRUE){
-    // XXX TODO : change this to use a semaphore !!!
-    if(presence_detected){
+    chSemWait(presence_sem);
       switch(lfsr()%3){
       case 0:
         animation_1();
@@ -30,11 +30,10 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
         break;
       default :
         break;
-      }
-      chThdSleepSeconds(1);
     }
-    else
-      chThdSleepMilliseconds(10);
+      chSemSignal(animation_sem);
+    chThdSleepSeconds(1);
+
   }
 }
 
