@@ -27,9 +27,12 @@
 #include "radio_thread.h"
 #include <stdint.h>
 #include "lfsr.h"
+#include "../common/sem.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
+
+BinarySemaphore *presence_sem;
 
 /*
  * Application entry point.
@@ -38,6 +41,9 @@ int main(void) {
   // Initialize system
   halInit();
   chSysInit();
+
+  //Initializes semaphore to check presence, locked by default
+  chBSemInit(presence_sem, TRUE);
 
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
