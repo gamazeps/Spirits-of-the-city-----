@@ -1,7 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 
-#define ISTRANSMITTER TRUE
+#define ISTRANSMITTER FALSE
 //RF registers and function names
 #define R_REGISTER(x) (x & 0x1F)
 #define W_REGISTER(x) ((x & 0x1F) | 0x20)
@@ -35,8 +35,6 @@ void spiStartTransaction(void);
 
 void spiStopTransaction(void);
 
-static uint8_t rxbuf[32];
-static uint8_t txbuf[32];
 static SEMAPHORE_DECL(sem, 0);
 
 void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf);
@@ -52,7 +50,7 @@ void ExecuteCommand(int command);
 //To send data to an other radio, puts the data int the TX_PAYLOAD
 void SendData(const uint8_t* datasend, int numWords);
 
-void ReceivePacket(uint8_t *rxbuf, size_t pkt_size);
+void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size);
 
 void ConfigureRF(int sizepck);
 
@@ -60,7 +58,7 @@ void switchOn(void);
 
 void switchOff(void);
 
-void SendMessage(uint8_t* txbuf);
+void SendMessage(uint8_t* ttxbuf);
 
 void ReceiveMessage(void);
 

@@ -58,12 +58,13 @@ int main(void) {
   startPirThread();
 
   // Launch RF thread
-  //startRFThread();
+  startRFThread();
+
   flash_head();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chThdSleepSeconds(1);
+    chThdSleepSeconds(1);chprintf(chp,"je suis la\r\n");
   }
 
 }

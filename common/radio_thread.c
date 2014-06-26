@@ -1,6 +1,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "RF.h"
+#include "radio_thread.h"
 
 static WORKING_AREA(waRFThread, 512);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
@@ -28,9 +29,6 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
   chThdSleepMilliseconds(1);
-  txbuf[0]=0xAB;
-  txbuf[1]=0x57;
-  txbuf[2]=0x26;
   while(TRUE) {
     //Send some things
     // SendMessage(txbuf);

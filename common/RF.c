@@ -2,6 +2,7 @@
 #include "hal.h"
 #include "RF.h"
 #include "debug.h"
+#include "radio_thread.h"
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -64,20 +65,20 @@ void SendData(const uint8_t* datasend, int numWords){
   set_CE(0);
 }
 
-void ReceivePacket(uint8_t *rxbuf, size_t pkt_size) {
+void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size) {
   set_CE(1);//sets CE to 1
   msg_t msgMode = chSemWaitTimeout(&sem,1000);
-  if(msgMode == RDY_OK){
+  if(msgMode == RDY_OK){chprintf(chp, "je reçois \r\n");
     set_CE(0);
     uint8_t command = R_RX_PAYLOAD;
     spiStartTransaction();
     spiSend(&SPID2, 1, &command);
-    spiReceive(&SPID2, pkt_size, rxbuf);
-    spiStopTransaction();
+    spiReceive(&SPID2, pkt_size, rrxbuf);
+    spiStopTransaction();chprintf(chp, "rx2buf[0]=%x\r\n", rrxbuf[0]);
     WriteRegisterByte(STATUS, RX_DR);
   }
   else if(msgMode == RDY_TIMEOUT) {
-    set_CE(0);
+    set_CE(0);chprintf(chp, "time is up \r\n");
   }
 }
 
@@ -97,11 +98,12 @@ void ConfigureRF(int sizepck){
   //??
   WriteRegisterByte(RF_SETUP, 0x07);
   //setting the  adress and the payload width
-  txbuf[0]=0xB1;txbuf[1]=0xB2;txbuf[2]=0xB3;
+  uint8_t tableaddress[3];
+  tableaddress[0]=0xB1;tableaddress[1]=0xB2;tableaddress[2]=0xB3;
   if(ISTRANSMITTER) {
-    WriteRegister(TX_ADDR,3,txbuf);
+    WriteRegister(TX_ADDR,3,tableaddress);
   } else {
-    WriteRegister(RX_ADDR_P0, 3, txbuf);
+    WriteRegister(RX_ADDR_P0, 3, tableaddress);
     WriteRegisterByte(RX_PW_P0, sizepck);
   }
 }
@@ -114,11 +116,11 @@ void switchOff(void){
   WriteRegisterByte(CONFIG, ISTRANSMITTER ? 0b000001100 : 0b00001101);
 }
 
-void SendMessage(uint8_t* txbuf) {
+void SendMessage(uint8_t* stxbuf) {
   if(ISTRANSMITTER){
     int t=chTimeNow();
     while( (int) chTimeNow() < (int) (t+7000) ){
-      SendData(txbuf,SIZEPKT);
+      SendData(stxbuf,SIZEPKT);
     }
   }
 }
