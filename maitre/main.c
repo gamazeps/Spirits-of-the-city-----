@@ -60,5 +60,11 @@ int main(void) {
 
   while (TRUE) {
     chThdSleepSeconds(1);
+    txbuf[0]=0x1;
+    SendMessage(txbuf);
+    txbuf[0]=255;
+    for(int i=0; i<10 ; i++){
+      SendData(txbuf, SIZEPKT);
+    }
   }
 }
