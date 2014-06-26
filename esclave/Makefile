@@ -90,7 +90,7 @@ CSRC = $(PORTSRC) \
        ../common/hsv2rgb.c \
        ../common/adc_thread.c \
        ../common/heart_beat_thread.c \
-       ../common/led_thread.c \
+       ../common/fill_buffer.c \
        ../common/animation.c \
        ../common/lfsr.c \
        ../common/radio_thread.c \

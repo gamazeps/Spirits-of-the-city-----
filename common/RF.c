@@ -128,7 +128,7 @@ void switchOff(void){
 void SendMessage(uint8_t* stxbuf) {
   switchOn();
   int t=chTimeNow();
-  while((int) chTimeNow() < (int) (t+7000)){
+  while((int) chTimeNow() < (int) (t+5500)){
     SendData(stxbuf,SIZEPKT);
   }
 }

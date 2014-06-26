@@ -19,9 +19,8 @@
 #include "debug.h"
 #include "hsv2rgb.h"
 #include "led.h"
-#include "led_thread.h"
 #include "heart_beat_thread.h"
-#include "led_thread.h"
+#include "fill_buffer.h"
 #include "adc_thread.h"
 #include "radio_thread.h"
 #include <stdint.h>
@@ -49,7 +48,7 @@ int main(void) {
   led_init();
 
   // Launch the LED thread
-  startLedThread();
+  // fill_buffer();
 
   // Launch the heart beat thread
   startHeartBeatThread();

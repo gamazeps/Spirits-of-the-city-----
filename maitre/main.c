@@ -20,14 +20,14 @@
 #include "hsv2rgb.h"
 #include "led.h"
 #include "pir_thread.h"
-#include "led_thread.h"
+#include "fill_buffer.h"
 #include "heart_beat_thread.h"
-#include "led_thread.h"
 #include "adc_thread.h"
 #include "radio_thread.h"
 #include <stdint.h>
 #include "lfsr.h"
 #include "../common/sem.h"
+#include "playAnimation.h"
 
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
@@ -48,23 +48,23 @@ int main(void) {
 
  // Launch the heart beat thread
   startHeartBeatThread();
-
  //Launch ADC Thread
-  startPirThread();
-
- // Launch the LED thread
-  startLedThread();
+ //startPirThread();
 
   // Configure radio
   startRF();
 
   while (TRUE) {
-    chThdSleepSeconds(1);
-    txbuf[0]=0x1;
-    SendMessage(txbuf);
-    txbuf[0]=255;
-    for(int i=0; i<10 ; i++){
-      SendData(txbuf, SIZEPKT);
+    while(palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH){
+      flash_head();
+      fill_buffer();
+      SendMessage(txbuf);
+      txbuf[0]=255;
+      for(int i=0; i<10 ; i++){
+        SendData(txbuf, SIZEPKT);
+      }
+      playAnimation();
     }
+    chThdSleepMilliseconds(100);
   }
 }
