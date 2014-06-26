@@ -43,6 +43,9 @@ int main(void) {
   halInit();
   chSysInit();
 
+
+  chprintf(chp,"je suis la1\r\n");
+
   //Initializes semaphore to check presence, locked by default
   chSemInit(presence_sem, 0);
 
