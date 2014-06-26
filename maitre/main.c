@@ -40,25 +40,23 @@ int main(void) {
   halInit();
   chSysInit();
 
-  chprintf(chp,"je suis la init\r\n");
-
-  // Activate USART1 using default configuration (115200 8N1)
+   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
 
   // Init LEDs
   led_init();
 
-  // Launch the LED thread
-  startLedThread();
-
-  // Launch the heart beat thread
+ // Launch the heart beat thread
   startHeartBeatThread();
+
+ //Launch ADC Thread
+  startPirThread();
+
+ // Launch the LED thread
+  startLedThread();
 
   // Configure radio
   startRF();
-
-  //Launch ADC Thread
-  startAdcThread();
 
   while (TRUE) {
     chThdSleepSeconds(1);

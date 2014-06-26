@@ -61,7 +61,6 @@ int main(void) {
   startAdcThread();
 
   while (TRUE) {
-    chprintf(chp, "I am waiting\r\n");
     WaitForAnimation();
     playAnimation();
   }
