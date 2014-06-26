@@ -36,6 +36,9 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
         color = lfsr()%256;
         animation_4(color);
         break;
+      case 5: animation_5(); break;
+      case 6: animation_6(); break;
+      case 7: animation_7(); break;
       default :
         break;
       }

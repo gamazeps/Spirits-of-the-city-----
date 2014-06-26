@@ -158,3 +158,75 @@ void animation_4(uint8_t color) {
     chThdSleepMilliseconds((lfsr()%100) * 10);
   }
 }
+
+// Animation qui fait flasher juste flasher brièvement les yeux en blanc
+void animation_5(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+}
+
+// Animation qui fait flasher juste flasher brièvement les yeux en blanc
+void animation_6(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+}
+
+// Meme chose que la précédente, mais avec la tete en plus.
+void animation_7(void) {
+  // Tableau des délais extinction / allumage en 10ème de seconde.
+  // À la fin de l'anim on éteint les yeux.
+  static uint8_t delays[] = {1, 1,
+                             1, 1,
+                             1, 1,
+  };
+
+  for (size_t i=0; i < sizeof delays; i += 2) {
+    set_big_led_rgb(0, 0, 0);
+    set_small_led_rgb(0, 0, 0);
+    set_big_uv_led(0);
+    chThdSleepMilliseconds(delays[i]*100);
+
+    set_big_led_rgb(255, 255, 255);
+    set_small_led_rgb(255, 255, 255);
+    set_big_uv_led(255);
+    chThdSleepMilliseconds(delays[i+1]*100);
+  }
+
+  set_big_led_rgb(0, 0, 0);
+  set_small_led_rgb(0, 0, 0);
+  set_big_uv_led(0);
+}
