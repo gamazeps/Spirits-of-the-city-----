@@ -4,6 +4,7 @@
 #include "radio_thread.h"
 #include "debug.h"
 
+uint8_t rxbuf = {0};
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -68,13 +69,13 @@ void SendData(const uint8_t* datasend, int numWords){
 
 void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size) {
   set_CE(1);//sets CE to 1
-  msg_t msgMode = chSemWaitTimeout(&sem,1000);
+  msg_t msgMode = chSemWaitTimeout(&sem, 1000);
   if(msgMode == RDY_OK){chprintf(chp, "je reçois \r\n");
     set_CE(0);
-    uint8_t command = R_RX_PAYLOAD; rrxbuf[1]=2;
+    uint8_t command = R_RX_PAYLOAD;
     spiStartTransaction();chprintf(chp, "command=%x\r\n", command);
     spiSend(&SPID2, 1, &command);
-    spiReceive(&SPID2, pkt_size, rrxbuf);chprintf(chp, "la commande est passée \r\n");chprintf(chp, "rx2buf[1]=%x\r\n", rrxbuf[32]);
+    spiReceive(&SPID2, pkt_size, rrxbuf);chprintf(chp, "la commande est passée \r\n");chprintf(chp, "rrxbuf[31]=%x\r\n", rrxbuf[31]);
     spiStopTransaction();
     WriteRegisterByte(STATUS, RX_DR);
   }
@@ -129,15 +130,15 @@ void SendMessage(uint8_t* stxbuf) {
 void ReceiveMessage(void){
   if(!ISTRANSMITTER){
     while (TRUE) {
-      chThdSleepMilliseconds(5000);
+      chThdSleepMilliseconds(5);
       // switchOn();
-      uint8_t messagerecu[32];messagerecu[1]=3;
+      uint8_t messagerecu[32];
       // Wait for data to be present in the RX FIFO
       ReceivePacket(messagerecu,SIZEPKT);
-       chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
-       messagerecu[5]=0x25;
+      chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
+      chprintf(chp, "rxbuf[1]=%x\r\n",messagerecu[1]);
+      rxbuf[0]=messagerecu[0];
       chThdSleepMilliseconds(1);
-      chprintf(chp, "rxbuf[5]=%x\r\n",messagerecu[5]);
       // switchOff();
     }
   }
