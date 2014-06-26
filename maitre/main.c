@@ -32,7 +32,8 @@
 // Debug channel
 BaseSequentialStream *chp =  (BaseSequentialStream *)&SD1;
 
-BinarySemaphore *presence_sem;
+Semaphore *presence_sem;
+Semaphore *animation_sem;
 
 /*
  * Application entry point.
@@ -43,7 +44,10 @@ int main(void) {
   chSysInit();
 
   //Initializes semaphore to check presence, locked by default
-  chBSemInit(presence_sem, TRUE);
+  chSemInit(presence_sem, 0);
+
+  //Initializes semaphore to lock pir thread during an animation
+  chSemInit(animation_sem, 0);
 
   // Activate USART1 using default configuration (115200 8N1)
   sdStart(&SD1, NULL);
@@ -65,12 +69,13 @@ int main(void) {
 
   // Launch RF thread
   startRFThread();
+
   flash_head();
 
   // Output some things on the serial port but mainly sleep
   while (TRUE) {
-    chprintf(chp, "lfsr = %x\r\n", lfsr());
     chThdSleepSeconds(1);
+	chprintf(chp,"je suis la\r\n");
   }
 
 }

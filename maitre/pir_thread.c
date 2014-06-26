@@ -14,10 +14,10 @@ __attribute__((__noreturn__)) static msg_t PIRThread(void *arg) {
   chRegSetThreadName("PIR");
   while(TRUE) {
     if(palReadPad(GPIOC, GPIOC_PROXSENSOR)==PAL_HIGH){
-      chBSemSignal(presence_sem);
+      chSemSignal(presence_sem);
+      chSemWait(animation_sem);
     }
-    else
-      presence_detected = FALSE;
+    chThdSleepMilliseconds(100);
   }
 }
 

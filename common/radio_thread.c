@@ -2,11 +2,11 @@
 #include "hal.h"
 #include "RF.h"
 #include "radio_thread.h"
+#include "debug.h"
 
-static WORKING_AREA(waRFThread, 128);
+static WORKING_AREA(waRFThread, 512);
 __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   (void) arg;
-  (void) rxbuf;
   chRegSetThreadName("RF");
   extStart(&EXTD1, &extconfig);
 
@@ -26,19 +26,22 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
   ConfigureRF(SIZEPKT);
   //switchOff();
   // Clean the RX FIFO
-  ExecuteCommand(FLUSH_RX);
+  //ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
   chThdSleepMilliseconds(1);
-  uint8_t mess[32];
+  while(TRUE){
+    ReceiveMessage();}
+  /* uint8_t mess[32];
   //txbuf[0]=0xAB;
   //txbuf[1]=0x57;
   //txbuf[2]=0x26;
   mess[0]=0xAB;
   mess[1]=0x94;
+  mess[2]=0xe4;
   while(TRUE) {
     //Send some things
-    SendMessage(mess/*txbuf*/);
-  }
+    // SendMessage(messtxbuf);*/
+
 }
 
 void startRFThread(void){
