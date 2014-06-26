@@ -44,7 +44,7 @@ int main(void) {
   chSysInit();
 
 
-  chprintf(chp,"je suis la1\r\n");
+  chprintf(chp,"je suis la\r\n");
 
   //Initializes semaphore to check presence, locked by default
   chSemInit(presence_sem, 0);
@@ -71,7 +71,7 @@ int main(void) {
   startPirThread();
 
   // Launch RF thread
-  startRFThread();
+  //startRFThread();
 
   flash_head();
 

@@ -5,6 +5,7 @@
 #include "debug.h"
 
 volatile uint8_t rxbuf[32] = {0};
+volatile uint8_t txbuf[32] = {0};
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -120,8 +121,8 @@ void switchOff(void){
 
 void SendMessage(uint8_t* stxbuf) {
   if(ISTRANSMITTER){
-    // int t=chTimeNow();
-    while( TRUE /*(int) chTimeNow() < (int) (t+7000) */  ){
+    int t=chTimeNow();
+    while((int) chTimeNow() < (int) (t+7000)){
       SendData(stxbuf,SIZEPKT);
     }
   }
@@ -130,14 +131,12 @@ void SendMessage(uint8_t* stxbuf) {
 void ReceiveMessage(void){
   if(!ISTRANSMITTER){
     while (TRUE) {
-      chThdSleepMilliseconds(5);
+      chThdSleepMilliseconds(5000);
       // switchOn();
-      uint8_t messagerecu[32];
       // Wait for data to be present in the RX FIFO
-      ReceivePacket(messagerecu,SIZEPKT);
-      chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
-      chprintf(chp, "rxbuf[1]=%x\r\n",messagerecu[1]);
-      rxbuf[0]=messagerecu[0];
+      ReceivePacket(rxbuf,SIZEPKT);
+      chprintf(chp, "rxbuf[0]=%x\r\n",rxbuf[0]);
+      chprintf(chp, "rxbuf[1]=%x\r\n",rxbuf[1]);
       chThdSleepMilliseconds(1);
       // switchOff();
     }
