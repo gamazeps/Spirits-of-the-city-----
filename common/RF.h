@@ -35,8 +35,6 @@ void spiStartTransaction(void);
 
 void spiStopTransaction(void);
 
-static uint8_t rxbuf[32];
-static uint8_t txbuf[32];
 static SEMAPHORE_DECL(sem, 0);
 
 void WriteRegister(int  numRegistre, int numMots, uint8_t* wtxbuf);
