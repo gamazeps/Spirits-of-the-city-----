@@ -3,7 +3,6 @@
 #include "chprintf.h"
 #include "debug.h"
 #include "led_thread.h"
-#include "pir_thread.h"
 #include "animation.h"
 #include "lfsr.h"
 #include "../common/sem.h"
@@ -15,7 +14,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
   uint8_t color;
   chRegSetThreadName("LED");
   while(TRUE){
-    chSemWait(presence_sem);
+    chSemWait(&presence_sem);
       switch(lfsr()%8){
       case 0:
         animation_0();
@@ -42,7 +41,7 @@ __attribute__((__noreturn__))  static msg_t LEDThread(void *arg) {
       default :
         break;
       }
-      chSemSignal(animation_sem);
+      chSemSignal(&animation_sem);
       chThdSleepSeconds(1);
   }
 }

@@ -19,7 +19,6 @@
 #include "debug.h"
 #include "hsv2rgb.h"
 #include "led.h"
-#include "pir_thread.h"
 #include "led_thread.h"
 #include "heart_beat_thread.h"
 #include "led_thread.h"
@@ -61,6 +60,7 @@ int main(void) {
   startAdcThread();
 
   while (TRUE) {
-    chThdSleepSeconds(1);
+    WaitForAnimation();
+    // PlayAnimation();
   }
 }

@@ -1,10 +1,15 @@
+#include <string.h>
 #include "ch.h"
 #include "hal.h"
 #include "RF.h"
 #include "radio_thread.h"
 #include "debug.h"
 
-uint8_t rxbuf = {0};
+static SEMAPHORE_DECL(sem, 0);
+
+uint8_t rxbuf[SIZEPKT] = {0};
+static uint8_t rxbuf2[SIZEPKT] = {0};
+uint8_t txbuf[SIZEPKT] = {0};
 
 void set_CE(int on){
   on ? palSetPad(GPIOB, GPIOB_RF_CE) : palClearPad(GPIOB, GPIOB_RF_CE);
@@ -67,21 +72,24 @@ void SendData(const uint8_t* datasend, int numWords){
   set_CE(0);
 }
 
-void ReceivePacket(uint8_t *rrxbuf, size_t pkt_size) {
+// Return TRUE if a packet has been received
+int ReceivePacket(uint8_t *rrxbuf, size_t pkt_size, int timeout_ms) {
   set_CE(1);//sets CE to 1
-  msg_t msgMode = chSemWaitTimeout(&sem, 1000);
-  if(msgMode == RDY_OK){chprintf(chp, "je reçois \r\n");
+  msg_t msgMode = chSemWaitTimeout(&sem, timeout_ms);
+  if(msgMode == RDY_OK){
     set_CE(0);
     uint8_t command = R_RX_PAYLOAD;
-    spiStartTransaction();chprintf(chp, "command=%x\r\n", command);
+    spiStartTransaction();
     spiSend(&SPID2, 1, &command);
-    spiReceive(&SPID2, pkt_size, rrxbuf);chprintf(chp, "la commande est passée \r\n");chprintf(chp, "rrxbuf[31]=%x\r\n", rrxbuf[31]);
+    spiReceive(&SPID2, pkt_size, rrxbuf);
     spiStopTransaction();
     WriteRegisterByte(STATUS, RX_DR);
+    return TRUE;
   }
   else if(msgMode == RDY_TIMEOUT) {
     set_CE(0);chprintf(chp, "time is up \r\n");
   }
+  return FALSE;
 }
 
 void ConfigureRF(int sizepck){
@@ -119,28 +127,49 @@ void switchOff(void){
 }
 
 void SendMessage(uint8_t* stxbuf) {
-  if(ISTRANSMITTER){
-    // int t=chTimeNow();
-    while( TRUE /*(int) chTimeNow() < (int) (t+7000) */  ){
-      SendData(stxbuf,SIZEPKT);
-    }
+  switchOn();
+  int t=chTimeNow();
+  while((int) chTimeNow() < (int) (t+7000)){
+    SendData(stxbuf,SIZEPKT);
   }
 }
 
-void ReceiveMessage(void){
-  if(!ISTRANSMITTER){
-    while (TRUE) {
-      chThdSleepMilliseconds(5);
-      // switchOn();
-      uint8_t messagerecu[32];
-      // Wait for data to be present in the RX FIFO
-      ReceivePacket(messagerecu,SIZEPKT);
-      chprintf(chp, "rxbuf[0]=%x\r\n",messagerecu[0]);
-      chprintf(chp, "rxbuf[1]=%x\r\n",messagerecu[1]);
-      rxbuf[0]=messagerecu[0];
-      chThdSleepMilliseconds(1);
-      // switchOff();
+// Get the animation parameters in rxbuf and waits for the top if needed.
+// Return TRUE if an animation is ready, 0 if not.
+static int ReceiveAnimation(void) {
+  switchOn();
+  int needs_start = 0;
+  int received;
+  while (TRUE) {
+    received = ReceivePacket(rxbuf2, SIZEPKT, needs_start ? 6000 : 1000);
+    if (!received)
+      break;
+    if (rxbuf2[0] == 0xff) {
+      if (needs_start) {
+        break;
+      } else {
+      // Top has no meaning here
+      continue;
+      }
     }
+    memcpy(rxbuf, rxbuf2, SIZEPKT);
+    if ((rxbuf2[0] & 0x80) == 0) {
+      needs_start = 1;
+    } else {
+      break;
+    }
+  }
+  switchOff();
+  return received;
+}
+
+void WaitForAnimation(void) {
+  while (TRUE) {
+    int received = ReceiveAnimation();
+    if (received) {
+      break;
+    }
+    chThdSleepSeconds(5);
   }
 }
 

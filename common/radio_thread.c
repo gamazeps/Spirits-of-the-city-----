@@ -4,12 +4,29 @@
 #include "radio_thread.h"
 #include "debug.h"
 
-static WORKING_AREA(waRFThread, 512);
-__attribute__((__noreturn__)) static msg_t RFThread(void *arg){
-  (void) arg;
-  chRegSetThreadName("RF");
-  extStart(&EXTD1, &extconfig);
+static const EXTConfig extconfig={
+  {
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+    {EXT_CH_MODE_FALLING_EDGE | EXT_MODE_GPIOA | EXT_CH_MODE_AUTOSTART, irq_handler},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL},
+	{EXT_CH_MODE_DISABLED,NULL}
+  },
+};
 
+void startRF(void){
+  extStart(&EXTD1, &extconfig);
   // Init SPI
   static SPIConfig spi2cfg = {
     NULL, // No callback
@@ -24,26 +41,8 @@ __attribute__((__noreturn__)) static msg_t RFThread(void *arg){
 
   // Configure the RF device
   ConfigureRF(SIZEPKT);
-  //switchOff();
+  switchOff();
   // Clean the RX FIFO
-  //ExecuteCommand(FLUSH_RX);
+  ExecuteCommand(FLUSH_RX);
   WriteRegisterByte(STATUS, RX_DR);
-  chThdSleepMilliseconds(1);
-  while(TRUE){
-    ReceiveMessage();}
-  /* uint8_t mess[32];
-  //txbuf[0]=0xAB;
-  //txbuf[1]=0x57;
-  //txbuf[2]=0x26;
-  mess[0]=0xAB;
-  mess[1]=0x94;
-  mess[2]=0xe4;
-  while(TRUE) {
-    //Send some things
-    // SendMessage(messtxbuf);*/
-
-}
-
-void startRFThread(void){
-chThdCreateStatic(waRFThread, sizeof(waRFThread), NORMALPRIO, RFThread, NULL);
 }

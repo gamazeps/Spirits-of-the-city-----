@@ -1,10 +1,12 @@
 #ifndef RADIO_THREAD_H
 #define RADIO_THREAD_H
 
-// Buffers d'émission et réception
-extern volatile uint8_t rxbuf[32];
-extern volatile uint8_t txbuf[32];
+#include "RF.h"
 
-void startRFThread(void);
+// Buffers d'émission et réception
+extern uint8_t rxbuf[SIZEPKT];
+extern uint8_t txbuf[SIZEPKT];
+
+void startRF(void);
 
 #endif

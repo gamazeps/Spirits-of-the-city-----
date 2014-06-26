@@ -96,7 +96,7 @@ CSRC = $(PORTSRC) \
        ../common/radio_thread.c \
        ../common/RF.c \
        ../common/sem.c \
-        pir_thread.c main.c
+	   main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
