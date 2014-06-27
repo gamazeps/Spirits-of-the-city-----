@@ -60,7 +60,7 @@ int main(void) {
       fill_buffer();
       SendMessage(txbuf);
       txbuf[0]=255;
-      for(int i=0; i<10 ; i++){
+      for(int i=0; i<50 ; i++){
         SendData(txbuf, SIZEPKT);
       }
       playAnimation();
