@@ -110,7 +110,11 @@ void animation_2 (uint8_t decalage, uint8_t color1, uint8_t color2 )
     chThdSleepMilliseconds(10);
   }
 
-  // Go to pace
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
   set_heart_beat_speed(600);
 }
 
@@ -141,6 +145,13 @@ void animation_3(uint8_t color) {
 
   set_big_led_hsv(color, 255, 255);
   set_small_led_hsv(color, 255, 255);
+
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
+  set_heart_beat_speed(600);
 }
 
 // Animation qui fait flasher la tete de façon aléatoire en allumant et éteignant
@@ -158,6 +169,12 @@ void animation_4(uint8_t color) {
 
     chThdSleepMilliseconds((lfsr()%100) * 10);
   }
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
+  set_heart_beat_speed(600);
 }
 
 // Animation qui fait flasher juste flasher brièvement les yeux en blanc
@@ -179,8 +196,12 @@ void animation_5(void) {
     chThdSleepMilliseconds(delays[i+1]*100);
   }
 
-  set_big_led_rgb(0, 0, 0);
-  set_small_led_rgb(0, 0, 0);
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
+  set_heart_beat_speed(600);
 }
 
 // Animation qui fait flasher juste flasher brièvement les yeux en blanc
@@ -202,8 +223,12 @@ void animation_6(void) {
     chThdSleepMilliseconds(delays[i+1]*100);
   }
 
-  set_big_led_rgb(0, 0, 0);
-  set_small_led_rgb(0, 0, 0);
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
+  set_heart_beat_speed(600);
 }
 
 // Meme chose que la précédente, mais avec la tete en plus.
@@ -227,9 +252,12 @@ void animation_7(void) {
     chThdSleepMilliseconds(delays[i+1]*100);
   }
 
-  set_big_led_rgb(0, 0, 0);
-  set_small_led_rgb(0, 0, 0);
-  set_big_uv_led(0);
+  // Turn off eyes
+  set_big_led_hsv(0, 0, 0);
+  set_small_led_hsv(0, 0, 0);
+
+  // Return to pace
+  set_heart_beat_speed(600);
 }
 
 /*void animation_8 ( uint8_t color1, uint8_t color2) {
