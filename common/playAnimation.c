@@ -21,13 +21,13 @@ void playAnimation(void)
       animation_4(rxbuf[1]);
       break;
     case 0x5:
-      animation_0();
+      animation_5();
       break;
     case 0x6:
-      animation_0();
+      animation_6();
       break;
     case 0x7:
-      animation_0();
+      animation_7();
       break;
     default:;
 

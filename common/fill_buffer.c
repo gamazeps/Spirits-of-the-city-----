@@ -16,12 +16,12 @@ void fill_buffer(void) {
     break;
   case 1:
     color = lfsr()%256;
-    txbuf[1]=50;
+    txbuf[1]=30;
     txbuf[2]=color;
     txbuf[3]=(color+123)%256;
 
     color = lfsr()%256;
-    rxbuf[1]=50;
+    rxbuf[1]=30;
     rxbuf[2]=color;
     rxbuf[3]=(color+123)%256;
     break;

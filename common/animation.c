@@ -132,11 +132,11 @@ void animation_3(uint8_t color) {
   for (size_t i=0; i < sizeof delays; i += 2) {
     set_big_led_hsv(color, 255, 255);
     set_small_led_hsv(color, 255, 255);
-    chThdSleepMilliseconds(delays[i]*100);
+    chThdSleepMilliseconds(delays[i]*50);
 
     set_big_led_hsv(0, 0, 0);
     set_small_led_hsv(0, 0, 0);
-    chThdSleepMilliseconds(delays[i+1]*100);
+    chThdSleepMilliseconds(delays[i+1]*50);
   }
 
   set_big_led_hsv(color, 255, 255);
@@ -149,14 +149,14 @@ void animation_4(uint8_t color) {
   set_big_led_hsv(0, 0, 0);
   set_small_led_hsv(0, 0, 0);
 
-  for(int i=0; i<10; i++) {
+  for(int i=0; i<6; i++) {
     flash_head();
     flash_head();
 
     set_big_led_hsv(color, 255, 25*i);
     set_small_led_hsv(color, 255, 25*i);
 
-    chThdSleepMilliseconds((lfsr()%100) * 10);
+    chThdSleepMilliseconds((lfsr()%100) * 5);
   }
 }
 
@@ -239,20 +239,20 @@ void animation_7(void) {
   chThdSleepMilliseconds(200);
 
   set_big_led_hsv(color1, 255, 80);
-  set_small_led_hsv(color2, 255, 80); 
+  set_small_led_hsv(color2, 255, 80);
   set_heart_beat_speed(6);
   chThdSleepMilliseconds(200);
 
   for (int i = 80; i>0; i--){
-    set_small_led_hsv(color2, 255, i); 
+    set_small_led_hsv(color2, 255, i);
     set_big_led_hsv(color1, 255, i);
     chThdSleepMilliseconds(10);
   }
   for (int i = 0; i<80; i++){
-    set_big_led_hsv(color1, 255, i); 
+    set_big_led_hsv(color1, 255, i);
     set_small_led_hsv(color2, 255, i);
     chThdSleepMilliseconds(10);
-  }  
+  }
 
   flash_head();
   chThdSleepMilliseconds(200);
@@ -260,47 +260,46 @@ void animation_7(void) {
   chThdSleepMilliseconds(200);
 
   for (int i = 80; i>0; i--){
-    set_small_led_hsv(color1, 255, i); 
+    set_small_led_hsv(color1, 255, i);
     set_big_led_hsv(color2, 255, i);
-    chThdSleepMilliseconds(10); 
+    chThdSleepMilliseconds(10);
   }
   for (int i = 80; i>0; i--){
-    set_small_led_hsv(color2, 255, i); 
+    set_small_led_hsv(color2, 255, i);
     set_big_led_hsv(color1, 255, i);
     chThdSleepMilliseconds(10);
   }
   for (int i = 0; i<80; i++){
-    set_big_led_hsv(color2, 255, i); 
+    set_big_led_hsv(color2, 255, i);
     set_small_led_hsv(color1, 255, i);
     chThdSleepMilliseconds(10);
-  }  
+  }
   }
   for (int i = 0; i<80; i++){
-    set_big_led_hsv(color2, 255, i); 
+    set_big_led_hsv(color2, 255, i);
     set_small_led_hsv(color1, 255, i);
     chThdSleepMilliseconds(10);
-  }  
+  }
 
   flash_head();
   set_small_led_hsv(0, 0, 0);
   set_big_led_hsv(0, 0, 0);
   chThdSleepMilliseconds(300);
 
-  set_big_led_hsv(color1, 255, 80); 
+  set_big_led_hsv(color1, 255, 80);
   set_small_led_hsv(color1, 255, 80);
   chThdSleepMilliseconds(150);
 
-  set_big_led_hsv(0, 0, 0); 
+  set_big_led_hsv(0, 0, 0);
   set_small_led_hsv(0, 0, 0);
   chThdSleepMilliseconds(150);
 
-  set_big_led_hsv(color2, 255, 80); 
+  set_big_led_hsv(color2, 255, 80);
   set_small_led_hsv(color2, 255, 80);
   chThdSleepMilliseconds(150);
 
-  set_big_led_hsv(0, 0, 0); 
+  set_big_led_hsv(0, 0, 0);
   set_small_led_hsv(0, 0, 0);
   set_heart_beat_speed(6);
 
   };*/
-
