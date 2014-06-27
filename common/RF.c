@@ -4,6 +4,8 @@
 #include "RF.h"
 #include "radio_thread.h"
 #include "debug.h"
+#include "led.h"
+#include "lfsr.h"
 
 static SEMAPHORE_DECL(sem, 0);
 
@@ -128,8 +130,15 @@ void switchOff(void){
 void SendMessage(uint8_t* stxbuf) {
   switchOn();
   int t=chTimeNow();
+  uint8_t i=0;
+  uint8_t j=0;
+  uint8_t color= lfsr()%256;
   while((int) chTimeNow() < (int) (t+6000)){
     SendData(stxbuf,SIZEPKT);
+    j = i<80 ? i : 80-i;
+    set_small_led_hsv(color, 255, j);
+    set_big_led_hsv(color, 255, j);
+    i=(i+1)%160;
   }
 }
 

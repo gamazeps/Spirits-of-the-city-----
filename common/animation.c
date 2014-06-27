@@ -132,11 +132,11 @@ void animation_3(uint8_t color) {
   for (size_t i=0; i < sizeof delays; i += 2) {
     set_big_led_hsv(color, 255, 255);
     set_small_led_hsv(color, 255, 255);
-    chThdSleepMilliseconds(delays[i]*50);
+    chThdSleepMilliseconds(delays[i]*100);
 
     set_big_led_hsv(0, 0, 0);
     set_small_led_hsv(0, 0, 0);
-    chThdSleepMilliseconds(delays[i+1]*50);
+    chThdSleepMilliseconds(delays[i+1]*100);
   }
 
   set_big_led_hsv(color, 255, 255);
@@ -149,14 +149,14 @@ void animation_4(uint8_t color) {
   set_big_led_hsv(0, 0, 0);
   set_small_led_hsv(0, 0, 0);
 
-  for(int i=0; i<6; i++) {
+  for(int i=0; i<10; i++) {
     flash_head();
     flash_head();
 
     set_big_led_hsv(color, 255, 25*i);
     set_small_led_hsv(color, 255, 25*i);
 
-    chThdSleepMilliseconds((lfsr()%100) * 5);
+    chThdSleepMilliseconds((lfsr()%100) * 10);
   }
 }
 
