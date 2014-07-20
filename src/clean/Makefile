@@ -89,6 +89,7 @@ CSRC = $(PORTSRC) \
        hsv2rgb.c \
        leds.c \
 			 pir.c \
+			 lfsr.c \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
