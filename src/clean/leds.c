@@ -4,6 +4,11 @@
 #include "gamma.h"
 #include "hsv2rgb.h"
 
+static SEMAPHORE_DECL(hb_sem, 0);
+
+static int hb_delay;
+static int beating;
+
 // PWM configuration for PWMD2 and PWMD3
 static PWMConfig pwmcfg = {
   800000,                             // 800kHz tick clock frequency
@@ -20,9 +25,31 @@ static PWMConfig pwmcfg = {
   0
 };
 
+// Heart beat thread
+static WORKING_AREA(HEART_BEAT_WA, 128);
+static __attribute__((noreturn)) msg_t heart_beat_thread(void *arg){
+	(void) arg;
+  while(1){
+    while(beating){
+      set_small_uv_led(255);
+      chThdSleepMilliseconds(200);
+      set_small_uv_led(0);
+      chThdSleepMilliseconds(200);
+      set_small_uv_led(255);
+      chThdSleepMilliseconds(200);
+      set_small_uv_led(0);
+      chThdSleepMilliseconds(hb_delay);
+    }
+    chSemWait(&hb_sem);
+	}
+}
+
 void leds_init(void) {
   pwmStart(&PWMD2, &pwmcfg);
   pwmStart(&PWMD3, &pwmcfg);
+  set_heart_beat_speed(0);
+  chThdCreateStatic(HEART_BEAT_WA, sizeof(HEART_BEAT_WA), NORMALPRIO,
+      heart_beat_thread, NULL);
 }
 
 void set_big_led_rgb(rgb_color color){
@@ -49,22 +76,30 @@ void set_small_led_hsv(hsv_color color){
   set_small_led_rgb(rgb);
 }
 
-// Set the big UV LED to the desired intensity
+// Head LED
 void set_big_uv_led(uint8_t val){
   if (val) pwmEnableChannel(&PWMD2, 3, led_gamma[val]);
   else pwmDisableChannel(&PWMD2, 3);
 }
 
-
-// Set the small UV LED to the desired intensity
+// Heart LED
 void set_small_uv_led(uint8_t val){
   if (val) pwmEnableChannel(&PWMD2, 2, led_gamma[val]);
   else pwmDisableChannel(&PWMD2, 2);
 }
 
-// TODO Change this BS
+// Speed in bpm
 void set_heart_beat_speed(int speed) {
-  (void) speed;
+  if(speed){
+    hb_delay = (60 * 1000 - 600) / speed; 
+    if(!beating){
+      beating = 1;
+      chSemSignal(&hb_sem);
+    }
+  } else {
+    hb_delay = 1;
+    beating = 0;
+  }
 }
 
 void flash_head(void) {
